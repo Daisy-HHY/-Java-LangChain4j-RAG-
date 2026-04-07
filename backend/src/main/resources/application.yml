@@ -1,0 +1,47 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: kgqa-rag-system
+  datasource:
+    url: jdbc:mysql://localhost:3306/kgqa?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  sql:
+    init:
+      dependency:
+        type: none  # 关键！关闭数据库初始化依赖检测
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+# LangChain4j 配置
+langchain4j:
+  siliconflow:
+    api-key: ${SILICONFLOW_API_KEY:sk-uavgmvrxbztvjpnlkltozsjvbguycmacaojjjvhezhaurxlp}
+    base-url: https://api.siliconflow.cn/v1
+    embedding-model: Qwen/Qwen3-Embedding-8B
+    chat-model: deepseek-ai/DeepSeek-V3.2
+
+# 文件上传配置
+upload:
+  path: ./uploads
+
+# MyBatis-Plus 配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+  mapper-locations: classpath*:/mapper/**/*.xml
+
+# 日志配置
+logging:
+  level:
+    com.kgqa: DEBUG
+    dev.langchain4j: DEBUG
