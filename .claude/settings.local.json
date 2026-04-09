@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(mvn spring-boot:run)",
-      "Bash(curl -s -X POST \"http://localhost:8080/api/import/medqa\")"
-    ]
-  }
-}
