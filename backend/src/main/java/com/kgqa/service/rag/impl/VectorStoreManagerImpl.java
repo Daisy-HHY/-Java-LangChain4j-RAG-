@@ -1,28 +1,34 @@
-package com.kgqa.rag;
+package com.kgqa.service.rag.impl;
 
+import com.kgqa.service.rag.VectorStoreManager;
 import dev.langchain4j.data.document.Document;
 import dev.langchain4j.data.embedding.Embedding;
 import dev.langchain4j.data.segment.TextSegment;
+import dev.langchain4j.model.embedding.EmbeddingModel;
 import dev.langchain4j.store.embedding.EmbeddingSearchRequest;
 import dev.langchain4j.store.embedding.EmbeddingStore;
-import dev.langchain4j.model.embedding.EmbeddingModel;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * 向量存储管理服务实现
+ * 负责向量存储的添加和搜索
+ */
 @Component
-public class VectorStoreManager {
+public class VectorStoreManagerImpl implements VectorStoreManager {
 
     private final EmbeddingStore<TextSegment> embeddingStore;
     private final EmbeddingModel embeddingModel;
 
-    public VectorStoreManager(EmbeddingStore<TextSegment> embeddingStore,
+    public VectorStoreManagerImpl(EmbeddingStore<TextSegment> embeddingStore,
                             EmbeddingModel embeddingModel) {
         this.embeddingStore = embeddingStore;
         this.embeddingModel = embeddingModel;
     }
 
+    @Override
     public List<String> search(String query, int topK) {
         Embedding queryEmbedding = embeddingModel.embed(query).content();
 
@@ -36,6 +42,7 @@ public class VectorStoreManager {
                 .collect(Collectors.toList());
     }
 
+    @Override
     public int addDocuments(List<String> chunks) {
         int count = 0;
         for (String chunk : chunks) {

@@ -1,10 +1,14 @@
-package com.kgqa.rag;
+package com.kgqa.service.rag;
 
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 文本分块服务
+ * 将长文本分割成较小的块
+ */
 @Component
 public class TextSplitter {
 

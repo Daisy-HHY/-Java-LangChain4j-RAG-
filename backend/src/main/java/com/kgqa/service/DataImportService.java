@@ -2,8 +2,8 @@ package com.kgqa.service;
 
 import com.kgqa.model.entity.KnowledgeBase;
 import com.kgqa.model.entity.KnowledgeChunk;
-import com.kgqa.rag.TextSplitter;
-import com.kgqa.rag.VectorStoreManager;
+import com.kgqa.service.rag.TextSplitter;
+import com.kgqa.service.rag.VectorStoreManager;
 import com.kgqa.repository.KnowledgeChunkRepository;
 import com.kgqa.repository.KnowledgeRepository;
 import org.apache.jena.query.Dataset;
@@ -103,17 +103,31 @@ public class DataImportService {
         List<String> triples = new ArrayList<>();
 
         try {
+            log.info("开始读取 TDB: {}", tdbPath);
+
             Dataset dataset = TDBFactory.createDataset(tdbPath);
-            dataset.begin();
+            log.info("Dataset 创建成功");
 
-            try {
-                String sparql = "SELECT ?subject ?predicate ?object WHERE { ?subject ?predicate ?object } LIMIT 100000";
+            // 使用无事务模式的 SPARQL 查询
+            String sparql = "SELECT ?subject ?predicate ?object WHERE { ?subject ?predicate ?object } LIMIT 1000000";
+            log.info("执行 SPARQL 查询");
 
-                try (QueryExecution qexec = QueryExecutionFactory.create(sparql, dataset)) {
-                    ResultSet results = qexec.execSelect();
+            try (QueryExecution qexec = QueryExecutionFactory.create(sparql, dataset)) {
+                ResultSet results = qexec.execSelect();
+                log.info("查询执行成功, 开始遍历结果");
 
-                    while (results.hasNext()) {
+                int count = 0;
+                int errorCount = 0;
+                while (results.hasNext()) {
+                    try {
                         var row = results.next();
+
+                        // 检查必要字段是否为空
+                        if (row.get("subject") == null || row.get("predicate") == null || row.get("object") == null) {
+                            errorCount++;
+                            continue;
+                        }
+
                         String subject = row.get("subject").toString();
                         String predicate = row.get("predicate").toString();
                         String object = row.get("object").toString();
@@ -123,14 +137,23 @@ public class DataImportService {
                         if (tripleText != null && !tripleText.isEmpty()) {
                             triples.add(tripleText);
                         }
+                        count++;
+                        if (count % 10000 == 0) {
+                            log.info("已读取 {} 条有效三元组", count);
+                        }
+                    } catch (Exception e) {
+                        errorCount++;
+                        if (errorCount <= 5) {
+                            log.warn("跳过异常三元组: {}", e.getMessage());
+                        }
+                        continue;
                     }
                 }
-            } finally {
-                dataset.end();
+                log.info("共读取 {} 条有效三元组，跳过 {} 条异常数据", count, errorCount);
             }
 
         } catch (Exception e) {
-            log.error("读取 TDB 数据失败: {}", e.getMessage(), e);
+            log.error("读取 TDB 数据失败: {} - path: {}", e.getMessage(), tdbPath, e);
         }
 
         return triples;

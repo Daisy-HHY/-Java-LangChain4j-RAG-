@@ -3,7 +3,7 @@ package com.kgqa.config;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.kgqa.model.entity.KnowledgeBase;
 import com.kgqa.model.entity.KnowledgeChunk;
-import com.kgqa.rag.VectorStoreManager;
+import com.kgqa.service.rag.VectorStoreManager;
 import com.kgqa.repository.KnowledgeChunkRepository;
 import com.kgqa.repository.KnowledgeRepository;
 import org.slf4j.Logger;

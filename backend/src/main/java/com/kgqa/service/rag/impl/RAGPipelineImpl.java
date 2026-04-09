@@ -1,12 +1,18 @@
-package com.kgqa.rag;
+package com.kgqa.service.rag.impl;
 
+import com.kgqa.service.rag.RAGPipeline;
+import com.kgqa.service.rag.VectorStoreManager;
 import dev.langchain4j.model.chat.ChatModel;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+/**
+ * RAG 管道服务实现
+ * 负责向量检索和 LLM 生成答案
+ */
 @Component
-public class RAGPipeline {
+public class RAGPipelineImpl implements RAGPipeline {
 
     private final VectorStoreManager vectorStoreManager;
     private final ChatModel chatLanguageModel;
@@ -20,12 +26,18 @@ public class RAGPipeline {
             %s
             """;
 
-    public RAGPipeline(VectorStoreManager vectorStoreManager,
-                      ChatModel chatLanguageModel) {
+    public RAGPipelineImpl(VectorStoreManager vectorStoreManager,
+                            ChatModel chatLanguageModel) {
         this.vectorStoreManager = vectorStoreManager;
         this.chatLanguageModel = chatLanguageModel;
     }
 
+    @Override
+    public ChatModel getChatModel() {
+        return chatLanguageModel;
+    }
+
+    @Override
     public Result answer(String question, List<String> chatHistory) {
         // 1. 检索相关知识
         List<String> relevantDocs = vectorStoreManager.search(question, 5);
@@ -60,6 +72,4 @@ public class RAGPipeline {
 
         return sb.toString();
     }
-
-    public record Result(String answer, List<String> sources) {}
 }

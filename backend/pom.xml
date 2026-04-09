@@ -68,11 +68,11 @@
             <version>2.9.1</version>
         </dependency>
 
-        <!-- Apache Jena TDB for knowledge graph -->
+        <!-- Apache Jena TDB2 for knowledge graph -->
         <dependency>
             <groupId>org.apache.jena</groupId>
             <artifactId>apache-jena-libs</artifactId>
-            <version>4.9.0</version>
+            <version>3.17.0</version>
             <type>pom</type>
         </dependency>
 

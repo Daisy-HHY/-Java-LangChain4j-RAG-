@@ -1,24 +1,30 @@
-package com.kgqa.service;
+package com.kgqa.service.rag.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.kgqa.model.entity.ChatMessageEntity;
 import com.kgqa.repository.ChatMessageMapper;
+import com.kgqa.service.rag.ChatMemoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 对话历史服务实现
+ * 管理聊天会话的历史消息
+ */
 @Service
-public class ChatMemoryService {
+public class ChatMemoryServiceImpl implements ChatMemoryService {
 
     @Autowired
     private final ChatMessageMapper messageMapper;
 
-    public ChatMemoryService(ChatMessageMapper messageMapper) {
+    public ChatMemoryServiceImpl(ChatMessageMapper messageMapper) {
         this.messageMapper = messageMapper;
     }
 
+    @Override
     public List<String> getChatHistory(Long sessionId) {
         List<ChatMessageEntity> messages = messageMapper.selectList(
                 new LambdaQueryWrapper<ChatMessageEntity>()
@@ -33,6 +39,7 @@ public class ChatMemoryService {
         return history;
     }
 
+    @Override
     public void saveMessage(Long sessionId, String role, String content, String sources) {
         ChatMessageEntity message = new ChatMessageEntity();
         message.setSessionId(sessionId);

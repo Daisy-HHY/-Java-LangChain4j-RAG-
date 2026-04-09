@@ -1,4 +1,4 @@
-package com.kgqa.rag;
+package com.kgqa.service.rag;
 
 import org.apache.tika.Tika;
 import org.apache.tika.exception.TikaException;
