@@ -58,6 +58,32 @@ public final class MedicalOntology {
     public static final Property MECHANISM_OF_ACTION =
             ResourceFactory.createProperty(BASE_URI + "mechanismOfAction");
 
+    // ===== Wikidata 属性 URI (用于 SPARQL 查询) =====
+    public static final String WDT_BASE = "http://www.wikidata.org/prop/direct/";
+    public static final Property WDT_P31 =      // instance of
+            ResourceFactory.createProperty(WDT_BASE + "P31");
+    public static final Property WDT_P780 =      // symptom
+            ResourceFactory.createProperty(WDT_BASE + "P780");
+    public static final Property WDT_P2176 =    // treated by / drug
+            ResourceFactory.createProperty(WDT_BASE + "P2176");
+    public static final Property WDT_P828 =     // cause
+            ResourceFactory.createProperty(WDT_BASE + "P828");
+    public static final Property WDT_P1542 =    // complication
+            ResourceFactory.createProperty(WDT_BASE + "P1542");
+    public static final Property WDT_P923 =     // diagnostic test
+            ResourceFactory.createProperty(WDT_BASE + "P923");
+    public static final Property WDT_P1995 =    // specialty (medical specialty)
+            ResourceFactory.createProperty(WDT_BASE + "P1995");
+    public static final Property WDT_P927 =     // located in (body location)
+            ResourceFactory.createProperty(WDT_BASE + "P927");
+
+    // ===== Wikidata 实体 URI =====
+    public static final String WD_ENTITY = "http://www.wikidata.org/entity/";
+    public static final Resource WD_DISEASE =    // Q12136
+            ResourceFactory.createResource(WD_ENTITY + "Q12136");
+    public static final Resource WD_DRUG =      // Q12140
+            ResourceFactory.createResource(WD_ENTITY + "Q12140");
+
     // ===== 工具方法 =====
     // 根据实体名称生成 URI（中英文兼容）
     public static Resource createEntityResource(String name, Resource type) {

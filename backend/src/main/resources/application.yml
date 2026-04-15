@@ -5,10 +5,10 @@ spring:
   application:
     name: kgqa-rag-system
   datasource:
-    url: jdbc:mysql://localhost:3306/kgqa?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
-    username: root
+    url: jdbc:postgresql://localhost:5432/kgqa
+    username: postgres
     password: 123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: org.postgresql.Driver
   sql:
     init:
       dependency:
@@ -29,6 +29,15 @@ langchain4j:
 # 文件上传配置
 upload:
   path: ./uploads
+
+# 知识图谱配置
+kgqa:
+  tdb:
+    path: E:/Github_project/LangChain4j-KGQA/tdb_wikidata
+  wikidata:
+    path: E:/Github_project/LangChain4j-KGQA/wikidata
+  embedding:
+    table: embeddings
 
 # MyBatis-Plus 配置
 mybatis-plus:

@@ -2,6 +2,8 @@ package com.kgqa.service.qa;
 
 import com.kgqa.model.dto.ChatRequest;
 import com.kgqa.model.dto.ChatResponse;
+import com.kgqa.model.dto.SourceItem;
+import com.kgqa.model.entity.ChatMessageEntity;
 import com.kgqa.model.entity.ChatSession;
 
 import java.util.List;
@@ -22,10 +24,10 @@ public interface HybridQAService {
     /**
      * 执行混合问答
      * @param question 问题
-     * @param chatHistory 对话历史
+     * @param chatHistory 对话历史（带角色信息）
      * @return 问答结果
      */
-    Result answer(String question, List<String> chatHistory);
+    Result answer(String question, List<ChatMessageEntity> chatHistory);
 
     /**
      * 获取所有会话
@@ -43,5 +45,5 @@ public interface HybridQAService {
     /**
      * 问答结果
      */
-    record Result(String answer, List<String> sources) {}
+    record Result(String answer, List<SourceItem> sources) {}
 }

@@ -40,6 +40,7 @@ public class VectorStoreInitializer implements ApplicationRunner {
             List<KnowledgeBase> knowledgeList = knowledgeRepository.selectList(
                     new LambdaQueryWrapper<KnowledgeBase>()
                             .eq(KnowledgeBase::getStatus, "READY")
+                            .ne(KnowledgeBase::getFileType, "MedQA")
             );
 
             if (knowledgeList.isEmpty()) {

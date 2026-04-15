@@ -7,7 +7,6 @@ import com.kgqa.service.rag.ChatMemoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,18 +24,12 @@ public class ChatMemoryServiceImpl implements ChatMemoryService {
     }
 
     @Override
-    public List<String> getChatHistory(Long sessionId) {
-        List<ChatMessageEntity> messages = messageMapper.selectList(
+    public List<ChatMessageEntity> getChatHistory(Long sessionId) {
+        return messageMapper.selectList(
                 new LambdaQueryWrapper<ChatMessageEntity>()
                         .eq(ChatMessageEntity::getSessionId, sessionId)
                         .orderByAsc(ChatMessageEntity::getCreatedAt)
         );
-
-        List<String> history = new ArrayList<>();
-        for (ChatMessageEntity msg : messages) {
-            history.add(msg.getContent());
-        }
-        return history;
     }
 
     @Override

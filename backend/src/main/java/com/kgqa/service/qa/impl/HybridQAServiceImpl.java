@@ -3,6 +3,7 @@ package com.kgqa.service.qa.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.kgqa.model.dto.ChatRequest;
 import com.kgqa.model.dto.ChatResponse;
+import com.kgqa.model.dto.SourceItem;
 import com.kgqa.model.entity.ChatMessageEntity;
 import com.kgqa.model.entity.ChatSession;
 import com.kgqa.repository.ChatMessageMapper;
@@ -84,8 +85,8 @@ public class HybridQAServiceImpl implements HybridQAService {
         // 获取或创建会话
         Long sessionId = getOrCreateSession(sessionIdStr);
 
-        // 获取对话历史
-        List<String> history = chatMemoryService.getChatHistory(sessionId);
+        // 获取对话历史（带角色信息）
+        List<ChatMessageEntity> history = chatMemoryService.getChatHistory(sessionId);
 
         // 执行混合问答
         Result result = answer(question, history);
@@ -109,7 +110,7 @@ public class HybridQAServiceImpl implements HybridQAService {
      * 执行混合问答
      */
     @Override
-    public Result answer(String question, List<String> chatHistory) {
+    public Result answer(String question, List<ChatMessageEntity> chatHistory) {
         // 1. 意图识别
         IntentDetectionService.QuestionType questionType = intentDetectionService.detect(question);
         log.debug("意图识别结果: {}", questionType);
@@ -147,7 +148,7 @@ public class HybridQAServiceImpl implements HybridQAService {
             if (!kgResults.isEmpty()) {
                 // 使用 LLM 生成自然语言回答
                 String answer = generateAnswerFromKG(question, kgResults, matchResult.predicate());
-                return new Result(answer, kgResults);
+                return new Result(answer, toSourceItems(kgResults));
             }
         }
 
@@ -160,7 +161,7 @@ public class HybridQAServiceImpl implements HybridQAService {
 
             if (!kgResults.isEmpty()) {
                 String answer = generateAnswerFromKG(question, kgResults, null);
-                return new Result(answer, kgResults);
+                return new Result(answer, toSourceItems(kgResults));
             }
         }
 
@@ -183,6 +184,8 @@ public class HybridQAServiceImpl implements HybridQAService {
         String prompt = String.format("""
                 你是一个专业的医学知识问答助手。请根据知识图谱查询结果回答用户问题。
 
+                直接以医学知识的形式组织语言。  
+        
                 用户问题：%s
                 查询结果：
                 %s
@@ -207,7 +210,7 @@ public class HybridQAServiceImpl implements HybridQAService {
     /**
      * 使用 RAG 回答
      */
-    private Result answerByRAG(String question, List<String> chatHistory) {
+    private Result answerByRAG(String question, List<ChatMessageEntity> chatHistory) {
         log.debug("使用 RAG 向量检索回答");
         RAGPipeline.Result result = ragPipeline.answer(question, chatHistory);
         return new Result(result.answer(), result.sources());
@@ -268,5 +271,15 @@ public class HybridQAServiceImpl implements HybridQAService {
             return true;
         }
         return false;
+    }
+
+    /**
+     * 将字符串列表转换为来源项列表
+     * SPARQL 查询结果没有分数信息,默认设为 1.0
+     */
+    private List<SourceItem> toSourceItems(List<String> strings) {
+        return strings.stream()
+                .map(s -> new SourceItem(s, 1.0))
+                .toList();
     }
 }

@@ -6,12 +6,12 @@ import java.util.List;
 @Data
 public class ChatResponse {
     private String answer;
-    private List<String> sources;
+    private List<SourceItem> sources;
     private String sessionId;
 
     public ChatResponse() {}
 
-    public ChatResponse(String answer, List<String> sources, String sessionId) {
+    public ChatResponse(String answer, List<SourceItem> sources, String sessionId) {
         this.answer = answer;
         this.sources = sources;
         this.sessionId = sessionId;

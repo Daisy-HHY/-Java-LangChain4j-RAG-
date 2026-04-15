@@ -67,8 +67,8 @@ public class KnowledgeService {
             // 分割文本
             List<String> chunks = textSplitter.split(content);
 
-            // 存入向量数据库
-            vectorStoreManager.addDocuments(chunks);
+            // 存入向量数据库（带 knowledge_id 用于级联删除）
+            vectorStoreManager.addDocuments(chunks, knowledgeId);
 
             // 保存 chunk 元数据
             for (int i = 0; i < chunks.size(); i++) {
@@ -114,6 +114,8 @@ public class KnowledgeService {
     }
 
     public boolean delete(Long id) {
+        // 级联删除向量数据
+        vectorStoreManager.deleteByKnowledgeId(id);
         // 级联删除 MySQL 数据
         chunkRepository.delete(new LambdaQueryWrapper<KnowledgeChunk>().eq(KnowledgeChunk::getKnowledgeId, id));
         knowledgeRepository.deleteById(id);

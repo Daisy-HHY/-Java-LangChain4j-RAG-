@@ -1,5 +1,6 @@
 package com.kgqa.service.sparql.impl;
 
+import com.kgqa.kg.TdbManager;
 import com.kgqa.service.sparql.QueryExecutor;
 import org.apache.jena.query.*;
 import org.apache.jena.tdb.TDBFactory;
@@ -23,8 +24,14 @@ public class QueryExecutorImpl implements QueryExecutor {
     private static final Logger log = LoggerFactory.getLogger(QueryExecutorImpl.class);
 
     // TDB 数据库路径
-    @Value("${knowledgegraph.tdb.path:E:/Github_project/LangChain4j-KGQA/tdb_drug_new}")
+    @Value("${kgqa.tdb.path:E:/Github_project/LangChain4j-KGQA/tdb_medqa}")
     private String tdbPath;
+
+    private final TdbManager tdbManager;
+
+    public QueryExecutorImpl(TdbManager tdbManager) {
+        this.tdbManager = tdbManager;
+    }
 
     /**
      * 执行 SPARQL 查询
@@ -35,42 +42,24 @@ public class QueryExecutorImpl implements QueryExecutor {
             return new ArrayList<>();
         }
 
-        // 检查 TDB 是否存在
-        if (!Files.exists(Path.of(tdbPath))) {
-            log.warn("TDB 数据库不存在: {}", tdbPath);
-            return new ArrayList<>();
-        }
-
-        List<String> results = new ArrayList<>();
-
         try {
-            // 创建 TDB 数据集
-            Dataset dataset = TDBFactory.createDataset(tdbPath);
-
-            // 执行查询
-            try (QueryExecution qexec = QueryExecutionFactory.create(sparql, dataset)) {
-                ResultSet rs = qexec.execSelect();
-
-                // 提取结果
-                while (rs.hasNext()) {
-                    QuerySolution solution = rs.next();
-
-                    // 将解决方案转换为字符串
-                    String resultStr = solutionToString(solution);
-                    if (resultStr != null && !resultStr.isEmpty()) {
-                        results.add(resultStr);
+            return tdbManager.readTransaction(model -> {
+                List<String> results = new ArrayList<>();
+                try (QueryExecution qexec = QueryExecutionFactory.create(sparql, model)) {
+                    ResultSet rs = qexec.execSelect();
+                    while (rs.hasNext()) {
+                        String resultStr = solutionToString(rs.next());
+                        if (resultStr != null && !resultStr.isEmpty()) {
+                            results.add(resultStr);
+                        }
                     }
                 }
-            }
-
-            dataset.close();
-            log.debug("SPARQL 查询执行成功，返回 {} 条结果", results.size());
-
+                return results;
+            });
         } catch (Exception e) {
             log.error("SPARQL 查询执行失败: {} - 查询: {}", e.getMessage(), sparql, e);
+            return new ArrayList<>();
         }
-
-        return results;
     }
 
     /**
@@ -78,12 +67,16 @@ public class QueryExecutorImpl implements QueryExecutor {
      */
     private String solutionToString(QuerySolution solution) {
         // 查找第一个绑定值
-        var varNames = solution.varNames();
-        while (varNames.hasNext()) {
-            String varName = varNames.next();
-            if (solution.contains(varName)) {
-                return solution.get(varName).toString();
+        try {
+            var varNames = solution.varNames();
+            while (varNames.hasNext()) {
+                String varName = varNames.next();
+                if (solution.contains(varName)) {
+                    return solution.get(varName).toString();
+                }
             }
+        } catch (Exception e) {
+            log.warn("解析查询结果失败: {}", e.getMessage());
         }
         return null;
     }
