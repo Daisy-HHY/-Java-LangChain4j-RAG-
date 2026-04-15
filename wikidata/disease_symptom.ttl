@@ -1,0 +1,1045 @@
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix hint: <http://www.bigdata.com/queryHints#> .
+@prefix bd: <http://www.bigdata.com/rdf#> .
+@prefix bds: <http://www.bigdata.com/rdf/search#> .
+@prefix psn: <http://www.wikidata.org/prop/statement/value-normalized/> .
+@prefix pqn: <http://www.wikidata.org/prop/qualifier/value-normalized/> .
+@prefix prn: <http://www.wikidata.org/prop/reference/value-normalized/> .
+@prefix mwapi: <https://www.mediawiki.org/ontology#API/> .
+@prefix gas: <http://www.bigdata.com/rdf/gas#> .
+@prefix wdsubgraph: <https://query.wikidata.org/subgraph/> .
+@prefix wdtn: <http://www.wikidata.org/prop/direct-normalized/> .
+@prefix psv: <http://www.wikidata.org/prop/statement/value/> .
+@prefix ps: <http://www.wikidata.org/prop/statement/> .
+@prefix pqv: <http://www.wikidata.org/prop/qualifier/value/> .
+@prefix pq: <http://www.wikidata.org/prop/qualifier/> .
+@prefix prv: <http://www.wikidata.org/prop/reference/value/> .
+@prefix pr: <http://www.wikidata.org/prop/reference/> .
+@prefix wdno: <http://www.wikidata.org/prop/novalue/> .
+@prefix p: <http://www.wikidata.org/prop/> .
+@prefix wikibase: <http://wikiba.se/ontology#> .
+@prefix wdata: <http://www.wikidata.org/wiki/Special:EntityData/> .
+@prefix wds: <http://www.wikidata.org/entity/statement/> .
+@prefix wdv: <http://www.wikidata.org/value/> .
+@prefix wdref: <http://www.wikidata.org/reference/> .
+@prefix schema: <http://schema.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix geof: <http://www.opengis.net/def/geosparql/function/> .
+@prefix mediawiki: <https://www.mediawiki.org/ontology#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix wikibaseqs: <http://wikiba.se/queryService#> .
+
+wd:Q1444550 wdt:P31 wd:Q12136 ;
+	rdfs:label "缺血性心脏病"@zh-hans ;
+	wdt:P780 wd:Q9690 .
+
+wd:Q1286499 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q35830 .
+
+wd:Q2076966 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q5445 , wd:Q32446 , wd:Q38933 .
+
+wd:Q2581333 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q29299 .
+
+wd:Q3153686 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q9690 .
+
+wd:Q3281303 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q38933 .
+
+wd:Q3508664 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q5445 .
+
+wd:Q4097126 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q38933 .
+
+wd:Q4219957 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q9690 .
+
+wd:Q12204 wdt:P31 wd:Q12136 ;
+	rdfs:label "结核"@zh-hans ;
+	wdt:P780 wd:Q38933 .
+
+wd:Q181923 wdt:P31 wd:Q12136 ;
+	rdfs:label "注意缺陷多动障碍"@zh-hans ;
+	wdt:P780 wd:Q5419936 , wd:Q21515327 , wd:Q67135693 .
+
+wd:Q21175413 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q9690 .
+
+wd:Q166907 wdt:P31 wd:Q12136 ;
+	rdfs:label "丛集性头痛"@zh-hans ;
+	wdt:P780 wd:Q29299 .
+
+wd:Q112672967 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q76829973 .
+
+wd:Q115744557 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q4291539 .
+
+wd:Q115743091 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q7104926 .
+
+wd:Q194101 wdt:P31 wd:Q12136 ;
+	rdfs:label "侏儒症"@zh-hans ;
+	wdt:P780 wd:Q7502090 .
+
+wd:Q115743091 wdt:P780 wd:Q115743869 , wd:Q115743908 .
+
+wd:Q19972185 wdt:P31 wd:Q12136 ;
+	rdfs:label "输卵管卵巢脓肿"@zh-hans ;
+	wdt:P780 wd:Q38933 .
+
+wd:Q120973015 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q25312637 .
+
+wd:Q56244339 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q35830 , wd:Q38933 .
+
+wd:Q460591 wdt:P31 wd:Q12136 ;
+	rdfs:label "减压症"@zh-hans ;
+	wdt:P780 wd:Q3954319 , wd:Q5470185 , wd:Q10686316 , wd:Q10916362 .
+
+wd:Q1432717 wdt:P31 wd:Q12136 ;
+	rdfs:label "紧张型思觉失调症"@zh-hans ;
+	wdt:P780 wd:Q4419847 , wd:Q4419854 , wd:Q57769952 .
+
+wd:Q1444550 wdt:P780 wd:Q3567802 .
+
+wd:Q628648 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q3567802 .
+
+wd:Q685200 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q10686316 , wd:Q10916362 .
+
+wd:Q1519971 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q10686316 , wd:Q18658055 .
+
+wd:Q605576 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q47085690 .
+
+wd:Q462833 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q58184039 .
+
+wd:Q628648 wdt:P780 wd:Q55105885 .
+
+wd:Q1444550 wdt:P780 wd:Q57823162 .
+
+wd:Q2521341 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q5445966 .
+
+wd:Q2581333 wdt:P780 wd:Q10916362 .
+
+wd:Q2681162 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q21112553 .
+
+wd:Q3153686 wdt:P780 wd:Q6940317 , wd:Q10916362 , wd:Q12153824 , wd:Q21118859 .
+
+wd:Q4219957 wdt:P780 wd:Q3537764 , wd:Q12101178 .
+
+wd:Q4097126 wdt:P780 wd:Q16775468 .
+
+wd:Q3399863 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q47496130 .
+
+wd:Q4699003 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q10916362 .
+
+wd:Q5045550 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q3567802 .
+
+wd:Q3281303 wdt:P780 wd:Q58490917 .
+
+wd:Q5064113 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q7104926 , wd:Q16831900 .
+
+wd:Q5032577 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q18968158 .
+
+wd:Q5196200 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q18558125 .
+
+wd:Q4219957 wdt:P780 wd:Q102186657 .
+
+wd:Q4721578 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q102186861 .
+
+wd:Q4219957 wdt:P780 wd:Q130499326 .
+
+wd:Q5064113 wdt:P780 wd:Q115743869 , wd:Q115743908 .
+
+wd:Q9334248 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q3919140 .
+
+wd:Q12204 wdt:P780 wd:Q15729017 .
+
+wd:Q6668132 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q107426859 .
+
+wd:Q17119515 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q56014002 .
+
+wd:Q18924544 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q3705665 .
+
+wd:Q21175413 wdt:P780 wd:Q21112577 .
+
+wd:Q32553802 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q3537764 .
+
+wd:Q32553811 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q3537764 .
+
+wd:Q32553802 wdt:P780 wd:Q10916362 .
+
+wd:Q32553811 wdt:P780 wd:Q21109837 .
+
+wd:Q837054 wdt:P31 wd:Q12136 ;
+	rdfs:label "腺病毒感染"@zh-hans ;
+	wdt:P780 wd:Q480971 , wd:Q847726 , wd:Q1115038 .
+
+wd:Q109466005 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q38933 .
+
+wd:Q166907 wdt:P780 wd:Q281289 , wd:Q622427 , wd:Q1115038 , wd:Q3537764 , wd:Q12153824 .
+
+wd:Q192579 wdt:P31 wd:Q12136 ;
+	rdfs:label "时差问题"@zh-hans ;
+	wdt:P780 wd:Q9690 , wd:Q29299 .
+
+wd:Q46545345 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q609066 .
+
+wd:Q3144201 wdt:P31 wd:Q12136 ;
+	rdfs:label "白天过度嗜睡"@zh-hans ;
+	wdt:P780 wd:Q1077823 .
+
+wd:Q19972185 wdt:P780 wd:Q183425 .
+
+wd:Q54911704 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q939378 , wd:Q4391416 .
+
+wd:Q55082435 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q923339 .
+
+wd:Q55042693 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q2291130 .
+
+wd:Q848662 wdt:P31 wd:Q12136 ;
+	rdfs:label "心室颤动"@zh-hans ;
+	wdt:P780 wd:Q10686316 .
+
+wd:Q56244339 wdt:P780 wd:Q1115038 .
+
+wd:Q460591 wdt:P780 wd:Q9690 .
+
+wd:Q63526133 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q3525894 , wd:Q6003455 .
+
+wd:Q2076966 wdt:P780 wd:Q653197 .
+
+wd:Q653197 rdfs:label "疹"@zh-hans .
+
+wd:Q124407 wdt:P31 wd:Q12136 ;
+	rdfs:label "1型糖尿病"@zh-hans ;
+	wdt:P780 wd:Q635195 .
+
+wd:Q635195 rdfs:label "多饮"@zh-hans .
+
+wd:Q181923 wdt:P780 wd:Q1549918 , wd:Q1640924 , wd:Q3316140 .
+
+wd:Q109466005 wdt:P780 wd:Q281289 .
+
+wd:Q3281303 wdt:P780 wd:Q653197 .
+
+wd:Q124407 wdt:P780 wd:Q653267 .
+
+wd:Q460591 wdt:P780 wd:Q557945 .
+
+wd:Q557945 rdfs:label "神经错乱"@zh-hans .
+
+wd:Q115744557 wdt:P780 wd:Q1115038 , wd:Q3357695 .
+
+wd:Q116585753 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q193211 .
+
+wd:Q120973015 wdt:P780 wd:Q1269290 , wd:Q3064951 .
+
+wd:Q3153686 wdt:P780 wd:Q11820606 .
+
+wd:Q11820606 rdfs:label "眼刺激"@zh-hans .
+
+wd:Q15974799 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q635195 .
+
+wd:Q460591 wdt:P780 wd:Q81938 , wd:Q683498 , wd:Q852376 , wd:Q2266426 , wd:Q3232712 .
+
+wd:Q1432717 wdt:P780 wd:Q460263 , wd:Q671776 , wd:Q918193 , wd:Q1642611 .
+
+wd:Q18966903 wdt:P31 wd:Q12136 ;
+	rdfs:label "躁狂发作"@zh-hans ;
+	wdt:P780 wd:Q1276947 .
+
+wd:Q136524882 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q281289 .
+
+wd:Q209647 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q397554 .
+
+wd:Q574975 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q961326 .
+
+wd:Q653383 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q81938 .
+
+wd:Q628648 wdt:P780 wd:Q1596398 .
+
+wd:Q685200 wdt:P780 wd:Q220989 .
+
+wd:Q693442 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q281289 .
+
+wd:Q685200 wdt:P780 wd:Q1581308 .
+
+wd:Q736776 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q81938 .
+
+wd:Q1132536 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q1411912 .
+
+wd:Q1275814 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q657516 , wd:Q3363589 .
+
+wd:Q1519971 wdt:P780 wd:Q1596398 .
+
+wd:Q2076966 wdt:P780 wd:Q431643 , wd:Q630552 , wd:Q727096 , wd:Q847726 , wd:Q945238 , wd:Q1360044 , wd:Q1362864 , wd:Q1459821 , wd:Q1462309 , wd:Q1975850 , wd:Q2085267 .
+
+wd:Q2270671 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q183425 .
+
+wd:Q3153686 wdt:P780 wd:Q557945 .
+
+wd:Q3043345 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q3043347 .
+
+wd:Q3153686 wdt:P780 wd:Q1349821 .
+
+wd:Q3281303 wdt:P780 wd:Q474959 , wd:Q683498 .
+
+wd:Q3399863 wdt:P780 wd:Q420240 , wd:Q1144406 .
+
+wd:Q3589128 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q183425 , wd:Q480971 .
+
+wd:Q3629075 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q333495 .
+
+wd:Q4097126 wdt:P780 wd:Q1166142 , wd:Q1476027 , wd:Q3269466 .
+
+wd:Q4219957 wdt:P780 wd:Q309406 , wd:Q1077823 , wd:Q2106335 .
+
+wd:Q4421929 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q127664 .
+
+wd:Q4454701 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q183425 .
+
+wd:Q5526844 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q1938763 .
+
+wd:Q6469283 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q183425 .
+
+wd:Q7262033 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q599389 .
+
+wd:Q12204 wdt:P780 wd:Q693058 , wd:Q2260058 .
+
+wd:Q9323945 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q209789 .
+
+wd:Q12206 wdt:P31 wd:Q12136 ;
+	rdfs:label "糖尿病"@zh-hans ;
+	wdt:P780 wd:Q653267 .
+
+wd:Q10355322 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q1363741 .
+
+wd:Q16333787 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q916398 .
+
+wd:Q916398 rdfs:label "淋巴水肿"@zh-hans .
+
+wd:Q3025883 wdt:P31 wd:Q12136 ;
+	rdfs:label "2型糖尿病"@zh-hans ;
+	wdt:P780 wd:Q635195 .
+
+wd:Q15401586 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q480971 .
+
+wd:Q15401621 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q2088392 .
+
+wd:Q15974799 wdt:P780 wd:Q1326943 .
+
+wd:Q209522 wdt:P31 wd:Q12136 ;
+	rdfs:label "暴食障碍"@zh-hans ;
+	wdt:P780 wd:Q2303219 .
+
+wd:Q21175413 wdt:P780 wd:Q183425 , wd:Q1350326 , wd:Q1362864 .
+
+wd:Q160796 wdt:P31 wd:Q12136 ;
+	rdfs:label "谵妄"@zh-hans ;
+	wdt:P780 wd:Q382255 , wd:Q1282114 , wd:Q3030775 .
+
+wd:Q29017164 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q661015 , wd:Q2841504 .
+
+wd:Q3025883 wdt:P780 wd:Q653267 .
+
+wd:Q32553802 wdt:P780 wd:Q183425 .
+
+wd:Q32553811 wdt:P780 wd:Q852376 .
+
+wd:Q32820424 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q1471918 .
+
+wd:Q18924544 wdt:P780 wd:Q653197 .
+
+wd:Q63526133 wdt:P780 wd:Q510236 .
+
+wd:Q510236 rdfs:label "神经衰弱"@zh-hans .
+
+wd:Q12204 wdt:P780 wd:Q647099 .
+
+wd:Q647099 rdfs:label "咳血"@zh-hans .
+
+wd:Q12206 wdt:P780 wd:Q635195 .
+
+wd:Q653383 wdt:P780 wd:Q574491 .
+
+wd:Q574491 rdfs:label "瘀斑"@zh-hans .
+
+wd:Q707388 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q718113 .
+
+wd:Q718113 rdfs:label "减肥"@zh-hans .
+
+wd:Q1519971 wdt:P780 wd:Q192309 .
+
+wd:Q192309 rdfs:label "耳鸣"@zh-hans .
+
+wd:Q32553811 wdt:P780 wd:Q2673323 .
+
+wd:Q2673323 rdfs:label "身体不适"@zh-hans .
+
+wd:Q5064113 wdt:P780 wd:Q841878 .
+
+wd:Q841878 rdfs:label "落枕"@zh-hans .
+
+wd:Q55042693 wdt:P780 wd:Q629444 .
+
+wd:Q629444 rdfs:label "运动障碍"@zh-hans .
+
+wd:Q113268139 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q275419 .
+
+wd:Q275419 rdfs:label "低血压"@zh-hans .
+
+wd:Q3589128 wdt:P780 wd:Q40878 .
+
+wd:Q40878 rdfs:label "腹泻"@zh-hans .
+
+wd:Q460591 wdt:P780 wd:Q199602 .
+
+wd:Q199602 rdfs:label "痒"@zh-hans .
+
+wd:Q63526133 wdt:P780 wd:Q6279182 .
+
+wd:Q6279182 rdfs:label "癫痫发作"@zh-hans .
+
+wd:Q848662 wdt:P780 wd:Q180007 .
+
+wd:Q180007 rdfs:label "昏厥"@zh-hans .
+
+wd:Q160796 wdt:P780 wd:Q177190 .
+
+wd:Q177190 rdfs:label "睡眠障碍"@zh-hans .
+
+wd:Q1519971 wdt:P780 wd:Q16035842 .
+
+wd:Q16035842 rdfs:label "听力障碍者"@zh-hans .
+
+wd:Q32820424 wdt:P780 wd:Q416417 .
+
+wd:Q416417 rdfs:label "静坐不能"@zh-hans .
+
+wd:Q160796 wdt:P780 wd:Q1895873 .
+
+wd:Q1895873 rdfs:label "定向力障碍"@zh-hans .
+
+wd:Q63526133 wdt:P780 wd:Q7933601 .
+
+wd:Q7933601 rdfs:label "心境波动"@zh-hans .
+
+wd:Q2076966 wdt:P780 wd:Q186470 .
+
+wd:Q186470 rdfs:label "扁桃体炎"@zh-hans .
+
+wd:Q2076966 wdt:P780 wd:Q193003 .
+
+wd:Q193003 rdfs:label "脑积水"@zh-hans .
+
+wd:Q2076966 wdt:P780 wd:Q205214 .
+
+wd:Q205214 rdfs:label "格林－巴利综合征"@zh-hans .
+
+wd:Q109466005 wdt:P780 wd:Q159557 .
+
+wd:Q159557 rdfs:label "昏迷"@zh-hans .
+
+wd:Q29017164 wdt:P780 wd:Q183560 .
+
+wd:Q183560 rdfs:label "智能障碍"@zh-hans .
+
+wd:Q109466005 wdt:P780 wd:Q186889 .
+
+wd:Q186889 rdfs:label "恶心"@zh-hans .
+
+wd:Q7253112 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q199602 .
+
+wd:Q15401586 wdt:P780 wd:Q2633267 .
+
+wd:Q2633267 rdfs:label "非典型肺炎"@zh-hans .
+
+wd:Q192579 wdt:P780 wd:Q177190 .
+
+wd:Q2270671 wdt:P780 wd:Q194290 .
+
+wd:Q194290 rdfs:label "脱水"@zh-hans .
+
+wd:Q460591 wdt:P780 wd:Q186889 , wd:Q188008 .
+
+wd:Q188008 rdfs:label "呼吸困难"@zh-hans .
+
+wd:Q460591 wdt:P780 wd:Q12829165 .
+
+wd:Q12829165 rdfs:label "失去意识"@zh-hans .
+
+wd:Q3153686 wdt:P780 wd:Q1054718 .
+
+wd:Q1054718 rdfs:label "肾病变"@zh-hans .
+
+wd:Q837054 wdt:P780 wd:Q167844 .
+
+wd:Q167844 rdfs:label "结膜炎"@zh-hans .
+
+wd:Q6668132 wdt:P780 wd:Q373597 .
+
+wd:Q373597 rdfs:label "血尿"@zh-hans .
+
+wd:Q55999739 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q275419 .
+
+wd:Q55624965 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q603178 .
+
+wd:Q603178 rdfs:label "幼态维持"@zh-hans .
+
+wd:Q837054 wdt:P780 wd:Q186889 .
+
+wd:Q4454701 wdt:P780 wd:Q40878 .
+
+wd:Q2076966 wdt:P780 wd:Q585285 .
+
+wd:Q585285 rdfs:label "低血小板计数"@zh-hans .
+
+wd:Q15401586 wdt:P780 wd:Q767485 .
+
+wd:Q767485 rdfs:label "呼吸衰竭"@zh-hans .
+
+wd:Q56244339 wdt:P780 wd:Q2633267 .
+
+wd:Q16333787 wdt:P780 wd:Q192100 .
+
+wd:Q192100 rdfs:label "象皮病"@zh-hans .
+
+wd:Q340548 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q40878 .
+
+wd:Q2270671 wdt:P780 wd:Q718113 .
+
+wd:Q3589128 wdt:P780 wd:Q160184 .
+
+wd:Q160184 rdfs:label "屁"@zh-hans .
+
+wd:Q460591 wdt:P780 wd:Q769220 .
+
+wd:Q769220 rdfs:label "感觉异常"@zh-hans .
+
+wd:Q137785913 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q199602 .
+
+wd:Q3153686 wdt:P780 wd:Q203994 .
+
+wd:Q203994 rdfs:label "亢奋"@zh-hans .
+
+wd:Q3153686 wdt:P780 wd:Q1869874 .
+
+wd:Q1869874 rdfs:label "失眠"@zh-hans .
+
+wd:Q3153686 wdt:P780 wd:Q229256 .
+
+wd:Q229256 rdfs:label "皮肤炎"@zh-hans .
+
+wd:Q707388 wdt:P780 wd:Q40878 .
+
+wd:Q460591 wdt:P780 wd:Q7933601 .
+
+wd:Q3399863 wdt:P780 wd:Q1886514 .
+
+wd:Q1886514 rdfs:label "大于胎龄儿"@zh-hans .
+
+wd:Q3399863 wdt:P780 wd:Q1918881 .
+
+wd:Q1918881 rdfs:label "胎粪吸入综合征"@zh-hans .
+
+wd:Q3589128 wdt:P780 wd:Q186889 , wd:Q194290 .
+
+wd:Q7235099 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q824292 .
+
+wd:Q824292 rdfs:label "低血钠"@zh-hans .
+
+wd:Q3153686 wdt:P780 wd:Q769220 .
+
+wd:Q93346177 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q270421 .
+
+wd:Q270421 rdfs:label "肌无力"@zh-hans .
+
+wd:Q4219957 wdt:P780 wd:Q186889 .
+
+wd:Q4097126 wdt:P780 wd:Q242510 .
+
+wd:Q242510 rdfs:label "橘皮组织"@zh-hans .
+
+wd:Q462833 wdt:P780 wd:Q189643 .
+
+wd:Q189643 rdfs:label "妄想"@zh-hans .
+
+wd:Q4219957 wdt:P780 wd:Q1895873 .
+
+wd:Q166907 wdt:P780 wd:Q2610154 .
+
+wd:Q2610154 rdfs:label "眼红"@zh-hans .
+
+wd:Q4219957 wdt:P780 wd:Q2336398 .
+
+wd:Q2336398 rdfs:label "皮膚蒼白"@zh-hans .
+
+wd:Q4454701 wdt:P780 wd:Q186889 .
+
+wd:Q115744557 wdt:P780 wd:Q468433 .
+
+wd:Q468433 rdfs:label "嗅觉缺失"@zh-hans .
+
+wd:Q115744557 wdt:P780 wd:Q3734963 .
+
+wd:Q3734963 rdfs:label "咸味"@zh-hans .
+
+wd:Q166907 wdt:P780 wd:Q3245488 .
+
+wd:Q3245488 rdfs:label "鼻塞"@zh-hans .
+
+wd:Q166907 wdt:P780 wd:Q394129 .
+
+wd:Q394129 rdfs:label "精神运动性激动"@zh-hans .
+
+wd:Q4721578 wdt:P780 wd:Q180152 .
+
+wd:Q180152 rdfs:label "白癜风"@zh-hans .
+
+wd:Q574975 wdt:P780 wd:Q242165 .
+
+wd:Q242165 rdfs:label "中暑"@zh-hans .
+
+wd:Q63526133 wdt:P780 wd:Q189643 .
+
+wd:Q98608770 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q188008 .
+
+wd:Q1132536 wdt:P780 wd:Q814207 .
+
+wd:Q814207 rdfs:label "疾病"@zh-hans .
+
+wd:Q2270671 wdt:P780 wd:Q40878 .
+
+wd:Q115743091 wdt:P780 wd:Q841878 .
+
+wd:Q18924544 wdt:P780 wd:Q199602 .
+
+wd:Q18199350 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q270421 .
+
+wd:Q462833 wdt:P780 wd:Q1895873 .
+
+wd:Q574975 wdt:P780 wd:Q177254 .
+
+wd:Q177254 rdfs:label "远视"@zh-hans .
+
+wd:Q558404 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q186889 .
+
+wd:Q1444550 wdt:P780 wd:Q180762 .
+
+wd:Q180762 rdfs:label "心绞痛"@zh-hans .
+
+wd:Q1444550 wdt:P780 wd:Q186889 , wd:Q188008 .
+
+wd:Q574975 wdt:P780 wd:Q209583 .
+
+wd:Q209583 rdfs:label "心跳过速"@zh-hans .
+
+wd:Q685200 wdt:P780 wd:Q192309 .
+
+wd:Q120973015 wdt:P780 wd:Q3450985 .
+
+wd:Q3450985 rdfs:label "神经发育障碍"@zh-hans .
+
+wd:Q12204 wdt:P780 wd:Q474718 .
+
+wd:Q474718 rdfs:label "夜間盗汗"@zh-hans .
+
+wd:Q4219957 wdt:P780 wd:Q7316656 .
+
+wd:Q7316656 rdfs:label "干呕"@zh-hans .
+
+wd:Q98483463 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q603178 .
+
+wd:Q56244339 wdt:P780 wd:Q40878 .
+
+wd:Q837054 wdt:P780 wd:Q40878 .
+
+wd:Q4421929 wdt:P780 wd:Q6279182 .
+
+wd:Q574975 wdt:P780 wd:Q3443277 .
+
+wd:Q3443277 rdfs:label "皮膚發紅"@zh-hans .
+
+wd:Q12204 wdt:P780 wd:Q718113 .
+
+wd:Q63526133 wdt:P780 wd:Q223907 .
+
+wd:Q223907 rdfs:label "手震"@zh-hans .
+
+wd:Q1132536 wdt:P780 wd:Q177190 .
+
+wd:Q32553811 wdt:P780 wd:Q180007 .
+
+wd:Q32553802 wdt:P780 wd:Q209583 .
+
+wd:Q32553811 wdt:P780 wd:Q209583 .
+
+wd:Q1275814 wdt:P780 wd:Q213373 .
+
+wd:Q213373 rdfs:label "失调"@zh-hans .
+
+wd:Q19275831 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q188008 .
+
+wd:Q32820424 wdt:P780 wd:Q1531991 .
+
+wd:Q1531991 rdfs:label "帕金森综合征"@zh-hans .
+
+wd:Q32820424 wdt:P780 wd:Q1546328 .
+
+wd:Q1546328 rdfs:label "迟发性运动障碍"@zh-hans .
+
+wd:Q2106232 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q1060890 .
+
+wd:Q1060890 rdfs:label "shiver"@zh-hans .
+
+wd:Q160796 wdt:P780 wd:Q1188698 .
+
+wd:Q1188698 rdfs:label "思维障碍"@zh-hans .
+
+wd:Q55624965 wdt:P780 wd:Q1142806 .
+
+wd:Q1142806 rdfs:label "智能低下"@zh-hans .
+
+wd:Q1286499 wdt:P780 wd:Q3245488 .
+
+wd:Q460591 wdt:P780 wd:Q107231 .
+
+wd:Q107231 rdfs:label "瘫痪"@zh-hans .
+
+wd:Q6469283 wdt:P780 wd:Q127076 .
+
+wd:Q127076 rdfs:label "呕吐"@zh-hans .
+
+wd:Q2076966 wdt:P780 wd:Q127724 .
+
+wd:Q127724 rdfs:label "白内障"@zh-hans .
+
+wd:Q63526133 wdt:P780 wd:Q83030 .
+
+wd:Q83030 rdfs:label "痴呆症"@zh-hans .
+
+wd:Q160796 wdt:P780 wd:Q170082 .
+
+wd:Q170082 rdfs:label "精神病"@zh-hans .
+
+wd:Q2076966 wdt:P780 wd:Q133244 .
+
+wd:Q133244 rdfs:label "黄疸"@zh-hans .
+
+wd:Q3153686 wdt:P780 wd:Q86 .
+
+wd:Q86 rdfs:label "头痛"@zh-hans .
+
+wd:Q109466005 wdt:P780 wd:Q127076 .
+
+wd:Q18199350 wdt:P780 wd:Q12133 .
+
+wd:Q12133 rdfs:label "聋"@zh-hans .
+
+wd:Q460591 wdt:P780 wd:Q127076 .
+
+wd:Q109466005 wdt:P780 wd:Q1421356 .
+
+wd:Q1421356 rdfs:label "恐声"@zh-hans .
+
+wd:Q2270671 wdt:P780 wd:Q152234 .
+
+wd:Q152234 rdfs:label "水肿"@zh-hans .
+
+wd:Q15974799 wdt:P780 wd:Q1124286 .
+
+wd:Q1124286 rdfs:label "多尿症"@zh-hans .
+
+wd:Q837054 wdt:P780 wd:Q114085 .
+
+wd:Q114085 rdfs:label "鼻炎"@zh-hans .
+
+wd:Q462833 wdt:P780 wd:Q11072 .
+
+wd:Q11072 rdfs:label "健忘症"@zh-hans .
+
+wd:Q837054 wdt:P780 wd:Q1162276 .
+
+wd:Q1162276 rdfs:label "口干"@zh-hans .
+
+wd:Q160796 wdt:P780 wd:Q3072083 .
+
+wd:Q3072083 rdfs:label "记忆障碍"@zh-hans .
+
+wd:Q55999739 wdt:P780 wd:Q1497481 .
+
+wd:Q1497481 rdfs:label "发育停滞"@zh-hans .
+
+wd:Q109466005 wdt:P780 wd:Q2006818 .
+
+wd:Q2006818 rdfs:label "抽搐"@zh-hans .
+
+wd:Q460591 wdt:P780 wd:Q1638131 .
+
+wd:Q1638131 rdfs:label "感觉过敏"@zh-hans .
+
+wd:Q55999739 wdt:P780 wd:Q1641068 .
+
+wd:Q1641068 rdfs:label "色素沉着"@zh-hans .
+
+wd:Q11497176 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q1292082 .
+
+wd:Q1292082 rdfs:label "咽喉痛"@zh-hans .
+
+wd:Q11497176 wdt:P780 wd:Q143925 .
+
+wd:Q143925 rdfs:label "牙痛"@zh-hans .
+
+wd:Q837054 wdt:P780 wd:Q1292082 .
+
+wd:Q3281303 wdt:P780 wd:Q101991 .
+
+wd:Q101991 rdfs:label "炎症"@zh-hans .
+
+wd:Q11883686 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q116275 .
+
+wd:Q116275 rdfs:label "肌痙挛性"@zh-hans .
+
+wd:Q3153686 wdt:P780 wd:Q1128283 .
+
+wd:Q1128283 rdfs:label "散瞳剂"@zh-hans .
+
+wd:Q12204 wdt:P780 wd:Q35805 .
+
+wd:Q35805 rdfs:label "咳嗽"@zh-hans .
+
+wd:Q16333787 wdt:P780 wd:Q152234 .
+
+wd:Q98608770 wdt:P780 wd:Q35805 .
+
+wd:Q166907 wdt:P780 wd:Q86 .
+
+wd:Q120973015 wdt:P780 wd:Q41571 .
+
+wd:Q41571 rdfs:label "癫痫"@zh-hans .
+
+wd:Q4219957 wdt:P780 wd:Q86 .
+
+wd:Q837054 wdt:P780 wd:Q3245488 .
+
+wd:Q3025883 wdt:P780 wd:Q1124286 .
+
+wd:Q3153686 wdt:P780 wd:Q154430 .
+
+wd:Q154430 rdfs:label "焦虑"@zh-hans .
+
+wd:Q21175413 wdt:P780 wd:Q1495657 .
+
+wd:Q1495657 rdfs:label "消化道出血"@zh-hans .
+
+wd:Q3281303 wdt:P780 wd:Q1292082 .
+
+wd:Q3589128 wdt:P780 wd:Q127076 .
+
+wd:Q4699003 wdt:P780 wd:Q86 .
+
+wd:Q1338684 wdt:P31 wd:Q12136 ;
+	rdfs:label "紧张性头痛"@zh-hans ;
+	wdt:P780 wd:Q86 .
+
+wd:Q2076966 wdt:P780 wd:Q10874 .
+
+wd:Q10874 rdfs:label "失明"@zh-hans .
+
+wd:Q1132536 wdt:P780 wd:Q42844 .
+
+wd:Q42844 rdfs:label "重性抑郁疾患"@zh-hans .
+
+wd:Q1286499 wdt:P780 wd:Q35805 .
+
+wd:Q128601314 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q3286546 .
+
+wd:Q3286546 rdfs:label "呼吸系统疾病"@zh-hans .
+
+wd:Q685200 wdt:P780 wd:Q86 .
+
+wd:Q4132712 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q130741 .
+
+wd:Q130741 rdfs:label "幻觉"@zh-hans .
+
+wd:Q4219957 wdt:P780 wd:Q127076 .
+
+wd:Q67841409 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q86 .
+
+wd:Q460591 wdt:P780 wd:Q12133 , wd:Q11072 .
+
+wd:Q116585753 wdt:P780 wd:Q101991 .
+
+wd:Q107008921 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q1707292 .
+
+wd:Q1707292 rdfs:label "无症状"@zh-hans .
+
+wd:Q116585753 wdt:P780 wd:Q109186 .
+
+wd:Q109186 rdfs:label "肿胀"@zh-hans .
+
+wd:Q4454701 wdt:P780 wd:Q178436 .
+
+wd:Q178436 rdfs:label "便秘"@zh-hans .
+
+wd:Q12206 wdt:P780 wd:Q1124286 .
+
+wd:Q605576 wdt:P780 wd:Q109186 .
+
+wd:Q15401586 wdt:P780 wd:Q35805 .
+
+wd:Q55042693 wdt:P780 wd:Q86 .
+
+wd:Q574975 wdt:P780 wd:Q1128283 .
+
+wd:Q462833 wdt:P780 wd:Q130741 .
+
+wd:Q574975 wdt:P780 wd:Q1162276 .
+
+wd:Q120973015 wdt:P780 wd:Q1753547 .
+
+wd:Q1753547 rdfs:label "肌肉低张力症"@zh-hans .
+
+wd:Q558404 wdt:P780 wd:Q133244 .
+
+wd:Q693442 wdt:P780 wd:Q127076 .
+
+wd:Q511818 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q1632123 .
+
+wd:Q1632123 rdfs:label "強缩"@zh-hans .
+
+wd:Q574975 wdt:P780 wd:Q1929023 .
+
+wd:Q1929023 rdfs:label "皮肤干燥"@zh-hans .
+
+wd:Q56244339 wdt:P780 wd:Q35805 .
+
+wd:Q54911704 wdt:P780 wd:Q109186 .
+
+wd:Q707388 wdt:P780 wd:Q1707292 .
+
+wd:Q1036696 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q130741 .
+
+wd:Q63526133 wdt:P780 wd:Q1429154 .
+
+wd:Q1429154 rdfs:label "反射亢进"@zh-hans .
+
+wd:Q4421929 wdt:P780 wd:Q83030 .
+
+wd:Q124407 wdt:P780 wd:Q1124286 .
+
+wd:Q109466005 wdt:P780 wd:Q86 .
+
+wd:Q32553802 wdt:P780 wd:Q127076 .
+
+wd:Q1132536 wdt:P780 wd:Q154430 .
+
+wd:Q192579 wdt:P780 wd:Q86 .
+
+wd:Q460591 wdt:P780 wd:Q86 .
+
+wd:Q574975 wdt:P780 wd:Q4930803 .
+
+wd:Q4930803 rdfs:label "视力模糊"@zh-hans .
+
+wd:Q54911704 wdt:P780 wd:Q166019 .
+
+wd:Q166019 rdfs:label "出血"@zh-hans .
+
+wd:Q32553802 wdt:P780 wd:Q1858291 .
+
+wd:Q1858291 rdfs:label "潮热"@zh-hans .
+
+wd:Q2581333 wdt:P780 wd:Q86 .

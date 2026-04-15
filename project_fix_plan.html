@@ -1,0 +1,479 @@
+
+<style>
+.card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 10px; }
+.phase-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.badge { font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: var(--border-radius-md); white-space: nowrap; }
+.badge-danger { background: var(--color-background-danger); color: var(--color-text-danger); }
+.badge-warning { background: var(--color-background-warning); color: var(--color-text-warning); }
+.badge-info { background: var(--color-background-info); color: var(--color-text-info); }
+.badge-success { background: var(--color-background-success); color: var(--color-text-success); }
+.phase-title { font-size: 15px; font-weight: 500; color: var(--color-text-primary); }
+.est { font-size: 12px; color: var(--color-text-secondary); margin-left: auto; }
+.task { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); margin-bottom: 6px; overflow: hidden; }
+.task-header { display: flex; align-items: center; gap: 8px; padding: 8px 12px; cursor: pointer; }
+.task-header:hover { background: var(--color-background-secondary); }
+.task-num { font-size: 11px; color: var(--color-text-tertiary); min-width: 20px; }
+.task-name { font-size: 13px; font-weight: 500; color: var(--color-text-primary); flex: 1; }
+.task-file { font-size: 11px; color: var(--color-text-secondary); font-family: var(--font-mono); }
+.chevron { font-size: 10px; color: var(--color-text-tertiary); transition: transform 0.2s; }
+.task-body { display: none; padding: 0 12px 10px; border-top: 0.5px solid var(--color-border-tertiary); margin-top: 0; }
+.task-body.open { display: block; }
+.task-body p { font-size: 12px; color: var(--color-text-secondary); margin: 8px 0 4px; line-height: 1.6; }
+.code { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 8px 10px; font-size: 11px; font-family: var(--font-mono); color: var(--color-text-primary); line-height: 1.7; white-space: pre; overflow-x: auto; margin: 6px 0; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.tag { font-size: 11px; padding: 2px 7px; border-radius: var(--border-radius-md); background: var(--color-background-secondary); color: var(--color-text-secondary); border: 0.5px solid var(--color-border-tertiary); }
+.progress-bar { height: 4px; background: var(--color-border-tertiary); border-radius: 2px; margin: 8px 0 14px; }
+.progress-fill { height: 100%; border-radius: 2px; background: var(--color-text-info); }
+.summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 14px; }
+.stat { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 10px; text-align: center; }
+.stat-num { font-size: 22px; font-weight: 500; color: var(--color-text-primary); }
+.stat-label { font-size: 11px; color: var(--color-text-secondary); margin-top: 2px; }
+.tabs { display: flex; gap: 4px; margin-bottom: 14px; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.tab { font-size: 13px; padding: 7px 12px; cursor: pointer; color: var(--color-text-secondary); border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.tab.active { color: var(--color-text-primary); border-bottom-color: var(--color-text-primary); font-weight: 500; }
+.pane { display: none; } .pane.active { display: block; }
+</style>
+
+<h2 class="sr-only">项目修改计划看板</h2>
+<div style="padding: 0.5rem 0">
+
+<div class="summary-grid">
+  <div class="stat"><div class="stat-num" style="color:var(--color-text-danger)">3</div><div class="stat-label">严重问题</div></div>
+  <div class="stat"><div class="stat-num" style="color:var(--color-text-warning)">4</div><div class="stat-label">设计问题</div></div>
+  <div class="stat"><div class="stat-num" style="color:var(--color-text-info)">3</div><div class="stat-label">缺失功能</div></div>
+  <div class="stat"><div class="stat-num" style="color:var(--color-text-success)">1</div><div class="stat-label">新增模块</div></div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('p1')">P1 严重修复</div>
+  <div class="tab" onclick="switchTab('p2')">P2 设计优化</div>
+  <div class="tab" onclick="switchTab('p3')">P3 功能补齐</div>
+  <div class="tab" onclick="switchTab('p4')">P4 前端开发</div>
+</div>
+
+<div class="pane active" id="pane-p1">
+<div style="font-size:12px;color:var(--color-text-secondary);margin-bottom:10px">影响系统正常运行，必须优先修复</div>
+
+<div class="card">
+<div class="phase-header">
+  <span class="badge badge-danger">严重</span>
+  <span class="phase-title">数据持久化 — 替换 InMemoryEmbeddingStore</span>
+  <span class="est">约 2h</span>
+</div>
+
+<div class="task">
+  <div class="task-header" onclick="toggle(this)">
+    <span class="task-num">1</span>
+    <span class="task-name">pom.xml 替换依赖</span>
+    <span class="task-file">pom.xml</span>
+    <span class="chevron">▶</span>
+  </div>
+  <div class="task-body">
+    <p>删除 mysql-connector-j，加入 postgresql + langchain4j-pgvector</p>
+    <div class="code">&lt;!-- 删除 --&gt;
+&lt;dependency&gt;mysql-connector-j&lt;/dependency&gt;
+
+&lt;!-- 新增 --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.postgresql&lt;/groupId&gt;
+  &lt;artifactId&gt;postgresql&lt;/artifactId&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;dev.langchain4j&lt;/groupId&gt;
+  &lt;artifactId&gt;langchain4j-pgvector&lt;/artifactId&gt;
+  &lt;version&gt;${langchain4j.version}&lt;/version&gt;
+&lt;/dependency&gt;</div>
+  </div>
+</div>
+
+<div class="task">
+  <div class="task-header" onclick="toggle(this)">
+    <span class="task-num">2</span>
+    <span class="task-name">EmbeddingStoreConfig 换实现</span>
+    <span class="task-file">config/EmbeddingStoreConfig.java</span>
+    <span class="chevron">▶</span>
+  </div>
+  <div class="task-body">
+    <p>替换 InMemoryEmbeddingStore 为 PgVectorEmbeddingStore，dimension 设 1024（Qwen3-Embedding-8B）</p>
+    <div class="code">return PgVectorEmbeddingStore.builder()
+    .datasource(dataSource)
+    .table("knowledge_embeddings")
+    .dimension(1024)
+    .createTable(true)
+    .build();</div>
+  </div>
+</div>
+
+<div class="task">
+  <div class="task-header" onclick="toggle(this)">
+    <span class="task-num">3</span>
+    <span class="task-name">application.yml 改数据源</span>
+    <span class="task-file">resources/application.yml</span>
+    <span class="chevron">▶</span>
+  </div>
+  <div class="task-body">
+    <div class="code">datasource:
+  url: jdbc:postgresql://localhost:5432/kgqa
+  driver-class-name: org.postgresql.Driver
+
+mybatis-plus:
+  global-config:
+    db-config:
+      db-type: postgre_sql</div>
+  </div>
+</div>
+
+<div class="task">
+  <div class="task-header" onclick="toggle(this)">
+    <span class="task-num">4</span>
+    <span class="task-name">schema.sql 改 PostgreSQL 语法</span>
+    <span class="task-file">resources/schema.sql</span>
+    <span class="chevron">▶</span>
+  </div>
+  <div class="task-body">
+    <p>AUTO_INCREMENT → BIGSERIAL，DATETIME → TIMESTAMP，ENGINE=InnoDB 删掉</p>
+  </div>
+</div>
+
+<div class="task">
+  <div class="task-header" onclick="toggle(this)">
+    <span class="task-num">5</span>
+    <span class="task-name">删除 VectorStoreInitializer</span>
+    <span class="task-file">config/VectorStoreInitializer.java</span>
+    <span class="chevron">▶</span>
+  </div>
+  <div class="task-body">
+    <p>pgvector 已持久化，不需要每次启动从 MySQL 重新加载向量，整个文件可以删除</p>
+  </div>
+</div>
+</div>
+
+<div class="card">
+<div class="phase-header">
+  <span class="badge badge-danger">严重</span>
+  <span class="phase-title">重复写入 — DataInitializer 加跳过判断</span>
+  <span class="est">约 30min</span>
+</div>
+
+<div class="task">
+  <div class="task-header" onclick="toggle(this)">
+    <span class="task-num">6</span>
+    <span class="task-name">DataInitializer 加启动检查</span>
+    <span class="task-file">init/DataInitializer.java</span>
+    <span class="chevron">▶</span>
+  </div>
+  <div class="task-body">
+    <p>在 run() 开头判断 MySQL 是否已有数据，有则跳过，防止每次重启重复向量化 34251 条</p>
+    <div class="code">long count = chunkRepository.selectCount(null);
+if (count > 0) {
+    log.info("已有{}条数据，跳过初始化", count);
+    return;
+}</div>
+    <p>同时修改向量化逻辑，在写入 EmbeddingStore 的同时也写入 knowledge_chunk 表，保证两者同步</p>
+  </div>
+</div>
+</div>
+
+<div class="card">
+<div class="phase-header">
+  <span class="badge badge-danger">严重</span>
+  <span class="phase-title">多轮对话错位 — ChatMemory 重构</span>
+  <span class="est">约 1h</span>
+</div>
+
+<div class="task">
+  <div class="task-header" onclick="toggle(this)">
+    <span class="task-num">7</span>
+    <span class="task-name">ChatMemoryService 改返回带角色的消息</span>
+    <span class="task-file">service/rag/ChatMemoryService.java</span>
+    <span class="chevron">▶</span>
+  </div>
+  <div class="task-body">
+    <p>接口改为返回 List&lt;ChatMessageEntity&gt; 而非 List&lt;String&gt;，保留 role 字段</p>
+    <div class="code">List&lt;ChatMessageEntity&gt; getChatHistory(Long sessionId);</div>
+  </div>
+</div>
+
+<div class="task">
+  <div class="task-header" onclick="toggle(this)">
+    <span class="task-num">8</span>
+    <span class="task-name">RAGPipelineImpl 修复 Prompt 构建</span>
+    <span class="task-file">service/rag/impl/RAGPipelineImpl.java</span>
+    <span class="chevron">▶</span>
+  </div>
+  <div class="task-body">
+    <p>system prompt 和 user message 分开发送，历史消息按 role 字段区分拼接，不再用奇偶索引</p>
+    <div class="code">// 用 role 区分，不用奇偶索引
+for (ChatMessageEntity msg : history) {
+    if ("USER".equals(msg.getRole()))
+        sb.append("用户：").append(msg.getContent()).append("\n");
+    else
+        sb.append("助手：").append(msg.getContent()).append("\n");
+}</div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="pane" id="pane-p2">
+<div style="font-size:12px;color:var(--color-text-secondary);margin-bottom:10px">不影响运行但会造成功能异常或代码质量问题</div>
+
+<div class="card">
+<div class="phase-header">
+  <span class="badge badge-warning">设计</span>
+  <span class="phase-title">SPARQL URI 不匹配 — 修复知识图谱查询</span>
+  <span class="est">约 1h</span>
+</div>
+<div class="task">
+  <div class="task-header" onclick="toggle(this)">
+    <span class="task-num">9</span>
+    <span class="task-name">SPARQLGeneratorImpl URI 格式统一</span>
+    <span class="task-file">service/sparql/impl/SPARQLGeneratorImpl.java</span>
+    <span class="chevron">▶</span>
+  </div>
+  <div class="task-body">
+    <p>生成 SPARQL 时调用 MedicalOntology.createEntityResource() 获取正确 URI，不能直接把实体名拼进去</p>
+    <div class="code">// 错误（当前）
+"SELECT ?answer WHERE { &lt;阿司匹林&gt; &lt;适应症&gt; ?answer }"
+
+// 正确
+String uri = MedicalOntology.createEntityResource(
+    entityValue, MedicalOntology.DRUG).getURI();
+// 结果: http://kgqa.com/data#dru_阿司匹林</div>
+    <div class="tag-row"><span class="tag">SPARQLTemplateMatcherImpl 同理修复</span></div>
+  </div>
+</div>
+</div>
+
+<div class="card">
+<div class="phase-header">
+  <span class="badge badge-warning">设计</span>
+  <span class="phase-title">重复词典 — 提取公共 MedicalDictionary</span>
+  <span class="est">约 30min</span>
+</div>
+<div class="task">
+  <div class="task-header" onclick="toggle(this)">
+    <span class="task-num">10</span>
+    <span class="task-name">新建 MedicalDictionary.java</span>
+    <span class="task-file">新建 util/MedicalDictionary.java</span>
+    <span class="chevron">▶</span>
+  </div>
+  <div class="task-body">
+    <p>把 MedicalEntityExtractorImpl 和 TripleExtractor 里重复的三份词典提取到公共类，两处都引用它</p>
+    <div class="code">public final class MedicalDictionary {
+    public static final Set&lt;String&gt; DRUGS = Set.of(...);
+    public static final Set&lt;String&gt; DISEASES = Set.of(...);
+    public static final Set&lt;String&gt; SYMPTOMS = Set.of(...);
+}</div>
+  </div>
+</div>
+</div>
+
+<div class="card">
+<div class="phase-header">
+  <span class="badge badge-warning">设计</span>
+  <span class="phase-title">API Key 安全 — 移除硬编码</span>
+  <span class="est">约 15min</span>
+</div>
+<div class="task">
+  <div class="task-header" onclick="toggle(this)">
+    <span class="task-num">11</span>
+    <span class="task-name">application.yml 改用环境变量</span>
+    <span class="task-file">resources/application.yml</span>
+    <span class="chevron">▶</span>
+  </div>
+  <div class="task-body">
+    <p>API Key 不能硬编码在配置文件里，会随 Git 提交泄露</p>
+    <div class="code"># 改为
+api-key: ${SILICONFLOW_API_KEY}
+
+# 启动时传入
+SILICONFLOW_API_KEY=sk-xxx mvn spring-boot:run</div>
+    <p>同时在 .gitignore 确认 application-local.yml 已忽略</p>
+  </div>
+</div>
+</div>
+
+<div class="card">
+<div class="phase-header">
+  <span class="badge badge-warning">设计</span>
+  <span class="phase-title">Prompt 暴露题目结构 — 优化 System Prompt</span>
+  <span class="est">约 20min</span>
+</div>
+<div class="task">
+  <div class="task-header" onclick="toggle(this)">
+    <span class="task-num">12</span>
+    <span class="task-name">RAGPipelineImpl 更新 SYSTEM_PROMPT</span>
+    <span class="task-file">service/rag/impl/RAGPipelineImpl.java</span>
+    <span class="chevron">▶</span>
+  </div>
+  <div class="task-body">
+    <p>加入明确限制，避免回答里出现"选项A""错误选项"等考题表述</p>
+    <div class="code">回答时不要提及"选项"、"A选项"、"错误选项"等考题表述。
+如知识库无相关信息请明确说明，不要编造答案。
+直接以医学知识形式组织语言，简明扼要。</div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="pane" id="pane-p3">
+<div style="font-size:12px;color:var(--color-text-secondary);margin-bottom:10px">已有框架但功能不完整</div>
+
+<div class="card">
+<div class="phase-header">
+  <span class="badge badge-info">补齐</span>
+  <span class="phase-title">相似度阈值过滤 — VectorStoreManager</span>
+  <span class="est">约 30min</span>
+</div>
+<div class="task">
+  <div class="task-header" onclick="toggle(this)">
+    <span class="task-num">13</span>
+    <span class="task-name">search() 加阈值过滤 + 返回分数</span>
+    <span class="task-file">service/rag/impl/VectorStoreManagerImpl.java</span>
+    <span class="chevron">▶</span>
+  </div>
+  <div class="task-body">
+    <p>EmbeddingSearchRequest 加 minScore，过滤低质量召回，同时返回分数供 sources 展示</p>
+    <div class="code">EmbeddingSearchRequest request = EmbeddingSearchRequest.builder()
+    .queryEmbedding(queryEmbedding)
+    .maxResults(topK)
+    .minScore(0.75)   // 加这一行
+    .build();</div>
+    <p>VectorStoreManager 接口增加 searchWithScore() 方法，返回包含分数的结果对象</p>
+  </div>
+</div>
+</div>
+
+<div class="card">
+<div class="phase-header">
+  <span class="badge badge-info">补齐</span>
+  <span class="phase-title">删除知识时清理向量 — KnowledgeService</span>
+  <span class="est">约 1h</span>
+</div>
+<div class="task">
+  <div class="task-header" onclick="toggle(this)">
+    <span class="task-num">14</span>
+    <span class="task-name">delete() 级联删向量</span>
+    <span class="task-file">service/KnowledgeService.java</span>
+    <span class="chevron">▶</span>
+  </div>
+  <div class="task-body">
+    <p>pgvector 支持按 metadata 过滤删除。存入向量时在 metadata 里加 knowledge_id，删除时按此过滤</p>
+    <div class="code">// 存入时
+Metadata meta = Metadata.from("knowledge_id", knowledgeId.toString());
+TextSegment segment = TextSegment.from(chunk, meta);
+
+// 删除时（pgvector 支持按 metadata filter 删除）
+embeddingStore.removeAll(
+    MetadataFilterBuilder.metadataKey("knowledge_id")
+                         .isEqualTo(id.toString())
+);</div>
+  </div>
+</div>
+</div>
+
+<div class="card">
+<div class="phase-header">
+  <span class="badge badge-info">补齐</span>
+  <span class="phase-title">sources 返回分数 — ChatResponse</span>
+  <span class="est">约 30min</span>
+</div>
+<div class="task">
+  <div class="task-header" onclick="toggle(this)">
+    <span class="task-num">15</span>
+    <span class="task-name">ChatResponse.sources 改为对象列表</span>
+    <span class="task-file">model/dto/ChatResponse.java</span>
+    <span class="chevron">▶</span>
+  </div>
+  <div class="task-body">
+    <p>sources 从 List&lt;String&gt; 改为 List&lt;SourceItem&gt;，每条带 content、score、knowledgeId</p>
+    <div class="code">record SourceItem(
+    String content,   // 前100字
+    double score,     // 相似度分数
+    String knowledgeId
+) {}</div>
+    <p>前端拿到分数后可以显示召回质量，低分结果可以标灰</p>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="pane" id="pane-p4">
+<div style="font-size:12px;color:var(--color-text-secondary);margin-bottom:10px">目前完全空白，是项目最大的缺口</div>
+
+<div class="card">
+<div class="phase-header">
+  <span class="badge badge-success">新增</span>
+  <span class="phase-title">Vue 3 前端 — 全部从零开始</span>
+  <span class="est">约 1.5 周</span>
+</div>
+
+<div class="task">
+  <div class="task-header" onclick="toggle(this)">
+    <span class="task-num">16</span>
+    <span class="task-name">项目初始化 + 路由 + API 封装</span>
+    <span class="task-file">frontend/ 目录</span>
+    <span class="chevron">▶</span>
+  </div>
+  <div class="task-body">
+    <p>vite + vue3 + element-plus + pinia + vue-router，axios 封装统一请求拦截</p>
+    <div class="tag-row">
+      <span class="tag">QAView.vue 聊天页</span>
+      <span class="tag">KnowledgeManage.vue 知识库</span>
+      <span class="tag">ChatHistory.vue 历史</span>
+    </div>
+  </div>
+</div>
+
+<div class="task">
+  <div class="task-header" onclick="toggle(this)">
+    <span class="task-num">17</span>
+    <span class="task-name">聊天界面核心功能</span>
+    <span class="task-file">views/QAView.vue</span>
+    <span class="chevron">▶</span>
+  </div>
+  <div class="task-body">
+    <p>消息气泡、流式输出展示、sources 引用面板（显示分数）、会话切换</p>
+    <div class="tag-row">
+      <span class="tag">ChatWindow.vue</span>
+      <span class="tag">MessageList.vue</span>
+      <span class="tag">SourcePanel.vue（新增）</span>
+    </div>
+  </div>
+</div>
+
+<div class="task">
+  <div class="task-header" onclick="toggle(this)">
+    <span class="task-num">18</span>
+    <span class="task-name">知识库管理页</span>
+    <span class="task-file">views/KnowledgeManage.vue</span>
+    <span class="chevron">▶</span>
+  </div>
+  <div class="task-body">
+    <p>文件上传（拖拽）、处理状态轮询、知识库列表、删除确认</p>
+    <div class="tag-row">
+      <span class="tag">KnowledgeUpload.vue</span>
+      <span class="tag">KnowledgeList.vue</span>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+
+<script>
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('pane-' + name).classList.add('active');
+}
+function toggle(header) {
+  const body = header.nextElementSibling;
+  const chevron = header.querySelector('.chevron');
+  const open = body.classList.toggle('open');
+  chevron.style.transform = open ? 'rotate(90deg)' : '';
+}
+</script>

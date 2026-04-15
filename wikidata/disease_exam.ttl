@@ -1,0 +1,347 @@
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix hint: <http://www.bigdata.com/queryHints#> .
+@prefix bd: <http://www.bigdata.com/rdf#> .
+@prefix bds: <http://www.bigdata.com/rdf/search#> .
+@prefix psn: <http://www.wikidata.org/prop/statement/value-normalized/> .
+@prefix pqn: <http://www.wikidata.org/prop/qualifier/value-normalized/> .
+@prefix prn: <http://www.wikidata.org/prop/reference/value-normalized/> .
+@prefix mwapi: <https://www.mediawiki.org/ontology#API/> .
+@prefix gas: <http://www.bigdata.com/rdf/gas#> .
+@prefix wdsubgraph: <https://query.wikidata.org/subgraph/> .
+@prefix wdtn: <http://www.wikidata.org/prop/direct-normalized/> .
+@prefix psv: <http://www.wikidata.org/prop/statement/value/> .
+@prefix ps: <http://www.wikidata.org/prop/statement/> .
+@prefix pqv: <http://www.wikidata.org/prop/qualifier/value/> .
+@prefix pq: <http://www.wikidata.org/prop/qualifier/> .
+@prefix prv: <http://www.wikidata.org/prop/reference/value/> .
+@prefix pr: <http://www.wikidata.org/prop/reference/> .
+@prefix wdno: <http://www.wikidata.org/prop/novalue/> .
+@prefix p: <http://www.wikidata.org/prop/> .
+@prefix wikibase: <http://wikiba.se/ontology#> .
+@prefix wdata: <http://www.wikidata.org/wiki/Special:EntityData/> .
+@prefix wds: <http://www.wikidata.org/entity/statement/> .
+@prefix wdv: <http://www.wikidata.org/value/> .
+@prefix wdref: <http://www.wikidata.org/reference/> .
+@prefix schema: <http://schema.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix geof: <http://www.opengis.net/def/geosparql/function/> .
+@prefix mediawiki: <https://www.mediawiki.org/ontology#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix wikibaseqs: <http://wikiba.se/queryService#> .
+
+wd:Q97356660 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q32566 .
+
+wd:Q32566 rdfs:label "X射线计算机断层成像"@zh-hans .
+
+wd:Q15401586 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q176996 .
+
+wd:Q176996 rdfs:label "聚合酶链式反应"@zh-hans .
+
+wd:Q2076966 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q176996 .
+
+wd:Q115744557 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q32566 .
+
+wd:Q6469283 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q234904 .
+
+wd:Q234904 rdfs:label "医学超声检查"@zh-hans .
+
+wd:Q19972185 wdt:P31 wd:Q12136 ;
+	rdfs:label "输卵管卵巢脓肿"@zh-hans ;
+	wdt:P923 wd:Q234904 .
+
+wd:Q2270671 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q179991 .
+
+wd:Q179991 rdfs:label "活体组织切片"@zh-hans .
+
+wd:Q56244339 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q176996 .
+
+wd:Q107008921 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q7168 .
+
+wd:Q7168 rdfs:label "组织学"@zh-hans .
+
+wd:Q221463 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q32566 .
+
+wd:Q693442 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q32566 .
+
+wd:Q1129121 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q32566 .
+
+wd:Q115743091 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q161238 .
+
+wd:Q161238 rdfs:label "核磁共振成像"@zh-hans .
+
+wd:Q115744557 wdt:P923 wd:Q161238 .
+
+wd:Q93346177 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q188952 .
+
+wd:Q188952 rdfs:label "病史"@zh-hans .
+
+wd:Q166907 wdt:P31 wd:Q12136 ;
+	rdfs:label "丛集性头痛"@zh-hans ;
+	wdt:P923 wd:Q188952 .
+
+wd:Q15401586 wdt:P923 wd:Q32566 .
+
+wd:Q6469283 wdt:P923 wd:Q32566 .
+
+wd:Q5064113 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q161238 .
+
+wd:Q736776 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q161238 .
+
+wd:Q707388 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q176996 .
+
+wd:Q1129121 wdt:P923 wd:Q234904 .
+
+wd:Q124407 wdt:P31 wd:Q12136 ;
+	rdfs:label "1型糖尿病"@zh-hans ;
+	wdt:P923 wd:Q311213 .
+
+wd:Q311213 rdfs:label "糖化血红蛋白"@zh-hans .
+
+wd:Q15401586 wdt:P923 wd:Q1283318 .
+
+wd:Q1283318 rdfs:label "胸部X光检查"@zh-hans .
+
+wd:Q124407 wdt:P923 wd:Q5572348 .
+
+wd:Q5572348 rdfs:label "葡萄糖测试"@zh-hans .
+
+wd:Q124407 wdt:P923 wd:Q842424 .
+
+wd:Q842424 rdfs:label "尿液分析"@zh-hans .
+
+wd:Q2076966 wdt:P923 wd:Q332126 .
+
+wd:Q332126 rdfs:label "酶联免疫吸附试验"@zh-hans .
+
+wd:Q109466005 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q2916167 .
+
+wd:Q2916167 rdfs:label "神经系统检查"@zh-hans .
+
+wd:Q107008921 wdt:P923 wd:Q3718630 .
+
+wd:Q2076966 wdt:P923 wd:Q592324 .
+
+wd:Q592324 rdfs:label "免疫荧光"@zh-hans .
+
+wd:Q124407 wdt:P923 wd:Q886518 , wd:Q886837 , wd:Q4927806 , wd:Q7049439 .
+
+wd:Q115744557 wdt:P923 wd:Q9302364 .
+
+wd:Q56244339 wdt:P923 wd:Q332126 .
+
+wd:Q109466005 wdt:P923 wd:Q719444 .
+
+wd:Q719444 rdfs:label "腰椎穿刺"@zh-hans .
+
+wd:Q2076966 wdt:P923 wd:Q835153 .
+
+wd:Q835153 rdfs:label "体格检查"@zh-hans .
+
+wd:Q115743091 wdt:P923 wd:Q115743433 .
+
+wd:Q120973015 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q285223 .
+
+wd:Q109466005 wdt:P923 wd:Q835153 .
+
+wd:Q2270671 wdt:P923 wd:Q840387 .
+
+wd:Q840387 rdfs:label "结肠镜"@zh-hans .
+
+wd:Q3025883 wdt:P31 wd:Q12136 ;
+	rdfs:label "2型糖尿病"@zh-hans ;
+	wdt:P923 wd:Q1501412 .
+
+wd:Q1501412 rdfs:label "糖耐力测试"@zh-hans .
+
+wd:Q2270671 wdt:P923 wd:Q912313 .
+
+wd:Q912313 rdfs:label "光学显微镜"@zh-hans .
+
+wd:Q15974799 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q842424 .
+
+wd:Q68833 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q4115819 .
+
+wd:Q558404 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q886518 .
+
+wd:Q1444550 wdt:P31 wd:Q12136 ;
+	rdfs:label "缺血性心脏病"@zh-hans ;
+	wdt:P923 wd:Q1956679 , wd:Q3577490 .
+
+wd:Q951639 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q1229320 .
+
+wd:Q1129121 wdt:P923 wd:Q795090 .
+
+wd:Q3025883 wdt:P923 wd:Q311213 .
+
+wd:Q1729124 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q5958784 .
+
+wd:Q2076966 wdt:P923 wd:Q856198 , wd:Q886518 .
+
+wd:Q2270671 wdt:P923 wd:Q938957 .
+
+wd:Q471812 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q59622840 .
+
+wd:Q625935 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q56275800 .
+
+wd:Q1444550 wdt:P923 wd:Q62623162 , wd:Q62623286 , wd:Q62623345 .
+
+wd:Q4497153 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q186604 .
+
+wd:Q4162400 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q16963637 .
+
+wd:Q4820034 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q758881 , wd:Q912019 , wd:Q3307114 .
+
+wd:Q951639 wdt:P923 wd:Q125243590 .
+
+wd:Q4820034 wdt:P923 wd:Q5357983 .
+
+wd:Q1036696 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q133040319 .
+
+wd:Q6469283 wdt:P923 wd:Q7899041 .
+
+wd:Q6758201 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q2372823 .
+
+wd:Q4770152 wdt:P31 wd:Q12136 ;
+	rdfs:label "视力缺失"@zh-hans ;
+	wdt:P923 wd:Q1801370 .
+
+wd:Q4820034 wdt:P923 wd:Q73219200 .
+
+wd:Q4070256 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q108525719 .
+
+wd:Q4820034 wdt:P923 wd:Q115926971 .
+
+wd:Q5064113 wdt:P923 wd:Q115743433 .
+
+wd:Q12204 wdt:P31 wd:Q12136 ;
+	rdfs:label "结核"@zh-hans ;
+	wdt:P923 wd:Q1964089 , wd:Q2893466 , wd:Q5531060 .
+
+wd:Q12206 wdt:P31 wd:Q12136 ;
+	rdfs:label "糖尿病"@zh-hans ;
+	wdt:P923 wd:Q886518 , wd:Q886837 .
+
+wd:Q12204 wdt:P923 wd:Q6040221 , wd:Q7667857 , wd:Q7850849 .
+
+wd:Q12206 wdt:P923 wd:Q4927806 , wd:Q7049439 .
+
+wd:Q12204 wdt:P923 wd:Q106108503 , wd:Q113896723 .
+
+wd:Q3025883 wdt:P923 wd:Q5572348 .
+
+wd:Q15974799 wdt:P923 wd:Q886518 , wd:Q886837 , wd:Q2277228 , wd:Q7201783 , wd:Q7900633 .
+
+wd:Q16001403 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q73484154 .
+
+wd:Q4699003 wdt:P31 wd:Q12136 ;
+	wdt:P923 <http://www.wikidata.org/.well-known/genid/a9cfa3424c6aa061749822a50aafb825> .
+
+wd:Q19843148 wdt:P31 wd:Q12136 ;
+	wdt:P923 wd:Q7433021 .
+
+wd:Q3025883 wdt:P923 wd:Q842424 .
+
+wd:Q12204 wdt:P923 wd:Q1283318 .
+
+wd:Q3025883 wdt:P923 wd:Q886518 , wd:Q886837 , wd:Q4927806 , wd:Q7049439 .
+
+wd:Q166907 wdt:P923 wd:Q551875 .
+
+wd:Q551875 rdfs:label "脑扫描"@zh-hans .
+
+wd:Q160796 wdt:P31 wd:Q12136 ;
+	rdfs:label "谵妄"@zh-hans ;
+	wdt:P923 wd:Q108525684 .
+
+wd:Q12204 wdt:P923 wd:Q198921 .
+
+wd:Q198921 rdfs:label "齐尔-尼尔森染色"@zh-hans .
+
+wd:Q12206 wdt:P923 wd:Q1501412 .
+
+wd:Q558404 wdt:P923 wd:Q1359801 .
+
+wd:Q1359801 rdfs:label "肝功能测试"@zh-hans .
+
+wd:Q93346177 wdt:P923 wd:Q835153 .
+
+wd:Q54911704 wdt:P31 wd:Q12136 ;
+	wdt:P923 <http://www.wikidata.org/.well-known/genid/2ff346f409cffe41505042fc159fa117> .
+
+wd:Q4497153 wdt:P923 wd:Q4101224 .
+
+wd:Q4101224 rdfs:label "快速尿素酶试验"@zh-hans .
+
+wd:Q12206 wdt:P923 wd:Q275157 .
+
+wd:Q275157 rdfs:label "血糖"@zh-hans .
+
+wd:Q166907 wdt:P923 wd:Q64830627 .
+
+wd:Q12206 wdt:P923 wd:Q311213 .
+
+wd:Q19972185 wdt:P923 wd:Q886837 .
+
+wd:Q707388 wdt:P923 wd:Q332126 .
+
+wd:Q12206 wdt:P923 wd:Q5572348 .
+
+wd:Q124407 wdt:P923 wd:Q1501412 .
+
+wd:Q12204 wdt:P923 wd:Q7581635 .
+
+wd:Q7581635 rdfs:label "痰培养"@zh-hans .
+
+wd:Q1338684 wdt:P31 wd:Q12136 ;
+	rdfs:label "紧张性头痛"@zh-hans ;
+	wdt:P923 wd:Q835153 .
+
+wd:Q12206 wdt:P923 wd:Q842424 .
+
+wd:Q12204 wdt:P923 wd:Q908699 .
+
+wd:Q908699 rdfs:label "结核菌素试验"@zh-hans .

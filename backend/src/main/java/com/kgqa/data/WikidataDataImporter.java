@@ -165,6 +165,7 @@ public class WikidataDataImporter {
 
         // 提取 rdfs:label @zh
         Map<String, String> labels = extractChineseLabels(model);
+        log.info("提取到 {} 个中文标签", labels.size());
 
         // 提取疾病-症状关系
         List<String> texts = new ArrayList<>();
@@ -182,6 +183,11 @@ public class WikidataDataImporter {
             texts.add("疾病 " + disease + " 的症状是 " + symptom);
         }
         stmtIterator.close();
+
+        log.info("生成 {} 条 RAG 文本", texts.size());
+        if (!texts.isEmpty()) {
+            log.info("示例文本: {}", texts.get(0));
+        }
 
         int count = embedTexts(texts);
         log.info("disease_symptom.ttl 导入完成: {} 条", count);
@@ -358,24 +364,60 @@ public class WikidataDataImporter {
 
     /**
      * 向量化文本并写入 EmbeddingStore
+     * 分批处理，每批 50 条，避免内存溢出和 API 限流
      */
     private int embedTexts(List<String> texts) {
         if (texts.isEmpty()) {
             return 0;
         }
 
-        List<TextSegment> segments = new ArrayList<>();
-        List<Embedding> embeddings = new ArrayList<>();
+        log.info("开始向量化 {} 条文本 (分批处理，每批50条)...", texts.size());
 
-        for (String text : texts) {
-            TextSegment segment = TextSegment.from(text);
-            Embedding embedding = embeddingModel.embed(text).content();
-            segments.add(segment);
-            embeddings.add(embedding);
+        int batchSize = 50;
+        int totalSuccess = 0;
+
+        for (int i = 0; i < texts.size(); i += batchSize) {
+            int end = Math.min(i + batchSize, texts.size());
+            List<String> batch = texts.subList(i, end);
+
+            log.info("处理第 {}-{} 条...", i + 1, end);
+
+            List<TextSegment> segments = new ArrayList<>();
+            List<Embedding> embeddings = new ArrayList<>();
+
+            for (String text : batch) {
+                try {
+                    TextSegment segment = TextSegment.from(text);
+                    Embedding embedding = embeddingModel.embed(text).content();
+                    segments.add(segment);
+                    embeddings.add(embedding);
+                } catch (Exception e) {
+                    log.error("向量化失败: {}, 错误: {}", text, e.getMessage());
+                }
+            }
+
+            if (!embeddings.isEmpty()) {
+                try {
+                    embeddingStore.addAll(embeddings, segments);
+                    totalSuccess += embeddings.size();
+                    log.info("第 {}-{} 条写入成功，当前总数: {}", i + 1, end, totalSuccess);
+                } catch (Exception e) {
+                    log.error("写入向量存储失败: {}", e.getMessage());
+                }
+            }
+
+            // 批次之间添加延迟，避免 API 限流
+            if (end < texts.size()) {
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            }
         }
 
-        embeddingStore.addAll(embeddings, segments);
-        return texts.size();
+        log.info("向量化完成，共成功 {} 条", totalSuccess);
+        return totalSuccess;
     }
 
     /**

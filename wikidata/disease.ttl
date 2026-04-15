@@ -1,0 +1,4970 @@
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix hint: <http://www.bigdata.com/queryHints#> .
+@prefix bd: <http://www.bigdata.com/rdf#> .
+@prefix bds: <http://www.bigdata.com/rdf/search#> .
+@prefix psn: <http://www.wikidata.org/prop/statement/value-normalized/> .
+@prefix pqn: <http://www.wikidata.org/prop/qualifier/value-normalized/> .
+@prefix prn: <http://www.wikidata.org/prop/reference/value-normalized/> .
+@prefix mwapi: <https://www.mediawiki.org/ontology#API/> .
+@prefix gas: <http://www.bigdata.com/rdf/gas#> .
+@prefix wdsubgraph: <https://query.wikidata.org/subgraph/> .
+@prefix wdtn: <http://www.wikidata.org/prop/direct-normalized/> .
+@prefix psv: <http://www.wikidata.org/prop/statement/value/> .
+@prefix ps: <http://www.wikidata.org/prop/statement/> .
+@prefix pqv: <http://www.wikidata.org/prop/qualifier/value/> .
+@prefix pq: <http://www.wikidata.org/prop/qualifier/> .
+@prefix prv: <http://www.wikidata.org/prop/reference/value/> .
+@prefix pr: <http://www.wikidata.org/prop/reference/> .
+@prefix wdno: <http://www.wikidata.org/prop/novalue/> .
+@prefix p: <http://www.wikidata.org/prop/> .
+@prefix wikibase: <http://wikiba.se/ontology#> .
+@prefix wdata: <http://www.wikidata.org/wiki/Special:EntityData/> .
+@prefix wds: <http://www.wikidata.org/entity/statement/> .
+@prefix wdv: <http://www.wikidata.org/value/> .
+@prefix wdref: <http://www.wikidata.org/reference/> .
+@prefix schema: <http://schema.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix geof: <http://www.opengis.net/def/geosparql/function/> .
+@prefix mediawiki: <https://www.mediawiki.org/ontology#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix wikibaseqs: <http://wikiba.se/queryService#> .
+
+wd:Q2076966 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q1462309 ;
+	wdt:P2176 wd:Q248550 ;
+	wdt:P494 "B25" ;
+	wdt:P486 "D003586" ;
+	wdt:P780 wd:Q1459821 ;
+	wdt:P2176 wd:Q417640 , wd:Q418594 , wd:Q420387 , wd:Q423384 , wd:Q423445 .
+
+wd:Q2141001 wdt:P31 wd:Q12136 ;
+	wdt:P494 "T69.1" ;
+	wdt:P2892 "C0008058" ;
+	wdt:P486 "D002647" .
+
+wd:Q2213687 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1543208 ;
+	wdt:P494 "M46.1" ;
+	wdt:P2892 "C0574960" ;
+	wdt:P486 "D058566" .
+
+wd:Q2249526 wdt:P31 wd:Q12136 ;
+	rdfs:label "脑组织缺氧"@zh-hans ;
+	wdt:P486 "D002534" .
+
+wd:Q2458539 wdt:P31 wd:Q12136 ;
+	rdfs:label "皮膚感染"@zh-hans ;
+	wdt:P2176 wd:Q15646788 ;
+	wdt:P2892 "C0037278" ;
+	wdt:P486 "D012874" .
+
+wd:Q2161683 wdt:P31 wd:Q12136 ;
+	wdt:P494 "L59.0" ;
+	wdt:P2892 "C0494853" ;
+	wdt:P486 "D000089965" .
+
+wd:Q2546232 wdt:P31 wd:Q12136 ;
+	wdt:P494 "Q67.3" ;
+	wdt:P2892 "C0265529" ;
+	wdt:P486 "D059041" .
+
+wd:Q2458539 wdt:P2176 wd:Q2392530 .
+
+wd:Q2311755 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206369" ;
+	wdt:P486 "D017890" .
+
+wd:Q2507454 wdt:P31 wd:Q12136 ;
+	rdfs:label "肾上腺机能不全"@zh-hans ;
+	wdt:P494 "E27.4" ;
+	wdt:P2892 "C0001623" ;
+	wdt:P486 "D000309" .
+
+wd:Q2280546 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D012791" .
+
+wd:Q2458539 wdt:P2176 wd:Q2601832 .
+
+wd:Q2343082 wdt:P31 wd:Q12136 ;
+	rdfs:label "狭窄"@zh-hans ;
+	wdt:P2892 "C1261287" ;
+	wdt:P486 "D003251" .
+
+wd:Q1467339 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q2701912 ;
+	wdt:P494 "E78.1" ;
+	wdt:P2892 "C0020557" ;
+	wdt:P486 "D015228" ;
+	wdt:P494 "E78.2" ;
+	wdt:P2892 "C1522137" ;
+	wdt:P494 "E78.3" .
+
+wd:Q2076966 wdt:P780 wd:Q1360044 , wd:Q1362864 , wd:Q2085267 .
+
+wd:Q2112703 wdt:P31 wd:Q12136 ;
+	rdfs:label "脱垂"@zh-hans ;
+	wdt:P2892 "C0033377" ;
+	wdt:P486 "D011391" ;
+	wdt:P2892 "C0042783" .
+
+wd:Q2458539 wdt:P2176 wd:Q3307752 .
+
+wd:Q1467339 wdt:P2176 wd:Q3294635 .
+
+wd:Q2076966 wdt:P780 wd:Q945238 .
+
+wd:Q2431472 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1136154" ;
+	wdt:P486 "D037081" .
+
+wd:Q2520684 wdt:P31 wd:Q12136 ;
+	wdt:P494 "D16" ;
+	wdt:P2892 "C0028882" ;
+	wdt:P486 "D009810" ;
+	wdt:P2892 "C0205865" .
+
+wd:Q2474600 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0042344" ;
+	wdt:P486 "D014647" .
+
+wd:Q2533616 wdt:P31 wd:Q12136 ;
+	wdt:P494 "L71.1" ;
+	wdt:P2892 "C0035466" ;
+	wdt:P486 "D012224" .
+
+wd:Q1996053 wdt:P31 wd:Q12136 ;
+	wdt:P494 "K86.1" ;
+	wdt:P2892 "C4014770" ;
+	wdt:P486 "D050500" .
+
+wd:Q2076966 wdt:P780 wd:Q847726 , wd:Q127724 , wd:Q133244 , wd:Q431643 , wd:Q727096 , wd:Q585285 , wd:Q186470 , wd:Q5445 .
+
+wd:Q1970295 wdt:P31 wd:Q12136 ;
+	wdt:P494 "N91.5" ;
+	wdt:P2892 "C0028949" ;
+	wdt:P486 "D009839" ;
+	wdt:P2892 "C0919662" .
+
+wd:Q2031871 wdt:P31 wd:Q12136 ;
+	rdfs:label "手-手臂振动症候群"@zh-hans ;
+	wdt:P2892 "C1363854" ;
+	wdt:P486 "D053421" .
+
+wd:Q2076966 wdt:P780 wd:Q193003 , wd:Q10874 , wd:Q630552 .
+
+wd:Q2035032 wdt:P31 wd:Q12136 ;
+	wdt:P494 "D16" ;
+	wdt:P2892 "C0029423" ;
+	wdt:P486 "D015831" .
+
+wd:Q2076966 wdt:P780 wd:Q205214 , wd:Q32446 , wd:Q653197 , wd:Q38933 .
+
+wd:Q2051919 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q420360 ;
+	wdt:P2892 "C0015376" ;
+	wdt:P486 "D005119" .
+
+wd:Q1985225 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0028309" ;
+	wdt:P486 "D009631" .
+
+wd:Q2003151 wdt:P31 wd:Q12136 ;
+	wdt:P494 "R23.1" ;
+	wdt:P486 "D054068" .
+
+wd:Q2051919 wdt:P2176 wd:Q904015 .
+
+wd:Q2025687 wdt:P31 wd:Q12136 ;
+	wdt:P494 "R79.0" ;
+	wdt:P486 "D019190" .
+
+wd:Q3993706 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q413050 ;
+	wdt:P494 "Q68.0" ;
+	wdt:P2892 "C0079352" ;
+	wdt:P486 "C535425" ;
+	wdt:P2892 "C3710741" .
+
+wd:Q1996053 wdt:P494 "K86.0" ;
+	wdt:P2892 "C0149521" .
+
+wd:Q3435504 wdt:P31 wd:Q12136 ;
+	wdt:P494 "B22.0" ;
+	wdt:P486 "D015526" .
+
+wd:Q3288116 wdt:P31 wd:Q12136 ;
+	wdt:P494 "B83.0" ;
+	wdt:P2892 "C0023049" ;
+	wdt:P486 "D007816" .
+
+wd:Q3629026 wdt:P31 wd:Q12136 ;
+	wdt:P494 "Q16.1" ;
+	wdt:P2892 "C1842937" ;
+	wdt:P486 "C564321" .
+
+wd:Q3338677 wdt:P31 wd:Q12136 ;
+	wdt:P494 "E85.1" ;
+	wdt:P486 "D028227" .
+
+wd:Q3357479 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0029461" ;
+	wdt:P486 "D010025" .
+
+wd:Q3408668 wdt:P31 wd:Q12136 ;
+	wdt:P494 "L28.1" ;
+	wdt:P486 "D011536" ;
+	wdt:P494 "L28.2" .
+
+wd:Q3399863 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q1918881 ;
+	wdt:P924 wd:Q228036 ;
+	wdt:P494 "O48" ;
+	wdt:P2892 "C0032993" ;
+	wdt:P486 "D011273" ;
+	wdt:P780 wd:Q47496130 ;
+	wdt:P924 wd:Q1497276 .
+
+wd:Q3740609 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q48566767 ;
+	wdt:P494 "J30.2" ;
+	wdt:P2892 "C0018621" ;
+	wdt:P486 "D006255" .
+
+wd:Q3435504 wdt:P494 "F02.4" .
+
+wd:Q3740609 wdt:P2176 wd:Q415122 , wd:Q417767 , wd:Q418060 .
+
+wd:Q3473544 wdt:P31 wd:Q12136 ;
+	rdfs:label "透明细胞肉瘤"@zh-hans ;
+	wdt:P486 "D018227" .
+
+wd:Q3399863 wdt:P780 wd:Q1886514 .
+
+wd:Q3617336 wdt:P31 wd:Q12136 ;
+	wdt:P494 "I20.8" ;
+	wdt:P2892 "C0340288" ;
+	wdt:P486 "D060050" ;
+	wdt:P2892 "C0577698" .
+
+wd:Q3543799 wdt:P31 wd:Q12136 ;
+	wdt:P494 "N64.5" ;
+	wdt:P2892 "C0149741" ;
+	wdt:P486 "D000071936" .
+
+wd:Q3740609 wdt:P2176 wd:Q419820 , wd:Q421091 .
+
+wd:Q3399863 wdt:P780 wd:Q420240 ;
+	wdt:P494 "P08.2" .
+
+wd:Q3493588 wdt:P31 wd:Q12136 ;
+	wdt:P494 "A69.9" ;
+	wdt:P2892 "C0037974" ;
+	wdt:P486 "D013145" .
+
+wd:Q3740609 wdt:P2176 wd:Q423075 .
+
+wd:Q3410750 wdt:P31 wd:Q12136 ;
+	wdt:P494 "W57" ;
+	wdt:P2892 "C0277355" ;
+	wdt:P486 "D058267" ;
+	wdt:P2892 "C0277357" .
+
+wd:Q3740609 wdt:P2176 wd:Q424049 , wd:Q1002165 .
+
+wd:Q3554941 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2717957" ;
+	wdt:P486 "D056987" .
+
+wd:Q3774229 wdt:P31 wd:Q12136 ;
+	wdt:P494 "L11.1" ;
+	wdt:P2892 "C0263325" ;
+	wdt:P486 "C537306" .
+
+wd:Q974792 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0001925" ;
+	wdt:P486 "D000419" .
+
+wd:Q848662 wdt:P31 wd:Q12136 ;
+	rdfs:label "心室颤动"@zh-hans ;
+	wdt:P780 wd:Q10686316 ;
+	wdt:P2176 wd:Q409468 ;
+	wdt:P924 wd:Q594446 ;
+	wdt:P494 "I49.0" ;
+	wdt:P2892 "C0042510" ;
+	wdt:P486 "D014693" .
+
+wd:Q866622 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C3178777" ;
+	wdt:P486 "D059266" .
+
+wd:Q848662 wdt:P2176 wd:Q413591 ;
+	wdt:P924 wd:Q185325 .
+
+wd:Q936417 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0030472" ;
+	wdt:P486 "D010257" .
+
+wd:Q848662 wdt:P2176 wd:Q216935 ;
+	wdt:P924 wd:Q954202 ;
+	wdt:P2176 wd:Q410061 .
+
+wd:Q917069 wdt:P31 wd:Q12136 ;
+	rdfs:label "横纹肌溶解症"@zh-hans ;
+	wdt:P494 "T79.5" ;
+	wdt:P2892 "C0035410" ;
+	wdt:P486 "D012206" .
+
+wd:Q1024546 wdt:P31 wd:Q12136 ;
+	wdt:P494 "C80.0" ;
+	wdt:P2892 "C0027667" ;
+	wdt:P486 "D009382" .
+
+wd:Q848662 wdt:P2176 wd:Q183011 , wd:Q418139 .
+
+wd:Q890167 wdt:P31 wd:Q12136 ;
+	wdt:P494 "A63.0" ;
+	wdt:P2892 "C0276264" ;
+	wdt:P486 "D062688" .
+
+wd:Q917069 wdt:P494 "M62.8" .
+
+wd:Q848662 wdt:P780 wd:Q180007 ;
+	wdt:P2176 wd:Q420026 , wd:Q411325 .
+
+wd:Q837054 wdt:P31 wd:Q12136 ;
+	rdfs:label "腺病毒感染"@zh-hans ;
+	wdt:P780 wd:Q167844 ;
+	wdt:P2176 wd:Q79460 ;
+	wdt:P494 "B97.0" ;
+	wdt:P2892 "C0001487" ;
+	wdt:P486 "D000258" .
+
+wd:Q917069 wdt:P494 "T79.6" .
+
+wd:Q837054 wdt:P780 wd:Q1115038 ;
+	wdt:P2176 wd:Q420690 .
+
+wd:Q848662 wdt:P2176 wd:Q420377 , wd:Q904071 , wd:Q132621 .
+
+wd:Q923339 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M25.7" ;
+	wdt:P2892 "C1956089" ;
+	wdt:P486 "D054850" .
+
+wd:Q848662 wdt:P2176 wd:Q423364 .
+
+wd:Q837054 wdt:P780 wd:Q480971 ;
+	wdt:P2176 wd:Q621558 ;
+	wdt:P780 wd:Q186889 , wd:Q1292082 .
+
+wd:Q848662 wdt:P2176 wd:Q418857 .
+
+wd:Q917620 wdt:P31 wd:Q12136 ;
+	rdfs:label "甲癣"@zh-hans ;
+	wdt:P2176 wd:Q411229 ;
+	wdt:P494 "B35.1" ;
+	wdt:P2892 "C0040261" ;
+	wdt:P486 "D014009" .
+
+wd:Q837054 wdt:P780 wd:Q3245488 .
+
+wd:Q917620 wdt:P2176 wd:Q415259 .
+
+wd:Q837054 wdt:P780 wd:Q40878 .
+
+wd:Q827017 wdt:P31 wd:Q12136 ;
+	rdfs:label "步态异常"@zh-hans ;
+	wdt:P494 "R26" ;
+	wdt:P2892 "C3809740" ;
+	wdt:P486 "D020233" .
+
+wd:Q917620 wdt:P2176 wd:Q419468 .
+
+wd:Q837054 wdt:P780 wd:Q847726 , wd:Q1162276 , wd:Q114085 .
+
+wd:Q835051 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0020507" ;
+	wdt:P486 "D006965" .
+
+wd:Q955454 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M21.0" ;
+	wdt:P2892 "C0239137" ;
+	wdt:P486 "D060906" ;
+	wdt:P2892 "C3549698" .
+
+wd:Q816422 wdt:P31 wd:Q12136 ;
+	rdfs:label "经痛"@zh-hans ;
+	wdt:P494 "N94.4" ;
+	wdt:P2892 "C0013390" ;
+	wdt:P486 "D004412" ;
+	wdt:P494 "N94.6" .
+
+wd:Q824292 wdt:P31 wd:Q12136 ;
+	rdfs:label "低血钠"@zh-hans ;
+	wdt:P494 "E87.1" ;
+	wdt:P2892 "C0020625" ;
+	wdt:P486 "D007010" .
+
+wd:Q827017 wdt:P2892 "C0231687" .
+
+wd:Q955454 wdt:P494 "Q65.8" .
+
+wd:Q838145 wdt:P31 wd:Q12136 ;
+	wdt:P494 "N90.4" ;
+	wdt:P2892 "C0023531" ;
+	wdt:P486 "D007971" .
+
+wd:Q840646 wdt:P31 wd:Q12136 ;
+	rdfs:label "早搏"@zh-hans ;
+	wdt:P2892 "C0340464" ;
+	wdt:P486 "D005117" .
+
+wd:Q838145 wdt:P494 "K13.2" , "N48.0" , "N88.0" , "N89.4" .
+
+wd:Q826918 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M85.4" ;
+	wdt:P2892 "C0005937" ;
+	wdt:P486 "D001845" ;
+	wdt:P494 "M85.6" .
+
+wd:Q835718 wdt:P31 wd:Q12136 ;
+	rdfs:label "机会性感染"@zh-hans ;
+	wdt:P2176 wd:Q417640 ;
+	wdt:P2892 "C0029118" ;
+	wdt:P486 "D009894" .
+
+wd:Q685200 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q10916362 ;
+	wdt:P927 wd:Q212344 ;
+	wdt:P494 "H83.8" ;
+	wdt:P2892 "C4708600" ;
+	wdt:P486 "D000084322" .
+
+wd:Q574975 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q3443277 ;
+	wdt:P2892 "C0151500" ;
+	wdt:P486 "D064807" .
+
+wd:Q697117 wdt:P31 wd:Q12136 ;
+	rdfs:label "椎间盘脱出症"@zh-hans ;
+	wdt:P494 "M51.2" ;
+	wdt:P2892 "C0021818" ;
+	wdt:P486 "D007405" ;
+	wdt:P2892 "C1832597" .
+
+wd:Q693442 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q281289 ;
+	wdt:P2176 wd:Q418666 ;
+	wdt:P924 wd:Q5134392 ;
+	wdt:P494 "I60" ;
+	wdt:P2892 "C0038525" ;
+	wdt:P486 "D013345" .
+
+wd:Q685200 wdt:P780 wd:Q192309 ;
+	wdt:P927 wd:Q25600755 .
+
+wd:Q593277 wdt:P31 wd:Q12136 ;
+	wdt:P494 "Y43.1" ;
+	wdt:P2892 "C0549410" ;
+	wdt:P486 "D060831" ;
+	wdt:P494 "Y43.3" .
+
+wd:Q605576 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q109186 ;
+	wdt:P924 wd:Q95547048 ;
+	wdt:P927 wd:Q3143036 ;
+	wdt:P494 "I87.1" ;
+	wdt:P2892 "C3165062" ;
+	wdt:P486 "D062108" .
+
+wd:Q693442 wdt:P780 wd:Q127076 .
+
+wd:Q605576 wdt:P780 wd:Q47085690 ;
+	wdt:P924 wd:Q63279445 .
+
+wd:Q693442 wdt:P494 "P10.3" , "S06.6" .
+
+wd:Q736776 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q81938 ;
+	wdt:P924 wd:Q15763171 ;
+	wdt:P494 "M77.1" ;
+	wdt:P2892 "C0039516" ;
+	wdt:P486 "D013716" .
+
+wd:Q565276 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M54.3" ;
+	wdt:P2892 "C0036396" ;
+	wdt:P486 "D012585" ;
+	wdt:P2892 "C0751492" ;
+	wdt:P494 "M54.4" .
+
+wd:Q685200 wdt:P780 wd:Q10686316 ;
+	wdt:P927 wd:Q29717447 ;
+	wdt:P780 wd:Q86 .
+
+wd:Q589612 wdt:P31 wd:Q12136 ;
+	wdt:P494 "D21.9" ;
+	wdt:P2892 "C0027149" ;
+	wdt:P486 "D009232" .
+
+wd:Q685200 wdt:P780 wd:Q220989 .
+
+wd:Q744305 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0024003" ;
+	wdt:P486 "D008141" .
+
+wd:Q605576 wdt:P924 wd:Q539795 .
+
+wd:Q574975 wdt:P780 wd:Q177254 .
+
+wd:Q754031 wdt:P31 wd:Q12136 ;
+	rdfs:label "肺不张"@zh-hans ;
+	wdt:P494 "J98.1" ;
+	wdt:P2892 "C0004144" ;
+	wdt:P486 "D001261" .
+
+wd:Q625935 wdt:P31 wd:Q12136 ;
+	wdt:P494 "Q65" ;
+	wdt:P2892 "C0019555" ;
+	wdt:P486 "D006618" ;
+	wdt:P2892 "C1306065" .
+
+wd:Q574975 wdt:P780 wd:Q209583 , wd:Q242165 .
+
+wd:Q693442 wdt:P2176 wd:Q421429 ;
+	wdt:P924 wd:Q5376564 .
+
+wd:Q574975 wdt:P780 wd:Q4930803 .
+
+wd:Q754447 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0035243" ;
+	wdt:P486 "D012141" ;
+	wdt:P2892 "C0041912" .
+
+wd:Q628648 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q55105885 ;
+	wdt:P2892 "C1868714" ;
+	wdt:P486 "C538010" .
+
+wd:Q625506 wdt:P31 wd:Q12136 ;
+	rdfs:label "早产"@zh-hans ;
+	wdt:P494 "O60.1" ;
+	wdt:P2892 "C0151526" ;
+	wdt:P486 "D047928" .
+
+wd:Q736599 wdt:P31 wd:Q12136 ;
+	wdt:P494 "N46" ;
+	wdt:P486 "D053714" .
+
+wd:Q685200 wdt:P780 wd:Q1581308 .
+
+wd:Q794072 wdt:P31 wd:Q12136 ;
+	rdfs:label "氮血症"@zh-hans ;
+	wdt:P494 "R79.8" ;
+	wdt:P2892 "C0242528" ;
+	wdt:P486 "D053099" .
+
+wd:Q628648 wdt:P780 wd:Q1596398 .
+
+wd:Q615363 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M43.6" ;
+	wdt:P2892 "C0040485" ;
+	wdt:P486 "D014103" .
+
+wd:Q574975 wdt:P780 wd:Q961326 .
+
+wd:Q707388 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q718113 ;
+	wdt:P2892 "C0030524" ;
+	wdt:P486 "D010283" .
+
+wd:Q574975 wdt:P780 wd:Q1128283 , wd:Q1162276 .
+
+wd:Q658873 wdt:P31 wd:Q12136 ;
+	rdfs:label "辐射灼伤"@zh-hans ;
+	wdt:P494 "L58" ;
+	wdt:P2892 "C0034561" ;
+	wdt:P486 "D011855" ;
+	wdt:P2892 "C1504534" .
+
+wd:Q574975 wdt:P780 wd:Q1929023 .
+
+wd:Q707388 wdt:P780 wd:Q1707292 .
+
+wd:Q748376 wdt:P31 wd:Q12136 ;
+	wdt:P494 "Q85" ;
+	wdt:P2892 "C0265316" ;
+	wdt:P486 "D020752" .
+
+wd:Q3025883 wdt:P31 wd:Q12136 ;
+	rdfs:label "2型糖尿病"@zh-hans ;
+	wdt:P780 wd:Q653267 ;
+	wdt:P2176 wd:Q954845 ;
+	wdt:P494 "E11" ;
+	wdt:P2892 "C0011860" ;
+	wdt:P486 "D003924" ;
+	wdt:P2892 "C5679587" .
+
+wd:Q3134276 wdt:P31 wd:Q12136 ;
+	rdfs:label "股疝"@zh-hans ;
+	wdt:P494 "K41" ;
+	wdt:P2892 "C0019288" ;
+	wdt:P486 "D006550" .
+
+wd:Q3025883 wdt:P780 wd:Q1124286 ;
+	wdt:P2176 wd:Q19484 .
+
+wd:Q3908490 wdt:P31 wd:Q12136 ;
+	wdt:P494 "E80" ;
+	wdt:P486 "D017094" .
+
+wd:Q2681162 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q21112553 ;
+	wdt:P494 "S05" ;
+	wdt:P2892 "C0015408" ;
+	wdt:P486 "D005131" .
+
+wd:Q3241451 wdt:P31 wd:Q12136 ;
+	rdfs:label "儿童肥胖症"@zh-hans ;
+	wdt:P494 "E66" ;
+	wdt:P486 "D063766" .
+
+wd:Q3025883 wdt:P780 wd:Q635195 .
+
+wd:Q3399863 wdt:P780 wd:Q1144406 .
+
+wd:Q3740798 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q158716 ;
+	wdt:P494 "N82.3" ;
+	wdt:P2892 "C0034895" ;
+	wdt:P486 "D012006" ;
+	wdt:P494 "Q52.2" .
+
+wd:Q2857923 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0856747" ;
+	wdt:P486 "D000094625" .
+
+wd:Q3705877 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0406645" ;
+	wdt:P486 "C538250" .
+
+wd:Q2915477 wdt:P31 wd:Q12136 ;
+	rdfs:label "叶酸缺乏症"@zh-hans ;
+	wdt:P2176 wd:Q127060 ;
+	wdt:P494 "D52" ;
+	wdt:P2892 "C0016412" ;
+	wdt:P486 "D005494" .
+
+wd:Q3725136 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1504464" ;
+	wdt:P486 "D057867" .
+
+wd:Q2964243 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q2314 ;
+	wdt:P2892 "C0036982" ;
+	wdt:P486 "D012771" .
+
+wd:Q2916477 wdt:P31 wd:Q12136 ;
+	wdt:P494 "O26.9" ;
+	wdt:P486 "D011248" .
+
+wd:Q3134277 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D046449" .
+
+wd:Q3367106 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D010322" .
+
+wd:Q3993706 wdt:P2176 wd:Q4095199 ;
+	wdt:P2892 "C0040485" .
+
+wd:Q3025883 wdt:P2176 wd:Q5906358 .
+
+wd:Q3740798 wdt:P927 wd:Q5880 .
+
+wd:Q3025883 wdt:P2176 wd:Q288280 .
+
+wd:Q3074499 wdt:P31 wd:Q12136 ;
+	wdt:P494 "T59.5" ;
+	wdt:P2892 "C0016325" ;
+	wdt:P486 "D005458" .
+
+wd:Q3046374 wdt:P31 wd:Q12136 ;
+	wdt:P494 "B46" ;
+	wdt:P486 "D020096" .
+
+wd:Q3045238 wdt:P31 wd:Q12136 ;
+	rdfs:label "先天性无痛症"@zh-hans ;
+	wdt:P486 "D000699" .
+
+wd:Q3832889 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0024214" ;
+	wdt:P486 "D008200" .
+
+wd:Q3025883 wdt:P2176 wd:Q747883 .
+
+wd:Q3542029 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q5982337 ;
+	wdt:P486 "D003110" .
+
+wd:Q3281285 wdt:P31 wd:Q12136 ;
+	wdt:P494 "E75.2" ;
+	wdt:P2892 "C0268242" ;
+	wdt:P486 "D052536" .
+
+wd:Q3907636 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0264511" ;
+	wdt:P486 "C562489" .
+
+wd:Q4059313 wdt:P31 wd:Q12136 ;
+	wdt:P494 "B74.4" ;
+	wdt:P2892 "C1527287" ;
+	wdt:P486 "D063485" .
+
+wd:Q3961680 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1879286" ;
+	wdt:P486 "C566873" .
+
+wd:Q3604584 wdt:P31 wd:Q12136 ;
+	wdt:P494 "L73.0" ;
+	wdt:P2892 "C0001145" ;
+	wdt:P486 "D000153" .
+
+wd:Q3740609 wdt:P2176 wd:Q28208887 .
+
+wd:Q3997975 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0037937" ;
+	wdt:P486 "D013124" .
+
+wd:Q3237081 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0270612" ;
+	wdt:P486 "D056784" .
+
+wd:Q2640586 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0242301" ;
+	wdt:P486 "D005667" .
+
+wd:Q3518022 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q244408 ;
+	wdt:P494 "M75.1" ;
+	wdt:P2892 "C0151448" ;
+	wdt:P486 "D000070636" ;
+	wdt:P2892 "C0851122" ;
+	wdt:P494 "S46.0" .
+
+wd:Q3281335 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0268622" ;
+	wdt:P486 "C562682" .
+
+wd:Q936382 wdt:P31 wd:Q12136 ;
+	rdfs:label "低血钙"@zh-hans ;
+	wdt:P494 "E83.5" ;
+	wdt:P2892 "C0020598" ;
+	wdt:P486 "D006996" .
+
+wd:Q961331 wdt:P31 wd:Q12136 ;
+	wdt:P494 "L05" ;
+	wdt:P2892 "C0031925" ;
+	wdt:P486 "D010864" .
+
+wd:Q920766 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0242843" ;
+	wdt:P486 "D018614" .
+
+wd:Q921907 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0339731" ;
+	wdt:P486 "D000075562" .
+
+wd:Q2633143 wdt:P31 wd:Q12136 ;
+	rdfs:label "功能失调性子宫出血"@zh-hans ;
+	wdt:P494 "N93.8" ;
+	wdt:P2892 "C0042134" ;
+	wdt:P486 "D014592" .
+
+wd:Q2915477 wdt:P494 "E53.8" .
+
+wd:Q923164 wdt:P31 wd:Q12136 ;
+	rdfs:label "表达性失语症"@zh-hans ;
+	wdt:P494 "F80.1" ;
+	wdt:P2892 "C0003550" ;
+	wdt:P486 "D001039" ;
+	wdt:P2892 "C0917814" .
+
+wd:Q970208 wdt:P31 wd:Q12136 ;
+	wdt:P494 "K72.9" ;
+	wdt:P2892 "C0085605" ;
+	wdt:P486 "D017093" .
+
+wd:Q166907 wdt:P31 wd:Q12136 ;
+	rdfs:label "丛集性头痛"@zh-hans ;
+	wdt:P780 wd:Q3245488 ;
+	wdt:P924 wd:Q576618 ;
+	wdt:P494 "G44.0" ;
+	wdt:P2892 "C0009088" ;
+	wdt:P486 "D003027" ;
+	wdt:P780 wd:Q622427 ;
+	wdt:P924 wd:Q152763 ;
+	wdt:P780 wd:Q281289 ;
+	wdt:P924 wd:Q210420 ;
+	wdt:P780 wd:Q86 .
+
+wd:Q181923 wdt:P31 wd:Q12136 ;
+	rdfs:label "注意缺陷多动障碍"@zh-hans ;
+	wdt:P780 wd:Q1549918 ;
+	wdt:P2176 wd:Q2506823 ;
+	wdt:P494 "F90.0" ;
+	wdt:P2892 "C4230171" ;
+	wdt:P486 "D001289" .
+
+wd:Q166907 wdt:P780 wd:Q2610154 ;
+	wdt:P924 wd:Q1988216 , wd:Q410291 .
+
+wd:Q160796 wdt:P31 wd:Q12136 ;
+	rdfs:label "谵妄"@zh-hans ;
+	wdt:P780 wd:Q177190 ;
+	wdt:P2176 wd:Q251347 ;
+	wdt:P494 "F05" ;
+	wdt:P2892 "C0338644" ;
+	wdt:P486 "D003693" .
+
+wd:Q124407 wdt:P31 wd:Q12136 ;
+	rdfs:label "1型糖尿病"@zh-hans ;
+	wdt:P780 wd:Q653267 ;
+	wdt:P2176 wd:Q410965 ;
+	wdt:P494 "E10" ;
+	wdt:P2892 "C0205734" ;
+	wdt:P486 "D003922" ;
+	wdt:P780 wd:Q635195 ;
+	wdt:P2176 wd:Q21011228 ;
+	wdt:P2892 "C0011854" .
+
+wd:Q181923 wdt:P2176 wd:Q6558704 .
+
+wd:Q117060 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q416905 ;
+	wdt:P494 "R25.2" ;
+	wdt:P2892 "C0026838" ;
+	wdt:P486 "D009128" ;
+	wdt:P2892 "C0277820" ;
+	wdt:P2176 wd:Q418351 .
+
+wd:Q181876 wdt:P31 wd:Q12136 ;
+	rdfs:label "远端转移"@zh-hans ;
+	wdt:P2892 "C0027627" ;
+	wdt:P486 "D009362" ;
+	wdt:P2892 "C2939420" .
+
+wd:Q117060 wdt:P2176 wd:Q2149443 , wd:Q421274 .
+
+wd:Q166907 wdt:P924 wd:Q419186 ;
+	wdt:P780 wd:Q12153824 .
+
+wd:Q124407 wdt:P2176 wd:Q417317 , wd:Q417762 .
+
+wd:Q166907 wdt:P780 wd:Q3537764 .
+
+wd:Q117060 wdt:P2176 wd:Q423538 .
+
+wd:Q124407 wdt:P2176 wd:Q6042242 , wd:Q419832 .
+
+wd:Q143607 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q104280 ;
+	wdt:P2892 "C0017565" ;
+	wdt:P486 "D005884" .
+
+wd:Q166907 wdt:P924 wd:Q423866 .
+
+wd:Q81867 wdt:P31 wd:Q12136 ;
+	wdt:P494 "E70.3" ;
+	wdt:P2892 "C0001916" ;
+	wdt:P486 "D000417" ;
+	wdt:P2892 "C0333913" .
+
+wd:Q160796 wdt:P780 wd:Q382255 .
+
+wd:Q166907 wdt:P780 wd:Q394129 , wd:Q29299 .
+
+wd:Q160796 wdt:P2176 wd:Q411457 .
+
+wd:Q166907 wdt:P780 wd:Q1115038 .
+
+wd:Q68833 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q408283 ;
+	wdt:P494 "T14.2" ;
+	wdt:P2892 "C0016658" ;
+	wdt:P486 "D050723" .
+
+wd:Q141440 wdt:P31 wd:Q12136 ;
+	rdfs:label "脑脓肿"@zh-hans ;
+	wdt:P924 wd:Q12187 ;
+	wdt:P2892 "C0006105" ;
+	wdt:P486 "D001922" .
+
+wd:Q124407 wdt:P780 wd:Q1124286 ;
+	wdt:P2176 wd:Q4712362 .
+
+wd:Q68833 wdt:P2176 wd:Q411781 .
+
+wd:Q117060 wdt:P2176 wd:Q5198674 .
+
+wd:Q124407 wdt:P2176 wd:Q2754775 .
+
+wd:Q120395 wdt:P31 wd:Q12136 ;
+	wdt:P494 "N94.1" ;
+	wdt:P2892 "C1384606" ;
+	wdt:P486 "D004414" .
+
+wd:Q124407 wdt:P2176 wd:Q3492616 .
+
+wd:Q117060 wdt:P2176 wd:Q6823309 .
+
+wd:Q124407 wdt:P2176 wd:Q2062094 .
+
+wd:Q117060 wdt:P2176 wd:Q5102983 , wd:Q210402 .
+
+wd:Q124407 wdt:P2176 wd:Q2526479 .
+
+wd:Q733616 wdt:P31 wd:Q12136 ;
+	wdt:P494 "A18.4" ;
+	wdt:P2892 "C0014741" ;
+	wdt:P486 "D004891" .
+
+wd:Q617079 wdt:P31 wd:Q12136 ;
+	rdfs:label "结石"@zh-hans ;
+	wdt:P2892 "C0006736" ;
+	wdt:P486 "D002137" ;
+	wdt:P2892 "C0023869" , "C1269628" .
+
+wd:Q688949 wdt:P31 wd:Q12136 ;
+	wdt:P494 "I77.3" ;
+	wdt:P2892 "C0016052" ;
+	wdt:P486 "D005352" .
+
+wd:Q707388 wdt:P780 wd:Q40878 .
+
+wd:Q796150 wdt:P31 wd:Q12136 ;
+	wdt:P494 "L30.4" ;
+	wdt:P486 "D007402" .
+
+wd:Q797128 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0006075" ;
+	wdt:P486 "D001912" .
+
+wd:Q628648 wdt:P780 wd:Q3567802 .
+
+wd:Q1268495 wdt:P31 wd:Q12136 ;
+	wdt:P494 "N92.4" ;
+	wdt:P2892 "C0025874" ;
+	wdt:P486 "D008796" .
+
+wd:Q1209892 wdt:P31 wd:Q12136 ;
+	wdt:P494 "K63.5" ;
+	wdt:P2892 "C0009376" ;
+	wdt:P486 "D003111" .
+
+wd:Q1345798 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D020270" .
+
+wd:Q640836 wdt:P31 wd:Q12136 ;
+	wdt:P494 "F70.1" ;
+	wdt:P2892 "C0796022" ;
+	wdt:P486 "C537724" .
+
+wd:Q1242891 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0038166" ;
+	wdt:P486 "D013207" .
+
+wd:Q1036696 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q130741 ;
+	wdt:P924 wd:Q185325 ;
+	wdt:P494 "T68" ;
+	wdt:P2892 "C0020672" ;
+	wdt:P486 "D007035" ;
+	wdt:P2892 "C0274285" .
+
+wd:Q653200 wdt:P31 wd:Q12136 ;
+	rdfs:label "扁平足"@zh-hans ;
+	wdt:P494 "M21.4" ;
+	wdt:P2892 "C0016202" ;
+	wdt:P486 "D005413" ;
+	wdt:P2892 "C0152237" , "C0264133" .
+
+wd:Q1128996 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0007621" ;
+	wdt:P486 "D002471" ;
+	wdt:P2892 "C0334044" .
+
+wd:Q653200 wdt:P494 "Q66.5" .
+
+wd:Q1368943 wdt:P31 wd:Q12136 ;
+	rdfs:label "脑内出血"@zh-hans ;
+	wdt:P2176 wd:Q670131 ;
+	wdt:P494 "I61" ;
+	wdt:P2892 "C4229449" ;
+	wdt:P486 "D002543" .
+
+wd:Q1129121 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q9371 ;
+	wdt:P494 "Q89.0" ;
+	wdt:P2892 "C0038002" ;
+	wdt:P486 "D013163" ;
+	wdt:P494 "R16.1" .
+
+wd:Q1330254 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M72.0" ;
+	wdt:P2892 "C0013312" ;
+	wdt:P486 "D004387" .
+
+wd:Q1405631 wdt:P31 wd:Q12136 ;
+	rdfs:label "不明热"@zh-hans ;
+	wdt:P494 "R50" ;
+	wdt:P2892 "C0015970" ;
+	wdt:P486 "D005335" .
+
+wd:Q1141055 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0012817" ;
+	wdt:P486 "D004240" .
+
+wd:Q1142806 wdt:P31 wd:Q12136 ;
+	rdfs:label "智能低下"@zh-hans ;
+	wdt:P486 "D002658" .
+
+wd:Q1368943 wdt:P2176 wd:Q45769835 ;
+	wdt:P494 "P10.1" .
+
+wd:Q1236057 wdt:P31 wd:Q12136 ;
+	rdfs:label "传导性失语症"@zh-hans ;
+	wdt:P2892 "C0234471" ;
+	wdt:P486 "D018886" .
+
+wd:Q1432717 wdt:P31 wd:Q12136 ;
+	rdfs:label "紧张型思觉失调症"@zh-hans ;
+	wdt:P780 wd:Q460263 ;
+	wdt:P494 "F20.2" ;
+	wdt:P2892 "C0036344" ;
+	wdt:P486 "D012560" .
+
+wd:Q1338684 wdt:P31 wd:Q12136 ;
+	rdfs:label "紧张性头痛"@zh-hans ;
+	wdt:P780 wd:Q86 ;
+	wdt:P2176 wd:Q186969 ;
+	wdt:P924 wd:Q173235 ;
+	wdt:P494 "G44.2" ;
+	wdt:P486 "D018781" .
+
+wd:Q1269351 wdt:P31 wd:Q12136 ;
+	rdfs:label "发展性协调障碍"@zh-hans ;
+	wdt:P2892 "C0011757" ;
+	wdt:P486 "D019957" ;
+	wdt:P2892 "C0026613" .
+
+wd:Q1277281 wdt:P31 wd:Q12136 ;
+	wdt:P494 "J01.8" ;
+	wdt:P2892 "C0029293" ;
+	wdt:P486 "D009957" .
+
+wd:Q1286499 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q3245488 ;
+	wdt:P924 wd:Q1641412 ;
+	wdt:P494 "T78.4" ;
+	wdt:P2892 "C0339808" ;
+	wdt:P486 "D000092542" .
+
+wd:Q1338684 wdt:P2176 wd:Q18216 .
+
+wd:Q1147182 wdt:P31 wd:Q12136 ;
+	wdt:P924 wd:Q115096 ;
+	wdt:P494 "R15" ;
+	wdt:P2892 "C0015732" ;
+	wdt:P486 "D005242" ;
+	wdt:P2892 "C2921133" .
+
+wd:Q1350326 wdt:P31 wd:Q12136 ;
+	wdt:P494 "T33" ;
+	wdt:P2892 "C0016736" ;
+	wdt:P486 "D005627" .
+
+wd:Q1036696 wdt:P924 wd:Q24885926 .
+
+wd:Q1432717 wdt:P780 wd:Q918193 .
+
+wd:Q1338684 wdt:P924 wd:Q908843 .
+
+wd:Q1432717 wdt:P780 wd:Q1642611 .
+
+wd:Q1069694 wdt:P31 wd:Q12136 ;
+	rdfs:label "子宫后倾"@zh-hans ;
+	wdt:P927 wd:Q9612 ;
+	wdt:P494 "N85.4" ;
+	wdt:P486 "D060725" .
+
+wd:Q1351381 wdt:P31 wd:Q12136 ;
+	wdt:P494 "H91.0" ;
+	wdt:P2892 "C0235280" ;
+	wdt:P486 "D000081015" .
+
+wd:Q1425208 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M20.2" ;
+	wdt:P2892 "C0264134" ;
+	wdt:P486 "D020859" .
+
+wd:Q1367304 wdt:P31 wd:Q12136 ;
+	wdt:P494 "O88.0" ;
+	wdt:P2892 "C0013926" ;
+	wdt:P486 "D004618" ;
+	wdt:P494 "T79.0" .
+
+wd:Q1338684 wdt:P2176 wd:Q57055 .
+
+wd:Q1419347 wdt:P31 wd:Q12136 ;
+	rdfs:label "产褥热"@zh-hans ;
+	wdt:P494 "O85" ;
+	wdt:P486 "D011645" .
+
+wd:Q1286499 wdt:P780 wd:Q35805 .
+
+wd:Q1076061 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206636" ;
+	wdt:P486 "D018210" .
+
+wd:Q1286499 wdt:P780 wd:Q35830 .
+
+wd:Q1350326 wdt:P494 "T35" .
+
+wd:Q1338684 wdt:P2176 wd:Q58397 .
+
+wd:Q1339539 wdt:P31 wd:Q12136 ;
+	wdt:P494 "J86.9" ;
+	wdt:P2892 "C0014009" ;
+	wdt:P486 "D004653" .
+
+wd:Q1129105 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q410352 ;
+	wdt:P494 "E10.2" ;
+	wdt:P2892 "C0011881" ;
+	wdt:P486 "D003928" .
+
+wd:Q1432717 wdt:P780 wd:Q4419847 , wd:Q4419854 .
+
+wd:Q1129105 wdt:P2176 wd:Q412174 .
+
+wd:Q1432717 wdt:P780 wd:Q671776 .
+
+wd:Q1363741 wdt:P31 wd:Q12136 ;
+	wdt:P494 "L26" ;
+	wdt:P2892 "C0011606" ;
+	wdt:P486 "D003873" .
+
+wd:Q1346134 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0085165" ;
+	wdt:P486 "D016583" .
+
+wd:Q1328805 wdt:P31 wd:Q12136 ;
+	rdfs:label "骨肿瘤"@zh-hans ;
+	wdt:P927 wd:Q265868 ;
+	wdt:P2892 "C0279530" ;
+	wdt:P486 "D001859" ;
+	wdt:P2892 "CL031131" , "CL497890" .
+
+wd:Q1432717 wdt:P780 wd:Q57769952 .
+
+wd:Q1320276 wdt:P31 wd:Q12136 ;
+	wdt:P494 "E86" ;
+	wdt:P2892 "C0546884" ;
+	wdt:P486 "D020896" ;
+	wdt:P2892 "C0752266" ;
+	wdt:P494 "R57.1" , "T81.1" .
+
+wd:Q1138267 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M21.1" ;
+	wdt:P2892 "C0239138" ;
+	wdt:P486 "D060905" ;
+	wdt:P494 "Q65.8" .
+
+wd:Q101971 wdt:P31 wd:Q12136 ;
+	rdfs:label "疣"@zh-hans ;
+	wdt:P494 "B07" ;
+	wdt:P2892 "C3665596" ;
+	wdt:P486 "D014860" .
+
+wd:Q1658731 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q421095 ;
+	wdt:P486 "D020250" .
+
+wd:Q1506572 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q3712521 ;
+	wdt:P494 "I48" ;
+	wdt:P2892 "C0004239" ;
+	wdt:P486 "D001282" .
+
+wd:Q105688 wdt:P31 wd:Q12136 ;
+	rdfs:label "缺氧"@zh-hans ;
+	wdt:P2892 "C0242184" ;
+	wdt:P486 "D000860" ;
+	wdt:P2892 "C0700292" .
+
+wd:Q1734755 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q27270371 ;
+	wdt:P494 "C75" ;
+	wdt:P2892 "C0007095" ;
+	wdt:P486 "D002276" ;
+	wdt:P2892 "C0600176" .
+
+wd:Q1467339 wdt:P2176 wd:Q1240093 .
+
+wd:Q1550742 wdt:P31 wd:Q12136 ;
+	rdfs:label "O型腿"@zh-hans ;
+	wdt:P494 "Q68.3" ;
+	wdt:P2892 "C0544755" ;
+	wdt:P486 "D056305" ;
+	wdt:P494 "Q68.5" .
+
+wd:Q1506572 wdt:P2176 wd:Q410061 .
+
+wd:Q1467339 wdt:P2176 wd:Q668093 .
+
+wd:Q1510899 wdt:P31 wd:Q12136 ;
+	wdt:P494 "K66.1" ;
+	wdt:P2892 "C0019065" ;
+	wdt:P486 "D006465" ;
+	wdt:P2892 "C0744735" .
+
+wd:Q1506572 wdt:P2176 wd:Q414462 .
+
+wd:Q1467339 wdt:P2176 wd:Q670131 .
+
+wd:Q1688105 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M92.7" ;
+	wdt:P2892 "C0264099" ;
+	wdt:P486 "C535636" .
+
+wd:Q1467339 wdt:P2176 wd:Q384295 .
+
+wd:Q1506572 wdt:P2176 wd:Q420262 .
+
+wd:Q127664 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q407241 ;
+	wdt:P494 "R56.0" ;
+	wdt:P2892 "C0009952" ;
+	wdt:P486 "D003294" ;
+	wdt:P2892 "C0149886" .
+
+wd:Q1729124 wdt:P31 wd:Q12136 ;
+	wdt:P494 "I51.7" ;
+	wdt:P2892 "C0018800" ;
+	wdt:P486 "D006332" .
+
+wd:Q117060 wdt:P2176 wd:Q412221 .
+
+wd:Q1473802 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0029441" ;
+	wdt:P486 "D010017" .
+
+wd:Q117060 wdt:P2176 wd:Q413717 .
+
+wd:Q127664 wdt:P2176 wd:Q410400 .
+
+wd:Q1519657 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0030436" ;
+	wdt:P486 "D010241" .
+
+wd:Q1734755 wdt:P2176 wd:Q421052 ;
+	wdt:P494 "E34.0" .
+
+wd:Q1467339 wdt:P2176 wd:Q417740 .
+
+wd:Q2487710 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0016398" ;
+	wdt:P486 "D005491" .
+
+wd:Q2076966 wdt:P780 wd:Q1975850 .
+
+wd:Q2527831 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0042755" ;
+	wdt:P486 "D014770" .
+
+wd:Q2538477 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0018273" ;
+	wdt:P486 "D006130" .
+
+wd:Q2583597 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0003813" ;
+	wdt:P486 "D001146" .
+
+wd:Q2458539 wdt:P2176 wd:Q118551 , wd:Q165399 , wd:Q27107637 , wd:Q418546 , wd:Q418747 , wd:Q420705 , wd:Q422273 , wd:Q423787 , wd:Q553220 .
+
+wd:Q2096745 wdt:P31 wd:Q12136 ;
+	rdfs:label "遗传性血管性水肿"@zh-hans ;
+	wdt:P494 "D84.1" ;
+	wdt:P2892 "C0019243" ;
+	wdt:P486 "D054179" .
+
+wd:Q2458539 wdt:P2176 wd:Q5134338 .
+
+wd:Q2123838 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1956418" ;
+	wdt:P486 "D014102" .
+
+wd:Q2458539 wdt:P2176 wd:Q979521 .
+
+wd:Q2148123 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0948780" ;
+	wdt:P486 "D000096825" .
+
+wd:Q2507454 wdt:P494 "E27.1" .
+
+wd:Q2581333 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q10916362 ;
+	wdt:P494 "F07.2" ;
+	wdt:P486 "D038223" .
+
+wd:Q2103933 wdt:P31 wd:Q12136 ;
+	rdfs:label "REM睡眠行为障碍"@zh-hans ;
+	wdt:P494 "G47.8" ;
+	wdt:P2892 "C0751772" ;
+	wdt:P486 "D020187" .
+
+wd:Q2581333 wdt:P780 wd:Q29299 , wd:Q86 .
+
+wd:Q1869874 wdt:P31 wd:Q12136 ;
+	rdfs:label "失眠"@zh-hans ;
+	wdt:P2176 wd:Q410225 ;
+	wdt:P924 wd:Q182881 ;
+	wdt:P494 "F51.0" ;
+	wdt:P2892 "C0393770" ;
+	wdt:P486 "D007319" ;
+	wdt:P2892 "C0917801" , "C3279991" ;
+	wdt:P494 "G47.0" ;
+	wdt:P924 wd:Q183257 ;
+	wdt:P2176 wd:Q410352 ;
+	wdt:P924 wd:Q188840 ;
+	wdt:P2176 wd:Q409558 ;
+	wdt:P924 wd:Q28437 , wd:Q31338769 ;
+	wdt:P2176 wd:Q410608 ;
+	wdt:P924 wd:Q42081 , wd:Q127849 , wd:Q128406 , wd:Q128939 , wd:Q148396 , wd:Q157819 ;
+	wdt:P2176 wd:Q411457 , wd:Q411940 , wd:Q412143 .
+
+wd:Q1734755 wdt:P2176 wd:Q417542 , wd:Q419935 .
+
+wd:Q1777118 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M17" ;
+	wdt:P2892 "C0409959" ;
+	wdt:P486 "D020370" .
+
+wd:Q1765564 wdt:P31 wd:Q12136 ;
+	rdfs:label "败血性休克"@zh-hans ;
+	wdt:P2176 wd:Q26981430 ;
+	wdt:P494 "R57.2" ;
+	wdt:P2892 "C0036983" ;
+	wdt:P486 "D012772" .
+
+wd:Q1858291 wdt:P31 wd:Q12136 ;
+	rdfs:label "潮热"@zh-hans ;
+	wdt:P2892 "C0600142" ;
+	wdt:P486 "D019584" .
+
+wd:Q1765564 wdt:P2176 wd:Q183011 , wd:Q186242 .
+
+wd:Q1758624 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M84.1" ;
+	wdt:P2892 "C0033785" ;
+	wdt:P486 "D011542" ;
+	wdt:P494 "M96.0" .
+
+wd:Q1734755 wdt:P2176 wd:Q413299 .
+
+wd:Q1759560 wdt:P31 wd:Q12136 ;
+	wdt:P494 "Q17.2" ;
+	wdt:P2892 "C0152423" ;
+	wdt:P486 "D065817" .
+
+wd:Q1753467 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M80" ;
+	wdt:P2892 "C0016663" ;
+	wdt:P486 "D005598" .
+
+wd:Q1869874 wdt:P2176 wd:Q408535 .
+
+wd:Q1741331 wdt:P31 wd:Q12136 ;
+	wdt:P494 "F80.2" ;
+	wdt:P486 "D001041" .
+
+wd:Q1765564 wdt:P2176 wd:Q132621 , wd:Q421910 , wd:Q422252 , wd:Q282902 .
+
+wd:Q1787939 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M62.8" ;
+	wdt:P2892 "C0872084" ;
+	wdt:P486 "D055948" .
+
+wd:Q1753520 wdt:P31 wd:Q12136 ;
+	rdfs:label "类风湿结节"@zh-hans ;
+	wdt:P2892 "C0035450" ;
+	wdt:P486 "D012218" .
+
+wd:Q1467339 wdt:P2176 wd:Q417942 , wd:Q418006 , wd:Q419724 .
+
+wd:Q1671598 wdt:P31 wd:Q12136 ;
+	rdfs:label "胎儿生长受限"@zh-hans ;
+	wdt:P494 "P05.9" ;
+	wdt:P2892 "C0015934" ;
+	wdt:P486 "D005317" ;
+	wdt:P2892 "C0302511" .
+
+wd:Q1467339 wdt:P2176 wd:Q423439 .
+
+wd:Q1524166 wdt:P31 wd:Q12136 ;
+	wdt:P494 "Q66.2" ;
+	wdt:P2892 "C0231791" ;
+	wdt:P486 "D000070592" ;
+	wdt:P2892 "C4082169" .
+
+wd:Q1550742 wdt:P494 "Q74.1" .
+
+wd:Q1664923 wdt:P31 wd:Q12136 ;
+	wdt:P494 "N90.4" ;
+	wdt:P2892 "C0022783" ;
+	wdt:P486 "D007724" .
+
+wd:Q1506572 wdt:P2176 wd:Q20078502 .
+
+wd:Q1472019 wdt:P31 wd:Q12136 ;
+	wdt:P494 "P28" ;
+	wdt:P486 "D057768" .
+
+wd:Q1571008 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "CL495312" ;
+	wdt:P486 "D056650" .
+
+wd:Q1632678 wdt:P31 wd:Q12136 ;
+	wdt:P494 "K22.6" ;
+	wdt:P2892 "C0024633" ;
+	wdt:P486 "D008309" .
+
+wd:Q1581308 wdt:P31 wd:Q12136 ;
+	wdt:P494 "H90.0" ;
+	wdt:P2892 "C0018777" ;
+	wdt:P486 "D006314" ;
+	wdt:P494 "H90.2" .
+
+wd:Q1592207 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0221269" ;
+	wdt:P486 "D019310" .
+
+wd:Q1506572 wdt:P2176 wd:Q113368879 .
+
+wd:Q1620594 wdt:P31 wd:Q12136 ;
+	wdt:P494 "L68.0" ;
+	wdt:P2892 "C0019572" ;
+	wdt:P486 "D006628" .
+
+wd:Q1467339 wdt:P2176 wd:Q899036 .
+
+wd:Q1668089 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1622510" ;
+	wdt:P486 "D018306" .
+
+wd:Q1637035 wdt:P31 wd:Q12136 ;
+	rdfs:label "毛囊角化症"@zh-hans ;
+	wdt:P2892 "C0263428" ;
+	wdt:P486 "C537412" ;
+	wdt:P2892 "C4073145" .
+
+wd:Q1711733 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1611188" ;
+	wdt:P486 "D000072042" .
+
+wd:Q1529650 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q326710 ;
+	wdt:P494 "H43.1" ;
+	wdt:P2892 "C0042909" ;
+	wdt:P486 "D014823" .
+
+wd:Q1869874 wdt:P2176 wd:Q319877 , wd:Q407988 , wd:Q408265 , wd:Q210402 , wd:Q201872 , wd:Q218842 .
+
+wd:Q1129338 wdt:P31 wd:Q12136 ;
+	rdfs:label "肉芽肿"@zh-hans ;
+	wdt:P494 "L92" ;
+	wdt:P2892 "C0018188" ;
+	wdt:P486 "D006099" .
+
+wd:Q1236063 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1627365" ;
+	wdt:P486 "C537031" .
+
+wd:Q1224503 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D015155" .
+
+wd:Q1431933 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0023370" ;
+	wdt:P486 "D007925" .
+
+wd:Q1324592 wdt:P31 wd:Q12136 ;
+	wdt:P494 "J38.5" ;
+	wdt:P2892 "C0023066" ;
+	wdt:P486 "D007826" .
+
+wd:Q1435219 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0333980" ;
+	wdt:P486 "D020518" .
+
+wd:Q1268495 wdt:P494 "N92.1" .
+
+wd:Q558404 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q133244 ;
+	wdt:P924 wd:Q1368191 ;
+	wdt:P494 "K70" ;
+	wdt:P2892 "C0023896" ;
+	wdt:P486 "D008108" .
+
+wd:Q525075 wdt:P31 wd:Q12136 ;
+	rdfs:label "错构瘤"@zh-hans ;
+	wdt:P494 "Q85.9" ;
+	wdt:P2892 "C0018552" ;
+	wdt:P486 "D006222" .
+
+wd:Q558404 wdt:P924 wd:Q12769393 .
+
+wd:Q460591 wdt:P31 wd:Q12136 ;
+	rdfs:label "减压症"@zh-hans ;
+	wdt:P780 wd:Q11072 ;
+	wdt:P924 wd:Q549046 ;
+	wdt:P494 "T70.3" ;
+	wdt:P486 "D003665" .
+
+wd:Q281490 wdt:P31 wd:Q12136 ;
+	rdfs:label "尿失禁"@zh-hans ;
+	wdt:P2176 wd:Q424312 ;
+	wdt:P494 "N39.3" ;
+	wdt:P2892 "C0042024" ;
+	wdt:P486 "D014549" .
+
+wd:Q460591 wdt:P780 wd:Q12133 , wd:Q1638131 .
+
+wd:Q209647 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q397554 ;
+	wdt:P494 "F10.4" ;
+	wdt:P486 "D000430" .
+
+wd:Q367756 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0002992" ;
+	wdt:P486 "D000798" .
+
+wd:Q192579 wdt:P31 wd:Q12136 ;
+	rdfs:label "时差问题"@zh-hans ;
+	wdt:P780 wd:Q9690 ;
+	wdt:P2176 wd:Q180912 ;
+	wdt:P924 wd:Q243570 ;
+	wdt:P494 "G47.2" ;
+	wdt:P2892 "C0231311" ;
+	wdt:P486 "D020179" .
+
+wd:Q340548 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q40878 ;
+	wdt:P494 "K31.8" ;
+	wdt:P2892 "C0001075" ;
+	wdt:P486 "D000126" .
+
+wd:Q460591 wdt:P780 wd:Q199602 .
+
+wd:Q268594 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q905058 ;
+	wdt:P494 "F44.2" ;
+	wdt:P2892 "C0085628" ;
+	wdt:P486 "D053608" .
+
+wd:Q318005 wdt:P31 wd:Q12136 ;
+	rdfs:label "夜遗尿"@zh-hans ;
+	wdt:P2176 wd:Q241006 ;
+	wdt:P494 "R32" ;
+	wdt:P2892 "C0270327" ;
+	wdt:P486 "D053206" .
+
+wd:Q194101 wdt:P31 wd:Q12136 ;
+	rdfs:label "侏儒症"@zh-hans ;
+	wdt:P780 wd:Q7502090 ;
+	wdt:P494 "E34.2" ;
+	wdt:P2892 "C0013336" ;
+	wdt:P486 "D004392" .
+
+wd:Q460591 wdt:P780 wd:Q3232712 , wd:Q3954319 .
+
+wd:Q475510 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0021832" ;
+	wdt:P486 "D007411" .
+
+wd:Q558623 wdt:P31 wd:Q12136 ;
+	wdt:P494 "Q12.3" ;
+	wdt:P2892 "C0003534" ;
+	wdt:P486 "D001035" .
+
+wd:Q487231 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0919691" ;
+	wdt:P486 "D057868" .
+
+wd:Q460591 wdt:P780 wd:Q86 .
+
+wd:Q494066 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0014072" ;
+	wdt:P486 "D004681" .
+
+wd:Q194101 wdt:P494 "Q77.4" .
+
+wd:Q216211 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0020564" ;
+	wdt:P486 "D006984" .
+
+wd:Q558404 wdt:P780 wd:Q186889 ;
+	wdt:P924 wd:Q1773974 .
+
+wd:Q460591 wdt:P780 wd:Q81938 .
+
+wd:Q268594 wdt:P494 "R40.1" .
+
+wd:Q221463 wdt:P31 wd:Q12136 ;
+	wdt:P494 "K55.9" ;
+	wdt:P2892 "C0267412" ;
+	wdt:P486 "D065666" .
+
+wd:Q552233 wdt:P31 wd:Q12136 ;
+	rdfs:label "卵巢扭转"@zh-hans ;
+	wdt:P927 wd:Q1233836 ;
+	wdt:P494 "N83.5" ;
+	wdt:P486 "D000082843" .
+
+wd:Q386408 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0001748" ;
+	wdt:P486 "D000355" .
+
+wd:Q181923 wdt:P780 wd:Q67135693 ;
+	wdt:P2176 wd:Q179452 .
+
+wd:Q194101 wdt:P494 "E45.0" .
+
+wd:Q356713 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q411229 ;
+	wdt:P494 "B44" ;
+	wdt:P486 "D055732" ;
+	wdt:P2176 wd:Q412236 .
+
+wd:Q511818 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q1632123 ;
+	wdt:P2176 wd:Q208451 ;
+	wdt:P494 "R29.0" ;
+	wdt:P2892 "C0039621" ;
+	wdt:P486 "D013746" ;
+	wdt:P2892 "C0917812" .
+
+wd:Q181923 wdt:P2176 wd:Q183257 .
+
+wd:Q369262 wdt:P31 wd:Q12136 ;
+	rdfs:label "生长激素缺乏症"@zh-hans ;
+	wdt:P494 "E23.0" ;
+	wdt:P486 "D004393" .
+
+wd:Q318005 wdt:P2176 wd:Q27252517 ;
+	wdt:P494 "F98.0" .
+
+wd:Q356713 wdt:P2176 wd:Q578726 .
+
+wd:Q424317 wdt:P31 wd:Q12136 ;
+	wdt:P494 "R10.0" ;
+	wdt:P2892 "C0000727" ;
+	wdt:P486 "D000006" .
+
+wd:Q209522 wdt:P31 wd:Q12136 ;
+	rdfs:label "暴食障碍"@zh-hans ;
+	wdt:P780 wd:Q2303219 ;
+	wdt:P494 "F50.8" ;
+	wdt:P486 "D056912" .
+
+wd:Q225957 wdt:P31 wd:Q12136 ;
+	rdfs:label "构音障碍"@zh-hans ;
+	wdt:P2176 wd:Q407988 ;
+	wdt:P494 "R47.1" ;
+	wdt:P2892 "C0013362" ;
+	wdt:P486 "D004401" .
+
+wd:Q181923 wdt:P2176 wd:Q191924 .
+
+wd:Q388626 wdt:P31 wd:Q12136 ;
+	wdt:P494 "F51.3" ;
+	wdt:P2892 "C0037672" ;
+	wdt:P486 "D013009" .
+
+wd:Q268832 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q27114666 ;
+	wdt:P2892 "C0023472" ;
+	wdt:P486 "D015465" .
+
+wd:Q460591 wdt:P780 wd:Q10916362 , wd:Q2266426 .
+
+wd:Q356713 wdt:P2176 wd:Q903341 , wd:Q906453 .
+
+wd:Q510236 wdt:P31 wd:Q12136 ;
+	rdfs:label "神经衰弱"@zh-hans ;
+	wdt:P494 "F48.0" ;
+	wdt:P2892 "C0027804" ;
+	wdt:P486 "D009440" .
+
+wd:Q266018 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q410237 ;
+	wdt:P494 "I20.0" ;
+	wdt:P2892 "C0948089" ;
+	wdt:P486 "D054058" .
+
+wd:Q460591 wdt:P780 wd:Q683498 , wd:Q107231 .
+
+wd:Q266018 wdt:P2176 wd:Q48566705 , wd:Q48566757 .
+
+wd:Q281490 wdt:P2176 wd:Q1060922 .
+
+wd:Q266018 wdt:P2176 wd:Q416232 .
+
+wd:Q281490 wdt:P2176 wd:Q415051 ;
+	wdt:P494 "R32" ;
+	wdt:P2176 wd:Q848264 .
+
+wd:Q266018 wdt:P2176 wd:Q420542 .
+
+wd:Q192579 wdt:P780 wd:Q177190 .
+
+wd:Q552233 wdt:P927 wd:Q9631 .
+
+wd:Q281490 wdt:P2176 wd:Q419824 ;
+	wdt:P494 "N39.4" .
+
+wd:Q460591 wdt:P780 wd:Q557945 .
+
+wd:Q189389 wdt:P31 wd:Q12136 ;
+	wdt:P494 "I72" ;
+	wdt:P2892 "C0333099" ;
+	wdt:P486 "D000783" .
+
+wd:Q460591 wdt:P780 wd:Q127076 .
+
+wd:Q318005 wdt:P2176 wd:Q905058 .
+
+wd:Q460591 wdt:P780 wd:Q852376 .
+
+wd:Q192579 wdt:P780 wd:Q86 .
+
+wd:Q460591 wdt:P780 wd:Q5470185 .
+
+wd:Q558623 wdt:P494 "H27.0" .
+
+wd:Q475086 wdt:P31 wd:Q12136 ;
+	wdt:P494 "D48.1" ;
+	wdt:P2892 "C0079218" ;
+	wdt:P486 "D018222" .
+
+wd:Q189470 wdt:P31 wd:Q12136 ;
+	rdfs:label "瘘"@zh-hans ;
+	wdt:P2892 "C0016169" ;
+	wdt:P486 "D005402" .
+
+wd:Q460591 wdt:P780 wd:Q12829165 .
+
+wd:Q511818 wdt:P2176 wd:Q5018826 .
+
+wd:Q460591 wdt:P780 wd:Q7933601 .
+
+wd:Q181923 wdt:P2176 wd:Q58396 .
+
+wd:Q511818 wdt:P2176 wd:Q413739 .
+
+wd:Q181923 wdt:P2176 wd:Q61387 .
+
+wd:Q1869874 wdt:P2176 wd:Q145052 , wd:Q58397 , wd:Q412443 , wd:Q413184 .
+
+wd:Q193211 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0010709" ;
+	wdt:P486 "D003560" .
+
+wd:Q192579 wdt:P780 wd:Q29299 .
+
+wd:Q194520 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0333641" ;
+	wdt:P486 "D001284" .
+
+wd:Q460591 wdt:P780 wd:Q10686316 .
+
+wd:Q181923 wdt:P2176 wd:Q402633 , wd:Q410441 , wd:Q412221 .
+
+wd:Q478389 wdt:P31 wd:Q12136 ;
+	rdfs:label "脊柱后凸"@zh-hans ;
+	wdt:P494 "M40.2" ;
+	wdt:P2892 "C0022821" ;
+	wdt:P486 "D007738" ;
+	wdt:P2892 "C1845112" .
+
+wd:Q181923 wdt:P2176 wd:Q417240 , wd:Q419008 , wd:Q422112 .
+
+wd:Q266018 wdt:P2176 wd:Q18216 .
+
+wd:Q181923 wdt:P2176 wd:Q423288 .
+
+wd:Q460591 wdt:P780 wd:Q186889 .
+
+wd:Q181923 wdt:P2176 wd:Q5613599 ;
+	wdt:P780 wd:Q3316140 .
+
+wd:Q460591 wdt:P780 wd:Q188008 .
+
+wd:Q181923 wdt:P780 wd:Q1640924 , wd:Q5419936 .
+
+wd:Q216866 wdt:P31 wd:Q12136 ;
+	rdfs:label "连体双胞胎"@zh-hans ;
+	wdt:P924 wd:Q135478279 ;
+	wdt:P494 "Q89.4" ;
+	wdt:P2892 "C0041428" ;
+	wdt:P486 "D014428" .
+
+wd:Q460591 wdt:P780 wd:Q769220 , wd:Q9690 .
+
+wd:Q181923 wdt:P2176 wd:Q1207210 ;
+	wdt:P780 wd:Q21515327 ;
+	wdt:P2176 wd:Q834280 , wd:Q1706418 , wd:Q898407 .
+
+wd:Q1869874 wdt:P2176 wd:Q414236 , wd:Q413486 , wd:Q415850 , wd:Q416791 , wd:Q414788 , wd:Q414796 , wd:Q418998 , wd:Q421930 , wd:Q417689 .
+
+wd:Q163469 wdt:P31 wd:Q12136 ;
+	wdt:P494 "K66.8" ;
+	wdt:P486 "D011027" .
+
+wd:Q144119 wdt:P31 wd:Q12136 ;
+	rdfs:label "歇斯底里"@zh-hans ;
+	wdt:P2892 "C0086441" ;
+	wdt:P486 "D007046" .
+
+wd:Q160796 wdt:P780 wd:Q3072083 , wd:Q170082 , wd:Q1188698 , wd:Q1895873 , wd:Q1282114 .
+
+wd:Q143790 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0520958" ;
+	wdt:P486 "D055964" ;
+	wdt:P2892 "C2717760" .
+
+wd:Q160796 wdt:P780 wd:Q3030775 .
+
+wd:Q143925 wdt:P31 wd:Q12136 ;
+	rdfs:label "牙痛"@zh-hans ;
+	wdt:P494 "K08.8" ;
+	wdt:P2892 "C0040460" ;
+	wdt:P486 "D014098" .
+
+wd:Q127664 wdt:P2176 wd:Q210402 .
+
+wd:Q1869874 wdt:P2176 wd:Q423390 , wd:Q3045264 , wd:Q906220 , wd:Q7553347 , wd:Q7250328 , wd:Q5141192 , wd:Q4926102 , wd:Q7650517 .
+
+wd:Q1948740 wdt:P31 wd:Q12136 ;
+	wdt:P494 "G57.6" ;
+	wdt:P2892 "C0311337" ;
+	wdt:P486 "D000070607" .
+
+wd:Q1901516 wdt:P31 wd:Q12136 ;
+	wdt:P494 "K07.1" ;
+	wdt:P2892 "C0035353" ;
+	wdt:P486 "D063173" ;
+	wdt:P2892 "C3494422" .
+
+wd:Q1920586 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0220654" ;
+	wdt:P486 "D055756" .
+
+wd:Q1952420 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1535889" ;
+	wdt:P486 "D000071069" , "D000076322" ;
+	wdt:P2892 "C3266262" .
+
+wd:Q1869874 wdt:P2176 wd:Q3085140 , wd:Q3927403 .
+
+wd:Q54875151 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0159970" ;
+	wdt:P486 "D031221" .
+
+wd:Q54889321 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206646" ;
+	wdt:P486 "D018221" .
+
+wd:Q54911224 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0022366" ;
+	wdt:P486 "D007575" .
+
+wd:Q54911242 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0404867" ;
+	wdt:P486 "D065170" .
+
+wd:Q54911330 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0035956" ;
+	wdt:P486 "D012422" .
+
+wd:Q54911334 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0242973" ;
+	wdt:P486 "D018754" .
+
+wd:Q54911376 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0033054" ;
+	wdt:P486 "D011297" .
+
+wd:Q54911386 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0009181" ;
+	wdt:P486 "D003043" .
+
+wd:Q54911414 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0037280" ;
+	wdt:P486 "D012876" .
+
+wd:Q54911437 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0032788" ;
+	wdt:P486 "D019106" .
+
+wd:Q54911470 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0162628" ;
+	wdt:P486 "D017193" .
+
+wd:Q54911488 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0025476" ;
+	wdt:P486 "D008644" .
+
+wd:Q54911504 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0342649" ;
+	wdt:P486 "D061205" .
+
+wd:Q54911517 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0393642" ;
+	wdt:P486 "D065166" .
+
+wd:Q54911701 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1562908" ;
+	wdt:P486 "D056005" .
+
+wd:Q54911746 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0161410" ;
+	wdt:P486 "D061227" .
+
+wd:Q54911749 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0162679" ;
+	wdt:P486 "D017254" .
+
+wd:Q54911767 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0282612" ;
+	wdt:P486 "D019048" .
+
+wd:Q54911791 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0729544" ;
+	wdt:P486 "D020314" .
+
+wd:Q54911848 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0243050" ;
+	wdt:P486 "D018376" .
+
+wd:Q54911877 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0034628" ;
+	wdt:P486 "D011885" .
+
+wd:Q54912072 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206606" ;
+	wdt:P486 "D018175" .
+
+wd:Q54912155 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0423772" ;
+	wdt:P486 "D017577" .
+
+wd:Q54912179 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1562585" ;
+	wdt:P486 "D056006" .
+
+wd:Q4499376 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1306570" ;
+	wdt:P486 "D000067390" .
+
+wd:Q4501577 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0008626" ;
+	wdt:P486 "D025063" ;
+	wdt:P2892 "C0969687" .
+
+wd:Q54926202 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0011360" ;
+	wdt:P486 "D003750" .
+
+wd:Q54926570 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0273487" ;
+	wdt:P486 "D061219" .
+
+wd:Q54927127 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0043264" ;
+	wdt:P486 "D014954" .
+
+wd:Q54927530 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0273486" ;
+	wdt:P486 "D061223" .
+
+wd:Q54927621 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0752195" ;
+	wdt:P486 "D020819" .
+
+wd:Q54927807 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1720887" ;
+	wdt:P486 "D052776" .
+
+wd:Q54927859 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0029897" ;
+	wdt:P486 "D010039" .
+
+wd:Q54927959 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0086533" ;
+	wdt:P486 "D018230" .
+
+wd:Q54928159 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0085511" ;
+	wdt:P486 "D017001" .
+
+wd:Q54928327 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C4277544" ;
+	wdt:P486 "D000072717" .
+
+wd:Q54928386 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0018565" ;
+	wdt:P486 "D006227" .
+
+wd:Q54930744 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0161411" ;
+	wdt:P486 "D061228" .
+
+wd:Q54930822 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0332761" ;
+	wdt:P486 "D000072039" .
+
+wd:Q54930906 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0520761" ;
+	wdt:P486 "D064419" ;
+	wdt:P2892 "C3658339" .
+
+wd:Q54931036 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0474820" ;
+	wdt:P486 "D043604" .
+
+wd:Q54931164 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0162494" ;
+	wdt:P486 "D015597" .
+
+wd:Q54931661 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2314882" ;
+	wdt:P486 "D060737" .
+
+wd:Q54931852 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0034531" ;
+	wdt:P486 "D011833" .
+
+wd:Q54932022 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "CL497918" ;
+	wdt:P486 "D010236" .
+
+wd:Q4651855 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0001857" ;
+	wdt:P486 "D000386" .
+
+wd:Q4138763 wdt:P31 wd:Q12136 ;
+	wdt:P494 "E51" ;
+	wdt:P2892 "C0039841" ;
+	wdt:P486 "D013832" .
+
+wd:Q54911704 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q4391416 ;
+	wdt:P924 wd:Q207848 ;
+	wdt:P486 "D001733" .
+
+wd:Q4664900 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2930877" ;
+	wdt:P486 "C535335" .
+
+wd:Q54911704 wdt:P780 wd:Q109186 .
+
+wd:Q4669671 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0031085" ;
+	wdt:P486 "D010508" .
+
+wd:Q54911704 wdt:P780 wd:Q166019 .
+
+wd:Q4682248 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1266146" ;
+	wdt:P486 "D055331" .
+
+wd:Q4683946 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206766" ;
+	wdt:P486 "D018294" .
+
+wd:Q4293079 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q118551 ;
+	wdt:P2892 "C0026918" ;
+	wdt:P486 "D009164" .
+
+wd:Q54931797 wdt:P31 wd:Q12136 ;
+	wdt:P494 "Q38.6" ;
+	wdt:P2892 "C0026633" ;
+	wdt:P486 "D009056" .
+
+wd:Q54931334 wdt:P31 wd:Q12136 ;
+	rdfs:label "肠瘘"@zh-hans ;
+	wdt:P2892 "C0021833" ;
+	wdt:P486 "D007412" .
+
+wd:Q4735280 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D018354" .
+
+wd:Q4651856 wdt:P31 wd:Q12136 ;
+	rdfs:label "艾滋病相关淋巴癌"@zh-hans ;
+	wdt:P2892 "C0085090" ;
+	wdt:P486 "D016483" .
+
+wd:Q54911741 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q841423 ;
+	wdt:P2892 "C0919631" ;
+	wdt:P486 "D056824" ;
+	wdt:P2892 "C2717899" .
+
+wd:Q54931978 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q318773 ;
+	wdt:P2892 "C0161407" ;
+	wdt:P486 "D020222" .
+
+wd:Q54946225 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0877445" ;
+	wdt:P486 "D058387" .
+
+wd:Q54946292 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0029163" ;
+	wdt:P486 "D006472" .
+
+wd:Q54946387 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0162455" ;
+	wdt:P486 "D047489" .
+
+wd:Q54946565 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0011378" ;
+	wdt:P486 "D003763" .
+
+wd:Q54946755 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0039234" ;
+	wdt:P486 "D013612" .
+
+wd:Q54947001 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0158309" ;
+	wdt:P486 "D000070639" .
+
+wd:Q54947136 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2717756" ;
+	wdt:P486 "D055954" .
+
+wd:Q54947288 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0014851" ;
+	wdt:P486 "D004934" .
+
+wd:Q54947504 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0042021" ;
+	wdt:P486 "D014548" .
+
+wd:Q55013018 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q904011 ;
+	wdt:P2892 "C0162817" ;
+	wdt:P486 "D017443" .
+
+wd:Q54971166 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0014100" ;
+	wdt:P486 "D004692" .
+
+wd:Q54971278 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0027746" ;
+	wdt:P486 "D009410" .
+
+wd:Q54971415 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1306068" ;
+	wdt:P486 "D058442" ;
+	wdt:P2892 "C1444680" .
+
+wd:Q54971563 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0018128" ;
+	wdt:P486 "D006083" .
+
+wd:Q54971712 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0343387" ;
+	wdt:P486 "D044504" .
+
+wd:Q54971821 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0027055" ;
+	wdt:P486 "D015428" .
+
+wd:Q54972217 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C4042945" ;
+	wdt:P486 "D000067011" .
+
+wd:Q54972345 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206151" ;
+	wdt:P486 "D017688" .
+
+wd:Q54972627 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0748164" ;
+	wdt:P486 "D055613" .
+
+wd:Q54973000 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0019699" ;
+	wdt:P486 "D006679" .
+
+wd:Q54973095 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0003535" ;
+	wdt:P486 "D001036" .
+
+wd:Q54973148 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0015806" ;
+	wdt:P486 "D005265" .
+
+wd:Q54973435 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0027670" ;
+	wdt:P486 "D009384" .
+
+wd:Q54973656 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0085073" ;
+	wdt:P486 "D016459" .
+
+wd:Q54973753 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C4082144" ;
+	wdt:P486 "D000070591" .
+
+wd:Q54974010 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0000773" ;
+	wdt:P486 "D000016" .
+
+wd:Q54974031 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206114" ;
+	wdt:P486 "D017622" .
+
+wd:Q54974116 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0752165" ;
+	wdt:P486 "D020787" .
+
+wd:Q54974186 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0016548" ;
+	wdt:P486 "D005548" .
+
+wd:Q54974239 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1565107" ;
+	wdt:P486 "D051271" .
+
+wd:Q54974362 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2936476" ;
+	wdt:P486 "D058625" .
+
+wd:Q55008903 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0032775" ;
+	wdt:P486 "D000072656" .
+
+wd:Q55043796 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0162869" ;
+	wdt:P486 "D017542" .
+
+wd:Q54972453 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q186969 ;
+	wdt:P486 "D012893" ;
+	wdt:P2176 wd:Q201872 , wd:Q210402 , wd:Q218842 , wd:Q319877 , wd:Q407988 , wd:Q408265 , wd:Q408535 , wd:Q410352 , wd:Q411457 , wd:Q412143 , wd:Q412443 , wd:Q413184 , wd:Q414796 , wd:Q417689 , wd:Q418913 , wd:Q421930 .
+
+wd:Q54974116 wdt:P2892 "C1956261" .
+
+wd:Q55082207 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0028431" ;
+	wdt:P486 "D009667" .
+
+wd:Q54972453 wdt:P2176 wd:Q7553347 , wd:Q7650517 .
+
+wd:Q55345789 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1843315" ;
+	wdt:P486 "C564362" .
+
+wd:Q54945665 wdt:P31 wd:Q12136 ;
+	wdt:P494 "Q38" ;
+	wdt:P2892 "C0243057" ;
+	wdt:P486 "D018640" .
+
+wd:Q55042693 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q2291130 ;
+	wdt:P927 wd:Q464210 ;
+	wdt:P2892 "C0472377" ;
+	wdt:P486 "D020145" .
+
+wd:Q54945591 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q359859 ;
+	wdt:P2892 "C0001576" ;
+	wdt:P486 "D000291" .
+
+wd:Q55136018 wdt:P31 wd:Q12136 ;
+	wdt:P494 "J30.3" ;
+	wdt:P2892 "C0035457" ;
+	wdt:P486 "D012221" .
+
+wd:Q55762724 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2673913" ;
+	wdt:P486 "C567144" .
+
+wd:Q55780299 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1863224" ;
+	wdt:P486 "C566310" .
+
+wd:Q55780520 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1851955" ;
+	wdt:P486 "C538000" .
+
+wd:Q55780773 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1969893" ;
+	wdt:P486 "C566980" .
+
+wd:Q55781281 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2267231" ;
+	wdt:P486 "C535815" ;
+	wdt:P2892 "C3665676" .
+
+wd:Q55781410 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1261128" ;
+	wdt:P486 "C536422" .
+
+wd:Q55781615 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0694899" ;
+	wdt:P486 "C536853" ;
+	wdt:P2892 "C1853800" .
+
+wd:Q55781735 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1859259" ;
+	wdt:P486 "C537370" .
+
+wd:Q55782044 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1855498" ;
+	wdt:P486 "C535904" .
+
+wd:Q55782106 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0266200" ;
+	wdt:P486 "C562563" .
+
+wd:Q55782114 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1855033" ;
+	wdt:P486 "C537476" .
+
+wd:Q55782106 wdt:P2892 "C3553395" .
+
+wd:Q55782230 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1849699" ;
+	wdt:P486 "C564871" .
+
+wd:Q54945893 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q713102 ;
+	wdt:P2892 "C0030790" ;
+	wdt:P486 "D034161" .
+
+wd:Q55082435 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q923339 ;
+	wdt:P2892 "C0037942" ;
+	wdt:P486 "D013128" .
+
+wd:Q54943948 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M84.0" ;
+	wdt:P486 "D017759" .
+
+wd:Q54945704 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1704375" ;
+	wdt:P486 "D063730" .
+
+wd:Q55762558 wdt:P31 wd:Q12136 ;
+	rdfs:label "永久性先天性甲状腺功能减退症不伴甲状腺肿"@zh-hans ;
+	wdt:P494 "E03.1" ;
+	wdt:P486 "C000603735" .
+
+wd:Q54932054 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D020923" .
+
+wd:Q54943954 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D020221" .
+
+wd:Q54944161 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D020808" .
+
+wd:Q54945688 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D057667" .
+
+wd:Q55082490 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D055622" .
+
+wd:Q55082504 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D044148" .
+
+wd:Q55092825 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D020198" .
+
+wd:Q55092923 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D008476" .
+
+wd:Q55092942 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D064129" .
+
+wd:Q55093037 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D007119" .
+
+wd:Q55093078 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D000069584" .
+
+wd:Q55093261 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D012183" .
+
+wd:Q55093289 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D015436" .
+
+wd:Q55093306 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D020203" .
+
+wd:Q55105368 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D019553" .
+
+wd:Q55083281 wdt:P31 wd:Q12136 ;
+	wdt:P494 "T02" ;
+	wdt:P2892 "C0016655" ;
+	wdt:P486 "D000069076" ;
+	wdt:P2892 "C1833752" , "C3805574" , "C3806283" .
+
+wd:Q54946033 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q47273 ;
+	wdt:P2892 "C0752180" ;
+	wdt:P486 "D020806" .
+
+wd:Q54932060 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0026644" ;
+	wdt:P486 "D009066" .
+
+wd:Q54932066 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0433856" ;
+	wdt:P486 "D000070625" .
+
+wd:Q54932071 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1720894" ;
+	wdt:P486 "D052801" .
+
+wd:Q54932080 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0014571" ;
+	wdt:P486 "D004839" .
+
+wd:Q54932081 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0161405" ;
+	wdt:P486 "D061247" .
+
+wd:Q54932084 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0751859" ;
+	wdt:P486 "D020263" .
+
+wd:Q55082461 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q70231003 ;
+	wdt:P2892 "C0443166" ;
+	wdt:P486 "D000070600" ;
+	wdt:P2892 "C4277746" .
+
+wd:Q54943715 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0018566" ;
+	wdt:P486 "D006228" .
+
+wd:Q54943748 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206676" ;
+	wdt:P486 "D018255" .
+
+wd:Q54943809 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0011406" ;
+	wdt:P486 "D003789" .
+
+wd:Q54943822 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2718000" ;
+	wdt:P486 "D057165" .
+
+wd:Q54943847 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1258224" ;
+	wdt:P486 "D045827" .
+
+wd:Q54943865 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0178324" ;
+	wdt:P486 "D057772" .
+
+wd:Q54943919 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0024693" ;
+	wdt:P486 "D008338" .
+
+wd:Q54943978 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0341299" ;
+	wdt:P486 "D064068" .
+
+wd:Q54944124 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0524948" ;
+	wdt:P486 "D019767" .
+
+wd:Q54944146 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0031028" ;
+	wdt:P486 "D010483" .
+
+wd:Q54944911 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0024953" ;
+	wdt:P486 "D008440" .
+
+wd:Q54945522 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0021295" ;
+	wdt:P486 "D007235" .
+
+wd:Q54945651 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0027643" ;
+	wdt:P486 "D009364" .
+
+wd:Q54945742 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0398689" ;
+	wdt:P486 "D053307" .
+
+wd:Q54945783 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0079746" ;
+	wdt:P486 "D016400" .
+
+wd:Q54945820 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0016508" ;
+	wdt:P486 "D005532" .
+
+wd:Q54945855 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0525041" ;
+	wdt:P486 "D019954" .
+
+wd:Q54945966 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0021645" ;
+	wdt:P486 "D007331" .
+
+wd:Q54946093 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0023897" ;
+	wdt:P486 "D008109" .
+
+wd:Q55082232 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0024961" ;
+	wdt:P486 "D008446" .
+
+wd:Q55082242 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1301937" ;
+	wdt:P486 "D000070558" ;
+	wdt:P2892 "C3552713" .
+
+wd:Q55082267 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1564560" ;
+	wdt:P486 "D050724" .
+
+wd:Q55082286 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0005690" ;
+	wdt:P486 "D001747" .
+
+wd:Q55082295 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0162625" ;
+	wdt:P486 "D017190" .
+
+wd:Q55082311 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0015405" ;
+	wdt:P486 "D015821" .
+
+wd:Q55082384 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C3658261" ;
+	wdt:P486 "D064146" .
+
+wd:Q55082412 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0276487" ;
+	wdt:P486 "D055761" .
+
+wd:Q55082479 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0016507" ;
+	wdt:P486 "D005531" .
+
+wd:Q55082472 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C3179000" ;
+	wdt:P486 "D060751" .
+
+wd:Q55083259 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0013504" ;
+	wdt:P486 "D004444" .
+
+wd:Q55083294 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0079943" ;
+	wdt:P486 "D016155" .
+
+wd:Q55083326 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0086468" ;
+	wdt:P486 "D049188" .
+
+wd:Q55083510 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0037771" ;
+	wdt:P486 "D020336" .
+
+wd:Q55083528 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0749165" ;
+	wdt:P486 "D059525" .
+
+wd:Q55083550 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2350449" ;
+	wdt:P486 "D055589" .
+
+wd:Q55092788 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1306710" ;
+	wdt:P486 "D005146" .
+
+wd:Q55092798 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0751814" ;
+	wdt:P486 "D020214" .
+
+wd:Q55092851 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C3178999" ;
+	wdt:P486 "D060750" .
+
+wd:Q55092864 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0027344" ;
+	wdt:P486 "D009264" .
+
+wd:Q55092959 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0282209" ;
+	wdt:P486 "D058736" .
+
+wd:Q55092991 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0521184" ;
+	wdt:P486 "D065309" .
+
+wd:Q55093014 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0017128" ;
+	wdt:P486 "D005747" .
+
+wd:Q55093051 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C3178956" ;
+	wdt:P486 "D060437" .
+
+wd:Q55093091 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0040198" ;
+	wdt:P486 "D013986" .
+
+wd:Q55093109 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0017671" ;
+	wdt:P486 "D005925" .
+
+wd:Q55093134 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0038357" ;
+	wdt:P486 "D013275" .
+
+wd:Q55093178 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0019553" ;
+	wdt:P486 "D006616" .
+
+wd:Q55093233 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1333991" ;
+	wdt:P486 "D055847" .
+
+wd:Q55093271 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0475073" ;
+	wdt:P486 "D020206" .
+
+wd:Q55093324 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0037118" ;
+	wdt:P486 "D012830" .
+
+wd:Q55082332 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q740541 ;
+	wdt:P486 "D061226" .
+
+wd:Q55224805 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206139" ;
+	wdt:P486 "D017676" .
+
+wd:Q55345767 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1863924" ;
+	wdt:P486 "C566381" .
+
+wd:Q55345776 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1857933" ;
+	wdt:P486 "C565728" .
+
+wd:Q55345784 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1847650" ;
+	wdt:P486 "C564678" .
+
+wd:Q4677921 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q27895847 ;
+	wdt:P2892 "C0023439" ;
+	wdt:P486 "D015472" .
+
+wd:Q54928207 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q515848 ;
+	wdt:P2892 "C0751815" ;
+	wdt:P486 "D020215" .
+
+wd:Q54911704 wdt:P780 wd:Q939378 .
+
+wd:Q54911678 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1178145 ;
+	wdt:P2892 "C0162870" ;
+	wdt:P486 "D017543" .
+
+wd:Q4330029 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q356194 ;
+	wdt:P924 wd:Q286949 ;
+	wdt:P2892 "C0001883" ;
+	wdt:P486 "D000402" .
+
+wd:Q54928062 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q5911033 ;
+	wdt:P2892 "C2936306" ;
+	wdt:P486 "D057971" .
+
+wd:Q4198677 wdt:P31 wd:Q12136 ;
+	wdt:P494 "E10" ;
+	wdt:P2892 "C0342257" ;
+	wdt:P486 "D048909" .
+
+wd:Q4138762 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q139307 ;
+	wdt:P494 "E55" ;
+	wdt:P2892 "C0042870" ;
+	wdt:P486 "D014808" .
+
+wd:Q54911298 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D020265" .
+
+wd:Q54911677 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D017441" .
+
+wd:Q54911710 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D017772" .
+
+wd:Q54911756 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D020264" .
+
+wd:Q54912141 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D001357" .
+
+wd:Q54912150 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D018173" .
+
+wd:Q54912199 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D057068" .
+
+wd:Q54926685 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D020196" .
+
+wd:Q54927356 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D000070656" .
+
+wd:Q54927442 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D002542" .
+
+wd:Q54931551 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D020361" .
+
+wd:Q54912204 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q228537 ;
+	wdt:P494 "S50-S59" ;
+	wdt:P2892 "C0016537" ;
+	wdt:P486 "D005543" .
+
+wd:Q4162400 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q2084566 ;
+	wdt:P2892 "C0878588" ;
+	wdt:P486 "D046628" ;
+	wdt:P2892 "C4048750" .
+
+wd:Q4421929 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q83030 ;
+	wdt:P486 "D000092223" ;
+	wdt:P780 wd:Q127664 .
+
+wd:Q54087187 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0029125" ;
+	wdt:P486 "D015418" .
+
+wd:Q4421929 wdt:P780 wd:Q6279182 .
+
+wd:Q4198677 wdt:P494 "E14" .
+
+wd:Q4330029 wdt:P2176 wd:Q132621 .
+
+wd:Q4316437 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0007684" ;
+	wdt:P486 "D002494" .
+
+wd:Q4335554 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0040411" ;
+	wdt:P486 "D014062" .
+
+wd:Q4335557 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0751620" ;
+	wdt:P486 "D016543" .
+
+wd:Q4338644 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0477611" ;
+	wdt:P486 "D055035" .
+
+wd:Q4503868 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q848382 ;
+	wdt:P2892 "C0007659" ;
+	wdt:P486 "D002485" .
+
+wd:Q4335552 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0038356" ;
+	wdt:P486 "D013274" .
+
+wd:Q4386685 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0162631" ;
+	wdt:P486 "D017196" .
+
+wd:Q54911777 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0014867" ;
+	wdt:P486 "D004932" .
+
+wd:Q12204 wdt:P31 wd:Q12136 ;
+	rdfs:label "结核"@zh-hans ;
+	wdt:P780 wd:Q718113 ;
+	wdt:P2176 wd:Q415909 ;
+	wdt:P924 wd:Q584144 ;
+	wdt:P494 "A15-A19" ;
+	wdt:P2892 "C0041296" ;
+	wdt:P486 "D014376" ;
+	wdt:P2176 wd:Q229924 ;
+	wdt:P780 wd:Q474718 ;
+	wdt:P2176 wd:Q422652 .
+
+wd:Q28693 wdt:P31 wd:Q12136 ;
+	rdfs:label "流产"@zh-hans ;
+	wdt:P494 "O03" ;
+	wdt:P2892 "C0000786" ;
+	wdt:P486 "D000022" ;
+	wdt:P2892 "C0000822" .
+
+wd:Q12204 wdt:P780 wd:Q647099 ;
+	wdt:P2176 wd:Q12751472 ;
+	wdt:P780 wd:Q15729017 ;
+	wdt:P2176 wd:Q412318 .
+
+wd:Q33121 wdt:P31 wd:Q12136 ;
+	wdt:P494 "T80.6" ;
+	wdt:P2892 "C0036830" ;
+	wdt:P486 "D012713" .
+
+wd:Q12204 wdt:P2176 wd:Q418508 , wd:Q423169 ;
+	wdt:P780 wd:Q2260058 , wd:Q693058 ;
+	wdt:P2176 wd:Q417571 .
+
+wd:Q53829 wdt:P31 wd:Q12136 ;
+	wdt:P494 "E04.1" ;
+	wdt:P2892 "C0040137" ;
+	wdt:P486 "D016606" .
+
+wd:Q52856 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q15807 ;
+	wdt:P2892 "C0206172" ;
+	wdt:P486 "D017719" .
+
+wd:Q12204 wdt:P2176 wd:Q414767 .
+
+wd:Q18579 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0751072" ;
+	wdt:P486 "D057174" .
+
+wd:Q53829 wdt:P494 "E05.1" .
+
+wd:Q16488 wdt:P31 wd:Q12136 ;
+	wdt:P494 "O90.5" ;
+	wdt:P2892 "C0271815" ;
+	wdt:P486 "D050032" .
+
+wd:Q56002 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q409468 ;
+	wdt:P494 "I47.2" ;
+	wdt:P2892 "C0042514" ;
+	wdt:P486 "D017180" ;
+	wdt:P2176 wd:Q410061 , wd:Q48566660 .
+
+wd:Q64348505 wdt:P31 wd:Q12136 ;
+	rdfs:label "软骨钙质沉着症"@zh-hans ;
+	wdt:P2892 "C0856830" ;
+	wdt:P486 "C563162" .
+
+wd:Q102245543 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0338777" ;
+	wdt:P486 "D000074607" ;
+	wdt:P2892 "C0856561" .
+
+wd:Q12206 wdt:P31 wd:Q12136 ;
+	rdfs:label "糖尿病"@zh-hans ;
+	wdt:P780 wd:Q635195 ;
+	wdt:P2176 wd:Q7939403 ;
+	wdt:P2892 "C0011849" ;
+	wdt:P486 "D003920" ;
+	wdt:P2176 wd:Q3492616 .
+
+wd:Q58833942 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D005770" .
+
+wd:Q58833940 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D005185" .
+
+wd:Q58833953 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D009303" .
+
+wd:Q58833962 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D010911" .
+
+wd:Q58833969 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D014523" .
+
+wd:Q58833980 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D018365" .
+
+wd:Q12204 wdt:P780 wd:Q35805 .
+
+wd:Q111695166 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C4038730" ;
+	wdt:P486 "D000080445" .
+
+wd:Q105224834 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D001157" .
+
+wd:Q64698726 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D020964" .
+
+wd:Q64785911 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D000074009" .
+
+wd:Q53829 wdt:P494 "E05.2" .
+
+wd:Q106303107 wdt:P31 wd:Q12136 ;
+	wdt:P486 "C564071" .
+
+wd:Q102668404 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "CL1637186" ;
+	wdt:P486 "C000656884" .
+
+wd:Q107336598 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D005887" .
+
+wd:Q66823716 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D013125" .
+
+wd:Q12206 wdt:P780 wd:Q1124286 ;
+	wdt:P2176 wd:Q19484 .
+
+wd:Q108442577 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D000077277" .
+
+wd:Q12206 wdt:P780 wd:Q653267 .
+
+wd:Q12204 wdt:P780 wd:Q38933 .
+
+wd:Q68882216 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D018601" .
+
+wd:Q12206 wdt:P2176 wd:Q2329715 .
+
+wd:Q70210922 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1846722" ;
+	wdt:P486 "C564621" ;
+	wdt:P2892 "C4225487" .
+
+wd:Q70210929 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2675518" ;
+	wdt:P486 "C567258" .
+
+wd:Q25787 wdt:P31 wd:Q12136 ;
+	rdfs:label "习惯性流产"@zh-hans ;
+	wdt:P494 "N96" ;
+	wdt:P486 "D000026" .
+
+wd:Q71785199 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D009669" .
+
+wd:Q113621026 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D000077275" .
+
+wd:Q57859955 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0338656" ;
+	wdt:P486 "D060825" .
+
+wd:Q5032577 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q18968158 ;
+	wdt:P486 "D000096704" .
+
+wd:Q5272095 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1571074 ;
+	wdt:P2892 "C0238442" ;
+	wdt:P486 "D046548" .
+
+wd:Q55950294 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q166825 ;
+	wdt:P2892 "C0029456" ;
+	wdt:P486 "D015663" ;
+	wdt:P2892 "C0029458" .
+
+wd:Q5191403 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M11" ;
+	wdt:P2892 "C0152087" ;
+	wdt:P486 "D000070657" ;
+	wdt:P2892 "C0947989" .
+
+wd:Q55950294 wdt:P2176 wd:Q408283 , wd:Q411781 .
+
+wd:Q5064113 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q7104926 ;
+	wdt:P2176 wd:Q2501772 ;
+	wdt:P2892 "C0023182" ;
+	wdt:P486 "D065634" .
+
+wd:Q4736375 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0343034" ;
+	wdt:P486 "D060487" ;
+	wdt:P2892 "C1096248" .
+
+wd:Q55950294 wdt:P2892 "C0029459" .
+
+wd:Q4959681 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D000093742" .
+
+wd:Q5013186 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D020278" .
+
+wd:Q4763280 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1266127" ;
+	wdt:P486 "C563181" .
+
+wd:Q5251124 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D000089783" .
+
+wd:Q4783806 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0268611" ;
+	wdt:P486 "C537426" .
+
+wd:Q55782410 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1848221" ;
+	wdt:P486 "C535532" ;
+	wdt:P2892 "C2746068" .
+
+wd:Q55782454 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1845117" ;
+	wdt:P486 "C536289" .
+
+wd:Q55782462 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1845070" ;
+	wdt:P486 "C564467" .
+
+wd:Q55782461 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1845073" ;
+	wdt:P486 "C564468" .
+
+wd:Q55782410 wdt:P2892 "C3806579" .
+
+wd:Q55782578 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1839842" ;
+	wdt:P486 "C564110" .
+
+wd:Q55782870 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1833341" ;
+	wdt:P486 "C563447" .
+
+wd:Q55783418 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1854146" ;
+	wdt:P486 "C565316" .
+
+wd:Q55783482 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1847196" ;
+	wdt:P486 "C535722" .
+
+wd:Q55783510 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1843758" ;
+	wdt:P486 "C564383" .
+
+wd:Q55783546 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1842485" ;
+	wdt:P486 "C564286" ;
+	wdt:P2892 "C1842486" .
+
+wd:Q55783547 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1842466" ;
+	wdt:P486 "C536471" .
+
+wd:Q55783582 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1837974" ;
+	wdt:P486 "C563923" .
+
+wd:Q55783614 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1837187" ;
+	wdt:P486 "C563838" .
+
+wd:Q55783660 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1836460" ;
+	wdt:P486 "C563750" .
+
+wd:Q55783661 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1836439" ;
+	wdt:P486 "C563747" .
+
+wd:Q55783547 wdt:P2892 "C5680251" .
+
+wd:Q55783699 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1853286" ;
+	wdt:P486 "C565221" .
+
+wd:Q55783716 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1864939" ;
+	wdt:P486 "C535381" .
+
+wd:Q55783727 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1864668" ;
+	wdt:P486 "C566437" .
+
+wd:Q55783829 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2673686" ;
+	wdt:P486 "C535796" .
+
+wd:Q55783838 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2673187" ;
+	wdt:P486 "C567086" .
+
+wd:Q55783903 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2676231" ;
+	wdt:P486 "C567306" .
+
+wd:Q55783904 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2676230" ;
+	wdt:P486 "C567305" .
+
+wd:Q55783953 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2751814" ;
+	wdt:P486 "C567834" .
+
+wd:Q55784055 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0268603" ;
+	wdt:P486 "C562678" .
+
+wd:Q55784083 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0342735" ;
+	wdt:P486 "C536005" .
+
+wd:Q55784064 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1841858" ;
+	wdt:P486 "C564215" .
+
+wd:Q55784065 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1841651" ;
+	wdt:P486 "C564200" .
+
+wd:Q55784067 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1863095" ;
+	wdt:P486 "C566304" .
+
+wd:Q55784051 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C3151237" ;
+	wdt:P486 "C563939" .
+
+wd:Q55784052 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C3151303" ;
+	wdt:P486 "C563938" .
+
+wd:Q55784083 wdt:P2892 "C1863485" .
+
+wd:Q55784067 wdt:P2892 "C3279661" .
+
+wd:Q55784064 wdt:P2892 "C3279657" .
+
+wd:Q55784285 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1866472" ;
+	wdt:P486 "C566640" ;
+	wdt:P2892 "C3280315" .
+
+wd:Q55784346 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C3281200" ;
+	wdt:P486 "C000598644" .
+
+wd:Q55784816 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1835808" ;
+	wdt:P486 "C563653" .
+
+wd:Q55785125 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0344543" ;
+	wdt:P486 "C536372" .
+
+wd:Q55789538 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0153381" ;
+	wdt:P486 "D009062" .
+
+wd:Q55789536 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0030581" ;
+	wdt:P486 "D010307" .
+
+wd:Q55789829 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2931668" ;
+	wdt:P486 "C537939" .
+
+wd:Q55790152 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2931124" ;
+	wdt:P486 "C536172" .
+
+wd:Q55790276 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2930966" ;
+	wdt:P486 "C535647" .
+
+wd:Q55790299 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0334402" ;
+	wdt:P486 "C537296" .
+
+wd:Q55790287 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2974016" ;
+	wdt:P486 "C537803" .
+
+wd:Q55790299 wdt:P2892 "C1370419" .
+
+wd:Q55790437 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0796036" ;
+	wdt:P486 "C535913" .
+
+wd:Q55790528 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2931445" ;
+	wdt:P486 "C537224" .
+
+wd:Q4820036 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1852271" ;
+	wdt:P486 "C538268" .
+
+wd:Q4740761 wdt:P31 wd:Q12136 ;
+	wdt:P494 "Q83.0" ;
+	wdt:P2892 "C0432357" ;
+	wdt:P486 "C535565" .
+
+wd:Q4865135 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0268371" ;
+	wdt:P486 "C562638" .
+
+wd:Q55949884 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0005695" ;
+	wdt:P486 "D001749" .
+
+wd:Q55950204 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1861537" ;
+	wdt:P486 "C566121" .
+
+wd:Q5156568 wdt:P31 wd:Q12136 ;
+	rdfs:label "混合型肿瘤"@zh-hans ;
+	wdt:P2892 "C0206764" ;
+	wdt:P486 "D018193" ;
+	wdt:P2892 "C1368354" .
+
+wd:Q55998730 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0403554" ;
+	wdt:P486 "C562897" .
+
+wd:Q55999515 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0796244" ;
+	wdt:P486 "C563150" .
+
+wd:Q55999570 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0403720" ;
+	wdt:P486 "C562901" .
+
+wd:Q55999595 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1834478" ;
+	wdt:P486 "C537831" .
+
+wd:Q55999714 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1853508" ;
+	wdt:P486 "C565249" ;
+	wdt:P2892 "C1853509" .
+
+wd:Q55999746 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1843302" ;
+	wdt:P486 "C536163" ;
+	wdt:P2892 "C2931123" .
+
+wd:Q54946694 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q620207 ;
+	wdt:P2892 "C0016124" ;
+	wdt:P486 "D005383" .
+
+wd:Q54971494 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q319317 ;
+	wdt:P2892 "C0161409" ;
+	wdt:P486 "D061285" .
+
+wd:Q54946623 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D055744" .
+
+wd:Q54947033 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D020204" .
+
+wd:Q54947378 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D001304" .
+
+wd:Q54974104 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D020207" .
+
+wd:Q54974218 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D020299" .
+
+wd:Q54973841 wdt:P31 wd:Q12136 ;
+	wdt:P494 "O06.4" ;
+	wdt:P2892 "C0000810" ;
+	wdt:P486 "D000027" .
+
+wd:Q55082183 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1817831 ;
+	wdt:P2892 "C0196594" ;
+	wdt:P486 "D061222" .
+
+wd:Q55042693 wdt:P780 wd:Q629444 , wd:Q86 .
+
+wd:Q54974057 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q6027402 ;
+	wdt:P2892 "C0431943" ;
+	wdt:P486 "D038061" .
+
+wd:Q9390215 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1858661" ;
+	wdt:P486 "C537964" .
+
+wd:Q9390342 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1853616" ;
+	wdt:P486 "C537579" .
+
+wd:Q9390574 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1838346" ;
+	wdt:P486 "C536574" .
+
+wd:Q9397786 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1861172" ;
+	wdt:P486 "D054556" .
+
+wd:Q7240236 wdt:P31 wd:Q12136 ;
+	rdfs:label "室性早搏"@zh-hans ;
+	wdt:P494 "I49.1" ;
+	wdt:P2892 "C0033036" ;
+	wdt:P486 "D018880" .
+
+wd:Q7259546 wdt:P31 wd:Q12136 ;
+	wdt:P494 "S27.3" ;
+	wdt:P2892 "C0273115" ;
+	wdt:P486 "D055370" .
+
+wd:Q6468402 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2931742" ;
+	wdt:P486 "C538131" .
+
+wd:Q5581314 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206722" ;
+	wdt:P486 "D018309" .
+
+wd:Q5898175 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q420098 ;
+	wdt:P486 "D006725" .
+
+wd:Q10265470 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0011085" ;
+	wdt:P486 "D003649" .
+
+wd:Q7202556 wdt:P31 wd:Q12136 ;
+	wdt:P494 "Q75.8" ;
+	wdt:P2892 "C0032209" ;
+	wdt:P486 "D010985" .
+
+wd:Q7576389 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0232981" ;
+	wdt:P486 "C536875" .
+
+wd:Q6534949 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0423738" ;
+	wdt:P486 "C535890" .
+
+wd:Q7581955 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0333873" ;
+	wdt:P486 "D065310" .
+
+wd:Q7581957 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1458142" ;
+	wdt:P486 "D051527" .
+
+wd:Q5629813 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1136321" ;
+	wdt:P486 "D039682" .
+
+wd:Q7234232 wdt:P31 wd:Q12136 ;
+	wdt:P494 "I67.83" ;
+	wdt:P2892 "C0878576" ;
+	wdt:P486 "D054038" .
+
+wd:Q7663896 wdt:P31 wd:Q12136 ;
+	rdfs:label "单纯收缩性高血压"@zh-hans ;
+	wdt:P2892 "C0221155" ;
+	wdt:P486 "D000092244" ;
+	wdt:P2892 "C0745133" .
+
+wd:Q6556693 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0406500" ;
+	wdt:P486 "C537026" .
+
+wd:Q7135955 wdt:P31 wd:Q12136 ;
+	wdt:P494 "J17.3" ;
+	wdt:P2892 "C0024118" ;
+	wdt:P486 "D008174" .
+
+wd:Q5710984 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0018915" ;
+	wdt:P486 "D006390" .
+
+wd:Q5566612 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D009375" .
+
+wd:Q7900855 wdt:P31 wd:Q12136 ;
+	wdt:P494 "D24" ;
+	wdt:P2892 "C0042065" ;
+	wdt:P486 "D014565" ;
+	wdt:P2892 "C4020809" .
+
+wd:Q5922406 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D058922" .
+
+wd:Q56014517 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0042138" ;
+	wdt:P486 "D014594" .
+
+wd:Q6279182 wdt:P31 wd:Q12136 ;
+	rdfs:label "癫痫发作"@zh-hans ;
+	wdt:P494 "P90" ;
+	wdt:P486 "D012640" .
+
+wd:Q6368059 wdt:P31 wd:Q12136 ;
+	wdt:P486 "C548029" .
+
+wd:Q5832599 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0376618" ;
+	wdt:P486 "D019446" .
+
+wd:Q7607891 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M65.3" ;
+	wdt:P2892 "C0158329" ;
+	wdt:P486 "D053682" .
+
+wd:Q6811539 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D008548" .
+
+wd:Q6960193 wdt:P31 wd:Q12136 ;
+	wdt:P486 "C538334" .
+
+wd:Q7130412 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D010190" .
+
+wd:Q56014511 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0033578" ;
+	wdt:P486 "D011471" .
+
+wd:Q6279182 wdt:P494 "R56" .
+
+wd:Q6717008 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1853371" ;
+	wdt:P486 "C565231" .
+
+wd:Q55999768 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1842160" ;
+	wdt:P486 "C564253" .
+
+wd:Q55999846 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1835934" ;
+	wdt:P486 "C563693" .
+
+wd:Q55999903 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2677481" ;
+	wdt:P486 "C567411" .
+
+wd:Q56002377 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1852127" ;
+	wdt:P486 "C565102" .
+
+wd:Q56002445 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2751322" ;
+	wdt:P486 "C567771" .
+
+wd:Q56002687 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C3151078" ;
+	wdt:P486 "C565170" .
+
+wd:Q56014502 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0007873" ;
+	wdt:P486 "D002583" .
+
+wd:Q56014508 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0031347" ;
+	wdt:P486 "D010610" .
+
+wd:Q56014520 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0546837" ;
+	wdt:P486 "D004938" .
+
+wd:Q56014555 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2931407" ;
+	wdt:P486 "C538125" .
+
+wd:Q56014558 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2931663" ;
+	wdt:P486 "C537906" .
+
+wd:Q7161811 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q713102 ;
+	wdt:P486 "D010386" .
+
+wd:Q7263138 wdt:P31 wd:Q12136 ;
+	wdt:P494 "K75.0" ;
+	wdt:P2892 "C0267830" ;
+	wdt:P486 "D046290" .
+
+wd:Q4925474 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0085313" ;
+	wdt:P486 "D016776" .
+
+wd:Q5849703 wdt:P31 wd:Q12136 ;
+	rdfs:label "链球菌感染"@zh-hans ;
+	wdt:P2892 "C0038395" ;
+	wdt:P486 "D013290" ;
+	wdt:P2892 "C0554628" .
+
+wd:Q5958205 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1861786" ;
+	wdt:P486 "C566153" .
+
+wd:Q5958530 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0342283" ;
+	wdt:P486 "C562776" .
+
+wd:Q5973974 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0023485" ;
+	wdt:P486 "D015452" .
+
+wd:Q7900855 wdt:P494 "C50" , "C68" .
+
+wd:Q55789594 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q645450 ;
+	wdt:P2892 "C0029295" ;
+	wdt:P486 "D009959" .
+
+wd:Q7193411 wdt:P31 wd:Q12136 ;
+	wdt:P494 "L81.7" ;
+	wdt:P2892 "C0263396" ;
+	wdt:P486 "C537186" .
+
+wd:Q4826344 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D000099105" .
+
+wd:Q9358981 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D020945" .
+
+wd:Q56014489 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0017416" ;
+	wdt:P486 "D005833" .
+
+wd:Q56014549 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0005396" ;
+	wdt:P486 "D001650" .
+
+wd:Q6844287 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D000099099" .
+
+wd:Q55950294 wdt:P2892 "C2674640" .
+
+wd:Q6279182 wdt:P494 "G40" .
+
+wd:Q6840464 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C3850148" ;
+	wdt:P486 "D066253" .
+
+wd:Q7830466 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0040561" ;
+	wdt:P486 "D014126" .
+
+wd:Q7607891 wdt:P494 "M65.4" .
+
+wd:Q7900855 wdt:P494 "D30.9" .
+
+wd:Q5018774 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206740" ;
+	wdt:P486 "D018333" .
+
+wd:Q55950294 wdt:P2176 wd:Q28852343 .
+
+wd:Q5114004 wdt:P31 wd:Q12136 ;
+	wdt:P494 "G93.8" ;
+	wdt:P486 "D000070627" .
+
+wd:Q4907660 wdt:P31 wd:Q12136 ;
+	wdt:P494 "K90.8" ;
+	wdt:P2892 "C2750087" ;
+	wdt:P486 "C567652" .
+
+wd:Q5171111 wdt:P31 wd:Q12136 ;
+	wdt:P494 "S05.3" ;
+	wdt:P2892 "C0339293" ;
+	wdt:P486 "D057112" .
+
+wd:Q5113903 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0677504" ;
+	wdt:P486 "D043283" .
+
+wd:Q5113970 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0011992" ;
+	wdt:P486 "D003968" ;
+	wdt:P2892 "C0473132" .
+
+wd:Q5113990 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0023474" ;
+	wdt:P486 "D015466" .
+
+wd:Q5064113 wdt:P780 wd:Q16831900 .
+
+wd:Q5149292 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0431384" ;
+	wdt:P486 "C535973" .
+
+wd:Q5172192 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0151814" ;
+	wdt:P486 "D054059" .
+
+wd:Q55789538 wdt:P2892 "C0026640" .
+
+wd:Q5191403 wdt:P494 "M10" .
+
+wd:Q5201203 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206767" ;
+	wdt:P486 "D018297" .
+
+wd:Q5064113 wdt:P780 wd:Q115743869 , wd:Q115743908 , wd:Q841878 .
+
+wd:Q5283757 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0270328" ;
+	wdt:P486 "D053207" .
+
+wd:Q5376307 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0005942" ;
+	wdt:P486 "D001849" .
+
+wd:Q1229345 wdt:P31 wd:Q12136 .
+
+wd:Q1234529 wdt:P31 wd:Q12136 .
+
+wd:Q1272217 wdt:P31 wd:Q12136 .
+
+wd:Q1307866 wdt:P31 wd:Q12136 .
+
+wd:Q1333571 wdt:P31 wd:Q12136 .
+
+wd:Q1350035 wdt:P31 wd:Q12136 .
+
+wd:Q1362494 wdt:P31 wd:Q12136 .
+
+wd:Q1367782 wdt:P31 wd:Q12136 .
+
+wd:Q1371405 wdt:P31 wd:Q12136 .
+
+wd:Q1391805 wdt:P31 wd:Q12136 .
+
+wd:Q1394711 wdt:P31 wd:Q12136 .
+
+wd:Q1410835 wdt:P31 wd:Q12136 .
+
+wd:Q1440027 wdt:P31 wd:Q12136 .
+
+wd:Q864868 wdt:P31 wd:Q12136 ;
+	rdfs:label "骨髓抑制"@zh-hans ;
+	wdt:P2892 "C0280962" .
+
+wd:Q1444550 wdt:P31 wd:Q12136 ;
+	rdfs:label "缺血性心脏病"@zh-hans ;
+	wdt:P780 wd:Q9690 ;
+	wdt:P2176 wd:Q816759 ;
+	wdt:P924 wd:Q186020 ;
+	wdt:P494 "I20-I25" ;
+	wdt:P2892 "C0010054" , "C3665365" ;
+	wdt:P924 wd:Q219067 .
+
+wd:Q1385411 wdt:P31 wd:Q12136 ;
+	rdfs:label "锥体外系副反应"@zh-hans ;
+	wdt:P2892 "C0015371" .
+
+wd:Q1016288 wdt:P31 wd:Q12136 ;
+	wdt:P494 "T85.5" ;
+	wdt:P2892 "C2242690" .
+
+wd:Q1001150 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0232197" .
+
+wd:Q922215 wdt:P31 wd:Q12136 ;
+	rdfs:label "胰岛炎"@zh-hans ;
+	wdt:P927 wd:Q728309 .
+
+wd:Q1022635 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0403434" .
+
+wd:Q1069110 wdt:P31 wd:Q12136 ;
+	rdfs:label "科塔尔综合征"@zh-hans .
+
+wd:Q815296 wdt:P31 wd:Q12136 ;
+	wdt:P494 "F43" .
+
+wd:Q813677 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1543208 ;
+	wdt:P2892 "C0581352" .
+
+wd:Q1103561 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M03.1" .
+
+wd:Q1110197 wdt:P31 wd:Q12136 ;
+	rdfs:label "急性粒细胞性白血病"@zh-hans .
+
+wd:Q1110590 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M35.7" .
+
+wd:Q1130192 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0744314" .
+
+wd:Q1035226 wdt:P31 wd:Q12136 ;
+	wdt:P494 "I86.8" ;
+	wdt:P2892 "C0221226" .
+
+wd:Q1154321 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0272388" .
+
+wd:Q1166866 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0229307" , "C1852294" , "C2751189" .
+
+wd:Q1169972 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0333416" .
+
+wd:Q1200228 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1305968" .
+
+wd:Q1200233 wdt:P31 wd:Q12136 ;
+	wdt:P494 "H02.3" , "Q10.0" .
+
+wd:Q1219219 wdt:P31 wd:Q12136 ;
+	wdt:P494 "K22.1" .
+
+wd:Q1227150 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0275688" .
+
+wd:Q1132536 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q814207 ;
+	wdt:P924 wd:Q187706 ;
+	wdt:P2892 "C0270493" , "C1704268" ;
+	wdt:P924 wd:Q208144 .
+
+wd:Q797708 wdt:P31 wd:Q12136 ;
+	wdt:P494 "G83.89" ;
+	wdt:P2892 "C0270711" .
+
+wd:Q1260186 wdt:P31 wd:Q12136 ;
+	wdt:P494 "R16.2" .
+
+wd:Q1264268 wdt:P31 wd:Q12136 ;
+	wdt:P494 "J63.5" .
+
+wd:Q1269235 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0237326" .
+
+wd:Q1132536 wdt:P924 wd:Q1147152 .
+
+wd:Q816912 wdt:P31 wd:Q12136 ;
+	wdt:P494 "G46.3" .
+
+wd:Q933444 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0022134" .
+
+wd:Q820818 wdt:P31 wd:Q12136 ;
+	wdt:P494 "I80.2" .
+
+wd:Q1248007 wdt:P31 wd:Q12136 ;
+	rdfs:label "血管闭塞"@zh-hans ;
+	wdt:P2892 "C1096458" .
+
+wd:Q1132536 wdt:P780 wd:Q1411912 .
+
+wd:Q762583 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0333355" .
+
+wd:Q1056457 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M53.1" ;
+	wdt:P2892 "C0007862" .
+
+wd:Q805070 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0429803" .
+
+wd:Q852094 wdt:P31 wd:Q12136 ;
+	rdfs:label "苦娃达"@zh-hans .
+
+wd:Q856736 wdt:P31 wd:Q12136 ;
+	rdfs:label "外国口音综合症"@zh-hans .
+
+wd:Q861814 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1167663" .
+
+wd:Q863710 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0275828" .
+
+wd:Q863725 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0270710" .
+
+wd:Q886810 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1135352" .
+
+wd:Q895414 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0334106" .
+
+wd:Q951639 wdt:P31 wd:Q12136 ;
+	wdt:P494 "F44.1" .
+
+wd:Q1132536 wdt:P780 wd:Q42844 .
+
+wd:Q979049 wdt:P31 wd:Q12136 ;
+	wdt:P494 "L53.2" ;
+	wdt:P2892 "C0085659" .
+
+wd:Q1232042 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q430892 .
+
+wd:Q786468 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q749520 ;
+	wdt:P494 "F07" ;
+	wdt:P2892 "C0549117" .
+
+wd:Q881811 wdt:P31 wd:Q12136 ;
+	wdt:P494 "L12" ;
+	wdt:P2892 "CL449041" .
+
+wd:Q1196503 wdt:P31 wd:Q12136 ;
+	rdfs:label "电脑视觉综合症"@zh-hans ;
+	wdt:P2892 "C2609092" .
+
+wd:Q905389 wdt:P31 wd:Q12136 ;
+	rdfs:label "二色视觉"@zh-hans ;
+	wdt:P2892 "C4023317" .
+
+wd:Q1199732 wdt:P31 wd:Q12136 ;
+	wdt:P494 "K13.4" ;
+	wdt:P2892 "C0302314" ;
+	wdt:P494 "E78.2" .
+
+wd:Q1106843 wdt:P31 wd:Q12136 ;
+	wdt:P494 "F15.2" ;
+	wdt:P2892 "C1386553" .
+
+wd:Q1088059 wdt:P31 wd:Q12136 ;
+	wdt:P494 "N18.5" ;
+	wdt:P2892 "C0403592" .
+
+wd:Q1132536 wdt:P780 wd:Q154430 , wd:Q177190 .
+
+wd:Q109905003 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0220697" ;
+	wdt:P486 "C562429" ;
+	wdt:P2892 "C3281053" .
+
+wd:Q109905255 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1836023" ;
+	wdt:P486 "C563703" , "C563835" ;
+	wdt:P2892 "C1837154" .
+
+wd:Q106303124 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C3279841" ;
+	wdt:P486 "C566729" .
+
+wd:Q106315554 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1850000" ;
+	wdt:P486 "C564893" .
+
+wd:Q58833963 wdt:P31 wd:Q12136 ;
+	wdt:P494 "D38.1" ;
+	wdt:P486 "D012142" .
+
+wd:Q103839148 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C4721610" ;
+	wdt:P486 "D000077216" .
+
+wd:Q112578116 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1835897" ;
+	wdt:P486 "C563678" .
+
+wd:Q115939521 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1096151" ;
+	wdt:P486 "C000604661" .
+
+wd:Q112659468 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2676254" ;
+	wdt:P486 "C580388" .
+
+wd:Q64732801 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0014324" ;
+	wdt:P486 "D004749" .
+
+wd:Q104007026 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2931188" ;
+	wdt:P486 "C536403" .
+
+wd:Q104205912 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0950124" ;
+	wdt:P486 "D030361" .
+
+wd:Q58833978 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0014170" ;
+	wdt:P486 "D016889" ;
+	wdt:P2892 "C0476089" .
+
+wd:Q58833976 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0009404" ;
+	wdt:P486 "D015179" .
+
+wd:Q58833981 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0238033" ;
+	wdt:P486 "D018567" .
+
+wd:Q58833983 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C3539878" ;
+	wdt:P486 "D064726" .
+
+wd:Q58845312 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0751075" ;
+	wdt:P486 "D004067" .
+
+wd:Q58845352 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206765" ;
+	wdt:P486 "D018204" .
+
+wd:Q111328997 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D000099103" .
+
+wd:Q62019625 wdt:P31 wd:Q12136 ;
+	wdt:P494 "K73.9" ;
+	wdt:P2892 "C0019189" ;
+	wdt:P486 "D006521" .
+
+wd:Q81214409 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1827192" ;
+	wdt:P486 "D000092562" .
+
+wd:Q67841409 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q86 ;
+	wdt:P494 "G44" ;
+	wdt:P486 "D020773" .
+
+wd:Q110419412 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1425513 ;
+	wdt:P2892 "C1275684" ;
+	wdt:P486 "D000080343" .
+
+wd:Q113372123 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0342482" ;
+	wdt:P486 "D000075262" .
+
+wd:Q113380191 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1852576" ;
+	wdt:P486 "C535468" .
+
+wd:Q109678814 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1842564" ;
+	wdt:P486 "C536956" .
+
+wd:Q56014598 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2931740" ;
+	wdt:P486 "C538125" .
+
+wd:Q56014605 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2931088" ;
+	wdt:P486 "C536023" .
+
+wd:Q137701351 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D000099298" .
+
+wd:Q98831372 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0011361" ;
+	wdt:P486 "D003751" .
+
+wd:Q65666252 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0079487" ;
+	wdt:P486 "D016481" .
+
+wd:Q98960925 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0085397" ;
+	wdt:P486 "D016871" .
+
+wd:Q56297467 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2930971" ;
+	wdt:P486 "C535663" .
+
+wd:Q107538662 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0262469" ;
+	wdt:P486 "D000083262" .
+
+wd:Q107538760 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0242129" ;
+	wdt:P486 "D000083244" .
+
+wd:Q114044181 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1275084" ;
+	wdt:P486 "C536364" .
+
+wd:Q6469117 wdt:P31 wd:Q12136 ;
+	wdt:P494 "I63.8" ;
+	wdt:P2892 "C0333559" ;
+	wdt:P486 "D059409" .
+
+wd:Q6065599 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0040524" ;
+	wdt:P486 "D014115" .
+
+wd:Q100732653 wdt:P31 wd:Q12136 ;
+	rdfs:label "2019冠状病毒病长期综合症"@zh-hans ;
+	wdt:P494 "U09.9" ;
+	wdt:P2892 "C5433293" ;
+	wdt:P486 "D000094024" .
+
+wd:Q5437240 wdt:P31 wd:Q12136 ;
+	rdfs:label "脂肪坏死"@zh-hans ;
+	wdt:P2892 "C0015668" ;
+	wdt:P486 "D005218" .
+
+wd:Q84955506 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0796118" ;
+	wdt:P486 "C536323" .
+
+wd:Q7900355 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0085395" ;
+	wdt:P486 "D016869" .
+
+wd:Q6931143 wdt:P31 wd:Q12136 ;
+	wdt:P494 "C56.9" ;
+	wdt:P2892 "C0010635" ;
+	wdt:P486 "D018291" .
+
+wd:Q6993502 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1332133" ;
+	wdt:P486 "D009357" .
+
+wd:Q6947906 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0151744" ;
+	wdt:P486 "D017202" .
+
+wd:Q7920253 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1701940" ;
+	wdt:P486 "D053717" .
+
+wd:Q6743514 wdt:P31 wd:Q12136 ;
+	wdt:P494 "C78.2" ;
+	wdt:P2892 "C0080032" ;
+	wdt:P486 "D016066" .
+
+wd:Q7943634 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0269084" ;
+	wdt:P486 "D054515" .
+
+wd:Q7253115 wdt:P31 wd:Q12136 ;
+	wdt:P494 "L28.2" ;
+	wdt:P2892 "C0263352" ;
+	wdt:P486 "C537169" .
+
+wd:Q6993502 wdt:P2892 "C0027609" , "C0030623" .
+
+wd:Q7002244 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0600467" ;
+	wdt:P486 "D020078" .
+
+wd:Q7002720 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206730" ;
+	wdt:P486 "D018321" .
+
+wd:Q7004538 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206769" ;
+	wdt:P486 "D018326" .
+
+wd:Q7045267 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0232347" ;
+	wdt:P486 "D054318" .
+
+wd:Q7049641 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0016665" ;
+	wdt:P486 "D005599" .
+
+wd:Q7077950 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0028879" ;
+	wdt:P486 "D009807" ;
+	wdt:P2892 "C0341038" .
+
+wd:Q7995600 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1532959" ;
+	wdt:P486 "D000080363" .
+
+wd:Q9190342 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1859783" ;
+	wdt:P486 "C536367" .
+
+wd:Q7193411 wdt:P2892 "C0406515" .
+
+wd:Q6807316 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q416975 ;
+	wdt:P2892 "C0206693" ;
+	wdt:P486 "D018276" .
+
+wd:Q7161799 wdt:P31 wd:Q12136 ;
+	rdfs:label "盆底功能障碍"@zh-hans ;
+	wdt:P2892 "C3178892" ;
+	wdt:P486 "D059952" ;
+	wdt:P2892 "C4041537" .
+
+wd:Q7193412 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206738" ;
+	wdt:P486 "D018331" ;
+	wdt:P2892 "C0474967" .
+
+wd:Q6822340 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q139307 ;
+	wdt:P2892 "C0005944" ;
+	wdt:P486 "D001851" .
+
+wd:Q6132707 wdt:P31 wd:Q12136 ;
+	rdfs:label "血小板减少性紫癜"@zh-hans ;
+	wdt:P2892 "C0857305" ;
+	wdt:P486 "D011696" .
+
+wd:Q7248877 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1514481" ;
+	wdt:P486 "C548085" .
+
+wd:Q7254511 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2931031" ;
+	wdt:P486 "C535824" .
+
+wd:Q5446462 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206649" ;
+	wdt:P486 "D018225" .
+
+wd:Q9347519 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1859805" ;
+	wdt:P486 "C565955" .
+
+wd:Q6717006 wdt:P31 wd:Q12136 ;
+	rdfs:label "肾囊肿-糖尿病综合征"@zh-hans ;
+	wdt:P2892 "C0431693" ;
+	wdt:P486 "C535520" .
+
+wd:Q56014520 wdt:P2892 "C0014859" .
+
+wd:Q1444550 wdt:P2176 wd:Q179748 ;
+	wdt:P924 wd:Q2008344 .
+
+wd:Q1385411 wdt:P2892 "C0234133" .
+
+wd:Q1444550 wdt:P2176 wd:Q907104 , wd:Q575062 ;
+	wdt:P924 wd:Q7834705 .
+
+wd:Q1412657 wdt:P31 wd:Q12136 ;
+	rdfs:label "瘀点"@zh-hans ;
+	wdt:P494 "R23.3" ;
+	wdt:P2892 "C0031256" .
+
+wd:Q1410851 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M72.9" ;
+	wdt:P2892 "C0016048" .
+
+wd:Q1444550 wdt:P2176 wd:Q954845 ;
+	wdt:P924 wd:Q718113 ;
+	wdt:P2176 wd:Q3221044 ;
+	wdt:P924 wd:Q2462253 .
+
+wd:Q1436099 wdt:P31 wd:Q12136 ;
+	wdt:P494 "F52.7" ;
+	wdt:P2892 "C0233619" .
+
+wd:Q1280852 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0233613" .
+
+wd:Q1444550 wdt:P2176 wd:Q50430353 .
+
+wd:Q1343590 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0265512" .
+
+wd:Q1345858 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1510420" .
+
+wd:Q1444550 wdt:P2176 wd:Q18216 .
+
+wd:Q1363662 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1274760" .
+
+wd:Q1399293 wdt:P31 wd:Q12136 ;
+	wdt:P494 "I67.3" .
+
+wd:Q1422574 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0018121" .
+
+wd:Q1444550 wdt:P780 wd:Q180762 ;
+	wdt:P2176 wd:Q410237 , wd:Q410374 .
+
+wd:Q1297985 wdt:P31 wd:Q12136 ;
+	rdfs:label "脑疝"@zh-hans ;
+	wdt:P494 "G93.5" ;
+	wdt:P2892 "C0553686" .
+
+wd:Q1275814 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q213373 ;
+	wdt:P494 "T62.2" ;
+	wdt:P2892 "CL494895" , "CL527598" ;
+	wdt:P780 wd:Q657516 .
+
+wd:Q1344603 wdt:P31 wd:Q12136 ;
+	wdt:P494 "A04.3" ;
+	wdt:P2892 "C0151565" , "C0276098" .
+
+wd:Q1275814 wdt:P780 wd:Q3363589 .
+
+wd:Q1365091 wdt:P31 wd:Q12136 ;
+	rdfs:label "脂肪肝"@zh-hans ;
+	wdt:P494 "E88.8" .
+
+wd:Q1444550 wdt:P2176 wd:Q421700 , wd:Q423401 , wd:Q415366 ;
+	wdt:P780 wd:Q186889 .
+
+wd:Q18967499 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q185765 ;
+	wdt:P2892 "C0022373" ;
+	wdt:P486 "D007579" .
+
+wd:Q11793793 wdt:P31 wd:Q12136 ;
+	wdt:P494 "C97" ;
+	wdt:P2892 "C0027663" ;
+	wdt:P486 "D009378" .
+
+wd:Q18966851 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q233345 ;
+	wdt:P2892 "C0020875" ;
+	wdt:P486 "D007077" .
+
+wd:Q12829863 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0039504" ;
+	wdt:P486 "D013708" .
+
+wd:Q19597369 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q2601832 ;
+	wdt:P2892 "C0085423" ;
+	wdt:P486 "D016905" ;
+	wdt:P2176 wd:Q2602246 .
+
+wd:Q17141201 wdt:P31 wd:Q12136 ;
+	rdfs:label "蘚"@zh-hans ;
+	wdt:P2176 wd:Q5134338 ;
+	wdt:P2892 "C0040247" ;
+	wdt:P486 "D014005" .
+
+wd:Q16935263 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q2552927 ;
+	wdt:P2892 "C0085394" ;
+	wdt:P486 "D016868" .
+
+wd:Q11793790 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0919267" ;
+	wdt:P486 "D010051" .
+
+wd:Q19597369 wdt:P2176 wd:Q2736126 , wd:Q2736402 .
+
+wd:Q17141201 wdt:P2176 wd:Q850729 .
+
+wd:Q14515911 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0040441" ;
+	wdt:P486 "D014082" .
+
+wd:Q14523576 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0032994" ;
+	wdt:P486 "D011274" .
+
+wd:Q19597369 wdt:P2176 wd:Q20817140 .
+
+wd:Q10863066 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D010854" .
+
+wd:Q11898125 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1863918" ;
+	wdt:P486 "C536967" .
+
+wd:Q17141201 wdt:P2176 wd:Q5643439 .
+
+wd:Q15460254 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q5276473 ;
+	wdt:P486 "D004404" .
+
+wd:Q19597369 wdt:P2176 wd:Q7636169 .
+
+wd:Q17146775 wdt:P31 wd:Q12136 ;
+	rdfs:label "高丙球蛋白血症"@zh-hans ;
+	wdt:P2892 "C0020455" ;
+	wdt:P486 "D006942" ;
+	wdt:P2892 "C0151669" , "C0541985" , "C2048011" .
+
+wd:Q18966873 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0029002" ;
+	wdt:P486 "D015827" .
+
+wd:Q18967534 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0035112" ;
+	wdt:P486 "D012088" .
+
+wd:Q18968050 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C3714739" ;
+	wdt:P486 "D018301" .
+
+wd:Q18968076 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206712" ;
+	wdt:P486 "D018298" .
+
+wd:Q18968172 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206609" ;
+	wdt:P486 "D018178" .
+
+wd:Q18975177 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0085308" ;
+	wdt:P486 "D016770" .
+
+wd:Q18975331 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0026945" ;
+	wdt:P486 "D009180" .
+
+wd:Q18975697 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0751456" ;
+	wdt:P486 "D011596" .
+
+wd:Q18975722 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206607" ;
+	wdt:P486 "D018176" .
+
+wd:Q18975859 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0752304" ;
+	wdt:P486 "D020925" .
+
+wd:Q18976000 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0007128" ;
+	wdt:P486 "D002287" .
+
+wd:Q11921610 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0015676" ;
+	wdt:P486 "D005222" .
+
+wd:Q19597369 wdt:P2176 wd:Q3231623 .
+
+wd:Q19000401 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0006008" ;
+	wdt:P486 "D001882" .
+
+wd:Q19000425 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0031149" ;
+	wdt:P486 "D010534" .
+
+wd:Q19000482 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0376549" ;
+	wdt:P486 "D019349" .
+
+wd:Q19000862 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0238461" ;
+	wdt:P486 "D065646" .
+
+wd:Q19597369 wdt:P2176 wd:Q3307752 .
+
+wd:Q16116595 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D007414" .
+
+wd:Q17146775 wdt:P2892 "C1306857" .
+
+wd:Q19597369 wdt:P2176 wd:Q3664175 .
+
+wd:Q16144052 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D000096702" .
+
+wd:Q13641482 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q9377 ;
+	wdt:P2892 "C0022665" ;
+	wdt:P486 "D007680" .
+
+wd:Q16965421 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0333324" ;
+	wdt:P486 "D000072663" ;
+	wdt:P2892 "C1709337" .
+
+wd:Q10889918 wdt:P31 wd:Q12136 ;
+	wdt:P494 "O20.0" ;
+	wdt:P2892 "C0000821" ;
+	wdt:P486 "D000033" .
+
+wd:Q18140710 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D002573" .
+
+wd:Q18477691 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D016781" .
+
+wd:Q16994031 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1835140" ;
+	wdt:P486 "C563602" ;
+	wdt:P2892 "C3280586" .
+
+wd:Q17119515 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q56014002 ;
+	wdt:P2892 "C1969653" ;
+	wdt:P486 "C548078" .
+
+wd:Q18966766 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D016720" .
+
+wd:Q18975594 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D007228" .
+
+wd:Q17004056 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1401136" ;
+	wdt:P486 "D065167" .
+
+wd:Q17048613 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0751877" ;
+	wdt:P486 "D020279" .
+
+wd:Q19597369 wdt:P2176 wd:Q3976824 .
+
+wd:Q17067160 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0015402" ;
+	wdt:P486 "D005130" .
+
+wd:Q17133302 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1832434" ;
+	wdt:P486 "C536713" .
+
+wd:Q18968218 wdt:P31 wd:Q12136 ;
+	wdt:P494 "P00-P96" ;
+	wdt:P2892 "C0021290" ;
+	wdt:P486 "D007232" .
+
+wd:Q17144183 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0040445" ;
+	wdt:P486 "D014086" .
+
+wd:Q15124212 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0242379" ;
+	wdt:P486 "D008175" .
+
+wd:Q13616307 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M93.9" ;
+	wdt:P2892 "C0029420" ;
+	wdt:P486 "D010007" .
+
+wd:Q17141201 wdt:P2176 wd:Q2392530 .
+
+wd:Q13121526 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q410374 ;
+	wdt:P494 "R10.4" ;
+	wdt:P2892 "C0232488" ;
+	wdt:P486 "D003085" ;
+	wdt:P2176 wd:Q413762 .
+
+wd:Q18921119 wdt:P31 wd:Q12136 ;
+	wdt:P494 "D48.5" ;
+	wdt:P2892 "C0037286" ;
+	wdt:P486 "D012878" .
+
+wd:Q16935263 wdt:P2176 wd:Q417968 .
+
+wd:Q12353899 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0032870" ;
+	wdt:P486 "D011213" .
+
+wd:Q15666414 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1059724 ;
+	wdt:P2892 "C0265654" ;
+	wdt:P486 "D000070604" ;
+	wdt:P2892 "C1406822" .
+
+wd:Q17141201 wdt:P2176 wd:Q3359058 .
+
+wd:Q16935263 wdt:P2176 wd:Q808845 .
+
+wd:Q11883686 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q116275 ;
+	wdt:P2176 wd:Q407988 ;
+	wdt:P2892 "C0014550" ;
+	wdt:P486 "D004831" .
+
+wd:Q15714148 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q11090 ;
+	wdt:P486 "C562842" .
+
+wd:Q16935263 wdt:P2176 wd:Q1082945 .
+
+wd:Q13632630 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0040136" ;
+	wdt:P486 "D013964" .
+
+wd:Q11546777 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0031087" ;
+	wdt:P486 "D010509" .
+
+wd:Q13257137 wdt:P31 wd:Q12136 ;
+	wdt:P494 "C44" ;
+	wdt:P2892 "C0149722" ;
+	wdt:P486 "D018327" .
+
+wd:Q16001403 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2717990" ;
+	wdt:P486 "D057108" .
+
+wd:Q16006998 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0006035" ;
+	wdt:P486 "D001899" .
+
+wd:Q18975915 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q112075583 ;
+	wdt:P2892 "C0018671" ;
+	wdt:P486 "D006258" .
+
+wd:Q18350119 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "CL508662" ;
+	wdt:P486 "C000629404" .
+
+wd:Q12666788 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "CL793114" ;
+	wdt:P486 "D000077162" .
+
+wd:Q19597369 wdt:P2176 wd:Q15646788 .
+
+wd:Q18455817 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0272174" ;
+	wdt:P486 "C562721" .
+
+wd:Q19000832 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q3611854 ;
+	wdt:P486 "C538559" .
+
+wd:Q17141201 wdt:P2176 wd:Q407883 , wd:Q410534 , wd:Q411229 , wd:Q413586 , wd:Q415238 , wd:Q415259 , wd:Q416096 , wd:Q417141 , wd:Q419468 .
+
+wd:Q119660 wdt:P31 wd:Q12136 .
+
+wd:Q241827 wdt:P31 wd:Q12136 .
+
+wd:Q260021 wdt:P31 wd:Q12136 .
+
+wd:Q300664 wdt:P31 wd:Q12136 .
+
+wd:Q305641 wdt:P31 wd:Q12136 .
+
+wd:Q319763 wdt:P31 wd:Q12136 .
+
+wd:Q332590 wdt:P31 wd:Q12136 .
+
+wd:Q424302 wdt:P31 wd:Q12136 .
+
+wd:Q441094 wdt:P31 wd:Q12136 .
+
+wd:Q465016 wdt:P31 wd:Q12136 .
+
+wd:Q568321 wdt:P31 wd:Q12136 .
+
+wd:Q228085 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q7891 .
+
+wd:Q462833 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q11072 .
+
+wd:Q397554 wdt:P31 wd:Q12136 ;
+	wdt:P494 "G47" .
+
+wd:Q19597369 wdt:P2176 wd:Q2467555 .
+
+wd:Q21087540 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2938905" ;
+	wdt:P486 "D059333" .
+
+wd:Q19597369 wdt:P2176 wd:Q2552927 , wd:Q2555060 , wd:Q2601530 .
+
+wd:Q25324230 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q9618 ;
+	wdt:P494 "K86.2" ;
+	wdt:P2892 "C0030283" ;
+	wdt:P486 "D010181" ;
+	wdt:P2892 "C1860394" .
+
+wd:Q690210 wdt:P31 wd:Q12136 ;
+	wdt:P494 "R43" .
+
+wd:Q360035 wdt:P31 wd:Q12136 ;
+	rdfs:label "Dhat症候群"@zh-hans ;
+	wdt:P494 "F48.8" .
+
+wd:Q25303605 wdt:P31 wd:Q12136 ;
+	rdfs:label "高血压危象"@zh-hans ;
+	wdt:P486 "D000096003" .
+
+wd:Q26805194 wdt:P31 wd:Q12136 ;
+	wdt:P494 "K66.8" ;
+	wdt:P2892 "C0521607" ;
+	wdt:P486 "D056627" .
+
+wd:Q23929670 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1257931" ;
+	wdt:P486 "D001943" .
+
+wd:Q28823477 wdt:P31 wd:Q12136 ;
+	wdt:P494 "F60.8" ;
+	wdt:P2892 "C0030631" ;
+	wdt:P486 "D010324" .
+
+wd:Q48988765 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0877172" ;
+	wdt:P486 "D046748" .
+
+wd:Q48996667 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1841809" ;
+	wdt:P486 "C564209" .
+
+wd:Q21110016 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D065306" .
+
+wd:Q42293706 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0035320" ;
+	wdt:P486 "D015861" ;
+	wdt:P2892 "C0474354" .
+
+wd:Q25324086 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D000076385" .
+
+wd:Q25339739 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D000098542" .
+
+wd:Q26781137 wdt:P31 wd:Q12136 ;
+	wdt:P494 "I49.3" ;
+	wdt:P2892 "C0151636" ;
+	wdt:P486 "D018879" .
+
+wd:Q30015589 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D004489" .
+
+wd:Q30753528 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D000092129" .
+
+wd:Q19597369 wdt:P2176 wd:Q163901 , wd:Q193045 , wd:Q201928 , wd:Q207442 , wd:Q244150 , wd:Q256602 .
+
+wd:Q24869796 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C3266164" ;
+	wdt:P486 "D000094222" .
+
+wd:Q19597369 wdt:P2176 wd:Q408529 , wd:Q411417 , wd:Q411447 , wd:Q411646 , wd:Q413728 , wd:Q415167 , wd:Q415336 , wd:Q415739 , wd:Q415843 , wd:Q417897 , wd:Q417968 , wd:Q418546 , wd:Q419521 , wd:Q421713 , wd:Q421951 , wd:Q422442 , wd:Q422482 , wd:Q422669 , wd:Q424193 , wd:Q424940 .
+
+wd:Q27698000 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1854013" ;
+	wdt:P486 "C565299" .
+
+wd:Q20571563 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q841423 ;
+	wdt:P2892 "C0749794" ;
+	wdt:P486 "D038062" .
+
+wd:Q19597369 wdt:P2176 wd:Q549803 .
+
+wd:Q30397754 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0015927" ;
+	wdt:P486 "D005313" .
+
+wd:Q19597369 wdt:P2176 wd:Q808845 .
+
+wd:Q21652028 wdt:P31 wd:Q12136 ;
+	wdt:P494 "T66" ;
+	wdt:P2892 "C0034535" ;
+	wdt:P486 "D011832" ;
+	wdt:P2892 "C1527225" .
+
+wd:Q43252414 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1851503" ;
+	wdt:P486 "C535510" .
+
+wd:Q43261065 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0751337" ;
+	wdt:P486 "D000083143" .
+
+wd:Q19597369 wdt:P2176 wd:Q976559 , wd:Q1050019 , wd:Q1052672 .
+
+wd:Q53844611 wdt:P31 wd:Q12136 ;
+	wdt:P486 "D000099067" .
+
+wd:Q19597369 wdt:P2176 wd:Q1082945 .
+
+wd:Q43462865 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2931143" ;
+	wdt:P486 "C536261" .
+
+wd:Q20387775 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0264515" ;
+	wdt:P486 "D000071067" .
+
+wd:Q25458308 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C2242710" ;
+	wdt:P486 "D059325" .
+
+wd:Q53844576 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0040422" ;
+	wdt:P486 "D014067" .
+
+wd:Q30892676 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0026953" ;
+	wdt:P486 "D015651" .
+
+wd:Q30900016 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0206064" ;
+	wdt:P486 "D017566" ;
+	wdt:P2892 "C2827469" .
+
+wd:Q30927439 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0476171" ;
+	wdt:P486 "D018460" .
+
+wd:Q47200750 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1536085" ;
+	wdt:P486 "D057092" .
+
+wd:Q19597369 wdt:P2176 wd:Q1453445 , wd:Q1639595 , wd:Q1639616 , wd:Q1758380 .
+
+wd:Q28501458 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0243001" ;
+	wdt:P486 "D018784" .
+
+wd:Q52601023 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q2192288 ;
+	wdt:P2892 "C0042995" ;
+	wdt:P486 "D014846" .
+
+wd:Q47108021 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q180284 ;
+	wdt:P494 "K10.9" ;
+	wdt:P2892 "C0022362" ;
+	wdt:P486 "D007571" .
+
+wd:Q40649915 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0008519" ;
+	wdt:P486 "D002828" .
+
+wd:Q19597369 wdt:P2176 wd:Q2319020 , wd:Q2325775 , wd:Q2353907 , wd:Q2365016 .
+
+wd:Q16935263 wdt:P2176 wd:Q2325775 .
+
+wd:Q757676 wdt:P31 wd:Q12136 .
+
+wd:Q827216 wdt:P31 wd:Q12136 .
+
+wd:Q840910 wdt:P31 wd:Q12136 .
+
+wd:Q991897 wdt:P31 wd:Q12136 .
+
+wd:Q1003534 wdt:P31 wd:Q12136 .
+
+wd:Q1036625 wdt:P31 wd:Q12136 .
+
+wd:Q1048858 wdt:P31 wd:Q12136 .
+
+wd:Q1087232 wdt:P31 wd:Q12136 .
+
+wd:Q1093388 wdt:P31 wd:Q12136 .
+
+wd:Q1095925 wdt:P31 wd:Q12136 .
+
+wd:Q1097302 wdt:P31 wd:Q12136 .
+
+wd:Q1110041 wdt:P31 wd:Q12136 .
+
+wd:Q1111014 wdt:P31 wd:Q12136 .
+
+wd:Q1185316 wdt:P31 wd:Q12136 .
+
+wd:Q1223924 wdt:P31 wd:Q12136 .
+
+wd:Q1228633 wdt:P31 wd:Q12136 .
+
+wd:Q196781 wdt:P31 wd:Q12136 ;
+	wdt:P494 "M50.1" ;
+	wdt:P2892 "C0543612" .
+
+wd:Q322370 wdt:P31 wd:Q12136 ;
+	wdt:P494 "Q10.3" .
+
+wd:Q486485 wdt:P31 wd:Q12136 ;
+	wdt:P2176 wd:Q27281933 ;
+	wdt:P494 "R60.1" .
+
+wd:Q737712 wdt:P31 wd:Q12136 ;
+	wdt:P494 "Q89.0" .
+
+wd:Q472664 wdt:P31 wd:Q12136 ;
+	wdt:P494 "E00" .
+
+wd:Q448747 wdt:P31 wd:Q12136 ;
+	wdt:P494 "J67" .
+
+wd:Q125466 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0233729" .
+
+wd:Q142807 wdt:P31 wd:Q12136 ;
+	wdt:P494 "H43.9" .
+
+wd:Q580754 wdt:P31 wd:Q12136 ;
+	wdt:P494 "F60.7" ;
+	wdt:P2892 "C1404989" .
+
+wd:Q656199 wdt:P31 wd:Q12136 ;
+	wdt:P494 "G24.1" .
+
+wd:Q397554 wdt:P494 "G47.0" , "F10.4" .
+
+wd:Q737712 wdt:P494 "D73.0" .
+
+wd:Q390217 wdt:P31 wd:Q12136 ;
+	wdt:P494 "O92.5" .
+
+wd:Q621053 wdt:P31 wd:Q12136 ;
+	wdt:P494 "F40.1" .
+
+wd:Q290213 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0339488" .
+
+wd:Q341201 wdt:P31 wd:Q12136 ;
+	wdt:P494 "K31.8" .
+
+wd:Q332768 wdt:P31 wd:Q12136 ;
+	rdfs:label "幸存者内疚"@zh-hans .
+
+wd:Q335941 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0919974" .
+
+wd:Q341201 wdt:P494 "K86.8" .
+
+wd:Q695954 wdt:P31 wd:Q12136 ;
+	wdt:P494 "F45.4" .
+
+wd:Q390217 wdt:P494 "O92.3" .
+
+wd:Q390434 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1836741" .
+
+wd:Q196788 wdt:P31 wd:Q12136 ;
+	wdt:P494 "D06" ;
+	wdt:P2892 "C0206708" .
+
+wd:Q447828 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0311227" .
+
+wd:Q476814 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1321782" .
+
+wd:Q512942 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0234488" .
+
+wd:Q517782 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0239161" .
+
+wd:Q545403 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C1859408" .
+
+wd:Q550061 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0856169" .
+
+wd:Q557009 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C0265228" .
+
+wd:Q420915 wdt:P31 wd:Q12136 ;
+	wdt:P494 "I73.8" ;
+	wdt:P2892 "C1332141" .
+
+wd:Q609066 wdt:P31 wd:Q12136 ;
+	wdt:P2892 "C3495892" .
+
+wd:Q621053 wdt:P494 "F40.8" .
+
+wd:Q691112 wdt:P31 wd:Q12136 ;
+	rdfs:label "集中营幸存者"@zh-hans .
+
+wd:Q738101 wdt:P31 wd:Q12136 ;
+	wdt:P494 "A51.3" .
+
+wd:Q734123 wdt:P31 wd:Q12136 ;
+	wdt:P494 "R41.4" ;
+	wdt:P2892 "C0840927" .
+
+wd:Q377493 wdt:P31 wd:Q12136 ;
+	rdfs:label "选择性缄默症"@zh-hans ;
+	wdt:P494 "F94.0" ;
+	wdt:P2892 "C0236818" .
+
+wd:Q586878 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q43801 ;
+	wdt:P494 "P38" ;
+	wdt:P2892 "C0495410" .
+
+wd:Q260688 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q594066 .
+
+wd:Q462833 wdt:P780 wd:Q130741 , wd:Q189643 , wd:Q1895873 , wd:Q58184039 .
+
+wd:Q188611 wdt:P31 wd:Q12136 ;
+	rdfs:label "轻躁狂"@zh-hans ;
+	wdt:P494 "F30.0" ;
+	wdt:P2892 "C0241934" .
+
+wd:Q499857 wdt:P31 wd:Q12136 ;
+	wdt:P494 "D17" ;
+	wdt:P2892 "C0205822" .
+
+wd:Q629515 wdt:P31 wd:Q12136 ;
+	rdfs:label "兴奋剂型精神病"@zh-hans ;
+	wdt:P494 "F14.5" , "F15.5" .
+
+wd:Q423927 wdt:P31 wd:Q12136 ;
+	rdfs:label "维生素过多症"@zh-hans ;
+	wdt:P494 "E67" ;
+	wdt:P2892 "C0342951" .
+
+wd:Q740731 wdt:P31 wd:Q12136 ;
+	wdt:P494 "T78.2" ;
+	wdt:P2892 "C0259756" .
+
+wd:Q471812 wdt:P31 wd:Q12136 ;
+	wdt:P494 "H53.5" ;
+	wdt:P2892 "C0009398" .
+
+wd:Q138885 wdt:P31 wd:Q12136 ;
+	wdt:P494 "A09" ;
+	wdt:P2892 "C0277528" .
+
+wd:Q653383 wdt:P31 wd:Q12136 ;
+	wdt:P780 wd:Q81938 ;
+	wdt:P494 "M20.0" ;
+	wdt:P780 wd:Q574491 .
+
+wd:Q196788 wdt:P494 "N87" .
+
+wd:Q486485 wdt:P2176 wd:Q221520 , wd:Q275926 , wd:Q388801 , wd:Q418571 , wd:Q419652 , wd:Q419948 , wd:Q419995 , wd:Q421119 , wd:Q422185 , wd:Q422188 , wd:Q423930 , wd:Q425289 , wd:Q1078392 , wd:Q1169164 , wd:Q1169561 , wd:Q2072745 , wd:Q2603363 , wd:Q2889971 , wd:Q3791957 , wd:Q3837481 , wd:Q5199066 , wd:Q5986553 .
+
+wd:Q495068 wdt:P31 wd:Q12136 ;
+	rdfs:label "托德麻痹"@zh-hans ;
+	wdt:P494 "G83.8" ;
+	wdt:P2892 "C0234544" .
+
+wd:Q486485 wdt:P2176 wd:Q6823919 .
+
+wd:Q555868 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q2536335 ;
+	wdt:P2892 "C0263962" .
+
+wd:Q486485 wdt:P2176 wd:Q7227099 , wd:Q7272222 , wd:Q11426176 .
+
+wd:Q420804 wdt:P31 wd:Q12136 ;
+	wdt:P494 "L90.4" ;
+	wdt:P2892 "C0029805" .

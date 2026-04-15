@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cmd /c \"set SILICONFLOW_API_KEY=sk-test123 && echo %SILICONFLOW_API_KEY%\")"
+    ]
+  }
+}

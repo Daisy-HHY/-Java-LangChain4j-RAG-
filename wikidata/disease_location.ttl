@@ -1,0 +1,466 @@
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix hint: <http://www.bigdata.com/queryHints#> .
+@prefix bd: <http://www.bigdata.com/rdf#> .
+@prefix bds: <http://www.bigdata.com/rdf/search#> .
+@prefix psn: <http://www.wikidata.org/prop/statement/value-normalized/> .
+@prefix pqn: <http://www.wikidata.org/prop/qualifier/value-normalized/> .
+@prefix prn: <http://www.wikidata.org/prop/reference/value-normalized/> .
+@prefix mwapi: <https://www.mediawiki.org/ontology#API/> .
+@prefix gas: <http://www.bigdata.com/rdf/gas#> .
+@prefix wdsubgraph: <https://query.wikidata.org/subgraph/> .
+@prefix wdtn: <http://www.wikidata.org/prop/direct-normalized/> .
+@prefix psv: <http://www.wikidata.org/prop/statement/value/> .
+@prefix ps: <http://www.wikidata.org/prop/statement/> .
+@prefix pqv: <http://www.wikidata.org/prop/qualifier/value/> .
+@prefix pq: <http://www.wikidata.org/prop/qualifier/> .
+@prefix prv: <http://www.wikidata.org/prop/reference/value/> .
+@prefix pr: <http://www.wikidata.org/prop/reference/> .
+@prefix wdno: <http://www.wikidata.org/prop/novalue/> .
+@prefix p: <http://www.wikidata.org/prop/> .
+@prefix wikibase: <http://wikiba.se/ontology#> .
+@prefix wdata: <http://www.wikidata.org/wiki/Special:EntityData/> .
+@prefix wds: <http://www.wikidata.org/entity/statement/> .
+@prefix wdv: <http://www.wikidata.org/value/> .
+@prefix wdref: <http://www.wikidata.org/reference/> .
+@prefix schema: <http://schema.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix geof: <http://www.opengis.net/def/geosparql/function/> .
+@prefix mediawiki: <https://www.mediawiki.org/ontology#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix wikibaseqs: <http://wikiba.se/queryService#> .
+
+wd:Q116584884 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q15807 .
+
+wd:Q15807 rdfs:label "脚"@zh-hans .
+
+wd:Q13641482 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q9377 .
+
+wd:Q9377 rdfs:label "肾"@zh-hans .
+
+wd:Q21112607 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q133105 .
+
+wd:Q133105 rdfs:label "腿"@zh-hans .
+
+wd:Q586878 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q43801 .
+
+wd:Q43801 rdfs:label "肚脐"@zh-hans .
+
+wd:Q228085 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q7891 .
+
+wd:Q7891 rdfs:label "呼吸系统"@zh-hans .
+
+wd:Q138496097 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q9612 .
+
+wd:Q9612 rdfs:label "子宫"@zh-hans .
+
+wd:Q1069694 wdt:P31 wd:Q12136 ;
+	rdfs:label "子宫后倾"@zh-hans ;
+	wdt:P927 wd:Q9612 .
+
+wd:Q52856 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q15807 .
+
+wd:Q2521341 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q15807 .
+
+wd:Q1129121 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q9371 .
+
+wd:Q9371 rdfs:label "脾脏"@zh-hans .
+
+wd:Q3278314 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q33767 .
+
+wd:Q33767 rdfs:label "手"@zh-hans .
+
+wd:Q65081603 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q553 .
+
+wd:Q553 rdfs:label "牙齿"@zh-hans .
+
+wd:Q10944150 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q9384 .
+
+wd:Q9384 rdfs:label "睾丸"@zh-hans .
+
+wd:Q2203194 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q9606 .
+
+wd:Q9606 rdfs:label "脊髓"@zh-hans .
+
+wd:Q3740798 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q5880 .
+
+wd:Q3928626 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q9103 .
+
+wd:Q786468 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q749520 .
+
+wd:Q749520 rdfs:label "额叶"@zh-hans .
+
+wd:Q54931978 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q318773 .
+
+wd:Q318773 rdfs:label "外展神经"@zh-hans .
+
+wd:Q1620206 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q182228 .
+
+wd:Q182228 rdfs:label "脑干"@zh-hans .
+
+wd:Q54971494 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q319317 .
+
+wd:Q319317 rdfs:label "前庭耳蜗神经"@zh-hans .
+
+wd:Q10913009 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q9635 .
+
+wd:Q1883190 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q160108 .
+
+wd:Q160108 rdfs:label "睫毛"@zh-hans .
+
+wd:Q1529650 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q326710 .
+
+wd:Q326710 rdfs:label "玻璃体"@zh-hans .
+
+wd:Q55042693 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q464210 .
+
+wd:Q464210 rdfs:label "基底核"@zh-hans .
+
+wd:Q47108021 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q180284 .
+
+wd:Q180284 rdfs:label "颚"@zh-hans .
+
+wd:Q54946694 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q620207 .
+
+wd:Q620207 rdfs:label "手指"@zh-hans .
+
+wd:Q552233 wdt:P31 wd:Q12136 ;
+	rdfs:label "卵巢扭转"@zh-hans ;
+	wdt:P927 wd:Q1233836 .
+
+wd:Q54945893 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q713102 .
+
+wd:Q713102 rdfs:label "骨盆"@zh-hans .
+
+wd:Q2213687 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1543208 .
+
+wd:Q1543208 rdfs:label "骶髀关节"@zh-hans .
+
+wd:Q25324230 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q9618 .
+
+wd:Q54911741 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q841423 .
+
+wd:Q841423 rdfs:label "上肢"@zh-hans .
+
+wd:Q131939449 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1571074 .
+
+wd:Q1571074 rdfs:label "耻骨聯合"@zh-hans .
+
+wd:Q1569702 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q713102 .
+
+wd:Q109466005 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q268930 .
+
+wd:Q268930 rdfs:label "蛛网膜下腔"@zh-hans .
+
+wd:Q136524882 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q178748 .
+
+wd:Q178748 rdfs:label "虹膜"@zh-hans .
+
+wd:Q101244555 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q658424 .
+
+wd:Q103813716 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1468271 .
+
+wd:Q105323112 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q707236 .
+
+wd:Q1328805 wdt:P31 wd:Q12136 ;
+	rdfs:label "骨肿瘤"@zh-hans ;
+	wdt:P927 wd:Q265868 .
+
+wd:Q265868 rdfs:label "骨组织"@zh-hans .
+
+wd:Q922215 wdt:P31 wd:Q12136 ;
+	rdfs:label "胰岛炎"@zh-hans ;
+	wdt:P927 wd:Q728309 .
+
+wd:Q728309 rdfs:label "胰岛"@zh-hans .
+
+wd:Q115743091 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q994527 .
+
+wd:Q116909437 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1422057 .
+
+wd:Q115743091 wdt:P927 wd:Q66517321 .
+
+wd:Q110419412 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1425513 .
+
+wd:Q1425513 rdfs:label "睑板腺"@zh-hans .
+
+wd:Q54946033 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q47273 .
+
+wd:Q7161811 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q713102 .
+
+wd:Q67153014 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q5880 .
+
+wd:Q20571563 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q841423 .
+
+wd:Q3740798 wdt:P927 wd:Q158716 .
+
+wd:Q158716 rdfs:label "直肠"@zh-hans .
+
+wd:Q555868 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q2536335 .
+
+wd:Q605576 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q3143036 .
+
+wd:Q1232042 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q430892 .
+
+wd:Q685200 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q25600755 .
+
+wd:Q1519971 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q320561 .
+
+wd:Q685200 wdt:P927 wd:Q29717447 .
+
+wd:Q1665961 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1515961 .
+
+wd:Q1573613 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q8265768 .
+
+wd:Q3073060 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q526920 .
+
+wd:Q3542029 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q5982337 .
+
+wd:Q4162400 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q2084566 .
+
+wd:Q4411659 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q447782 .
+
+wd:Q5185088 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1407428 .
+
+wd:Q6057394 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q502781 .
+
+wd:Q3099702 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q713102 .
+
+wd:Q6806121 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1364876 .
+
+wd:Q7171312 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1640882 .
+
+wd:Q7844856 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q653284 .
+
+wd:Q7879706 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q7879707 .
+
+wd:Q143607 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q104280 .
+
+wd:Q104280 rdfs:label "牙龈"@zh-hans .
+
+wd:Q11419020 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1469602 .
+
+wd:Q15714148 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q11090 .
+
+wd:Q11090 rdfs:label "小肠"@zh-hans .
+
+wd:Q15666414 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1059724 .
+
+wd:Q16257164 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q11829360 .
+
+wd:Q16555939 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q3966104 .
+
+wd:Q16661734 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q11878994 .
+
+wd:Q17130620 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1547173 .
+
+wd:Q17164695 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1293405 .
+
+wd:Q552233 wdt:P927 wd:Q9631 .
+
+wd:Q137690901 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q577238 .
+
+wd:Q577238 rdfs:label "腹膜后腔"@zh-hans .
+
+wd:Q17639642 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q254643 .
+
+wd:Q4253356 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q189961 .
+
+wd:Q189961 rdfs:label "乳腺"@zh-hans .
+
+wd:Q3541798 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q712294 .
+
+wd:Q712294 rdfs:label "肾上腺"@zh-hans .
+
+wd:Q18975915 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q112075583 .
+
+wd:Q25091295 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q6057436 .
+
+wd:Q31841190 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q56296771 .
+
+wd:Q4350506 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q620207 .
+
+wd:Q42425827 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q426139 .
+
+wd:Q42404192 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1892702 .
+
+wd:Q42425827 wdt:P927 wd:Q5064080 .
+
+wd:Q42404343 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q17130717 .
+
+wd:Q115805608 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q37425 .
+
+wd:Q116585753 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q37425 .
+
+wd:Q685200 wdt:P927 wd:Q212344 .
+
+wd:Q212344 rdfs:label "内耳"@zh-hans .
+
+wd:Q813677 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1543208 .
+
+wd:Q5272095 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1571074 .
+
+wd:Q260688 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q594066 .
+
+wd:Q594066 rdfs:label "Vater氏管壶腹部"@zh-hans .
+
+wd:Q52601023 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q2192288 .
+
+wd:Q53844335 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1940081 .
+
+wd:Q53678400 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q7197992 .
+
+wd:Q54928207 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q515848 .
+
+wd:Q54911678 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1178145 .
+
+wd:Q54945591 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q359859 .
+
+wd:Q55082332 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q740541 .
+
+wd:Q54928062 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q5911033 .
+
+wd:Q55082183 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q1817831 .
+
+wd:Q54974057 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q6027402 .
+
+wd:Q55789594 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q645450 .
+
+wd:Q4503868 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q848382 .
+
+wd:Q848382 rdfs:label "牙骨质"@zh-hans .
+
+wd:Q55082461 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q70231003 .
+
+wd:Q22907909 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q509053 .
+
+wd:Q509053 rdfs:label "房室结"@zh-hans .
+
+wd:Q18967499 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q185765 .
+
+wd:Q185765 rdfs:label "空肠"@zh-hans .
+
+wd:Q62006223 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q2070179 .
+
+wd:Q18966851 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q233345 .
+
+wd:Q233345 rdfs:label "回肠"@zh-hans .
+
+wd:Q54912204 wdt:P31 wd:Q12136 ;
+	wdt:P927 wd:Q228537 .
+
+wd:Q228537 rdfs:label "前臂"@zh-hans .
