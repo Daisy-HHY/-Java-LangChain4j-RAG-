@@ -1,0 +1,1007 @@
+@prefix med: <http://example.org/medical-ontology/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+
+wd:Q1002165 med:treats wd:Q3740609 .
+
+wd:Q1050019 med:treats wd:Q19597369 .
+
+wd:Q1052672 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q1060922 med:treats wd:Q281490 .
+
+wd:Q1078392 med:treats wd:Q486485 .
+
+wd:Q1082945 med:treats wd:Q16935263,
+        wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q113368879 med:treats wd:Q1506572 .
+
+wd:Q11426176 med:treats wd:Q486485 .
+
+wd:Q115743576 med:treats wd:Q115743091 .
+
+wd:Q115745925 med:treats wd:Q115744557 .
+
+wd:Q1169164 med:treats wd:Q486485 .
+
+wd:Q1169561 med:treats wd:Q486485 .
+
+wd:Q118551 med:treats wd:Q2458539,
+        wd:Q2622199,
+        wd:Q4293079,
+        wd:Q4497153 .
+
+wd:Q1207210 med:treats wd:Q181923 .
+
+wd:Q120731098 med:treats wd:Q19275831 .
+
+wd:Q1240093 med:treats wd:Q1467339 .
+
+wd:Q126677485 med:treats wd:Q15401586 .
+
+wd:Q127060 med:treats wd:Q2915477 .
+
+wd:Q12751472 med:treats wd:Q12204 .
+
+wd:Q132621 med:treats wd:Q1765564,
+        wd:Q4330029,
+        wd:Q848662 .
+
+wd:Q1385195 med:treats wd:Q113268139 .
+
+wd:Q13896859 med:treats wd:Q18975855 .
+
+wd:Q139307 med:treats wd:Q4138762,
+        wd:Q6822340 .
+
+wd:Q145052 med:treats wd:Q1869874 .
+
+wd:Q1453445 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q15211075 med:treats wd:Q12284921 .
+
+wd:Q1534470 med:treats wd:Q1956669 .
+
+wd:Q15474950 med:treats wd:Q113268139 .
+
+wd:Q15646788 med:treats wd:Q19597369,
+        wd:Q2458539 .
+
+wd:Q15708292 med:treats wd:Q18975855 .
+
+wd:Q1638852 med:treats wd:Q2622199 .
+
+wd:Q163901 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q1639595 med:treats wd:Q19597369 .
+
+wd:Q1639616 med:treats wd:Q19597369 .
+
+wd:Q165399 med:treats wd:Q2458539,
+        wd:Q2622199 .
+
+wd:Q166825 med:treats wd:Q55950294 .
+
+wd:Q1706418 med:treats wd:Q181923 .
+
+wd:Q1758380 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q179452 med:treats wd:Q181923 .
+
+wd:Q179731 med:treats wd:Q113268139 .
+
+wd:Q179748 med:treats wd:Q1444550 .
+
+wd:Q180912 med:treats wd:Q192579 .
+
+wd:Q18216 med:treats wd:Q1338684,
+        wd:Q1444550,
+        wd:Q266018 .
+
+wd:Q183011 med:treats wd:Q1765564,
+        wd:Q848662 .
+
+wd:Q183257 med:treats wd:Q181923 .
+
+wd:Q18476657 med:treats wd:Q12199 .
+
+wd:Q186242 med:treats wd:Q1765564 .
+
+wd:Q186969 med:treats wd:Q1338684,
+        wd:Q54972453 .
+
+wd:Q18936 med:treats wd:Q55998694 .
+
+wd:Q191924 med:treats wd:Q181923 .
+
+wd:Q193045 med:treats wd:Q19597369 .
+
+wd:Q19484 med:treats wd:Q12206,
+        wd:Q3025883 .
+
+wd:Q19858657 med:treats wd:Q154869 .
+
+wd:Q20078502 med:treats wd:Q1506572 .
+
+wd:Q201872 med:treats wd:Q1869874,
+        wd:Q54972453 .
+
+wd:Q201928 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q203174 med:treats wd:Q106305033 .
+
+wd:Q2062094 med:treats wd:Q124407 .
+
+wd:Q2072745 med:treats wd:Q486485 .
+
+wd:Q207442 med:treats wd:Q19597369 .
+
+wd:Q20801763 med:treats wd:Q12284921 .
+
+wd:Q20817140 med:treats wd:Q19597369 .
+
+wd:Q208451 med:treats wd:Q511818 .
+
+wd:Q21011228 med:treats wd:Q124407 .
+
+wd:Q21011236 med:treats wd:Q55998694 .
+
+wd:Q210402 med:treats wd:Q117060,
+        wd:Q127664,
+        wd:Q1869874,
+        wd:Q54972453 .
+
+wd:Q2149443 med:treats wd:Q117060 .
+
+wd:Q216935 med:treats wd:Q848662 .
+
+wd:Q218842 med:treats wd:Q1869874,
+        wd:Q54972453 .
+
+wd:Q221520 med:treats wd:Q486485 .
+
+wd:Q22673321 med:treats wd:Q154869 .
+
+wd:Q2298283 med:treats wd:Q55998694 .
+
+wd:Q229924 med:treats wd:Q12204 .
+
+wd:Q2313188 med:treats wd:Q1573613 .
+
+wd:Q2313471 med:treats wd:Q2622199 .
+
+wd:Q2314 med:treats wd:Q2964243 .
+
+wd:Q2319020 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q2325775 med:treats wd:Q16935263,
+        wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q2329715 med:treats wd:Q12206 .
+
+wd:Q2353907 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q2365016 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q238490 med:treats wd:Q18967417 .
+
+wd:Q2392530 med:treats wd:Q17141201,
+        wd:Q2458539 .
+
+wd:Q241006 med:treats wd:Q318005 .
+
+wd:Q244150 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q244408 med:treats wd:Q3518022 .
+
+wd:Q2459042 med:treats wd:Q18975855 .
+
+wd:Q2467555 med:treats wd:Q19597369 .
+
+wd:Q248550 med:treats wd:Q2076966 .
+
+wd:Q24885926 med:treats wd:Q113268139 .
+
+wd:Q2501772 med:treats wd:Q5064113 .
+
+wd:Q25048068 med:treats wd:Q182413,
+        wd:Q3184856,
+        wd:Q4420149 .
+
+wd:Q2506823 med:treats wd:Q181923 .
+
+wd:Q25110523 med:treats wd:Q154869 .
+
+wd:Q251347 med:treats wd:Q160796 .
+
+wd:Q2526479 med:treats wd:Q124407 .
+
+wd:Q2552927 med:treats wd:Q16935263,
+        wd:Q19597369 .
+
+wd:Q2555060 med:treats wd:Q19597369 .
+
+wd:Q256602 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q2601530 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q2601832 med:treats wd:Q19597369,
+        wd:Q2458539,
+        wd:Q2622199 .
+
+wd:Q2602246 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q2603363 med:treats wd:Q486485 .
+
+wd:Q26981430 med:treats wd:Q1765564 .
+
+wd:Q2701912 med:treats wd:Q1467339 .
+
+wd:Q27107637 med:treats wd:Q2458539,
+        wd:Q2622199 .
+
+wd:Q27114666 med:treats wd:Q268832 .
+
+wd:Q27252517 med:treats wd:Q318005 .
+
+wd:Q27270371 med:treats wd:Q1734755 .
+
+wd:Q27281933 med:treats wd:Q486485 .
+
+wd:Q2736126 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q2736402 med:treats wd:Q19597369 .
+
+wd:Q2754775 med:treats wd:Q124407 .
+
+wd:Q275926 med:treats wd:Q486485 .
+
+wd:Q27895847 med:treats wd:Q4677921 .
+
+wd:Q28163629 med:treats wd:Q113268139 .
+
+wd:Q28208887 med:treats wd:Q3740609 .
+
+wd:Q282629 med:treats wd:Q12284921 .
+
+wd:Q282902 med:treats wd:Q1765564 .
+
+wd:Q2878140 med:treats wd:Q2622199 .
+
+wd:Q288280 med:treats wd:Q3025883 .
+
+wd:Q28852343 med:treats wd:Q55950294 .
+
+wd:Q28859607 med:treats wd:Q41861 .
+
+wd:Q2889971 med:treats wd:Q486485 .
+
+wd:Q2957662 med:treats wd:Q113268139 .
+
+wd:Q3011604 med:treats wd:Q18975855 .
+
+wd:Q3045264 med:treats wd:Q1869874 .
+
+wd:Q3085140 med:treats wd:Q1869874 .
+
+wd:Q319877 med:treats wd:Q1869874,
+        wd:Q54972453 .
+
+wd:Q3221044 med:treats wd:Q1444550 .
+
+wd:Q3231623 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q3294635 med:treats wd:Q1467339 .
+
+wd:Q3307752 med:treats wd:Q19597369,
+        wd:Q2458539,
+        wd:Q2622199 .
+
+wd:Q3359058 med:treats wd:Q17141201 .
+
+wd:Q3359124 med:treats wd:Q113268139 .
+
+wd:Q3492616 med:treats wd:Q12206,
+        wd:Q124407 .
+
+wd:Q356194 med:treats wd:Q4330029 .
+
+wd:Q3611854 med:treats wd:Q19000832 .
+
+wd:Q3664175 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q3712521 med:treats wd:Q1506572 .
+
+wd:Q375613 med:treats wd:Q1783300 .
+
+wd:Q3791957 med:treats wd:Q486485 .
+
+wd:Q3837481 med:treats wd:Q486485 .
+
+wd:Q384295 med:treats wd:Q1467339 .
+
+wd:Q388801 med:treats wd:Q486485 .
+
+wd:Q39048038 med:treats wd:Q154869 .
+
+wd:Q3927403 med:treats wd:Q1869874 .
+
+wd:Q3950557 med:treats wd:Q12284921 .
+
+wd:Q3976824 med:treats wd:Q19597369 .
+
+wd:Q402633 med:treats wd:Q181923 .
+
+wd:Q407241 med:treats wd:Q127664 .
+
+wd:Q407883 med:treats wd:Q17141201 .
+
+wd:Q407988 med:treats wd:Q11883686,
+        wd:Q1869874,
+        wd:Q225957,
+        wd:Q54972453 .
+
+wd:Q408265 med:treats wd:Q1869874,
+        wd:Q54972453 .
+
+wd:Q408283 med:treats wd:Q55950294,
+        wd:Q68833 .
+
+wd:Q408524 med:treats wd:Q12284921 .
+
+wd:Q408529 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q408535 med:treats wd:Q1869874,
+        wd:Q54972453 .
+
+wd:Q408977 med:treats wd:Q12284921 .
+
+wd:Q409468 med:treats wd:Q56002,
+        wd:Q848662 .
+
+wd:Q4095199 med:treats wd:Q3993706 .
+
+wd:Q409558 med:treats wd:Q1869874 .
+
+wd:Q409761 med:treats wd:Q56298920 .
+
+wd:Q410061 med:treats wd:Q1506572,
+        wd:Q56002,
+        wd:Q848662 .
+
+wd:Q410225 med:treats wd:Q1869874 .
+
+wd:Q410237 med:treats wd:Q1444550,
+        wd:Q266018 .
+
+wd:Q410352 med:treats wd:Q1129105,
+        wd:Q1869874,
+        wd:Q54972453 .
+
+wd:Q410374 med:treats wd:Q13121526,
+        wd:Q1444550 .
+
+wd:Q410400 med:treats wd:Q127664 .
+
+wd:Q410441 med:treats wd:Q181923 .
+
+wd:Q410534 med:treats wd:Q17141201 .
+
+wd:Q410608 med:treats wd:Q1869874 .
+
+wd:Q410965 med:treats wd:Q124407 .
+
+wd:Q411229 med:treats wd:Q17141201,
+        wd:Q356713,
+        wd:Q917620 .
+
+wd:Q411325 med:treats wd:Q848662 .
+
+wd:Q411417 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q411447 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q411457 med:treats wd:Q160796,
+        wd:Q1869874,
+        wd:Q54972453 .
+
+wd:Q411478 med:treats wd:Q14942021 .
+
+wd:Q411646 med:treats wd:Q19597369 .
+
+wd:Q411781 med:treats wd:Q55950294,
+        wd:Q68833 .
+
+wd:Q411940 med:treats wd:Q1869874 .
+
+wd:Q412143 med:treats wd:Q1869874,
+        wd:Q54972453 .
+
+wd:Q412174 med:treats wd:Q1129105 .
+
+wd:Q412197 med:treats wd:Q55998694 .
+
+wd:Q412221 med:treats wd:Q117060,
+        wd:Q181923 .
+
+wd:Q412236 med:treats wd:Q356713 .
+
+wd:Q412318 med:treats wd:Q12204 .
+
+wd:Q412415 med:treats wd:Q12284921,
+        wd:Q55998694 .
+
+wd:Q412443 med:treats wd:Q1869874,
+        wd:Q54972453 .
+
+wd:Q413050 med:treats wd:Q3993706 .
+
+wd:Q413184 med:treats wd:Q1869874,
+        wd:Q54972453 .
+
+wd:Q413299 med:treats wd:Q1734755,
+        wd:Q18975855 .
+
+wd:Q413486 med:treats wd:Q1869874 .
+
+wd:Q413586 med:treats wd:Q17141201 .
+
+wd:Q413591 med:treats wd:Q848662 .
+
+wd:Q413717 med:treats wd:Q117060 .
+
+wd:Q413728 med:treats wd:Q19597369 .
+
+wd:Q413739 med:treats wd:Q511818 .
+
+wd:Q413762 med:treats wd:Q13121526 .
+
+wd:Q414030 med:treats wd:Q12284921 .
+
+wd:Q414236 med:treats wd:Q1869874 .
+
+wd:Q414462 med:treats wd:Q1506572 .
+
+wd:Q414767 med:treats wd:Q12204 .
+
+wd:Q414788 med:treats wd:Q1869874 .
+
+wd:Q414796 med:treats wd:Q1869874,
+        wd:Q54972453 .
+
+wd:Q415051 med:treats wd:Q281490 .
+
+wd:Q415122 med:treats wd:Q3740609 .
+
+wd:Q415167 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q415238 med:treats wd:Q17141201 .
+
+wd:Q415259 med:treats wd:Q17141201,
+        wd:Q917620 .
+
+wd:Q415336 med:treats wd:Q19597369 .
+
+wd:Q415366 med:treats wd:Q1444550 .
+
+wd:Q415378 med:treats wd:Q12284921 .
+
+wd:Q415571 med:treats wd:Q12284921 .
+
+wd:Q415588 med:treats wd:Q55998694 .
+
+wd:Q415739 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q415843 med:treats wd:Q19597369 .
+
+wd:Q415850 med:treats wd:Q1869874 .
+
+wd:Q415909 med:treats wd:Q12204 .
+
+wd:Q415939 med:treats wd:Q12284921 .
+
+wd:Q416096 med:treats wd:Q17141201 .
+
+wd:Q416206 med:treats wd:Q15401586 .
+
+wd:Q416232 med:treats wd:Q266018 .
+
+wd:Q416485 med:treats wd:Q12152,
+        wd:Q220570,
+        wd:Q26695607 .
+
+wd:Q416791 med:treats wd:Q1869874 .
+
+wd:Q416905 med:treats wd:Q117060 .
+
+wd:Q416975 med:treats wd:Q6807316 .
+
+wd:Q417141 med:treats wd:Q17141201 .
+
+wd:Q417240 med:treats wd:Q181923 .
+
+wd:Q417317 med:treats wd:Q124407 .
+
+wd:Q417542 med:treats wd:Q1734755 .
+
+wd:Q417571 med:treats wd:Q12204 .
+
+wd:Q417640 med:treats wd:Q2076966,
+        wd:Q835718 .
+
+wd:Q417689 med:treats wd:Q1869874,
+        wd:Q54972453 .
+
+wd:Q417740 med:treats wd:Q1467339 .
+
+wd:Q417762 med:treats wd:Q124407 .
+
+wd:Q417767 med:treats wd:Q3740609 .
+
+wd:Q417897 med:treats wd:Q19597369 .
+
+wd:Q417942 med:treats wd:Q1467339 .
+
+wd:Q417968 med:treats wd:Q16935263,
+        wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q418006 med:treats wd:Q1467339 .
+
+wd:Q418060 med:treats wd:Q3740609 .
+
+wd:Q418139 med:treats wd:Q848662 .
+
+wd:Q418179 med:treats wd:Q15401586 .
+
+wd:Q418351 med:treats wd:Q117060 .
+
+wd:Q418508 med:treats wd:Q12204 .
+
+wd:Q418529 med:treats wd:Q12284921 .
+
+wd:Q418546 med:treats wd:Q19597369,
+        wd:Q2458539,
+        wd:Q2622199 .
+
+wd:Q418560 med:treats wd:Q12284921 .
+
+wd:Q418571 med:treats wd:Q486485 .
+
+wd:Q418594 med:treats wd:Q2076966 .
+
+wd:Q418656 med:treats wd:Q12284921 .
+
+wd:Q418666 med:treats wd:Q693442 .
+
+wd:Q418725 med:treats wd:Q2622199 .
+
+wd:Q418747 med:treats wd:Q2458539 .
+
+wd:Q418817 med:treats wd:Q55998694 .
+
+wd:Q418857 med:treats wd:Q848662 .
+
+wd:Q418913 med:treats wd:Q54972453 .
+
+wd:Q418998 med:treats wd:Q1869874 .
+
+wd:Q419008 med:treats wd:Q181923 .
+
+wd:Q419468 med:treats wd:Q17141201,
+        wd:Q917620 .
+
+wd:Q419521 med:treats wd:Q19597369 .
+
+wd:Q419652 med:treats wd:Q486485 .
+
+wd:Q419724 med:treats wd:Q1467339 .
+
+wd:Q419820 med:treats wd:Q3740609 .
+
+wd:Q419824 med:treats wd:Q281490 .
+
+wd:Q419832 med:treats wd:Q124407 .
+
+wd:Q419935 med:treats wd:Q1734755 .
+
+wd:Q419948 med:treats wd:Q486485 .
+
+wd:Q419953 med:treats wd:Q55998694 .
+
+wd:Q419995 med:treats wd:Q486485 .
+
+wd:Q420026 med:treats wd:Q848662 .
+
+wd:Q420098 med:treats wd:Q5898175 .
+
+wd:Q420262 med:treats wd:Q1506572 .
+
+wd:Q420360 med:treats wd:Q2051919 .
+
+wd:Q420377 med:treats wd:Q848662 .
+
+wd:Q420387 med:treats wd:Q2076966 .
+
+wd:Q420542 med:treats wd:Q266018 .
+
+wd:Q420690 med:treats wd:Q837054 .
+
+wd:Q420705 med:treats wd:Q2458539 .
+
+wd:Q421052 med:treats wd:Q1734755,
+        wd:Q55998494 .
+
+wd:Q421091 med:treats wd:Q3740609 .
+
+wd:Q421095 med:treats wd:Q1658731 .
+
+wd:Q421119 med:treats wd:Q486485 .
+
+wd:Q421274 med:treats wd:Q117060 .
+
+wd:Q421429 med:treats wd:Q693442 .
+
+wd:Q421663 med:treats wd:Q55998494 .
+
+wd:Q421670 med:treats wd:Q2622199 .
+
+wd:Q421700 med:treats wd:Q1444550 .
+
+wd:Q421713 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q421910 med:treats wd:Q1765564 .
+
+wd:Q421930 med:treats wd:Q1869874,
+        wd:Q54972453 .
+
+wd:Q421951 med:treats wd:Q18554341,
+        wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q422112 med:treats wd:Q181923 .
+
+wd:Q422185 med:treats wd:Q486485 .
+
+wd:Q422188 med:treats wd:Q486485 .
+
+wd:Q422219 med:treats wd:Q2622199 .
+
+wd:Q422252 med:treats wd:Q1765564 .
+
+wd:Q422273 med:treats wd:Q2458539 .
+
+wd:Q422442 med:treats wd:Q19597369 .
+
+wd:Q422482 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q422652 med:treats wd:Q12204 .
+
+wd:Q422665 med:treats wd:Q2622199 .
+
+wd:Q422669 med:treats wd:Q19597369 .
+
+wd:Q422689 med:treats wd:Q18554341 .
+
+wd:Q423075 med:treats wd:Q3740609 .
+
+wd:Q423111 med:treats wd:Q18975855 .
+
+wd:Q423169 med:treats wd:Q12204 .
+
+wd:Q423288 med:treats wd:Q181923 .
+
+wd:Q423364 med:treats wd:Q848662 .
+
+wd:Q423384 med:treats wd:Q2076966 .
+
+wd:Q423390 med:treats wd:Q1869874 .
+
+wd:Q423401 med:treats wd:Q1444550 .
+
+wd:Q423439 med:treats wd:Q1467339 .
+
+wd:Q423445 med:treats wd:Q2076966 .
+
+wd:Q423538 med:treats wd:Q117060 .
+
+wd:Q423762 med:treats wd:Q18975855 .
+
+wd:Q423787 med:treats wd:Q2458539,
+        wd:Q2622199 .
+
+wd:Q423930 med:treats wd:Q486485 .
+
+wd:Q424049 med:treats wd:Q3740609 .
+
+wd:Q424145 med:treats wd:Q4454701 .
+
+wd:Q424193 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q424312 med:treats wd:Q281490 .
+
+wd:Q424940 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q425088 med:treats wd:Q18975855 .
+
+wd:Q425152 med:treats wd:Q2622199 .
+
+wd:Q425289 med:treats wd:Q486485 .
+
+wd:Q45769835 med:treats wd:Q1368943 .
+
+wd:Q4712362 med:treats wd:Q124407 .
+
+wd:Q4747074 med:treats wd:Q41861 .
+
+wd:Q4747075 med:treats wd:Q41861 .
+
+wd:Q48564239 med:treats wd:Q540571 .
+
+wd:Q48566653 med:treats wd:Q12192 .
+
+wd:Q48566655 med:treats wd:Q41861 .
+
+wd:Q48566657 med:treats wd:Q41861 .
+
+wd:Q48566660 med:treats wd:Q1129007,
+        wd:Q56002,
+        wd:Q769815 .
+
+wd:Q48566693 med:treats wd:Q41861 .
+
+wd:Q48566694 med:treats wd:Q41861 .
+
+wd:Q48566696 med:treats wd:Q19000661,
+        wd:Q41861,
+        wd:Q79928 .
+
+wd:Q48566700 med:treats wd:Q1129007,
+        wd:Q19000661,
+        wd:Q190805,
+        wd:Q41861,
+        wd:Q570197 .
+
+wd:Q48566705 med:treats wd:Q1827605,
+        wd:Q18558122,
+        wd:Q266018,
+        wd:Q55785266,
+        wd:Q593958 .
+
+wd:Q48566757 med:treats wd:Q190805,
+        wd:Q266018,
+        wd:Q41861,
+        wd:Q815819 .
+
+wd:Q48566767 med:treats wd:Q114085,
+        wd:Q183344,
+        wd:Q18554536,
+        wd:Q3740609,
+        wd:Q471521 .
+
+wd:Q48566771 med:treats wd:Q41861 .
+
+wd:Q48566776 med:treats wd:Q205764 .
+
+wd:Q48566794 med:treats wd:Q16501 .
+
+wd:Q48566802 med:treats wd:Q189561 .
+
+wd:Q48566803 med:treats wd:Q540571 .
+
+wd:Q48566808 med:treats wd:Q1827605,
+        wd:Q18558122,
+        wd:Q190805,
+        wd:Q41861,
+        wd:Q55785266 .
+
+wd:Q48566821 med:treats wd:Q12192,
+        wd:Q183344,
+        wd:Q1856914,
+        wd:Q221668,
+        wd:Q246084,
+        wd:Q34879,
+        wd:Q79928,
+        wd:Q876887 .
+
+wd:Q4926102 med:treats wd:Q1869874 .
+
+wd:Q5018826 med:treats wd:Q511818 .
+
+wd:Q50265665 med:treats wd:Q113268139 .
+
+wd:Q50430353 med:treats wd:Q1444550 .
+
+wd:Q5102983 med:treats wd:Q117060 .
+
+wd:Q5119441 med:treats wd:Q2622199 .
+
+wd:Q5134338 med:treats wd:Q17141201,
+        wd:Q2458539 .
+
+wd:Q5141192 med:treats wd:Q1869874 .
+
+wd:Q5186964 med:treats wd:Q55998694 .
+
+wd:Q5198674 med:treats wd:Q117060 .
+
+wd:Q5199066 med:treats wd:Q486485 .
+
+wd:Q5276473 med:treats wd:Q15460254 .
+
+wd:Q5299119 med:treats wd:Q159701,
+        wd:Q9294051 .
+
+wd:Q544393 med:treats wd:Q2622199 .
+
+wd:Q549803 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q553220 med:treats wd:Q2458539,
+        wd:Q2622199 .
+
+wd:Q5613599 med:treats wd:Q181923 .
+
+wd:Q5643439 med:treats wd:Q17141201 .
+
+wd:Q57055 med:treats wd:Q1338684 .
+
+wd:Q575062 med:treats wd:Q1444550 .
+
+wd:Q578726 med:treats wd:Q356713 .
+
+wd:Q58396 med:treats wd:Q181923 .
+
+wd:Q58397 med:treats wd:Q1338684,
+        wd:Q1869874 .
+
+wd:Q5906358 med:treats wd:Q3025883 .
+
+wd:Q5986553 med:treats wd:Q486485 .
+
+wd:Q6042242 med:treats wd:Q124407 .
+
+wd:Q6058432 med:treats wd:Q113268139 .
+
+wd:Q61387 med:treats wd:Q181923 .
+
+wd:Q621558 med:treats wd:Q837054 .
+
+wd:Q6457467 med:treats wd:Q19000661,
+        wd:Q190805,
+        wd:Q41861,
+        wd:Q847583 .
+
+wd:Q6482030 med:treats wd:Q12199 .
+
+wd:Q6558704 med:treats wd:Q181923 .
+
+wd:Q668093 med:treats wd:Q1467339 .
+
+wd:Q670131 med:treats wd:Q1368943,
+        wd:Q1467339 .
+
+wd:Q6823309 med:treats wd:Q117060 .
+
+wd:Q6823919 med:treats wd:Q486485 .
+
+wd:Q7041828 med:treats wd:Q18975855 .
+
+wd:Q7160547 med:treats wd:Q12284921 .
+
+wd:Q719444 med:treats wd:Q115744557 .
+
+wd:Q7227099 med:treats wd:Q486485 .
+
+wd:Q7250328 med:treats wd:Q1869874 .
+
+wd:Q7272222 med:treats wd:Q486485 .
+
+wd:Q747883 med:treats wd:Q3025883 .
+
+wd:Q7553347 med:treats wd:Q1869874,
+        wd:Q54972453 .
+
+wd:Q7597226 med:treats wd:Q11085 .
+
+wd:Q7636169 med:treats wd:Q19597369 .
+
+wd:Q7650517 med:treats wd:Q1869874,
+        wd:Q54972453 .
+
+wd:Q7697766 med:treats wd:Q41861 .
+
+wd:Q7700570 med:treats wd:Q189331,
+        wd:Q190805,
+        wd:Q41861,
+        wd:Q815819 .
+
+wd:Q7833138 med:treats wd:Q18975855 .
+
+wd:Q7939403 med:treats wd:Q12206 .
+
+wd:Q79460 med:treats wd:Q837054 .
+
+wd:Q808845 med:treats wd:Q16935263,
+        wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q816759 med:treats wd:Q1444550 .
+
+wd:Q834280 med:treats wd:Q181923 .
+
+wd:Q848264 med:treats wd:Q281490 .
+
+wd:Q850197 med:treats wd:Q115744557 .
+
+wd:Q850729 med:treats wd:Q17141201 .
+
+wd:Q857162 med:treats wd:Q183425 .
+
+wd:Q857300 med:treats wd:Q19275831 .
+
+wd:Q863389 med:treats wd:Q12192,
+        wd:Q1477,
+        wd:Q2058941,
+        wd:Q3286546,
+        wd:Q3392853 .
+
+wd:Q898407 med:treats wd:Q181923 .
+
+wd:Q898623 med:treats wd:Q15401586 .
+
+wd:Q899036 med:treats wd:Q1467339 .
+
+wd:Q903341 med:treats wd:Q356713 .
+
+wd:Q904011 med:treats wd:Q55013018 .
+
+wd:Q904015 med:treats wd:Q2051919 .
+
+wd:Q904071 med:treats wd:Q848662 .
+
+wd:Q905058 med:treats wd:Q268594,
+        wd:Q318005,
+        wd:Q46545345 .
+
+wd:Q906220 med:treats wd:Q1869874 .
+
+wd:Q906453 med:treats wd:Q356713 .
+
+wd:Q907104 med:treats wd:Q1444550 .
+
+wd:Q954845 med:treats wd:Q1444550,
+        wd:Q3025883 .
+
+wd:Q976559 med:treats wd:Q19597369,
+        wd:Q2622199 .
+
+wd:Q979521 med:treats wd:Q2458539,
+        wd:Q2622199 .
+

@@ -38,7 +38,7 @@ public class WikidataTdbLoader {
             "disease.ttl",
             "medication.ttl",
             "disease_symptom.ttl",
-            "disease_drug.ttl",
+            "drug_disease.ttl",
             "disease_cause.ttl",
             "disease_exam.ttl",
             "disease_complication.ttl",

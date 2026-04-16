@@ -198,13 +198,13 @@ public class WikidataDataImporter {
      * 导入疾病-药物关系
      */
     private int importDiseaseDrug() {
-        Path filePath = Paths.get(wikidataPath, "disease_drug.ttl");
+        Path filePath = Paths.get(wikidataPath, "drug_disease.ttl");
         if (!filePath.toFile().exists()) {
             log.warn("文件不存在: {}", filePath);
             return 0;
         }
 
-        log.info("开始导入 disease_drug.ttl...");
+        log.info("开始导入 drug_disease.ttl...");
         Model model = loadModel(filePath.toString());
 
         Map<String, String> labels = extractChineseLabels(model);
@@ -221,12 +221,12 @@ public class WikidataDataImporter {
             String drugUri = stmt.getObject().asResource().getURI();
             String disease = labels.getOrDefault(diseaseUri, extractLabelFromUri(diseaseUri));
             String drug = labels.getOrDefault(drugUri, extractLabelFromUri(drugUri));
-            texts.add("疾病 " + disease + " 可以用药物治疗 " + drug);
+            texts.add("药物 " + drug + " 可以治疗疾病 " + disease);
         }
         stmtIterator.close();
 
         int count = embedTexts(texts);
-        log.info("disease_drug.ttl 导入完成: {} 条", count);
+        log.info("drug_disease.ttl 导入完成: {} 条", count);
         return count;
     }
 

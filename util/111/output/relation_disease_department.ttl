@@ -1,0 +1,2582 @@
+@prefix med: <http://example.org/medical-ontology/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+
+wd:Q101245788 med:belongsToDepartment wd:Q83042 .
+
+wd:Q1016288 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q101971 med:belongsToDepartment wd:Q171171 .
+
+wd:Q1024546 med:belongsToDepartment wd:Q162555 .
+
+wd:Q10265470 med:belongsToDepartment wd:Q162606,
+        wd:Q327657 .
+
+wd:Q10302339 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q1035226 med:belongsToDepartment wd:Q10379 .
+
+wd:Q10355322 med:belongsToDepartment wd:Q171171 .
+
+wd:Q1036696 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q105153163 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q105323112 med:belongsToDepartment wd:Q120569 .
+
+wd:Q105393852 med:belongsToDepartment wd:Q120569 .
+
+wd:Q1056457 med:belongsToDepartment wd:Q327657 .
+
+wd:Q105678458 med:belongsToDepartment wd:Q3875054 .
+
+wd:Q105688 med:belongsToDepartment wd:Q203337,
+        wd:Q6806614 .
+
+wd:Q106601158 med:belongsToDepartment wd:Q2964004 .
+
+wd:Q106628525 med:belongsToDepartment wd:Q83042 .
+
+wd:Q10666889 med:belongsToDepartment wd:Q170912 .
+
+wd:Q1069110 med:belongsToDepartment wd:Q7867,
+        wd:Q9418 .
+
+wd:Q1069694 med:belongsToDepartment wd:Q105650 .
+
+wd:Q107008921 med:belongsToDepartment wd:Q5284418,
+        wd:Q7208 .
+
+wd:Q107248935 med:belongsToDepartment wd:Q203337,
+        wd:Q679690 .
+
+wd:Q107313503 med:belongsToDepartment wd:Q161437 .
+
+wd:Q107389486 med:belongsToDepartment wd:Q120569 .
+
+wd:Q107584016 med:belongsToDepartment wd:Q216685 .
+
+wd:Q1076061 med:belongsToDepartment wd:Q162555 .
+
+wd:Q108266561 med:belongsToDepartment wd:Q171171 .
+
+wd:Q108392778 med:belongsToDepartment wd:Q7208 .
+
+wd:Q108486055 med:belongsToDepartment wd:Q123028 .
+
+wd:Q10863066 med:belongsToDepartment wd:Q788926 .
+
+wd:Q1088059 med:belongsToDepartment wd:Q105650 .
+
+wd:Q10889918 med:belongsToDepartment wd:Q80015 .
+
+wd:Q10922432 med:belongsToDepartment wd:Q189553,
+        wd:Q200253 .
+
+wd:Q109236729 med:belongsToDepartment wd:Q1221899 .
+
+wd:Q109284519 med:belongsToDepartment wd:Q171171 .
+
+wd:Q109466005 med:belongsToDepartment wd:Q788926,
+        wd:Q83042 .
+
+wd:Q1095925 med:belongsToDepartment wd:Q327657 .
+
+wd:Q1103561 med:belongsToDepartment wd:Q327657 .
+
+wd:Q1106843 med:belongsToDepartment wd:Q55190072,
+        wd:Q7867 .
+
+wd:Q1110590 med:belongsToDepartment wd:Q327657,
+        wd:Q7162 .
+
+wd:Q111955699 med:belongsToDepartment wd:Q101929 .
+
+wd:Q112252163 med:belongsToDepartment wd:Q161437 .
+
+wd:Q112578658 med:belongsToDepartment wd:Q161437 .
+
+wd:Q1128996 med:belongsToDepartment wd:Q162555 .
+
+wd:Q1129105 med:belongsToDepartment wd:Q162606,
+        wd:Q177635 .
+
+wd:Q1129121 med:belongsToDepartment wd:Q932510 .
+
+wd:Q1129338 med:belongsToDepartment wd:Q171171 .
+
+wd:Q1130192 med:belongsToDepartment wd:Q120569 .
+
+wd:Q113144113 med:belongsToDepartment wd:Q1221899 .
+
+wd:Q1132536 med:belongsToDepartment wd:Q199906,
+        wd:Q7867 .
+
+wd:Q113371905 med:belongsToDepartment wd:Q1221899 .
+
+wd:Q113372005 med:belongsToDepartment wd:Q1221899 .
+
+wd:Q113518874 med:belongsToDepartment wd:Q162555 .
+
+wd:Q113635350 med:belongsToDepartment wd:Q162555 .
+
+wd:Q113677925 med:belongsToDepartment wd:Q161437 .
+
+wd:Q1138267 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q1141055 med:belongsToDepartment wd:Q120569 .
+
+wd:Q1147182 med:belongsToDepartment wd:Q120569 .
+
+wd:Q1154321 med:belongsToDepartment wd:Q189553 .
+
+wd:Q11546777 med:belongsToDepartment wd:Q162555,
+        wd:Q327657,
+        wd:Q504033 .
+
+wd:Q115743091 med:belongsToDepartment wd:Q83042 .
+
+wd:Q115744557 med:belongsToDepartment wd:Q83042 .
+
+wd:Q115939521 med:belongsToDepartment wd:Q216685 .
+
+wd:Q11612288 med:belongsToDepartment wd:Q105650 .
+
+wd:Q11612290 med:belongsToDepartment wd:Q7867 .
+
+wd:Q116170100 med:belongsToDepartment wd:Q7208 .
+
+wd:Q116909437 med:belongsToDepartment wd:Q216685 .
+
+wd:Q117060 med:belongsToDepartment wd:Q83042 .
+
+wd:Q117336784 med:belongsToDepartment wd:Q932510 .
+
+wd:Q117743271 med:belongsToDepartment wd:Q7867 .
+
+wd:Q11793790 med:belongsToDepartment wd:Q162555 .
+
+wd:Q11793793 med:belongsToDepartment wd:Q162555 .
+
+wd:Q11794042 med:belongsToDepartment wd:Q83042 .
+
+wd:Q118054858 med:belongsToDepartment wd:Q83042 .
+
+wd:Q118235743 med:belongsToDepartment wd:Q162555,
+        wd:Q83042 .
+
+wd:Q1185316 med:belongsToDepartment wd:Q7867 .
+
+wd:Q118807564 med:belongsToDepartment wd:Q118803217 .
+
+wd:Q11883686 med:belongsToDepartment wd:Q83042 .
+
+wd:Q11884185 med:belongsToDepartment wd:Q162555,
+        wd:Q189553,
+        wd:Q203337,
+        wd:Q327657 .
+
+wd:Q118906472 med:belongsToDepartment wd:Q788926 .
+
+wd:Q119039802 med:belongsToDepartment wd:Q161437 .
+
+wd:Q119145290 med:belongsToDepartment wd:Q203337 .
+
+wd:Q119660 med:belongsToDepartment wd:Q788926 .
+
+wd:Q1199732 med:belongsToDepartment wd:Q120569,
+        wd:Q171171 .
+
+wd:Q1200233 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q120108012 med:belongsToDepartment wd:Q1221899 .
+
+wd:Q120395 med:belongsToDepartment wd:Q1221899 .
+
+wd:Q120913155 med:belongsToDepartment wd:Q83042 .
+
+wd:Q120973015 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q1209892 med:belongsToDepartment wd:Q120569 .
+
+wd:Q1219219 med:belongsToDepartment wd:Q120569 .
+
+wd:Q12204 med:belongsToDepartment wd:Q203337,
+        wd:Q2624918,
+        wd:Q788926 .
+
+wd:Q12206 med:belongsToDepartment wd:Q1207969,
+        wd:Q162606 .
+
+wd:Q122227904 med:belongsToDepartment wd:Q170201 .
+
+wd:Q1223924 med:belongsToDepartment wd:Q162555 .
+
+wd:Q12244913 med:belongsToDepartment wd:Q788926 .
+
+wd:Q1224503 med:belongsToDepartment wd:Q120569 .
+
+wd:Q12284921 med:belongsToDepartment wd:Q162555 .
+
+wd:Q123122818 med:belongsToDepartment wd:Q162555 .
+
+wd:Q12340591 med:belongsToDepartment wd:Q11180 .
+
+wd:Q1236057 med:belongsToDepartment wd:Q83042 .
+
+wd:Q1236063 med:belongsToDepartment wd:Q7208 .
+
+wd:Q123692320 med:belongsToDepartment wd:Q120569 .
+
+wd:Q1242891 med:belongsToDepartment wd:Q171171,
+        wd:Q788926 .
+
+wd:Q124407 med:belongsToDepartment wd:Q1207969 .
+
+wd:Q1260186 med:belongsToDepartment wd:Q120569 .
+
+wd:Q1264268 med:belongsToDepartment wd:Q203337 .
+
+wd:Q126680155 med:belongsToDepartment wd:Q83042 .
+
+wd:Q1268495 med:belongsToDepartment wd:Q1221899 .
+
+wd:Q1269235 med:belongsToDepartment wd:Q120569 .
+
+wd:Q1269351 med:belongsToDepartment wd:Q2116083,
+        wd:Q83042 .
+
+wd:Q12711676 med:belongsToDepartment wd:Q171171 .
+
+wd:Q1275814 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q127664 med:belongsToDepartment wd:Q123028,
+        wd:Q2861470,
+        wd:Q83042 .
+
+wd:Q1277281 med:belongsToDepartment wd:Q189553 .
+
+wd:Q1286499 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q1297985 med:belongsToDepartment wd:Q188449,
+        wd:Q83042 .
+
+wd:Q13048172 med:belongsToDepartment wd:Q170201 .
+
+wd:Q130693319 med:belongsToDepartment wd:Q1413084 .
+
+wd:Q130724049 med:belongsToDepartment wd:Q161437 .
+
+wd:Q131124183 med:belongsToDepartment wd:Q123028 .
+
+wd:Q131191565 med:belongsToDepartment wd:Q1413084 .
+
+wd:Q13121526 med:belongsToDepartment wd:Q105650,
+        wd:Q120569 .
+
+wd:Q131297168 med:belongsToDepartment wd:Q161437 .
+
+wd:Q131939449 med:belongsToDepartment wd:Q1221899,
+        wd:Q186005,
+        wd:Q216685 .
+
+wd:Q1320276 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q1324592 med:belongsToDepartment wd:Q203337 .
+
+wd:Q13257137 med:belongsToDepartment wd:Q162555,
+        wd:Q171171 .
+
+wd:Q1328805 med:belongsToDepartment wd:Q162555 .
+
+wd:Q1330254 med:belongsToDepartment wd:Q216685 .
+
+wd:Q133278225 med:belongsToDepartment wd:Q1413084 .
+
+wd:Q1338684 med:belongsToDepartment wd:Q83042 .
+
+wd:Q1339539 med:belongsToDepartment wd:Q203337,
+        wd:Q40821 .
+
+wd:Q1343590 med:belongsToDepartment wd:Q216685 .
+
+wd:Q1344603 med:belongsToDepartment wd:Q788926 .
+
+wd:Q1345798 med:belongsToDepartment wd:Q83042 .
+
+wd:Q134606554 med:belongsToDepartment wd:Q170201 .
+
+wd:Q1350326 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q1351381 med:belongsToDepartment wd:Q1644347,
+        wd:Q189553 .
+
+wd:Q136101876 med:belongsToDepartment wd:Q679690,
+        wd:Q788926 .
+
+wd:Q136114360 med:belongsToDepartment wd:Q10379,
+        wd:Q243748,
+        wd:Q788926 .
+
+wd:Q13616307 med:belongsToDepartment wd:Q327657 .
+
+wd:Q13632630 med:belongsToDepartment wd:Q162555 .
+
+wd:Q1363741 med:belongsToDepartment wd:Q171171 .
+
+wd:Q13641482 med:belongsToDepartment wd:Q105650,
+        wd:Q162555,
+        wd:Q80015 .
+
+wd:Q1365091 med:belongsToDepartment wd:Q120569 .
+
+wd:Q136524882 med:belongsToDepartment wd:Q161437 .
+
+wd:Q1367304 med:belongsToDepartment wd:Q1423517,
+        wd:Q2861470 .
+
+wd:Q1368943 med:belongsToDepartment wd:Q188449,
+        wd:Q83042 .
+
+wd:Q1371405 med:belongsToDepartment wd:Q3505712 .
+
+wd:Q137385036 med:belongsToDepartment wd:Q327657 .
+
+wd:Q138028966 med:belongsToDepartment wd:Q1498222 .
+
+wd:Q138356685 med:belongsToDepartment wd:Q2861470,
+        wd:Q788926 .
+
+wd:Q138496097 med:belongsToDepartment wd:Q1221899 .
+
+wd:Q1385411 med:belongsToDepartment wd:Q83042 .
+
+wd:Q138885 med:belongsToDepartment wd:Q788926 .
+
+wd:Q1399293 med:belongsToDepartment wd:Q83042 .
+
+wd:Q1410851 med:belongsToDepartment wd:Q327657 .
+
+wd:Q1412657 med:belongsToDepartment wd:Q327657 .
+
+wd:Q141440 med:belongsToDepartment wd:Q788926,
+        wd:Q83042 .
+
+wd:Q1419347 med:belongsToDepartment wd:Q5284418 .
+
+wd:Q1422574 med:belongsToDepartment wd:Q189553 .
+
+wd:Q1425208 med:belongsToDepartment wd:Q327657 .
+
+wd:Q142807 med:belongsToDepartment wd:Q161437 .
+
+wd:Q1431933 med:belongsToDepartment wd:Q10379 .
+
+wd:Q1432717 med:belongsToDepartment wd:Q7867 .
+
+wd:Q1435219 med:belongsToDepartment wd:Q120569 .
+
+wd:Q143607 med:belongsToDepartment wd:Q504033 .
+
+wd:Q143790 med:belongsToDepartment wd:Q83042 .
+
+wd:Q143925 med:belongsToDepartment wd:Q120569 .
+
+wd:Q144119 med:belongsToDepartment wd:Q7867,
+        wd:Q9418 .
+
+wd:Q1444550 med:belongsToDepartment wd:Q10379 .
+
+wd:Q14515911 med:belongsToDepartment wd:Q504033 .
+
+wd:Q14523576 med:belongsToDepartment wd:Q80015 .
+
+wd:Q1453767 med:belongsToDepartment wd:Q183257,
+        wd:Q7867 .
+
+wd:Q14594748 med:belongsToDepartment wd:Q105650 .
+
+wd:Q1459798 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q1467339 med:belongsToDepartment wd:Q162606 .
+
+wd:Q1472019 med:belongsToDepartment wd:Q203337 .
+
+wd:Q1473802 med:belongsToDepartment wd:Q162555 .
+
+wd:Q14870002 med:belongsToDepartment wd:Q171171 .
+
+wd:Q1492283 med:belongsToDepartment wd:Q120569 .
+
+wd:Q1494009 med:belongsToDepartment wd:Q203337 .
+
+wd:Q14942021 med:belongsToDepartment wd:Q120569,
+        wd:Q7218 .
+
+wd:Q15043325 med:belongsToDepartment wd:Q4313186,
+        wd:Q55190072,
+        wd:Q7867 .
+
+wd:Q15043641 med:belongsToDepartment wd:Q83042 .
+
+wd:Q1506572 med:belongsToDepartment wd:Q10379 .
+
+wd:Q1510899 med:belongsToDepartment wd:Q120569 .
+
+wd:Q15124212 med:belongsToDepartment wd:Q162555,
+        wd:Q203337 .
+
+wd:Q1519657 med:belongsToDepartment wd:Q171171 .
+
+wd:Q15218681 med:belongsToDepartment wd:Q2861470,
+        wd:Q83042 .
+
+wd:Q1524166 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q1529650 med:belongsToDepartment wd:Q161437 .
+
+wd:Q15401586 med:belongsToDepartment wd:Q203337,
+        wd:Q788926 .
+
+wd:Q15460254 med:belongsToDepartment wd:Q788926 .
+
+wd:Q1550742 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q1561647 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q15630404 med:belongsToDepartment wd:Q105650 .
+
+wd:Q15640367 med:belongsToDepartment wd:Q7867,
+        wd:Q788926 .
+
+wd:Q15666414 med:belongsToDepartment wd:Q327657 .
+
+wd:Q1571008 med:belongsToDepartment wd:Q80015 .
+
+wd:Q1572538 med:belongsToDepartment wd:Q105650,
+        wd:Q177635 .
+
+wd:Q15730674 med:belongsToDepartment wd:Q120569 .
+
+wd:Q15731388 med:belongsToDepartment wd:Q105650 .
+
+wd:Q1573613 med:belongsToDepartment wd:Q171171 .
+
+wd:Q1581308 med:belongsToDepartment wd:Q189553 .
+
+wd:Q1592207 med:belongsToDepartment wd:Q539690 .
+
+wd:Q1593114 med:belongsToDepartment wd:Q105650,
+        wd:Q335057 .
+
+wd:Q1593600 med:belongsToDepartment wd:Q177635 .
+
+wd:Q15974799 med:belongsToDepartment wd:Q105650,
+        wd:Q162606,
+        wd:Q177635 .
+
+wd:Q16001403 med:belongsToDepartment wd:Q161437 .
+
+wd:Q16002898 med:belongsToDepartment wd:Q788926 .
+
+wd:Q16006998 med:belongsToDepartment wd:Q788926 .
+
+wd:Q160796 med:belongsToDepartment wd:Q7867,
+        wd:Q83042,
+        wd:Q9418 .
+
+wd:Q16116595 med:belongsToDepartment wd:Q120569,
+        wd:Q162555 .
+
+wd:Q1613885 med:belongsToDepartment wd:Q788926 .
+
+wd:Q1614115 med:belongsToDepartment wd:Q162606 .
+
+wd:Q1620193 med:belongsToDepartment wd:Q83042 .
+
+wd:Q1620206 med:belongsToDepartment wd:Q83042 .
+
+wd:Q1620594 med:belongsToDepartment wd:Q171171 .
+
+wd:Q16242812 med:belongsToDepartment wd:Q12128 .
+
+wd:Q16254825 med:belongsToDepartment wd:Q1221899 .
+
+wd:Q16256637 med:belongsToDepartment wd:Q18123741 .
+
+wd:Q16257997 med:belongsToDepartment wd:Q171171 .
+
+wd:Q16258703 med:belongsToDepartment wd:Q177635 .
+
+wd:Q1632678 med:belongsToDepartment wd:Q120569 .
+
+wd:Q16333787 med:belongsToDepartment wd:Q788926 .
+
+wd:Q163469 med:belongsToDepartment wd:Q120569 .
+
+wd:Q1637035 med:belongsToDepartment wd:Q171171 .
+
+wd:Q1640632 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q1640998 med:belongsToDepartment wd:Q171171 .
+
+wd:Q16485 med:belongsToDepartment wd:Q162606 .
+
+wd:Q16488 med:belongsToDepartment wd:Q5284418 .
+
+wd:Q16525336 med:belongsToDepartment wd:Q120569 .
+
+wd:Q16545548 med:belongsToDepartment wd:Q83042 .
+
+wd:Q1664923 med:belongsToDepartment wd:Q105650 .
+
+wd:Q1665961 med:belongsToDepartment wd:Q83042 .
+
+wd:Q16678468 med:belongsToDepartment wd:Q83042 .
+
+wd:Q166907 med:belongsToDepartment wd:Q83042 .
+
+wd:Q1671489 med:belongsToDepartment wd:Q162606 .
+
+wd:Q1671598 med:belongsToDepartment wd:Q123028,
+        wd:Q5284418 .
+
+wd:Q1687472 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q1688105 med:belongsToDepartment wd:Q216685,
+        wd:Q327657 .
+
+wd:Q16905725 med:belongsToDepartment wd:Q10379 .
+
+wd:Q16934007 med:belongsToDepartment wd:Q5284418 .
+
+wd:Q16935263 med:belongsToDepartment wd:Q788926 .
+
+wd:Q16939433 med:belongsToDepartment wd:Q162555 .
+
+wd:Q16964509 med:belongsToDepartment wd:Q171171 .
+
+wd:Q16965421 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q16975956 med:belongsToDepartment wd:Q171171 .
+
+wd:Q16977356 med:belongsToDepartment wd:Q788926 .
+
+wd:Q16984194 med:belongsToDepartment wd:Q203337 .
+
+wd:Q16994031 med:belongsToDepartment wd:Q101929 .
+
+wd:Q16999817 med:belongsToDepartment wd:Q105650 .
+
+wd:Q16999912 med:belongsToDepartment wd:Q1071953,
+        wd:Q83042 .
+
+wd:Q17004056 med:belongsToDepartment wd:Q80015 .
+
+wd:Q17004153 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q17008739 med:belongsToDepartment wd:Q162606 .
+
+wd:Q17009830 med:belongsToDepartment wd:Q1221899,
+        wd:Q162606 .
+
+wd:Q17012451 med:belongsToDepartment wd:Q162606 .
+
+wd:Q17028415 med:belongsToDepartment wd:Q7867 .
+
+wd:Q17037142 med:belongsToDepartment wd:Q162555 .
+
+wd:Q17048613 med:belongsToDepartment wd:Q1071953,
+        wd:Q162606,
+        wd:Q83042 .
+
+wd:Q17067160 med:belongsToDepartment wd:Q161437 .
+
+wd:Q17071650 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q17077887 med:belongsToDepartment wd:Q788926 .
+
+wd:Q17083598 med:belongsToDepartment wd:Q12128 .
+
+wd:Q17112235 med:belongsToDepartment wd:Q15218776 .
+
+wd:Q1711733 med:belongsToDepartment wd:Q15218776 .
+
+wd:Q17118587 med:belongsToDepartment wd:Q83042 .
+
+wd:Q17119515 med:belongsToDepartment wd:Q120569 .
+
+wd:Q17125280 med:belongsToDepartment wd:Q83042 .
+
+wd:Q17125282 med:belongsToDepartment wd:Q162555 .
+
+wd:Q17126040 med:belongsToDepartment wd:Q103824 .
+
+wd:Q17130620 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q17141201 med:belongsToDepartment wd:Q171171,
+        wd:Q788926 .
+
+wd:Q17144183 med:belongsToDepartment wd:Q504033 .
+
+wd:Q17145912 med:belongsToDepartment wd:Q103824 .
+
+wd:Q17146775 med:belongsToDepartment wd:Q101929,
+        wd:Q103824 .
+
+wd:Q17147306 med:belongsToDepartment wd:Q203337 .
+
+wd:Q17148651 med:belongsToDepartment wd:Q171171 .
+
+wd:Q17151226 med:belongsToDepartment wd:Q898674 .
+
+wd:Q17154586 med:belongsToDepartment wd:Q123028 .
+
+wd:Q17156972 med:belongsToDepartment wd:Q83042 .
+
+wd:Q17163513 med:belongsToDepartment wd:Q1071953,
+        wd:Q83042 .
+
+wd:Q17164695 med:belongsToDepartment wd:Q327657 .
+
+wd:Q17165269 med:belongsToDepartment wd:Q12128 .
+
+wd:Q1729124 med:belongsToDepartment wd:Q10379 .
+
+wd:Q1734755 med:belongsToDepartment wd:Q162606 .
+
+wd:Q1741331 med:belongsToDepartment wd:Q83042 .
+
+wd:Q1746068 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q1753467 med:belongsToDepartment wd:Q327657 .
+
+wd:Q1753520 med:belongsToDepartment wd:Q327657 .
+
+wd:Q1756659 med:belongsToDepartment wd:Q83042 .
+
+wd:Q1758624 med:belongsToDepartment wd:Q327657 .
+
+wd:Q1759560 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q1760294 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q1762339 med:belongsToDepartment wd:Q10379 .
+
+wd:Q1764657 med:belongsToDepartment wd:Q171171 .
+
+wd:Q1765564 med:belongsToDepartment wd:Q679690,
+        wd:Q788926 .
+
+wd:Q1777118 med:belongsToDepartment wd:Q327657 .
+
+wd:Q1783300 med:belongsToDepartment wd:Q177635 .
+
+wd:Q1787939 med:belongsToDepartment wd:Q10384 .
+
+wd:Q1790005 med:belongsToDepartment wd:Q7208 .
+
+wd:Q18054140 med:belongsToDepartment wd:Q10379 .
+
+wd:Q18140710 med:belongsToDepartment wd:Q10379,
+        wd:Q83042 .
+
+wd:Q181876 med:belongsToDepartment wd:Q162555 .
+
+wd:Q181923 med:belongsToDepartment wd:Q1741745,
+        wd:Q7867 .
+
+wd:Q18199350 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q18209712 med:belongsToDepartment wd:Q83042 .
+
+wd:Q18211695 med:belongsToDepartment wd:Q1221899 .
+
+wd:Q1827380 med:belongsToDepartment wd:Q182442 .
+
+wd:Q18350119 med:belongsToDepartment wd:Q83042 .
+
+wd:Q18357155 med:belongsToDepartment wd:Q120569 .
+
+wd:Q18395602 med:belongsToDepartment wd:Q161437 .
+
+wd:Q18477691 med:belongsToDepartment wd:Q788926 .
+
+wd:Q18553201 med:belongsToDepartment wd:Q788926 .
+
+wd:Q18554341 med:belongsToDepartment wd:Q120569 .
+
+wd:Q18559423 med:belongsToDepartment wd:Q539690 .
+
+wd:Q18579 med:belongsToDepartment wd:Q162606,
+        wd:Q83042 .
+
+wd:Q1858291 med:belongsToDepartment wd:Q1221899 .
+
+wd:Q1869874 med:belongsToDepartment wd:Q207011,
+        wd:Q7867,
+        wd:Q83042,
+        wd:Q9418 .
+
+wd:Q1883190 med:belongsToDepartment wd:Q161437 .
+
+wd:Q188611 med:belongsToDepartment wd:Q7867,
+        wd:Q9418 .
+
+wd:Q18921119 med:belongsToDepartment wd:Q162555 .
+
+wd:Q18924544 med:belongsToDepartment wd:Q1365243,
+        wd:Q788926 .
+
+wd:Q189389 med:belongsToDepartment wd:Q1498222 .
+
+wd:Q18966343 med:belongsToDepartment wd:Q7867 .
+
+wd:Q18966766 med:belongsToDepartment wd:Q788926 .
+
+wd:Q18966851 med:belongsToDepartment wd:Q120569 .
+
+wd:Q18967077 med:belongsToDepartment wd:Q162555 .
+
+wd:Q18967342 med:belongsToDepartment wd:Q162555 .
+
+wd:Q18967417 med:belongsToDepartment wd:Q788926 .
+
+wd:Q18967499 med:belongsToDepartment wd:Q120569 .
+
+wd:Q18967534 med:belongsToDepartment wd:Q788926 .
+
+wd:Q18968218 med:belongsToDepartment wd:Q123028 .
+
+wd:Q18975177 med:belongsToDepartment wd:Q788926 .
+
+wd:Q18975456 med:belongsToDepartment wd:Q101929,
+        wd:Q103824 .
+
+wd:Q18975594 med:belongsToDepartment wd:Q2138622 .
+
+wd:Q18975859 med:belongsToDepartment wd:Q10379,
+        wd:Q83042 .
+
+wd:Q18975915 med:belongsToDepartment wd:Q162555 .
+
+wd:Q18976000 med:belongsToDepartment wd:Q162555 .
+
+wd:Q19000482 med:belongsToDepartment wd:Q788926 .
+
+wd:Q19000862 med:belongsToDepartment wd:Q162555 .
+
+wd:Q19001172 med:belongsToDepartment wd:Q162555 .
+
+wd:Q1901516 med:belongsToDepartment wd:Q120569 .
+
+wd:Q1920586 med:belongsToDepartment wd:Q162555,
+        wd:Q83042 .
+
+wd:Q192579 med:belongsToDepartment wd:Q83042 .
+
+wd:Q19275831 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q193211 med:belongsToDepartment wd:Q162555 .
+
+wd:Q1934449 med:belongsToDepartment wd:Q171171 .
+
+wd:Q194101 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q194520 med:belongsToDepartment wd:Q7208 .
+
+wd:Q1948740 med:belongsToDepartment wd:Q83042 .
+
+wd:Q1956557 med:belongsToDepartment wd:Q177635 .
+
+wd:Q19597369 med:belongsToDepartment wd:Q788926 .
+
+wd:Q19597605 med:belongsToDepartment wd:Q161437 .
+
+wd:Q196781 med:belongsToDepartment wd:Q327657 .
+
+wd:Q196788 med:belongsToDepartment wd:Q162555 .
+
+wd:Q1970295 med:belongsToDepartment wd:Q1221899 .
+
+wd:Q1974371 med:belongsToDepartment wd:Q83042 .
+
+wd:Q19772377 med:belongsToDepartment wd:Q120569 .
+
+wd:Q1981337 med:belongsToDepartment wd:Q131130 .
+
+wd:Q1985123 med:belongsToDepartment wd:Q327657 .
+
+wd:Q1985225 med:belongsToDepartment wd:Q162555,
+        wd:Q327657,
+        wd:Q504033 .
+
+wd:Q1996053 med:belongsToDepartment wd:Q120569 .
+
+wd:Q19972185 med:belongsToDepartment wd:Q105650,
+        wd:Q1221899 .
+
+wd:Q2003151 med:belongsToDepartment wd:Q10379,
+        wd:Q171171 .
+
+wd:Q2013137 med:belongsToDepartment wd:Q105650 .
+
+wd:Q2017756 med:belongsToDepartment wd:Q162606 .
+
+wd:Q2025687 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q2026920 med:belongsToDepartment wd:Q55190072 .
+
+wd:Q2031871 med:belongsToDepartment wd:Q10379,
+        wd:Q83042 .
+
+wd:Q2035032 med:belongsToDepartment wd:Q162555 .
+
+wd:Q20387775 med:belongsToDepartment wd:Q203337 .
+
+wd:Q2045954 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q2054837 med:belongsToDepartment wd:Q7867 .
+
+wd:Q2056680 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q20571563 med:belongsToDepartment wd:Q327657 .
+
+wd:Q2060353 med:belongsToDepartment wd:Q83042 .
+
+wd:Q2071182 med:belongsToDepartment wd:Q162555 .
+
+wd:Q2076966 med:belongsToDepartment wd:Q123028,
+        wd:Q788926,
+        wd:Q80015 .
+
+wd:Q2088972 med:belongsToDepartment wd:Q171171 .
+
+wd:Q209522 med:belongsToDepartment wd:Q199906,
+        wd:Q7867 .
+
+wd:Q209647 med:belongsToDepartment wd:Q7867 .
+
+wd:Q2096745 med:belongsToDepartment wd:Q103824 .
+
+wd:Q2103933 med:belongsToDepartment wd:Q83042 .
+
+wd:Q2105535 med:belongsToDepartment wd:Q120569,
+        wd:Q668064 .
+
+wd:Q2106232 med:belongsToDepartment wd:Q131130 .
+
+wd:Q21109048 med:belongsToDepartment wd:Q105650 .
+
+wd:Q21110016 med:belongsToDepartment wd:Q161437,
+        wd:Q83042 .
+
+wd:Q21129548 med:belongsToDepartment wd:Q10379 .
+
+wd:Q21234558 med:belongsToDepartment wd:Q10379 .
+
+wd:Q21235512 med:belongsToDepartment wd:Q10379 .
+
+wd:Q2141001 med:belongsToDepartment wd:Q3505712 .
+
+wd:Q2161683 med:belongsToDepartment wd:Q171171 .
+
+wd:Q216866 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q2213687 med:belongsToDepartment wd:Q327657 .
+
+wd:Q221463 med:belongsToDepartment wd:Q120569,
+        wd:Q1498222,
+        wd:Q932510 .
+
+wd:Q2246688 med:belongsToDepartment wd:Q162606 .
+
+wd:Q2248721 med:belongsToDepartment wd:Q83042 .
+
+wd:Q2249526 med:belongsToDepartment wd:Q679690 .
+
+wd:Q225957 med:belongsToDepartment wd:Q33226,
+        wd:Q3872,
+        wd:Q83042 .
+
+wd:Q2270671 med:belongsToDepartment wd:Q1976068,
+        wd:Q788926 .
+
+wd:Q2280546 med:belongsToDepartment wd:Q10379,
+        wd:Q83042 .
+
+wd:Q22907909 med:belongsToDepartment wd:Q10379 .
+
+wd:Q2291593 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q2319892 med:belongsToDepartment wd:Q203337 .
+
+wd:Q2323502 med:belongsToDepartment wd:Q788926 .
+
+wd:Q2373700 med:belongsToDepartment wd:Q788926 .
+
+wd:Q23808178 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q23808336 med:belongsToDepartment wd:Q203337 .
+
+wd:Q23929670 med:belongsToDepartment wd:Q162555,
+        wd:Q171171 .
+
+wd:Q2395215 med:belongsToDepartment wd:Q83042 .
+
+wd:Q2431472 med:belongsToDepartment wd:Q327657 .
+
+wd:Q2438516 med:belongsToDepartment wd:Q203337 .
+
+wd:Q2458539 med:belongsToDepartment wd:Q171171 .
+
+wd:Q2466106 med:belongsToDepartment wd:Q171171 .
+
+wd:Q2474600 med:belongsToDepartment wd:Q171171 .
+
+wd:Q2487710 med:belongsToDepartment wd:Q504033 .
+
+wd:Q2496447 med:belongsToDepartment wd:Q5284418 .
+
+wd:Q24975389 med:belongsToDepartment wd:Q166231 .
+
+wd:Q2507454 med:belongsToDepartment wd:Q162606 .
+
+wd:Q2520684 med:belongsToDepartment wd:Q12128 .
+
+wd:Q2521341 med:belongsToDepartment wd:Q171171 .
+
+wd:Q25303958 med:belongsToDepartment wd:Q161437 .
+
+wd:Q25324086 med:belongsToDepartment wd:Q120569 .
+
+wd:Q25324223 med:belongsToDepartment wd:Q171171 .
+
+wd:Q25324230 med:belongsToDepartment wd:Q120569,
+        wd:Q162555 .
+
+wd:Q2533616 med:belongsToDepartment wd:Q171171 .
+
+wd:Q2538477 med:belongsToDepartment wd:Q123028 .
+
+wd:Q2546232 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q2569523 med:belongsToDepartment wd:Q235007,
+        wd:Q7867 .
+
+wd:Q25787 med:belongsToDepartment wd:Q5284418 .
+
+wd:Q2581333 med:belongsToDepartment wd:Q7867,
+        wd:Q83042 .
+
+wd:Q2583597 med:belongsToDepartment wd:Q10379 .
+
+wd:Q260688 med:belongsToDepartment wd:Q162555 .
+
+wd:Q2622199 med:belongsToDepartment wd:Q203337 .
+
+wd:Q2625993 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q2632078 med:belongsToDepartment wd:Q120569 .
+
+wd:Q2633143 med:belongsToDepartment wd:Q1221899 .
+
+wd:Q2633267 med:belongsToDepartment wd:Q203337 .
+
+wd:Q2640586 med:belongsToDepartment wd:Q170201,
+        wd:Q171171,
+        wd:Q788926 .
+
+wd:Q266018 med:belongsToDepartment wd:Q10379 .
+
+wd:Q26695958 med:belongsToDepartment wd:Q788926 .
+
+wd:Q26721126 med:belongsToDepartment wd:Q7867 .
+
+wd:Q26781137 med:belongsToDepartment wd:Q10379,
+        wd:Q1154774 .
+
+wd:Q26805194 med:belongsToDepartment wd:Q120569 .
+
+wd:Q2681162 med:belongsToDepartment wd:Q161437,
+        wd:Q83042 .
+
+wd:Q268594 med:belongsToDepartment wd:Q7867,
+        wd:Q83042 .
+
+wd:Q268832 med:belongsToDepartment wd:Q103824,
+        wd:Q162555 .
+
+wd:Q2697371 med:belongsToDepartment wd:Q83042 .
+
+wd:Q2703671 med:belongsToDepartment wd:Q171171 .
+
+wd:Q27698000 med:belongsToDepartment wd:Q182442 .
+
+wd:Q2774221 med:belongsToDepartment wd:Q162555 .
+
+wd:Q28032350 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q28058359 med:belongsToDepartment wd:Q10344696,
+        wd:Q10379 .
+
+wd:Q28136285 med:belongsToDepartment wd:Q162555 .
+
+wd:Q281490 med:belongsToDepartment wd:Q105650 .
+
+wd:Q2823517 med:belongsToDepartment wd:Q10379 .
+
+wd:Q28405104 med:belongsToDepartment wd:Q5284418 .
+
+wd:Q28439873 med:belongsToDepartment wd:Q5284418 .
+
+wd:Q28501458 med:belongsToDepartment wd:Q788926 .
+
+wd:Q2852337 med:belongsToDepartment wd:Q83042 .
+
+wd:Q2853082 med:belongsToDepartment wd:Q788926 .
+
+wd:Q2855814 med:belongsToDepartment wd:Q7867 .
+
+wd:Q2856379 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q2857923 med:belongsToDepartment wd:Q10379 .
+
+wd:Q2857924 med:belongsToDepartment wd:Q10379 .
+
+wd:Q28693 med:belongsToDepartment wd:Q20862341 .
+
+wd:Q28735834 med:belongsToDepartment wd:Q83042 .
+
+wd:Q28741649 med:belongsToDepartment wd:Q7867 .
+
+wd:Q28823477 med:belongsToDepartment wd:Q7867,
+        wd:Q9418 .
+
+wd:Q28914244 med:belongsToDepartment wd:Q7867 .
+
+wd:Q28923579 med:belongsToDepartment wd:Q7867 .
+
+wd:Q290213 med:belongsToDepartment wd:Q161437 .
+
+wd:Q2915477 med:belongsToDepartment wd:Q162606 .
+
+wd:Q2916477 med:belongsToDepartment wd:Q5284418 .
+
+wd:Q2923350 med:belongsToDepartment wd:Q1071953,
+        wd:Q327657 .
+
+wd:Q2933021 med:belongsToDepartment wd:Q2861470,
+        wd:Q7867 .
+
+wd:Q2937283 med:belongsToDepartment wd:Q171171 .
+
+wd:Q2946952 med:belongsToDepartment wd:Q327657 .
+
+wd:Q2964437 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q2966706 med:belongsToDepartment wd:Q171171 .
+
+wd:Q2977746 med:belongsToDepartment wd:Q162606 .
+
+wd:Q30015589 med:belongsToDepartment wd:Q10379 .
+
+wd:Q3005579 med:belongsToDepartment wd:Q327657 .
+
+wd:Q300664 med:belongsToDepartment wd:Q120569 .
+
+wd:Q3009535 med:belongsToDepartment wd:Q120569 .
+
+wd:Q3020720 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q3023846 med:belongsToDepartment wd:Q171171 .
+
+wd:Q3025883 med:belongsToDepartment wd:Q162606,
+        wd:Q3505712 .
+
+wd:Q30314084 med:belongsToDepartment wd:Q840545 .
+
+wd:Q30314231 med:belongsToDepartment wd:Q162555 .
+
+wd:Q30314291 med:belongsToDepartment wd:Q171171 .
+
+wd:Q30325669 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q30397754 med:belongsToDepartment wd:Q80015 .
+
+wd:Q3042166 med:belongsToDepartment wd:Q203337 .
+
+wd:Q3043345 med:belongsToDepartment wd:Q7867 .
+
+wd:Q3045238 med:belongsToDepartment wd:Q83042 .
+
+wd:Q3046374 med:belongsToDepartment wd:Q788926 .
+
+wd:Q3047124 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q3074499 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q30892676 med:belongsToDepartment wd:Q6947231 .
+
+wd:Q30900016 med:belongsToDepartment wd:Q10379 .
+
+wd:Q3099702 med:belongsToDepartment wd:Q840545 .
+
+wd:Q3128789 med:belongsToDepartment wd:Q120569 .
+
+wd:Q3130277 med:belongsToDepartment wd:Q162606 .
+
+wd:Q3134276 med:belongsToDepartment wd:Q932510 .
+
+wd:Q3144117 med:belongsToDepartment wd:Q120569 .
+
+wd:Q3144201 med:belongsToDepartment wd:Q83042 .
+
+wd:Q3145111 med:belongsToDepartment wd:Q161437 .
+
+wd:Q3150711 med:belongsToDepartment wd:Q5284418 .
+
+wd:Q3153686 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q3155580 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q318005 med:belongsToDepartment wd:Q7867,
+        wd:Q9418 .
+
+wd:Q3208285 med:belongsToDepartment wd:Q7867 .
+
+wd:Q3208830 med:belongsToDepartment wd:Q7867 .
+
+wd:Q322370 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q3241451 med:belongsToDepartment wd:Q123028,
+        wd:Q1470093,
+        wd:Q162606 .
+
+wd:Q3264425 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q3281285 med:belongsToDepartment wd:Q162606 .
+
+wd:Q3281296 med:belongsToDepartment wd:Q171171 .
+
+wd:Q3281303 med:belongsToDepartment wd:Q327657 .
+
+wd:Q3281910 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q3288116 med:belongsToDepartment wd:Q788926 .
+
+wd:Q3288122 med:belongsToDepartment wd:Q7867 .
+
+wd:Q33121 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q3317156 med:belongsToDepartment wd:Q10379 .
+
+wd:Q332768 med:belongsToDepartment wd:Q7867 .
+
+wd:Q3333223 med:belongsToDepartment wd:Q1221899 .
+
+wd:Q3335661 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q3338677 med:belongsToDepartment wd:Q162606 .
+
+wd:Q3348621 med:belongsToDepartment wd:Q10379 .
+
+wd:Q3367106 med:belongsToDepartment wd:Q788926 .
+
+wd:Q3377653 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q3399863 med:belongsToDepartment wd:Q80015 .
+
+wd:Q340548 med:belongsToDepartment wd:Q120569 .
+
+wd:Q3408668 med:belongsToDepartment wd:Q171171 .
+
+wd:Q3410750 med:belongsToDepartment wd:Q788926 .
+
+wd:Q341201 med:belongsToDepartment wd:Q120569 .
+
+wd:Q3435504 med:belongsToDepartment wd:Q7867 .
+
+wd:Q3473544 med:belongsToDepartment wd:Q162555 .
+
+wd:Q3493588 med:belongsToDepartment wd:Q788926 .
+
+wd:Q3508629 med:belongsToDepartment wd:Q15218776,
+        wd:Q2964004,
+        wd:Q40821,
+        wd:Q840545 .
+
+wd:Q3508650 med:belongsToDepartment wd:Q327657 .
+
+wd:Q3508714 med:belongsToDepartment wd:Q105650 .
+
+wd:Q3508735 med:belongsToDepartment wd:Q103824 .
+
+wd:Q3518022 med:belongsToDepartment wd:Q376680 .
+
+wd:Q3542027 med:belongsToDepartment wd:Q162555,
+        wd:Q171171 .
+
+wd:Q3542029 med:belongsToDepartment wd:Q120569,
+        wd:Q162555 .
+
+wd:Q3543799 med:belongsToDepartment wd:Q1221899 .
+
+wd:Q3554941 med:belongsToDepartment wd:Q235007 .
+
+wd:Q356713 med:belongsToDepartment wd:Q788926 .
+
+wd:Q360035 med:belongsToDepartment wd:Q7867 .
+
+wd:Q3604584 med:belongsToDepartment wd:Q171171 .
+
+wd:Q3612627 med:belongsToDepartment wd:Q7867,
+        wd:Q83042 .
+
+wd:Q3617336 med:belongsToDepartment wd:Q10379 .
+
+wd:Q3617579 med:belongsToDepartment wd:Q103824 .
+
+wd:Q3658376 med:belongsToDepartment wd:Q162555 .
+
+wd:Q367756 med:belongsToDepartment wd:Q10379 .
+
+wd:Q369262 med:belongsToDepartment wd:Q162606 .
+
+wd:Q3725136 med:belongsToDepartment wd:Q10379 .
+
+wd:Q3740609 med:belongsToDepartment wd:Q101929,
+        wd:Q189553,
+        wd:Q203337 .
+
+wd:Q3740798 med:belongsToDepartment wd:Q1071953,
+        wd:Q1221899 .
+
+wd:Q3774229 med:belongsToDepartment wd:Q171171 .
+
+wd:Q377493 med:belongsToDepartment wd:Q7867,
+        wd:Q9418 .
+
+wd:Q3792460 med:belongsToDepartment wd:Q83042 .
+
+wd:Q38076020 med:belongsToDepartment wd:Q7867 .
+
+wd:Q3831227 med:belongsToDepartment wd:Q120569 .
+
+wd:Q3832889 med:belongsToDepartment wd:Q539690 .
+
+wd:Q3854686 med:belongsToDepartment wd:Q83042 .
+
+wd:Q386408 med:belongsToDepartment wd:Q170201,
+        wd:Q788926 .
+
+wd:Q3874230 med:belongsToDepartment wd:Q177635 .
+
+wd:Q388626 med:belongsToDepartment wd:Q744029 .
+
+wd:Q390217 med:belongsToDepartment wd:Q5284418 .
+
+wd:Q3907636 med:belongsToDepartment wd:Q203337 .
+
+wd:Q3908490 med:belongsToDepartment wd:Q162606 .
+
+wd:Q3908491 med:belongsToDepartment wd:Q171171 .
+
+wd:Q3928626 med:belongsToDepartment wd:Q472607 .
+
+wd:Q3961680 med:belongsToDepartment wd:Q10379 .
+
+wd:Q3961701 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q397554 med:belongsToDepartment wd:Q83042 .
+
+wd:Q3993706 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q4059313 med:belongsToDepartment wd:Q788926 .
+
+wd:Q40649915 med:belongsToDepartment wd:Q1071953,
+        wd:Q7208 .
+
+wd:Q4070256 med:belongsToDepartment wd:Q17147442 .
+
+wd:Q4086828 med:belongsToDepartment wd:Q161437 .
+
+wd:Q4090776 med:belongsToDepartment wd:Q162606 .
+
+wd:Q4097126 med:belongsToDepartment wd:Q1365243,
+        wd:Q788926 .
+
+wd:Q4135134 med:belongsToDepartment wd:Q83042 .
+
+wd:Q4138762 med:belongsToDepartment wd:Q162606 .
+
+wd:Q4138763 med:belongsToDepartment wd:Q2138622 .
+
+wd:Q41411120 med:belongsToDepartment wd:Q1071953,
+        wd:Q83042 .
+
+wd:Q4162341 med:belongsToDepartment wd:Q7867 .
+
+wd:Q4162400 med:belongsToDepartment wd:Q120569 .
+
+wd:Q4198677 med:belongsToDepartment wd:Q162606 .
+
+wd:Q4200416 med:belongsToDepartment wd:Q7867 .
+
+wd:Q420804 med:belongsToDepartment wd:Q171171 .
+
+wd:Q420915 med:belongsToDepartment wd:Q10379 .
+
+wd:Q4222640 med:belongsToDepartment wd:Q788926 .
+
+wd:Q42293706 med:belongsToDepartment wd:Q161437 .
+
+wd:Q423927 med:belongsToDepartment wd:Q162606 .
+
+wd:Q42404192 med:belongsToDepartment wd:Q83042 .
+
+wd:Q42404343 med:belongsToDepartment wd:Q83042 .
+
+wd:Q424317 med:belongsToDepartment wd:Q120569 .
+
+wd:Q4293079 med:belongsToDepartment wd:Q788926 .
+
+wd:Q4316437 med:belongsToDepartment wd:Q83042 .
+
+wd:Q4330029 med:belongsToDepartment wd:Q203337 .
+
+wd:Q4335552 med:belongsToDepartment wd:Q120569,
+        wd:Q162555 .
+
+wd:Q4335554 med:belongsToDepartment wd:Q162555,
+        wd:Q504033 .
+
+wd:Q4335557 med:belongsToDepartment wd:Q162555,
+        wd:Q83042 .
+
+wd:Q4338644 med:belongsToDepartment wd:Q327657 .
+
+wd:Q4338646 med:belongsToDepartment wd:Q327657 .
+
+wd:Q4350506 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q4351777 med:belongsToDepartment wd:Q103824 .
+
+wd:Q4362373 med:belongsToDepartment wd:Q1730955,
+        wd:Q4313186 .
+
+wd:Q4373155 med:belongsToDepartment wd:Q788926 .
+
+wd:Q4386685 med:belongsToDepartment wd:Q788926 .
+
+wd:Q4411659 med:belongsToDepartment wd:Q182442 .
+
+wd:Q4421929 med:belongsToDepartment wd:Q83042 .
+
+wd:Q4438017 med:belongsToDepartment wd:Q203337 .
+
+wd:Q4454701 med:belongsToDepartment wd:Q788926 .
+
+wd:Q448747 med:belongsToDepartment wd:Q203337 .
+
+wd:Q4497153 med:belongsToDepartment wd:Q120569,
+        wd:Q788926 .
+
+wd:Q4501577 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q4501726 med:belongsToDepartment wd:Q203337 .
+
+wd:Q4503868 med:belongsToDepartment wd:Q162555 .
+
+wd:Q460591 med:belongsToDepartment wd:Q2861470,
+        wd:Q628764,
+        wd:Q731615 .
+
+wd:Q465016 med:belongsToDepartment wd:Q1898664 .
+
+wd:Q4651855 med:belongsToDepartment wd:Q101929,
+        wd:Q788926 .
+
+wd:Q4651856 med:belongsToDepartment wd:Q101929,
+        wd:Q162555,
+        wd:Q539690 .
+
+wd:Q46545345 med:belongsToDepartment wd:Q7867 .
+
+wd:Q4665123 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q4669671 med:belongsToDepartment wd:Q12128 .
+
+wd:Q4674430 med:belongsToDepartment wd:Q171171 .
+
+wd:Q4677914 med:belongsToDepartment wd:Q123028 .
+
+wd:Q4677921 med:belongsToDepartment wd:Q162555 .
+
+wd:Q4682248 med:belongsToDepartment wd:Q162555,
+        wd:Q7208 .
+
+wd:Q4683946 med:belongsToDepartment wd:Q162555 .
+
+wd:Q4699003 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q47108021 med:belongsToDepartment wd:Q327657,
+        wd:Q504033 .
+
+wd:Q47166292 med:belongsToDepartment wd:Q161437 .
+
+wd:Q47200750 med:belongsToDepartment wd:Q161437 .
+
+wd:Q4721578 med:belongsToDepartment wd:Q171171 .
+
+wd:Q472664 med:belongsToDepartment wd:Q162606 .
+
+wd:Q4735280 med:belongsToDepartment wd:Q788926 .
+
+wd:Q4736375 med:belongsToDepartment wd:Q171171,
+        wd:Q788926 .
+
+wd:Q475086 med:belongsToDepartment wd:Q162555 .
+
+wd:Q47535995 med:belongsToDepartment wd:Q11180 .
+
+wd:Q475510 med:belongsToDepartment wd:Q788926 .
+
+wd:Q4770152 med:belongsToDepartment wd:Q161437 .
+
+wd:Q478389 med:belongsToDepartment wd:Q327657 .
+
+wd:Q4797639 med:belongsToDepartment wd:Q327657 .
+
+wd:Q4818889 med:belongsToDepartment wd:Q1221899 .
+
+wd:Q4826986 med:belongsToDepartment wd:Q171171 .
+
+wd:Q4828020 med:belongsToDepartment wd:Q83042 .
+
+wd:Q4830470 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q486485 med:belongsToDepartment wd:Q11180 .
+
+wd:Q4865135 med:belongsToDepartment wd:Q171171 .
+
+wd:Q4887972 med:belongsToDepartment wd:Q189553 .
+
+wd:Q48988765 med:belongsToDepartment wd:Q83042 .
+
+wd:Q4907660 med:belongsToDepartment wd:Q120569 .
+
+wd:Q4925474 med:belongsToDepartment wd:Q788926 .
+
+wd:Q494066 med:belongsToDepartment wd:Q101929,
+        wd:Q83042 .
+
+wd:Q495068 med:belongsToDepartment wd:Q83042 .
+
+wd:Q4979461 med:belongsToDepartment wd:Q83042 .
+
+wd:Q4982380 med:belongsToDepartment wd:Q27712466 .
+
+wd:Q499857 med:belongsToDepartment wd:Q162555 .
+
+wd:Q5013186 med:belongsToDepartment wd:Q101929,
+        wd:Q83042 .
+
+wd:Q5018774 med:belongsToDepartment wd:Q162555,
+        wd:Q327657,
+        wd:Q504033 .
+
+wd:Q5031732 med:belongsToDepartment wd:Q788926 .
+
+wd:Q5032577 med:belongsToDepartment wd:Q120569 .
+
+wd:Q5038165 med:belongsToDepartment wd:Q162555 .
+
+wd:Q5064113 med:belongsToDepartment wd:Q83042 .
+
+wd:Q5073466 med:belongsToDepartment wd:Q162555 .
+
+wd:Q5090456 med:belongsToDepartment wd:Q83042 .
+
+wd:Q50936730 med:belongsToDepartment wd:Q161437 .
+
+wd:Q510236 med:belongsToDepartment wd:Q183257,
+        wd:Q7867,
+        wd:Q9418 .
+
+wd:Q5104958 med:belongsToDepartment wd:Q7208 .
+
+wd:Q5113735 med:belongsToDepartment wd:Q7208 .
+
+wd:Q5113990 med:belongsToDepartment wd:Q162555 .
+
+wd:Q5113997 med:belongsToDepartment wd:Q3332477 .
+
+wd:Q5114004 med:belongsToDepartment wd:Q83042,
+        wd:Q840545 .
+
+wd:Q511818 med:belongsToDepartment wd:Q162606,
+        wd:Q83042 .
+
+wd:Q5129816 med:belongsToDepartment wd:Q188449 .
+
+wd:Q51302742 med:belongsToDepartment wd:Q7218 .
+
+wd:Q5142470 med:belongsToDepartment wd:Q101929,
+        wd:Q327657 .
+
+wd:Q5145914 med:belongsToDepartment wd:Q7208 .
+
+wd:Q5149292 med:belongsToDepartment wd:Q1071953,
+        wd:Q83042 .
+
+wd:Q5156568 med:belongsToDepartment wd:Q162555 .
+
+wd:Q5159188 med:belongsToDepartment wd:Q27712466,
+        wd:Q327657 .
+
+wd:Q5160447 med:belongsToDepartment wd:Q162555,
+        wd:Q171171 .
+
+wd:Q5166383 med:belongsToDepartment wd:Q161437,
+        wd:Q618211 .
+
+wd:Q5171111 med:belongsToDepartment wd:Q161437,
+        wd:Q83042 .
+
+wd:Q5172192 med:belongsToDepartment wd:Q10379 .
+
+wd:Q5178867 med:belongsToDepartment wd:Q5284418 .
+
+wd:Q5182143 med:belongsToDepartment wd:Q188449 .
+
+wd:Q5182155 med:belongsToDepartment wd:Q123028 .
+
+wd:Q5185088 med:belongsToDepartment wd:Q189553 .
+
+wd:Q5191403 med:belongsToDepartment wd:Q327657 .
+
+wd:Q5194855 med:belongsToDepartment wd:Q932510 .
+
+wd:Q5196200 med:belongsToDepartment wd:Q120569 .
+
+wd:Q525075 med:belongsToDepartment wd:Q1071953,
+        wd:Q7208 .
+
+wd:Q5259438 med:belongsToDepartment wd:Q12128 .
+
+wd:Q52601023 med:belongsToDepartment wd:Q162555,
+        wd:Q80015 .
+
+wd:Q5272095 med:belongsToDepartment wd:Q327657,
+        wd:Q80015 .
+
+wd:Q5283757 med:belongsToDepartment wd:Q105650,
+        wd:Q80015 .
+
+wd:Q52856 med:belongsToDepartment wd:Q10379,
+        wd:Q11865729,
+        wd:Q162606,
+        wd:Q171171 .
+
+wd:Q5360758 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q5376307 med:belongsToDepartment wd:Q162606,
+        wd:Q327657 .
+
+wd:Q53829 med:belongsToDepartment wd:Q162606 .
+
+wd:Q54087187 med:belongsToDepartment wd:Q1071953,
+        wd:Q161437,
+        wd:Q83042 .
+
+wd:Q5422284 med:belongsToDepartment wd:Q105650 .
+
+wd:Q5437240 med:belongsToDepartment wd:Q7208 .
+
+wd:Q5437988 med:belongsToDepartment wd:Q162606 .
+
+wd:Q5445915 med:belongsToDepartment wd:Q7208 .
+
+wd:Q5446459 med:belongsToDepartment wd:Q162555 .
+
+wd:Q5446462 med:belongsToDepartment wd:Q162555 .
+
+wd:Q5454124 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q54875151 med:belongsToDepartment wd:Q15218776 .
+
+wd:Q54889321 med:belongsToDepartment wd:Q162555 .
+
+wd:Q54911224 med:belongsToDepartment wd:Q327657,
+        wd:Q504033 .
+
+wd:Q54911242 med:belongsToDepartment wd:Q80015 .
+
+wd:Q54911298 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54911334 med:belongsToDepartment wd:Q10379 .
+
+wd:Q54911376 med:belongsToDepartment wd:Q80015 .
+
+wd:Q54911386 med:belongsToDepartment wd:Q162555 .
+
+wd:Q54911414 med:belongsToDepartment wd:Q171171,
+        wd:Q788926 .
+
+wd:Q54911470 med:belongsToDepartment wd:Q171171,
+        wd:Q788926 .
+
+wd:Q54911488 med:belongsToDepartment wd:Q504033 .
+
+wd:Q54911504 med:belongsToDepartment wd:Q162606 .
+
+wd:Q54911517 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54911677 med:belongsToDepartment wd:Q171171,
+        wd:Q327657 .
+
+wd:Q54911678 med:belongsToDepartment wd:Q10379 .
+
+wd:Q54911701 med:belongsToDepartment wd:Q788926 .
+
+wd:Q54911704 med:belongsToDepartment wd:Q6806614 .
+
+wd:Q54911710 med:belongsToDepartment wd:Q162606,
+        wd:Q83042 .
+
+wd:Q54911741 med:belongsToDepartment wd:Q10379 .
+
+wd:Q54911746 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54911749 med:belongsToDepartment wd:Q162555 .
+
+wd:Q54911756 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54911767 med:belongsToDepartment wd:Q162555 .
+
+wd:Q54911777 med:belongsToDepartment wd:Q120569 .
+
+wd:Q54911791 med:belongsToDepartment wd:Q788926,
+        wd:Q83042 .
+
+wd:Q54911848 med:belongsToDepartment wd:Q10379 .
+
+wd:Q54912072 med:belongsToDepartment wd:Q788926 .
+
+wd:Q54912141 med:belongsToDepartment wd:Q162555,
+        wd:Q170201,
+        wd:Q788926 .
+
+wd:Q54912150 med:belongsToDepartment wd:Q788926 .
+
+wd:Q54912155 med:belongsToDepartment wd:Q171171 .
+
+wd:Q54912179 med:belongsToDepartment wd:Q788926 .
+
+wd:Q54926202 med:belongsToDepartment wd:Q12128 .
+
+wd:Q54926570 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54926685 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54927356 med:belongsToDepartment wd:Q327657 .
+
+wd:Q54927442 med:belongsToDepartment wd:Q10379,
+        wd:Q83042 .
+
+wd:Q54927530 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54927621 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54927807 med:belongsToDepartment wd:Q80015 .
+
+wd:Q54927859 med:belongsToDepartment wd:Q162555,
+        wd:Q189553 .
+
+wd:Q54927959 med:belongsToDepartment wd:Q162555 .
+
+wd:Q54928062 med:belongsToDepartment wd:Q161437 .
+
+wd:Q54928159 med:belongsToDepartment wd:Q504033 .
+
+wd:Q54928207 med:belongsToDepartment wd:Q10379,
+        wd:Q83042 .
+
+wd:Q54928386 med:belongsToDepartment wd:Q327657 .
+
+wd:Q54930744 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54930822 med:belongsToDepartment wd:Q327657 .
+
+wd:Q54931036 med:belongsToDepartment wd:Q162555 .
+
+wd:Q54931164 med:belongsToDepartment wd:Q788926,
+        wd:Q80015 .
+
+wd:Q54931334 med:belongsToDepartment wd:Q120569 .
+
+wd:Q54931551 med:belongsToDepartment wd:Q162555,
+        wd:Q83042 .
+
+wd:Q54931661 med:belongsToDepartment wd:Q105650,
+        wd:Q80015 .
+
+wd:Q54931797 med:belongsToDepartment wd:Q504033 .
+
+wd:Q54931978 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54932022 med:belongsToDepartment wd:Q162555 .
+
+wd:Q54932054 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54932060 med:belongsToDepartment wd:Q504033 .
+
+wd:Q54932066 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54932071 med:belongsToDepartment wd:Q105650 .
+
+wd:Q54932080 med:belongsToDepartment wd:Q327657 .
+
+wd:Q54932081 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54932084 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54943715 med:belongsToDepartment wd:Q327657 .
+
+wd:Q54943748 med:belongsToDepartment wd:Q162555 .
+
+wd:Q54943809 med:belongsToDepartment wd:Q504033 .
+
+wd:Q54943822 med:belongsToDepartment wd:Q162606 .
+
+wd:Q54943847 med:belongsToDepartment wd:Q788926 .
+
+wd:Q54943865 med:belongsToDepartment wd:Q10379 .
+
+wd:Q54943919 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54943948 med:belongsToDepartment wd:Q327657 .
+
+wd:Q54943954 med:belongsToDepartment wd:Q161437,
+        wd:Q83042 .
+
+wd:Q54943978 med:belongsToDepartment wd:Q120569,
+        wd:Q162606 .
+
+wd:Q54944124 med:belongsToDepartment wd:Q327657,
+        wd:Q504033 .
+
+wd:Q54944146 med:belongsToDepartment wd:Q504033 .
+
+wd:Q54944161 med:belongsToDepartment wd:Q788926,
+        wd:Q83042 .
+
+wd:Q54944911 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54945522 med:belongsToDepartment wd:Q123028 .
+
+wd:Q54945591 med:belongsToDepartment wd:Q80015 .
+
+wd:Q54945651 med:belongsToDepartment wd:Q162555 .
+
+wd:Q54945665 med:belongsToDepartment wd:Q504033 .
+
+wd:Q54945704 med:belongsToDepartment wd:Q162606,
+        wd:Q2138622,
+        wd:Q327657 .
+
+wd:Q54945742 med:belongsToDepartment wd:Q101929,
+        wd:Q103824,
+        wd:Q1071953 .
+
+wd:Q54945783 med:belongsToDepartment wd:Q101929,
+        wd:Q162555,
+        wd:Q539690 .
+
+wd:Q54945820 med:belongsToDepartment wd:Q327657 .
+
+wd:Q54945855 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54945893 med:belongsToDepartment wd:Q788926 .
+
+wd:Q54945966 med:belongsToDepartment wd:Q162606,
+        wd:Q83042 .
+
+wd:Q54946033 med:belongsToDepartment wd:Q788926,
+        wd:Q83042 .
+
+wd:Q54946093 med:belongsToDepartment wd:Q120569,
+        wd:Q788926 .
+
+wd:Q54946225 med:belongsToDepartment wd:Q788926 .
+
+wd:Q54946292 med:belongsToDepartment wd:Q504033 .
+
+wd:Q54946387 med:belongsToDepartment wd:Q512285 .
+
+wd:Q54946565 med:belongsToDepartment wd:Q504033 .
+
+wd:Q54946623 med:belongsToDepartment wd:Q203337,
+        wd:Q788926 .
+
+wd:Q54946755 med:belongsToDepartment wd:Q10379 .
+
+wd:Q54947001 med:belongsToDepartment wd:Q327657 .
+
+wd:Q54947033 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54947136 med:belongsToDepartment wd:Q161437 .
+
+wd:Q54947288 med:belongsToDepartment wd:Q120569,
+        wd:Q162555 .
+
+wd:Q54947378 med:belongsToDepartment wd:Q189553,
+        wd:Q83042 .
+
+wd:Q54947504 med:belongsToDepartment wd:Q80015 .
+
+wd:Q54971166 med:belongsToDepartment wd:Q10379 .
+
+wd:Q54971415 med:belongsToDepartment wd:Q161437 .
+
+wd:Q54971494 med:belongsToDepartment wd:Q189553,
+        wd:Q83042 .
+
+wd:Q54971712 med:belongsToDepartment wd:Q120569 .
+
+wd:Q54971821 med:belongsToDepartment wd:Q10379 .
+
+wd:Q54972217 med:belongsToDepartment wd:Q2138622 .
+
+wd:Q54972345 med:belongsToDepartment wd:Q120569 .
+
+wd:Q54972453 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54972627 med:belongsToDepartment wd:Q162555,
+        wd:Q203337 .
+
+wd:Q54973000 med:belongsToDepartment wd:Q101929,
+        wd:Q788926 .
+
+wd:Q54973095 med:belongsToDepartment wd:Q161437 .
+
+wd:Q54973435 med:belongsToDepartment wd:Q162555,
+        wd:Q162606 .
+
+wd:Q54973656 med:belongsToDepartment wd:Q788926 .
+
+wd:Q54973753 med:belongsToDepartment wd:Q327657 .
+
+wd:Q54973841 med:belongsToDepartment wd:Q80015 .
+
+wd:Q54974031 med:belongsToDepartment wd:Q504033 .
+
+wd:Q54974057 med:belongsToDepartment wd:Q327657 .
+
+wd:Q54974104 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54974116 med:belongsToDepartment wd:Q10379,
+        wd:Q162555,
+        wd:Q83042 .
+
+wd:Q54974218 med:belongsToDepartment wd:Q10379,
+        wd:Q83042 .
+
+wd:Q54974239 med:belongsToDepartment wd:Q83042 .
+
+wd:Q54974362 med:belongsToDepartment wd:Q120569 .
+
+wd:Q55008903 med:belongsToDepartment wd:Q539690 .
+
+wd:Q55042693 med:belongsToDepartment wd:Q10379,
+        wd:Q83042 .
+
+wd:Q55043796 med:belongsToDepartment wd:Q10379 .
+
+wd:Q55082183 med:belongsToDepartment wd:Q504033,
+        wd:Q83042 .
+
+wd:Q55082207 med:belongsToDepartment wd:Q189553,
+        wd:Q203337 .
+
+wd:Q55082232 med:belongsToDepartment wd:Q83042 .
+
+wd:Q55082242 med:belongsToDepartment wd:Q327657 .
+
+wd:Q55082286 med:belongsToDepartment wd:Q105650,
+        wd:Q80015 .
+
+wd:Q55082295 med:belongsToDepartment wd:Q788926 .
+
+wd:Q55082311 med:belongsToDepartment wd:Q161437,
+        wd:Q788926 .
+
+wd:Q55082332 med:belongsToDepartment wd:Q189553,
+        wd:Q203337,
+        wd:Q83042 .
+
+wd:Q55082384 med:belongsToDepartment wd:Q103824 .
+
+wd:Q55082412 med:belongsToDepartment wd:Q170201 .
+
+wd:Q55082435 med:belongsToDepartment wd:Q327657 .
+
+wd:Q55082472 med:belongsToDepartment wd:Q327657 .
+
+wd:Q55082479 med:belongsToDepartment wd:Q327657 .
+
+wd:Q55082490 med:belongsToDepartment wd:Q161437,
+        wd:Q327657,
+        wd:Q83042 .
+
+wd:Q55082504 med:belongsToDepartment wd:Q539690 .
+
+wd:Q55083259 med:belongsToDepartment wd:Q120569,
+        wd:Q788926 .
+
+wd:Q55083294 med:belongsToDepartment wd:Q504033 .
+
+wd:Q55083326 med:belongsToDepartment wd:Q80015 .
+
+wd:Q55083510 med:belongsToDepartment wd:Q83042 .
+
+wd:Q55083528 med:belongsToDepartment wd:Q189553,
+        wd:Q203337 .
+
+wd:Q55083550 med:belongsToDepartment wd:Q120569 .
+
+wd:Q55092798 med:belongsToDepartment wd:Q10379,
+        wd:Q83042 .
+
+wd:Q55092825 med:belongsToDepartment wd:Q10379,
+        wd:Q83042 .
+
+wd:Q55092851 med:belongsToDepartment wd:Q327657 .
+
+wd:Q55092923 med:belongsToDepartment wd:Q162555,
+        wd:Q203337 .
+
+wd:Q55092942 med:belongsToDepartment wd:Q105650,
+        wd:Q162555 .
+
+wd:Q55092991 med:belongsToDepartment wd:Q162555,
+        wd:Q80015 .
+
+wd:Q55093014 med:belongsToDepartment wd:Q120569 .
+
+wd:Q55093037 med:belongsToDepartment wd:Q101929,
+        wd:Q539690 .
+
+wd:Q55093051 med:belongsToDepartment wd:Q161437 .
+
+wd:Q55093078 med:belongsToDepartment wd:Q162555,
+        wd:Q171171 .
+
+wd:Q55093091 med:belongsToDepartment wd:Q6806614 .
+
+wd:Q55093109 med:belongsToDepartment wd:Q162555 .
+
+wd:Q55093134 med:belongsToDepartment wd:Q120569 .
+
+wd:Q55093178 med:belongsToDepartment wd:Q327657 .
+
+wd:Q55093233 med:belongsToDepartment wd:Q1071953,
+        wd:Q162555 .
+
+wd:Q55093271 med:belongsToDepartment wd:Q10379,
+        wd:Q83042 .
+
+wd:Q55093289 med:belongsToDepartment wd:Q120569,
+        wd:Q327657 .
+
+wd:Q55093306 med:belongsToDepartment wd:Q10379,
+        wd:Q83042 .
+
+wd:Q55093324 med:belongsToDepartment wd:Q203337,
+        wd:Q788926 .
+
+wd:Q5521142 med:belongsToDepartment wd:Q7208 .
+
+wd:Q552233 med:belongsToDepartment wd:Q5625186 .
+
+wd:Q5524429 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q5530367 med:belongsToDepartment wd:Q83042 .
+
+wd:Q5532491 med:belongsToDepartment wd:Q788926 .
+
+wd:Q5558486 med:belongsToDepartment wd:Q103824 .
+
+wd:Q555868 med:belongsToDepartment wd:Q327657 .
+
+wd:Q55784349 med:belongsToDepartment wd:Q83042 .
+
+wd:Q55789538 med:belongsToDepartment wd:Q162555,
+        wd:Q504033 .
+
+wd:Q5581314 med:belongsToDepartment wd:Q162555 .
+
+wd:Q5581327 med:belongsToDepartment wd:Q1221899 .
+
+wd:Q5582043 med:belongsToDepartment wd:Q788926 .
+
+wd:Q558404 med:belongsToDepartment wd:Q120569 .
+
+wd:Q558623 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q55949884 med:belongsToDepartment wd:Q105650,
+        wd:Q162555,
+        wd:Q80015 .
+
+wd:Q55950116 med:belongsToDepartment wd:Q788926 .
+
+wd:Q55950294 med:belongsToDepartment wd:Q162606,
+        wd:Q327657 .
+
+wd:Q5596833 med:belongsToDepartment wd:Q105650 .
+
+wd:Q56002 med:belongsToDepartment wd:Q10379 .
+
+wd:Q56014489 med:belongsToDepartment wd:Q162555,
+        wd:Q80015 .
+
+wd:Q56014502 med:belongsToDepartment wd:Q162555,
+        wd:Q80015 .
+
+wd:Q56014508 med:belongsToDepartment wd:Q162555,
+        wd:Q189553,
+        wd:Q504033 .
+
+wd:Q56014511 med:belongsToDepartment wd:Q162555 .
+
+wd:Q56014517 med:belongsToDepartment wd:Q162555,
+        wd:Q80015 .
+
+wd:Q56014520 med:belongsToDepartment wd:Q120569,
+        wd:Q162555 .
+
+wd:Q56014549 med:belongsToDepartment wd:Q120569,
+        wd:Q162555 .
+
+wd:Q56244339 med:belongsToDepartment wd:Q788926 .
+
+wd:Q56277527 med:belongsToDepartment wd:Q162606 .
+
+wd:Q56278375 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q56297474 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q5629813 med:belongsToDepartment wd:Q101929,
+        wd:Q162606,
+        wd:Q171171,
+        wd:Q788926 .
+
+wd:Q5643382 med:belongsToDepartment wd:Q171171 .
+
+wd:Q5643617 med:belongsToDepartment wd:Q7867 .
+
+wd:Q565276 med:belongsToDepartment wd:Q216685,
+        wd:Q83042 .
+
+wd:Q5710984 med:belongsToDepartment wd:Q162555 .
+
+wd:Q5832599 med:belongsToDepartment wd:Q788926 .
+
+wd:Q5849703 med:belongsToDepartment wd:Q788926 .
+
+wd:Q5880534 med:belongsToDepartment wd:Q10379 .
+
+wd:Q58833940 med:belongsToDepartment wd:Q162555,
+        wd:Q80015 .
+
+wd:Q58833942 med:belongsToDepartment wd:Q120569,
+        wd:Q162555 .
+
+wd:Q58833953 med:belongsToDepartment wd:Q162555,
+        wd:Q189553,
+        wd:Q504033 .
+
+wd:Q58833962 med:belongsToDepartment wd:Q162555,
+        wd:Q162606,
+        wd:Q83042 .
+
+wd:Q58833963 med:belongsToDepartment wd:Q162555,
+        wd:Q203337 .
+
+wd:Q58833969 med:belongsToDepartment wd:Q105650,
+        wd:Q162555,
+        wd:Q80015 .
+
+wd:Q58833976 med:belongsToDepartment wd:Q120569,
+        wd:Q162555 .
+
+wd:Q58833978 med:belongsToDepartment wd:Q162555,
+        wd:Q80015 .
+
+wd:Q58833980 med:belongsToDepartment wd:Q162555 .
+
+wd:Q58833981 med:belongsToDepartment wd:Q162555,
+        wd:Q171171 .
+
+wd:Q58833983 med:belongsToDepartment wd:Q162555,
+        wd:Q171171 .
+
+wd:Q58845312 med:belongsToDepartment wd:Q120569,
+        wd:Q162555 .
+
+wd:Q58845352 med:belongsToDepartment wd:Q162555 .
+
+wd:Q589612 med:belongsToDepartment wd:Q162555 .
+
+wd:Q5898175 med:belongsToDepartment wd:Q788926 .
+
+wd:Q5898279 med:belongsToDepartment wd:Q162606 .
+
+wd:Q5922406 med:belongsToDepartment wd:Q162555,
+        wd:Q171171 .
+
+wd:Q593277 med:belongsToDepartment wd:Q171171 .
+
+wd:Q5952492 med:belongsToDepartment wd:Q162555 .
+
+wd:Q5959600 med:belongsToDepartment wd:Q162606 .
+
+wd:Q5973974 med:belongsToDepartment wd:Q162555 .
+
+wd:Q5988903 med:belongsToDepartment wd:Q171171 .
+
+wd:Q5998500 med:belongsToDepartment wd:Q171171 .
+
+wd:Q6030102 med:belongsToDepartment wd:Q12128 .
+
+wd:Q60456290 med:belongsToDepartment wd:Q120569 .
+
+wd:Q605576 med:belongsToDepartment wd:Q10379 .
+
+wd:Q6057394 med:belongsToDepartment wd:Q327657 .
+
+wd:Q6058392 med:belongsToDepartment wd:Q171171 .
+
+wd:Q6058489 med:belongsToDepartment wd:Q162555 .
+
+wd:Q6060418 med:belongsToDepartment wd:Q171171 .
+
+wd:Q6065599 med:belongsToDepartment wd:Q788926 .
+
+wd:Q60786881 med:belongsToDepartment wd:Q120569 .
+
+wd:Q60875818 med:belongsToDepartment wd:Q12128 .
+
+wd:Q6132707 med:belongsToDepartment wd:Q101929,
+        wd:Q103824 .
+
+wd:Q615363 med:belongsToDepartment wd:Q327657 .
+
+wd:Q62019625 med:belongsToDepartment wd:Q120569,
+        wd:Q668064,
+        wd:Q788926 .
+
+wd:Q625506 med:belongsToDepartment wd:Q80015 .
+
+wd:Q625935 med:belongsToDepartment wd:Q216685 .
+
+wd:Q6279182 med:belongsToDepartment wd:Q23688644,
+        wd:Q83042 .
+
+wd:Q629515 med:belongsToDepartment wd:Q7867 .
+
+wd:Q6311294 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q6348271 med:belongsToDepartment wd:Q162555,
+        wd:Q171171 .
+
+wd:Q6362361 med:belongsToDepartment wd:Q171171 .
+
+wd:Q6368059 med:belongsToDepartment wd:Q83042 .
+
+wd:Q63762876 med:belongsToDepartment wd:Q1071953,
+        wd:Q120569,
+        wd:Q162555 .
+
+wd:Q6378573 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q640836 med:belongsToDepartment wd:Q7867 .
+
+wd:Q64485022 med:belongsToDepartment wd:Q7867 .
+
+wd:Q6469117 med:belongsToDepartment wd:Q83042 .
+
+wd:Q6469283 med:belongsToDepartment wd:Q120569 .
+
+wd:Q64698726 med:belongsToDepartment wd:Q80015 .
+
+wd:Q64732801 med:belongsToDepartment wd:Q788926 .
+
+wd:Q64785911 med:belongsToDepartment wd:Q162555 .
+
+wd:Q64869872 med:belongsToDepartment wd:Q327657 .
+
+wd:Q6523346 med:belongsToDepartment wd:Q162555,
+        wd:Q171171 .
+
+wd:Q653200 med:belongsToDepartment wd:Q11865729 .
+
+wd:Q653383 med:belongsToDepartment wd:Q182442,
+        wd:Q2861470 .
+
+wd:Q6534949 med:belongsToDepartment wd:Q120569 .
+
+wd:Q6543217 med:belongsToDepartment wd:Q171171 .
+
+wd:Q6556684 med:belongsToDepartment wd:Q171171 .
+
+wd:Q656199 med:belongsToDepartment wd:Q83042 .
+
+wd:Q658873 med:belongsToDepartment wd:Q171171 .
+
+wd:Q6668132 med:belongsToDepartment wd:Q105650 .
+
+wd:Q6692756 med:belongsToDepartment wd:Q7208 .
+
+wd:Q6743514 med:belongsToDepartment wd:Q162555 .
+
+wd:Q6758201 med:belongsToDepartment wd:Q161437 .
+
+wd:Q67959679 med:belongsToDepartment wd:Q161437 .
+
+wd:Q6806121 med:belongsToDepartment wd:Q83042 .
+
+wd:Q6807316 med:belongsToDepartment wd:Q162555 .
+
+wd:Q6811448 med:belongsToDepartment wd:Q171171 .
+
+wd:Q6811539 med:belongsToDepartment wd:Q171171 .
+
+wd:Q6822340 med:belongsToDepartment wd:Q162606,
+        wd:Q327657 .
+
+wd:Q6844287 med:belongsToDepartment wd:Q83042 .
+
+wd:Q685200 med:belongsToDepartment wd:Q1406609 .
+
+wd:Q6865354 med:belongsToDepartment wd:Q103824 .
+
+wd:Q68833 med:belongsToDepartment wd:Q819121 .
+
+wd:Q6883839 med:belongsToDepartment wd:Q162555 .
+
+wd:Q688949 med:belongsToDepartment wd:Q10379 .
+
+wd:Q6896359 med:belongsToDepartment wd:Q788926 .
+
+wd:Q690210 med:belongsToDepartment wd:Q83042 .
+
+wd:Q6931137 med:belongsToDepartment wd:Q162555 .
+
+wd:Q6931143 med:belongsToDepartment wd:Q162555 .
+
+wd:Q693442 med:belongsToDepartment wd:Q188449,
+        wd:Q2861470,
+        wd:Q83042 .
+
+wd:Q6947906 med:belongsToDepartment wd:Q10379 .
+
+wd:Q695954 med:belongsToDepartment wd:Q7867 .
+
+wd:Q69642903 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q697117 med:belongsToDepartment wd:Q188449 .
+
+wd:Q6993502 med:belongsToDepartment wd:Q123028 .
+
+wd:Q7002244 med:belongsToDepartment wd:Q83042 .
+
+wd:Q7002720 med:belongsToDepartment wd:Q162555 .
+
+wd:Q7003148 med:belongsToDepartment wd:Q171171 .
+
+wd:Q7004538 med:belongsToDepartment wd:Q162555 .
+
+wd:Q7005032 med:belongsToDepartment wd:Q171171 .
+
+wd:Q7005035 med:belongsToDepartment wd:Q171171 .
+
+wd:Q7045267 med:belongsToDepartment wd:Q10379 .
+
+wd:Q7049641 med:belongsToDepartment wd:Q216685 .
+
+wd:Q707388 med:belongsToDepartment wd:Q170201,
+        wd:Q788926 .
+
+wd:Q7077950 med:belongsToDepartment wd:Q162555,
+        wd:Q327657,
+        wd:Q504033 .
+
+wd:Q7099389 med:belongsToDepartment wd:Q171171 .
+
+wd:Q7107617 med:belongsToDepartment wd:Q327657 .
+
+wd:Q7130412 med:belongsToDepartment wd:Q162555 .
+
+wd:Q7135955 med:belongsToDepartment wd:Q203337,
+        wd:Q788926 .
+
+wd:Q7161799 med:belongsToDepartment wd:Q80015 .
+
+wd:Q7161811 med:belongsToDepartment wd:Q162555 .
+
+wd:Q7168462 med:belongsToDepartment wd:Q171171 .
+
+wd:Q7168708 med:belongsToDepartment wd:Q12128 .
+
+wd:Q7170403 med:belongsToDepartment wd:Q83042 .
+
+wd:Q7170405 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q7170418 med:belongsToDepartment wd:Q161437 .
+
+wd:Q7171312 med:belongsToDepartment wd:Q216685 .
+
+wd:Q7193411 med:belongsToDepartment wd:Q171171 .
+
+wd:Q7193412 med:belongsToDepartment wd:Q162555 .
+
+wd:Q7200298 med:belongsToDepartment wd:Q5284418 .
+
+wd:Q7202556 med:belongsToDepartment wd:Q327657 .
+
+wd:Q7228858 med:belongsToDepartment wd:Q162555 .
+
+wd:Q7234207 med:belongsToDepartment wd:Q161437 .
+
+wd:Q7234232 med:belongsToDepartment wd:Q83042 .
+
+wd:Q7240236 med:belongsToDepartment wd:Q10379,
+        wd:Q1154774 .
+
+wd:Q7248877 med:belongsToDepartment wd:Q788926 .
+
+wd:Q7250686 med:belongsToDepartment wd:Q83042 .
+
+wd:Q7253115 med:belongsToDepartment wd:Q171171 .
+
+wd:Q7254511 med:belongsToDepartment wd:Q7208 .
+
+wd:Q7255172 med:belongsToDepartment wd:Q7867 .
+
+wd:Q7259546 med:belongsToDepartment wd:Q203337 .
+
+wd:Q7263138 med:belongsToDepartment wd:Q120569 .
+
+wd:Q7263721 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q733616 med:belongsToDepartment wd:Q788926 .
+
+wd:Q734123 med:belongsToDepartment wd:Q83042 .
+
+wd:Q7356544 med:belongsToDepartment wd:Q788926 .
+
+wd:Q736599 med:belongsToDepartment wd:Q105650,
+        wd:Q351870 .
+
+wd:Q736776 med:belongsToDepartment wd:Q2678675 .
+
+wd:Q737712 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q738101 med:belongsToDepartment wd:Q788926 .
+
+wd:Q7404867 med:belongsToDepartment wd:Q189553 .
+
+wd:Q740731 med:belongsToDepartment wd:Q788926 .
+
+wd:Q7442321 med:belongsToDepartment wd:Q189553 .
+
+wd:Q744305 med:belongsToDepartment wd:Q1071953,
+        wd:Q327657 .
+
+wd:Q7444204 med:belongsToDepartment wd:Q7867 .
+
+wd:Q7455473 med:belongsToDepartment wd:Q105650 .
+
+wd:Q7458489 med:belongsToDepartment wd:Q1221899 .
+
+wd:Q748376 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q754031 med:belongsToDepartment wd:Q203337 .
+
+wd:Q754447 med:belongsToDepartment wd:Q788926 .
+
+wd:Q7578955 med:belongsToDepartment wd:Q327657 .
+
+wd:Q7581957 med:belongsToDepartment wd:Q162555 .
+
+wd:Q7604533 med:belongsToDepartment wd:Q83042 .
+
+wd:Q7607891 med:belongsToDepartment wd:Q327657 .
+
+wd:Q7623345 med:belongsToDepartment wd:Q171171 .
+
+wd:Q762583 med:belongsToDepartment wd:Q203337 .
+
+wd:Q7630991 med:belongsToDepartment wd:Q123028 .
+
+wd:Q7644763 med:belongsToDepartment wd:Q10379 .
+
+wd:Q7830466 med:belongsToDepartment wd:Q161437,
+        wd:Q788926 .
+
+wd:Q7834208 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q7835825 med:belongsToDepartment wd:Q120569 .
+
+wd:Q7840658 med:belongsToDepartment wd:Q162555,
+        wd:Q171171 .
+
+wd:Q786468 med:belongsToDepartment wd:Q7867 .
+
+wd:Q7879706 med:belongsToDepartment wd:Q216685 .
+
+wd:Q7900355 med:belongsToDepartment wd:Q788926 .
+
+wd:Q7900855 med:belongsToDepartment wd:Q162555,
+        wd:Q16683088 .
+
+wd:Q7902645 med:belongsToDepartment wd:Q1221899 .
+
+wd:Q7916836 med:belongsToDepartment wd:Q105650 .
+
+wd:Q7920253 med:belongsToDepartment wd:Q203337 .
+
+wd:Q7922590 med:belongsToDepartment wd:Q171171 .
+
+wd:Q7931112 med:belongsToDepartment wd:Q7208 .
+
+wd:Q7931117 med:belongsToDepartment wd:Q7208 .
+
+wd:Q794072 med:belongsToDepartment wd:Q105650,
+        wd:Q177635 .
+
+wd:Q7943634 med:belongsToDepartment wd:Q80015 .
+
+wd:Q796150 med:belongsToDepartment wd:Q171171 .
+
+wd:Q797708 med:belongsToDepartment wd:Q83042 .
+
+wd:Q8041552 med:belongsToDepartment wd:Q161437 .
+
+wd:Q8041561 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q815296 med:belongsToDepartment wd:Q7867 .
+
+wd:Q816422 med:belongsToDepartment wd:Q3505712 .
+
+wd:Q816912 med:belongsToDepartment wd:Q83042 .
+
+wd:Q81867 med:belongsToDepartment wd:Q162606 .
+
+wd:Q824292 med:belongsToDepartment wd:Q162606,
+        wd:Q177635 .
+
+wd:Q826918 med:belongsToDepartment wd:Q216685,
+        wd:Q327657 .
+
+wd:Q827017 med:belongsToDepartment wd:Q83042 .
+
+wd:Q827216 med:belongsToDepartment wd:Q189553 .
+
+wd:Q835051 med:belongsToDepartment wd:Q7208 .
+
+wd:Q835718 med:belongsToDepartment wd:Q788926 .
+
+wd:Q837054 med:belongsToDepartment wd:Q123028,
+        wd:Q788926 .
+
+wd:Q838145 med:belongsToDepartment wd:Q3673891 .
+
+wd:Q840646 med:belongsToDepartment wd:Q10379 .
+
+wd:Q848662 med:belongsToDepartment wd:Q10379 .
+
+wd:Q852094 med:belongsToDepartment wd:Q199906 .
+
+wd:Q856736 med:belongsToDepartment wd:Q7867,
+        wd:Q83042 .
+
+wd:Q866622 med:belongsToDepartment wd:Q327657,
+        wd:Q504033 .
+
+wd:Q881811 med:belongsToDepartment wd:Q171171 .
+
+wd:Q890167 med:belongsToDepartment wd:Q788926 .
+
+wd:Q895414 med:belongsToDepartment wd:Q171171 .
+
+wd:Q905389 med:belongsToDepartment wd:Q161437 .
+
+wd:Q917069 med:belongsToDepartment wd:Q2861470 .
+
+wd:Q917620 med:belongsToDepartment wd:Q171171,
+        wd:Q788926 .
+
+wd:Q920766 med:belongsToDepartment wd:Q788926 .
+
+wd:Q921907 med:belongsToDepartment wd:Q161437,
+        wd:Q7867 .
+
+wd:Q923164 med:belongsToDepartment wd:Q83042 .
+
+wd:Q923339 med:belongsToDepartment wd:Q327657 .
+
+wd:Q9334248 med:belongsToDepartment wd:Q7867 .
+
+wd:Q93346177 med:belongsToDepartment wd:Q83042 .
+
+wd:Q9358981 med:belongsToDepartment wd:Q101929,
+        wd:Q10379,
+        wd:Q327657,
+        wd:Q83042 .
+
+wd:Q936382 med:belongsToDepartment wd:Q162606 .
+
+wd:Q936417 med:belongsToDepartment wd:Q162555 .
+
+wd:Q9385429 med:belongsToDepartment wd:Q7867 .
+
+wd:Q9386039 med:belongsToDepartment wd:Q788926 .
+
+wd:Q9397786 med:belongsToDepartment wd:Q10379 .
+
+wd:Q951639 med:belongsToDepartment wd:Q183257,
+        wd:Q199906,
+        wd:Q7867,
+        wd:Q9418 .
+
+wd:Q955454 med:belongsToDepartment wd:Q1071953 .
+
+wd:Q961331 med:belongsToDepartment wd:Q171171 .
+
+wd:Q96199399 med:belongsToDepartment wd:Q11607623,
+        wd:Q3259956 .
+
+wd:Q970208 med:belongsToDepartment wd:Q120569,
+        wd:Q668064 .
+
+wd:Q97194759 med:belongsToDepartment wd:Q120569 .
+
+wd:Q97356660 med:belongsToDepartment wd:Q188449,
+        wd:Q83042 .
+
+wd:Q97403851 med:belongsToDepartment wd:Q161437 .
+
+wd:Q974792 med:belongsToDepartment wd:Q105650,
+        wd:Q80015 .
+
+wd:Q979049 med:belongsToDepartment wd:Q171171 .
+
+wd:Q98266891 med:belongsToDepartment wd:Q177635 .
+
+wd:Q98404923 med:belongsToDepartment wd:Q788926 .
+
+wd:Q98844836 med:belongsToDepartment wd:Q103824 .
+
