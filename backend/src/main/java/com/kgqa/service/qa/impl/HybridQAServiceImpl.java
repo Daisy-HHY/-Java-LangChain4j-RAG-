@@ -102,6 +102,9 @@ public class HybridQAServiceImpl implements HybridQAService {
             chatMemoryService.saveMessage(sessionId, "ASSISTANT", result.answer(), null);
         }
 
+        // 更新会话标题为问题内容（如果标题是默认的"新会话"）
+        updateSessionTitle(sessionId, question);
+
         String actualSessionId = sessionRepository.selectById(sessionId).getSessionId();
         return new ChatResponse(result.answer(), result.sources(), actualSessionId);
     }
@@ -242,6 +245,19 @@ public class HybridQAServiceImpl implements HybridQAService {
         }
 
         return session.getId();
+    }
+
+    /**
+     * 更新会话标题为用户第一个问题
+     */
+    private void updateSessionTitle(Long sessionId, String question) {
+        ChatSession session = sessionRepository.selectById(sessionId);
+        if (session != null && "新会话".equals(session.getTitle())) {
+            // 截取问题前20个字符作为标题
+            String title = question.length() > 20 ? question.substring(0, 20) + "..." : question;
+            session.setTitle(title);
+            sessionRepository.updateById(session);
+        }
     }
 
     /**

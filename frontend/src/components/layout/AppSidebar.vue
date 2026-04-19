@@ -63,7 +63,6 @@ function createNewSession() {
         :key="session.sessionId"
         class="session-item"
         :class="{ active: chatStore.currentSessionId === session.sessionId }"
-        :style="{ animationDelay: `${index * 30}ms` }"
         @click="selectSession(session)"
       >
         <div class="session-indicator"></div>
@@ -161,8 +160,6 @@ function createNewSession() {
   cursor: pointer;
   transition: all var(--transition-fast);
   margin-bottom: var(--space-1);
-  opacity: 0;
-  animation: fadeIn var(--transition-normal) ease forwards;
   position: relative;
 
   &:hover {
@@ -259,11 +256,6 @@ function createNewSession() {
   border-radius: 50%;
   background-color: var(--border-default);
   animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(4px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulse {

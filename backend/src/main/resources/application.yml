@@ -33,9 +33,12 @@ upload:
 # 知识图谱配置
 kgqa:
   tdb:
-    path: E:/Github_project/LangChain4j-KGQA/tdb_wikidata
+    path: E:/Github_project/LangChain4j-KGQA/apache_configuration/tdb_drug_new
   wikidata:
     path: E:/Github_project/LangChain4j-KGQA/wikidata
+  # 本体 URI (kgdrug)
+  ontology:
+    base: http://www.kgdrug.com
   embedding:
     table: embeddings
 

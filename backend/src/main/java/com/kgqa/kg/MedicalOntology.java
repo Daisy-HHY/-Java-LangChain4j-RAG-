@@ -6,86 +6,66 @@ import org.apache.jena.rdf.model.ResourceFactory;
 
 /**
  * 医疗知识图谱本体常量
- * 所有实体类型和关系的 URI 定义集中在此
+ * 支持两种本体：
+ * 1. kgqa 本体 (http://kgqa.com/medical#)
+ * 2. kgdrug 本体 (http://www.kgdrug.com)
  */
 public final class MedicalOntology {
 
-    public static final String BASE_URI = "http://kgqa.com/medical#";
-    public static final String DATA_URI = "http://kgqa.com/data#";
+    // ===== kgdrug 本体 (YeYzheng 项目) =====
+    public static final String KGDRUG_BASE = "http://www.kgdrug.com";
+    public static final Resource KGDRUG_DISEASE = ResourceFactory.createResource(KGDRUG_BASE + "#disease");
+    public static final Resource KGDRUG_DRUG = ResourceFactory.createResource(KGDRUG_BASE + "#drug");
+    public static final Resource KGDRUG_SYMPTOM = ResourceFactory.createResource(KGDRUG_BASE + "#symptom");
 
-    // ===== 实体类型 =====
-    public static final Resource DISEASE =
-            ResourceFactory.createResource(BASE_URI + "Disease");
-    public static final Resource SYMPTOM =
-            ResourceFactory.createResource(BASE_URI + "Symptom");
-    public static final Resource DRUG =
-            ResourceFactory.createResource(BASE_URI + "Drug");
-    public static final Resource DEPARTMENT =
-            ResourceFactory.createResource(BASE_URI + "Department");
-    public static final Resource EXAMINATION =
-            ResourceFactory.createResource(BASE_URI + "Examination");
-    public static final Resource BODY_PART =
-            ResourceFactory.createResource(BASE_URI + "BodyPart");
-    public static final Resource TREATMENT =
-            ResourceFactory.createResource(BASE_URI + "Treatment");
+    // kgdrug 关系属性
+    public static final Property KGDRUG_HASZHENGZHUANG = ResourceFactory.createProperty(KGDRUG_BASE + "#haszhengzhuang");
+    public static final Property KGDRUG_RELATEDISEASE = ResourceFactory.createProperty(KGDRUG_BASE + "#relatedisease");
+    public static final Property KGDRUG_NEEDCURE = ResourceFactory.createProperty(KGDRUG_BASE + "#needcure");
+    public static final Property KGDRUG_CURE = ResourceFactory.createProperty(KGDRUG_BASE + "#cure");
 
-    // ===== 关系属性 =====
-    // 疾病相关
-    public static final Property HAS_SYMPTOM =
-            ResourceFactory.createProperty(BASE_URI + "hasSymptom");
-    public static final Property TREATED_BY =
-            ResourceFactory.createProperty(BASE_URI + "treatedBy");
-    public static final Property BELONGS_TO_DEPT =
-            ResourceFactory.createProperty(BASE_URI + "belongsToDept");
-    public static final Property REQUIRES_EXAM =
-            ResourceFactory.createProperty(BASE_URI + "requiresExam");
-    public static final Property LOCATED_IN =
-            ResourceFactory.createProperty(BASE_URI + "locatedIn");
-    public static final Property CAUSED_BY =
-            ResourceFactory.createProperty(BASE_URI + "causedBy");
-    public static final Property COMPLICATION_OF =
-            ResourceFactory.createProperty(BASE_URI + "complicationOf");
+    // kgdrug 数据属性
+    public static final Property KGDRUG_JIBINGNAME = ResourceFactory.createProperty(KGDRUG_BASE + "#jibingname");
+    public static final Property KGDRUG_PRONAME = ResourceFactory.createProperty(KGDRUG_BASE + "#proname");
+    public static final Property KGDRUG_ZZNAME = ResourceFactory.createProperty(KGDRUG_BASE + "#zzname");
+    public static final Property KGDRUG_BINGYIN = ResourceFactory.createProperty(KGDRUG_BASE + "#bingyin");
+    public static final Property KGDRUG_BINGFAZHENG = ResourceFactory.createProperty(KGDRUG_BASE + "#bingfazheng");
+    public static final Property KGDRUG_ZHILIAO = ResourceFactory.createProperty(KGDRUG_BASE + "#zhiliao");
+    public static final Property KGDRUG_YUFANG = ResourceFactory.createProperty(KGDRUG_BASE + "#yufang");
+    public static final Property KGDRUG_GAISHU = ResourceFactory.createProperty(KGDRUG_BASE + "#gaishu");
+    public static final Property KGDRUG_GAZHZH = ResourceFactory.createProperty(KGDRUG_BASE + "#gazhzh");
 
-    // 药物相关
-    public static final Property INDICATION =
-            ResourceFactory.createProperty(BASE_URI + "indication");
-    public static final Property SIDE_EFFECT =
-            ResourceFactory.createProperty(BASE_URI + "sideEffect");
-    public static final Property CONTRAINDICATED_WITH =
-            ResourceFactory.createProperty(BASE_URI + "contraindicatedWith");
-    public static final Property DRUG_CLASS =
-            ResourceFactory.createProperty(BASE_URI + "drugClass");
-    public static final Property MECHANISM_OF_ACTION =
-            ResourceFactory.createProperty(BASE_URI + "mechanismOfAction");
+    // ===== kgqa 本体 (原有) =====
+    public static final String KGQA_BASE = "http://kgqa.com/medical#";
+    public static final Resource DISEASE = ResourceFactory.createResource(KGQA_BASE + "Disease");
+    public static final Resource SYMPTOM = ResourceFactory.createResource(KGQA_BASE + "Symptom");
+    public static final Resource DRUG = ResourceFactory.createResource(KGQA_BASE + "Drug");
+    public static final Resource DEPARTMENT = ResourceFactory.createResource(KGQA_BASE + "Department");
+    public static final Resource EXAMINATION = ResourceFactory.createResource(KGQA_BASE + "Examination");
+    public static final Resource BODY_PART = ResourceFactory.createResource(KGQA_BASE + "BodyPart");
+    public static final Resource TREATMENT = ResourceFactory.createResource(KGQA_BASE + "Treatment");
 
-    // ===== Wikidata 属性 URI (用于 SPARQL 查询) =====
+    // kgqa 关系属性
+    public static final Property HAS_SYMPTOM = ResourceFactory.createProperty(KGQA_BASE + "hasSymptom");
+    public static final Property TREATED_BY = ResourceFactory.createProperty(KGQA_BASE + "treatedBy");
+    public static final Property BELONGS_TO_DEPT = ResourceFactory.createProperty(KGQA_BASE + "belongsToDept");
+    public static final Property CAUSED_BY = ResourceFactory.createProperty(KGQA_BASE + "causedBy");
+    public static final Property COMPLICATION_OF = ResourceFactory.createProperty(KGQA_BASE + "complicationOf");
+    public static final Property INDICATION = ResourceFactory.createProperty(KGQA_BASE + "indication");
+    public static final Property SIDE_EFFECT = ResourceFactory.createProperty(KGQA_BASE + "sideEffect");
+    public static final Property CONTRAINDICATED_WITH = ResourceFactory.createProperty(KGQA_BASE + "contraindicatedWith");
+    public static final Property REQUIRES_EXAM = ResourceFactory.createProperty(KGQA_BASE + "requiresExam");
+    public static final Property LOCATED_IN = ResourceFactory.createProperty(KGQA_BASE + "locatedIn");
+
+    // ===== Wikidata 属性 URI =====
     public static final String WDT_BASE = "http://www.wikidata.org/prop/direct/";
-    public static final Property WDT_P31 =      // instance of
-            ResourceFactory.createProperty(WDT_BASE + "P31");
-    public static final Property WDT_P780 =      // symptom
-            ResourceFactory.createProperty(WDT_BASE + "P780");
-    public static final Property WDT_P2176 =    // treated by / drug
-            ResourceFactory.createProperty(WDT_BASE + "P2176");
-    public static final Property WDT_P828 =     // cause
-            ResourceFactory.createProperty(WDT_BASE + "P828");
-    public static final Property WDT_P1542 =    // complication
-            ResourceFactory.createProperty(WDT_BASE + "P1542");
-    public static final Property WDT_P923 =     // diagnostic test
-            ResourceFactory.createProperty(WDT_BASE + "P923");
-    public static final Property WDT_P1995 =    // specialty (medical specialty)
-            ResourceFactory.createProperty(WDT_BASE + "P1995");
-    public static final Property WDT_P927 =     // located in (body location)
-            ResourceFactory.createProperty(WDT_BASE + "P927");
-
-    // ===== Wikidata 实体 URI =====
-    public static final String WD_ENTITY = "http://www.wikidata.org/entity/";
-    public static final Resource WD_DISEASE =    // Q12136
-            ResourceFactory.createResource(WD_ENTITY + "Q12136");
-    public static final Resource WD_DRUG =      // Q12140
-            ResourceFactory.createResource(WD_ENTITY + "Q12140");
+    public static final Property WDT_P780 = ResourceFactory.createProperty(WDT_BASE + "P780");     // symptom
+    public static final Property WDT_P2176 = ResourceFactory.createProperty(WDT_BASE + "P2176");     // treated by drug
+    public static final Property WDT_P828 = ResourceFactory.createProperty(WDT_BASE + "P828");       // cause
+    public static final Property WDT_P1542 = ResourceFactory.createProperty(WDT_BASE + "P1542");    // complication
+    public static final Property WDT_P1995 = ResourceFactory.createProperty(WDT_BASE + "P1995");    // medical specialty
 
     // ===== 工具方法 =====
-    // 根据实体名称生成 URI（中英文兼容）
     public static Resource createEntityResource(String name, Resource type) {
         String localName = name.trim()
                 .replaceAll("[\\s/()]+", "_")
@@ -93,6 +73,8 @@ public final class MedicalOntology {
         String typePrefix = type.getLocalName().toLowerCase().substring(0, 3);
         return ResourceFactory.createResource(DATA_URI + typePrefix + "_" + localName);
     }
+
+    public static final String DATA_URI = "http://kgqa.com/data#";
 
     private MedicalOntology() {}
 }
