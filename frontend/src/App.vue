@@ -33,8 +33,8 @@ function toggleSidebar() {
 html, body {
   height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  background: #fdfcfa;
-  color: #2d2926;
+  background: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 #app {
@@ -45,6 +45,9 @@ html, body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  background:
+    radial-gradient(circle at top left, rgba(123, 95, 62, 0.08), transparent 28rem),
+    var(--bg-primary);
 }
 
 .app-body {
@@ -58,5 +61,6 @@ html, body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 </style>

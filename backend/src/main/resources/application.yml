@@ -24,7 +24,7 @@ langchain4j:
     api-key: ${SILICONFLOW_API_KEY:sk-uavgmvrxbztvjpnlkltozsjvbguycmacaojjjvhezhaurxlp}
     base-url: https://api.siliconflow.cn/v1
     embedding-model: Qwen/Qwen3-Embedding-8B
-    chat-model: deepseek-ai/DeepSeek-V3.2
+    chat-model: MiniMaxAI/MiniMax-M2.5
 
 # 文件上传配置
 upload:
@@ -33,14 +33,17 @@ upload:
 # 知识图谱配置
 kgqa:
   tdb:
-    path: E:/Github_project/LangChain4j-KGQA/apache_configuration/tdb_drug_new
-  wikidata:
-    path: E:/Github_project/LangChain4j-KGQA/wikidata
+    path: ${KGQA_TDB_PATH:E:/Github_project/LangChain4j-KGQA/apache jena/tdb_drug_new}
+    validate-on-startup: true
   # 本体 URI (kgdrug)
   ontology:
     base: http://www.kgdrug.com
   embedding:
     table: embeddings
+  rag:
+    reindex-on-startup: false
+  data:
+    import-kgdrug-to-vector-on-startup: false
 
 # MyBatis-Plus 配置
 mybatis-plus:

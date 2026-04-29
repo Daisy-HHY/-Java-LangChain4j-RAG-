@@ -193,8 +193,8 @@ public class SPARQLValidator {
 
         while (matcher.find()) {
             String entity = matcher.group(1);
-            // 排除以 http:// 或 kgqa.com 开头的 URI
-            if (!entity.startsWith("http://") && !entity.startsWith("kgqa.com")) {
+            // 排除完整 URI
+            if (!entity.startsWith("http://")) {
                 entities.add(entity);
             }
         }

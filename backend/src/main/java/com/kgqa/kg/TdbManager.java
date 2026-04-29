@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
@@ -27,8 +29,12 @@ public class TdbManager {
 
     @PostConstruct
     public void init() {
+        Path path = Path.of(tdbPath);
+        if (!Files.exists(path)) {
+            log.warn("TDB 路径不存在，将创建空数据集: {}", tdbPath);
+        }
         dataset = TDBFactory.createDataset(tdbPath);
-        log.info("TDB 数据集已连接: {}", tdbPath);
+        log.info("TDB 数据集已连接: {}, 三元组数量: {}", tdbPath, countTriples());
     }
 
     @PreDestroy
@@ -68,6 +74,18 @@ public class TdbManager {
         }
     }
 
+    /**
+     * 读事务，可访问完整 Dataset（默认图和命名图）
+     */
+    public <T> T readDatasetTransaction(Function<Dataset, T> action) {
+        dataset.begin(ReadWrite.READ);
+        try {
+            return action.apply(dataset);
+        } finally {
+            dataset.end();
+        }
+    }
+
     public Dataset getDataset() {
         return dataset;
     }
@@ -76,7 +94,14 @@ public class TdbManager {
      * 查询图谱中的三元组总数
      */
     public long countTriples() {
-        return readTransaction(model -> model.size());
+        return readDatasetTransaction(ds -> {
+            long total = ds.getDefaultModel().size();
+            var graphNames = ds.listNames();
+            while (graphNames.hasNext()) {
+                total += ds.getNamedModel(graphNames.next()).size();
+            }
+            return total;
+        });
     }
 
     /**

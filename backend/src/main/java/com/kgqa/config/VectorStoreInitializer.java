@@ -8,6 +8,7 @@ import com.kgqa.repository.KnowledgeChunkRepository;
 import com.kgqa.repository.KnowledgeRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -23,6 +24,9 @@ public class VectorStoreInitializer implements ApplicationRunner {
     private final KnowledgeChunkRepository chunkRepository;
     private final VectorStoreManager vectorStoreManager;
 
+    @Value("${kgqa.rag.reindex-on-startup:false}")
+    private boolean reindexOnStartup;
+
     public VectorStoreInitializer(KnowledgeRepository knowledgeRepository,
                                 KnowledgeChunkRepository chunkRepository,
                                 VectorStoreManager vectorStoreManager) {
@@ -33,6 +37,11 @@ public class VectorStoreInitializer implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) {
+        if (!reindexOnStartup) {
+            log.info("跳过启动时向量重建；pgvector 使用已持久化的文档向量");
+            return;
+        }
+
         log.info("========== 开始初始化向量存储 ==========");
 
         try {

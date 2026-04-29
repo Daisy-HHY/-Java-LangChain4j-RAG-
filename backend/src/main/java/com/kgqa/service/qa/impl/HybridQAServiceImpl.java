@@ -16,6 +16,7 @@ import com.kgqa.service.rag.RAGPipeline;
 import com.kgqa.service.sparql.QueryExecutor;
 import com.kgqa.service.sparql.SPARQLGenerator;
 import com.kgqa.service.sparql.SPARQLTemplateMatcher;
+import com.kgqa.util.AnswerFormatter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +24,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.IntStream;
 
 /**
  * 混合问答服务实现
@@ -122,10 +124,8 @@ public class HybridQAServiceImpl implements HybridQAService {
         MedicalEntityExtractor.ExtractionResult entityResult = entityExtractor.extract(question);
         log.debug("实体抽取结果: {} - {}", entityResult.entities(), entityResult.intent());
 
-        // 3. 路由决策
-        if (questionType == IntentDetectionService.QuestionType.FACT_QUERY
-                && !entityResult.entities().isEmpty()) {
-            // 3a. 尝试 SPARQL 查询
+        // 3. 路由决策：识别到 kgdrug 实体时优先尝试知识图谱。
+        if (!entityResult.entities().isEmpty()) {
             Result sparqlResult = trySPARQLQuery(question, entityResult);
             if (sparqlResult != null) {
                 return sparqlResult;
@@ -182,32 +182,52 @@ public class HybridQAServiceImpl implements HybridQAService {
         }
 
         // 构建提示词
-        String resultsText = String.join("\n", kgResults);
+        String resultsText = formatKgResultsForPrompt(kgResults);
 
         String prompt = String.format("""
                 你是一个专业的医学知识问答助手。请根据知识图谱查询结果回答用户问题。
 
-                直接以医学知识的形式组织语言。  
+                你必须**严格基于**以下查询结果回答，不要添加查询结果中没有的信息。
+                如果结果不足，请明确说"资料中未提及"，不要编造。
+
+                输出格式要求：
+                1. 第一行直接给出简短结论。
+                2. 如果查询结果有多条，必须使用编号列表，每条结果单独一行。
+                3. 如果查询结果是长文本，按语义拆成 2-4 个短段落。
+                4. 不要把所有内容堆在一个段落里。
+                5. 不要输出 Markdown 表格。
         
                 用户问题：%s
+
                 查询结果：
                 %s
 
-                请用简洁、专业的语言回答问题。如果结果有多条，请列举。
+                请用简洁、专业、分段清晰的语言回答。
                 """, question, resultsText);
 
         try {
             // 使用 ragPipeline 中的 chatModel
             String answer = ragPipeline.getChatModel().chat(prompt);
-            return answer;
+            return AnswerFormatter.format(answer);
         } catch (Exception e) {
             // 如果 LLM 调用失败，直接返回结果列表
             if (predicate != null) {
-                return String.format("根据查询，%s：\n%s",
-                        predicate, String.join("\n", kgResults));
+                return AnswerFormatter.format(String.format("根据查询，%s：\n%s",
+                        predicate, resultsText));
             }
-            return "查询结果：\n" + String.join("\n", kgResults);
+            return AnswerFormatter.format("查询结果：\n" + resultsText);
         }
+    }
+
+    private String formatKgResultsForPrompt(List<String> kgResults) {
+        if (kgResults.size() == 1) {
+            return kgResults.get(0);
+        }
+
+        return IntStream.range(0, kgResults.size())
+                .mapToObj(i -> (i + 1) + ". " + kgResults.get(i))
+                .reduce((a, b) -> a + "\n" + b)
+                .orElse("");
     }
 
     /**

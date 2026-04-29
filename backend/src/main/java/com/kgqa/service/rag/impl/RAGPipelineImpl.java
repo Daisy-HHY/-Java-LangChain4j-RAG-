@@ -4,6 +4,7 @@ import com.kgqa.model.dto.SourceItem;
 import com.kgqa.model.entity.ChatMessageEntity;
 import com.kgqa.service.rag.RAGPipeline;
 import com.kgqa.service.rag.VectorStoreManager;
+import com.kgqa.util.AnswerFormatter;
 import dev.langchain4j.data.message.SystemMessage;
 import dev.langchain4j.data.message.UserMessage;
 import dev.langchain4j.model.chat.ChatModel;
@@ -28,8 +29,17 @@ public class RAGPipelineImpl implements RAGPipeline {
     private static final String SYSTEM_PROMPT_TEMPLATE = """
             你是一个医学知识助手，请根据参考资料回答用户问题。
 
+            你必须**严格基于**以下参考资料回答，不要添加参考资料中没有的信息。
+                      如果资料不足，请明确说"资料中未提及"，不要编造。
+
             回答时不要提及"选项"、"A选项"、"B选项"、"错误选项"、"对应选项"等考题相关表述。
-            直接以医学知识的形式组织语言，简明扼要地回答问题。
+
+            输出格式要求：
+            1. 第一行直接给出简短结论。
+            2. 后续按要点分段说明，每段不超过 3 句话。
+            3. 涉及多个症状、药品、病因或处理措施时，使用编号列表，每项单独一行。
+            4. 不要把所有内容堆在一个段落里。
+            5. 不要输出 Markdown 表格。
 
             参考资料：
             %s
@@ -56,6 +66,10 @@ public class RAGPipelineImpl implements RAGPipeline {
             relevantDocs = vectorStoreManager.searchWithScore(question, 5, 0.5);
         }
 
+        if (relevantDocs.isEmpty()) {
+            return new Result("资料中未提及。当前医疗文档向量库没有检索到可用于回答该问题的内容。", List.of());
+        }
+
         // 2. 构建上下文（只取文本内容）
         String context = relevantDocs.stream()
                 .map(SourceItem::getContent)
@@ -73,7 +87,7 @@ public class RAGPipelineImpl implements RAGPipeline {
 
         String answer = response.aiMessage().text();
 
-        return new Result(answer, relevantDocs);
+        return new Result(AnswerFormatter.format(answer), relevantDocs);
     }
 
     /**

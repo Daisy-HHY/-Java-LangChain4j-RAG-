@@ -3,7 +3,6 @@ package com.kgqa.service.sparql.impl;
 import com.kgqa.kg.TdbManager;
 import com.kgqa.service.sparql.QueryExecutor;
 import org.apache.jena.query.*;
-import org.apache.jena.tdb.TDBFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -43,9 +42,9 @@ public class QueryExecutorImpl implements QueryExecutor {
         }
 
         try {
-            return tdbManager.readTransaction(model -> {
+            return tdbManager.readDatasetTransaction(dataset -> {
                 List<String> results = new ArrayList<>();
-                try (QueryExecution qexec = QueryExecutionFactory.create(sparql, model)) {
+                try (QueryExecution qexec = QueryExecutionFactory.create(sparql, dataset)) {
                     ResultSet rs = qexec.execSelect();
                     while (rs.hasNext()) {
                         String resultStr = solutionToString(rs.next());
@@ -72,7 +71,14 @@ public class QueryExecutorImpl implements QueryExecutor {
             while (varNames.hasNext()) {
                 String varName = varNames.next();
                 if (solution.contains(varName)) {
-                    return solution.get(varName).toString();
+                    var node = solution.get(varName);
+                    if (node.isLiteral()) {
+                        return node.asLiteral().getString();
+                    }
+                    if (node.isResource()) {
+                        return node.asResource().getURI();
+                    }
+                    return node.toString();
                 }
             }
         } catch (Exception e) {
@@ -94,43 +100,40 @@ public class QueryExecutorImpl implements QueryExecutor {
             return new QueryResult(List.of(), List.of());
         }
 
-        List<String> headers = new ArrayList<>();
-        List<List<String>> rows = new ArrayList<>();
-
         try {
-            Dataset dataset = TDBFactory.createDataset(tdbPath);
+            return tdbManager.readDatasetTransaction(dataset -> {
+                List<String> headers = new ArrayList<>();
+                List<List<String>> rows = new ArrayList<>();
+                try (QueryExecution qexec = QueryExecutionFactory.create(sparql, dataset)) {
+                    ResultSet rs = qexec.execSelect();
 
-            try (QueryExecution qexec = QueryExecutionFactory.create(sparql, dataset)) {
-                ResultSet rs = qexec.execSelect();
+                    // 获取变量名
+                    ResultSetRewindable rsRewindable = ResultSetFactory.makeRewindable(rs);
+                    while (rsRewindable.hasNext()) {
+                        QuerySolution solution = rsRewindable.next();
 
-                // 获取变量名
-                ResultSetRewindable rsRewindable = ResultSetFactory.makeRewindable(rs);
-                while (rsRewindable.hasNext()) {
-                    QuerySolution solution = rsRewindable.next();
-
-                    if (headers.isEmpty()) {
-                        solution.varNames().forEachRemaining(headers::add);
-                    }
-
-                    List<String> row = new ArrayList<>();
-                    for (String header : headers) {
-                        if (solution.contains(header)) {
-                            row.add(solution.get(header).toString());
-                        } else {
-                            row.add("");
+                        if (headers.isEmpty()) {
+                            solution.varNames().forEachRemaining(headers::add);
                         }
+
+                        List<String> row = new ArrayList<>();
+                        for (String header : headers) {
+                            if (solution.contains(header)) {
+                                row.add(solution.get(header).toString());
+                            } else {
+                                row.add("");
+                            }
+                        }
+                        rows.add(row);
                     }
-                    rows.add(row);
                 }
-            }
-
-            dataset.close();
-
+                return new QueryResult(headers, rows);
+            });
         } catch (Exception e) {
             log.error("SPARQL 查询执行失败: {}", e.getMessage(), e);
         }
 
-        return new QueryResult(headers, rows);
+        return new QueryResult(List.of(), List.of());
     }
 
     /**

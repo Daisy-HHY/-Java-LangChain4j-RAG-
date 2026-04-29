@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, nextTick, watch } from 'vue'
 import { useChatStore } from '@/stores/chat'
+import SourceCard from '@/components/chat/SourceCard.vue'
 
 const chatStore = useChatStore()
 const isReady = ref(false)
@@ -35,6 +36,51 @@ function autoResize(e) {
   const textarea = e.target
   textarea.style.height = 'auto'
   textarea.style.height = Math.min(textarea.scrollHeight, 150) + 'px'
+}
+
+function normalizeAssistantText(content) {
+  return String(content || '')
+    .replace(/\r\n/g, '\n')
+    .replace(/\\n/g, '\n')
+    .replace(/\*\*/g, '')
+    .replace(/([。；;])\s+(?=\d+[.、]\s*)/g, '$1\n')
+    .replace(/([：:])\s+(?=\d+[.、]\s*)/g, '$1\n')
+    .replace(/\s+(?=\d+[.、]\s*[\u4e00-\u9fa5A-Za-z])/g, '\n')
+    .replace(/[ \t]{2,}/g, ' ')
+    .trim()
+}
+
+function formatMessageBlocks(content, role) {
+  const text = role === 'USER'
+    ? String(content || '').trim()
+    : normalizeAssistantText(content)
+
+  if (!text) return []
+
+  const lines = text.split('\n').map(line => line.trim()).filter(Boolean)
+  const blocks = []
+  let listItems = []
+
+  function flushList() {
+    if (listItems.length) {
+      blocks.push({ type: 'list', items: listItems })
+      listItems = []
+    }
+  }
+
+  lines.forEach((line) => {
+    const itemMatch = line.match(/^\d+[.、]\s*(.+)$/)
+    if (itemMatch) {
+      listItems.push(itemMatch[1].trim())
+      return
+    }
+
+    flushList()
+    blocks.push({ type: 'paragraph', text: line })
+  })
+
+  flushList()
+  return blocks
 }
 </script>
 
@@ -92,19 +138,25 @@ function autoResize(e) {
           </div>
           <div class="message-content">
             <div class="message-bubble">
-              <div class="message-text" v-html="msg.content"></div>
-              <div v-if="msg.sources && msg.sources.length" class="sources">
-                <div class="sources-header">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
-                  </svg>
-                  来源 ({{ msg.sources.length }})
-                </div>
-                <div v-for="(s, j) in msg.sources" :key="j" class="source-item">
-                  {{ s.content }}
-                </div>
+              <div class="message-text">
+                <template
+                  v-for="(block, blockIndex) in formatMessageBlocks(msg.content, msg.role)"
+                  :key="`${i}-${blockIndex}`"
+                >
+                  <p v-if="block.type === 'paragraph'" class="message-paragraph">
+                    {{ block.text }}
+                  </p>
+                  <ol v-else class="message-list-block">
+                    <li v-for="(item, itemIndex) in block.items" :key="itemIndex">
+                      {{ item }}
+                    </li>
+                  </ol>
+                </template>
               </div>
+              <SourceCard
+                v-if="msg.sources && msg.sources.length"
+                :sources="msg.sources"
+              />
             </div>
             <div class="message-time">{{ msg.timestamp ? new Date(msg.timestamp).toLocaleTimeString('zh-CN', {hour:'2-digit', minute:'2-digit'}) : '' }}</div>
           </div>
@@ -162,26 +214,31 @@ function autoResize(e) {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: var(--bg-primary);
+  background:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.5), rgba(247, 243, 236, 0) 260px),
+    var(--bg-primary);
 }
 
 .chat-header {
-  padding: var(--space-4);
-  text-align: center;
-  border-bottom: 1px solid var(--border-subtle);
+  padding: var(--space-4) var(--space-6) var(--space-2);
+  text-align: left;
+  border-bottom: 0;
   flex-shrink: 0;
+  max-width: var(--chat-content-width);
+  width: 100%;
+  margin: 0 auto;
 }
 
 .chat-header h1 {
-  font-size: 16px;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
 
 .chat-messages {
   flex: 1;
   overflow-y: auto;
-  padding: var(--space-6) var(--space-4);
+  padding: var(--space-4) var(--space-5) var(--space-6);
 }
 
 /* Welcome */
@@ -192,68 +249,77 @@ function autoResize(e) {
   justify-content: center;
   height: 100%;
   text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+  padding-bottom: var(--space-12);
 }
 
 .welcome-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: var(--bg-secondary);
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-2xl);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: var(--space-6);
-  color: var(--accent-primary);
-  animation: pulse 3s ease-in-out infinite;
+  margin-bottom: var(--space-5);
+  color: var(--accent-clinical);
+  box-shadow: var(--shadow-sm);
 }
 
 .welcome h2 {
-  font-size: 20px;
+  font-size: 1.55rem;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: var(--space-2);
+  letter-spacing: 0;
 }
 
 .welcome p {
-  font-size: 14px;
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
 }
 
 .examples {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-3);
-  width: 320px;
+  width: 100%;
 }
 
 .example-btn {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--space-3);
-  padding: var(--space-4) var(--space-5);
+  min-height: 88px;
+  padding: var(--space-4);
   background: var(--bg-elevated);
   border: 1px solid var(--border-default);
-  border-radius: var(--radius-xl);
-  font-size: 14px;
+  border-radius: var(--radius-lg);
+  font-size: 0.9rem;
   color: var(--text-secondary);
   cursor: pointer;
   transition: all var(--transition-fast);
   text-align: left;
+  line-height: 1.45;
+  box-shadow: var(--shadow-sm);
 }
 
 .example-icon {
   font-size: 12px;
-  color: var(--accent-primary);
+  color: var(--accent-clinical);
   transition: transform var(--transition-fast);
+  padding-top: 2px;
 }
 
 .example-btn:hover {
-  background: var(--bg-hover);
+  background: var(--bg-soft);
   color: var(--text-primary);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-  border-color: var(--accent-primary);
+  border-color: var(--border-strong);
 }
 
 .example-btn:hover .example-icon {
@@ -264,16 +330,18 @@ function autoResize(e) {
 .messages-list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
-  max-width: 680px;
+  gap: var(--space-7);
+  max-width: var(--chat-content-width);
   margin: 0 auto;
+  width: 100%;
 }
 
 .message {
   display: flex;
-  gap: var(--space-3);
+  gap: var(--space-4);
   opacity: 0;
   animation: messageIn 0.3s ease forwards;
+  align-items: flex-start;
 }
 
 .message.user {
@@ -281,10 +349,10 @@ function autoResize(e) {
 }
 
 .message-avatar {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background: var(--bg-secondary);
+  background: var(--bg-elevated);
   border: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
@@ -295,81 +363,80 @@ function autoResize(e) {
 }
 
 .message.user .message-avatar {
-  background: var(--accent-primary);
+  background: var(--accent-brand);
   border-color: var(--accent-primary);
-  color: white;
+  color: var(--bg-elevated);
 }
 
 .message:hover .message-avatar {
-  transform: scale(1.05);
+  transform: translateY(-1px);
 }
 
 .message-content {
-  max-width: 75%;
+  max-width: min(100%, 720px);
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
+  min-width: 0;
 }
 
 .message-bubble {
-  padding: var(--space-4);
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-xl);
-  border-bottom-left-radius: var(--radius-sm);
-  font-size: 15px;
-  line-height: 1.7;
+  padding: 2px 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-size: 1rem;
+  line-height: 1.78;
   color: var(--text-primary);
   transition: all var(--transition-fast);
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
 }
 
 .message.user .message-bubble {
-  background: var(--bg-secondary);
-  border-bottom-left-radius: var(--radius-xl);
-  border-bottom-right-radius: var(--radius-sm);
+  padding: 10px var(--space-4);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  line-height: 1.6;
 }
 
 .message:hover .message-bubble {
-  box-shadow: var(--shadow-md);
+  box-shadow: none;
 }
 
 .message-text {
   word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
-.sources {
-  margin-top: var(--space-3);
-  padding: var(--space-3);
-  background: var(--bg-secondary);
-  border-radius: var(--radius-lg);
-  font-size: 13px;
+.message-paragraph {
+  margin: 0 0 0.85em;
 }
 
-.sources-header {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  color: var(--text-secondary);
-  margin-bottom: var(--space-2);
-  font-weight: 500;
+.message-paragraph:last-child {
+  margin-bottom: 0;
 }
 
-.source-item {
-  color: var(--text-secondary);
-  padding: var(--space-2) 0;
-  border-bottom: 1px solid var(--border-subtle);
+.message-list-block {
+  margin: 0.25em 0 1em 1.35em;
+  padding: 0;
 }
 
-.source-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
+.message-list-block li {
+  padding-left: 0.35em;
+  margin-bottom: 0.55em;
+}
+
+.message-list-block li::marker {
+  color: var(--accent-clinical);
+  font-weight: 600;
 }
 
 .message-time {
-  font-size: 11px;
+  font-size: 0.7rem;
   color: var(--text-muted);
-  padding: 0 var(--space-2);
+  padding-top: 2px;
 }
 
 .message.user .message-time {
@@ -385,7 +452,7 @@ function autoResize(e) {
 .loading-bubble {
   display: flex;
   gap: var(--space-2);
-  padding: var(--space-4) var(--space-5);
+  padding: var(--space-3) 0;
 }
 
 .loading-bubble .dot {
@@ -410,28 +477,41 @@ function autoResize(e) {
 
 /* Input */
 .chat-input-area {
-  padding: var(--space-4);
-  border-top: 1px solid var(--border-subtle);
-  background: var(--bg-primary);
+  padding: var(--space-3) var(--space-5) var(--space-5);
+  border-top: 0;
+  background: linear-gradient(180deg, rgba(247, 243, 236, 0), var(--bg-primary) 30%);
   flex-shrink: 0;
 }
 
 .input-wrapper {
   display: flex;
-  gap: var(--space-3);
-  max-width: 680px;
+  gap: var(--space-2);
+  max-width: var(--chat-content-width);
   margin: 0 auto;
   align-items: flex-end;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-2);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.input-wrapper:focus-within {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-lg);
 }
 
 .input-wrapper textarea {
   flex: 1;
-  padding: var(--space-4);
-  background: var(--bg-input);
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-xl);
+  min-height: 44px;
+  max-height: 150px;
+  padding: 11px var(--space-3);
+  background: transparent;
+  border: 0;
+  border-radius: var(--radius-lg);
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--text-primary);
   resize: none;
   font-family: inherit;
@@ -444,17 +524,16 @@ function autoResize(e) {
 
 .input-wrapper textarea:focus {
   outline: none;
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px rgba(45, 41, 38, 0.08);
+  box-shadow: none;
 }
 
 .send-btn {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   background: var(--accent-primary);
-  color: white;
+  color: var(--bg-elevated);
   border: none;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -464,7 +543,7 @@ function autoResize(e) {
 
 .send-btn:hover:not(:disabled) {
   background: var(--accent-secondary);
-  transform: scale(1.05);
+  transform: translateY(-1px);
 }
 
 .send-btn:active:not(:disabled) {
@@ -473,6 +552,7 @@ function autoResize(e) {
 
 .send-btn:disabled {
   background: var(--bg-hover);
+  color: var(--text-muted);
   cursor: not-allowed;
 }
 
@@ -500,5 +580,40 @@ function autoResize(e) {
 @keyframes pulse {
   0%, 100% { transform: scale(1); opacity: 0.8; }
   50% { transform: scale(1.05); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .chat-header {
+    padding-inline: var(--space-4);
+  }
+
+  .chat-messages {
+    padding-inline: var(--space-4);
+  }
+
+  .examples {
+    grid-template-columns: 1fr;
+  }
+
+  .message {
+    gap: var(--space-3);
+  }
+
+  .message-avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  .message-content {
+    max-width: calc(100% - 40px);
+  }
+
+  .message.user .message-content {
+    max-width: 86%;
+  }
+
+  .chat-input-area {
+    padding: var(--space-3) var(--space-4) calc(72px + var(--space-3));
+  }
 }
 </style>

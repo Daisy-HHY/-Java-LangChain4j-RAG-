@@ -1,5 +1,6 @@
 package com.kgqa.service.qa.impl;
 
+import com.kgqa.kg.KgdrugEntityDictionary;
 import com.kgqa.service.qa.MedicalEntityExtractor;
 import com.kgqa.util.MedicalDictionary;
 import dev.langchain4j.model.chat.ChatModel;
@@ -20,6 +21,7 @@ import java.util.regex.Pattern;
 public class MedicalEntityExtractorImpl implements MedicalEntityExtractor {
 
     private final ChatModel chatModel;
+    private final KgdrugEntityDictionary kgdrugEntityDictionary;
 
     // 提示词
     private static final String EXTRACT_PROMPT = """
@@ -44,8 +46,10 @@ public class MedicalEntityExtractorImpl implements MedicalEntityExtractor {
             用户问题：%s
             """;
 
-    public MedicalEntityExtractorImpl(ChatModel chatModel) {
+    public MedicalEntityExtractorImpl(ChatModel chatModel,
+                                      KgdrugEntityDictionary kgdrugEntityDictionary) {
         this.chatModel = chatModel;
+        this.kgdrugEntityDictionary = kgdrugEntityDictionary;
     }
 
     /**
@@ -79,6 +83,7 @@ public class MedicalEntityExtractorImpl implements MedicalEntityExtractor {
         Set<String> found = new HashSet<>();
 
         // 提取药物
+        matchEntities(question, kgdrugEntityDictionary.drugs(), "药物", entities, found);
         for (String drug : MedicalDictionary.DRUGS) {
             if (question.contains(drug) && !found.contains(drug)) {
                 entities.add(new MedicalEntity("药物", drug));
@@ -87,6 +92,7 @@ public class MedicalEntityExtractorImpl implements MedicalEntityExtractor {
         }
 
         // 提取疾病
+        matchEntities(question, kgdrugEntityDictionary.diseases(), "疾病", entities, found);
         for (String disease : MedicalDictionary.DISEASES) {
             if (question.contains(disease) && !found.contains(disease)) {
                 entities.add(new MedicalEntity("疾病", disease));
@@ -95,6 +101,7 @@ public class MedicalEntityExtractorImpl implements MedicalEntityExtractor {
         }
 
         // 提取症状
+        matchEntities(question, kgdrugEntityDictionary.symptoms(), "症状", entities, found);
         for (String symptom : MedicalDictionary.SYMPTOMS) {
             if (question.contains(symptom) && !found.contains(symptom)) {
                 entities.add(new MedicalEntity("症状", symptom));
@@ -103,6 +110,18 @@ public class MedicalEntityExtractorImpl implements MedicalEntityExtractor {
         }
 
         return entities;
+    }
+
+    private void matchEntities(String question,
+                               List<String> candidates,
+                               String type,
+                               List<MedicalEntity> entities,
+                               Set<String> found) {
+        for (String candidate : candidates) {
+            if (question.contains(candidate) && found.add(candidate)) {
+                entities.add(new MedicalEntity(type, candidate));
+            }
+        }
     }
 
     /**

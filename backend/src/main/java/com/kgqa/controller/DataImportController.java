@@ -22,22 +22,16 @@ public class DataImportController {
     }
 
     /**
-     * 从 TDB 导入知识图谱
+     * TDB 知识图谱只作为 SPARQL 数据源，不导入 RAG 向量库。
      */
     @PostMapping("/tdb")
     public Map<String, Object> importFromTDB(
             @RequestParam String path,
             @RequestParam(defaultValue = "知识图谱") String title) {
         Map<String, Object> result = new HashMap<>();
-        try {
-            int count = dataImportService.importFromTDB(path, title);
-            result.put("success", true);
-            result.put("message", "导入成功");
-            result.put("count", count);
-        } catch (Exception e) {
-            result.put("success", false);
-            result.put("message", "导入失败: " + e.getMessage());
-        }
+        result.put("success", false);
+        result.put("message", "TDB 数据集仅用于 kgdrug 知识图谱 SPARQL 查询，不允许导入 RAG 向量库");
+        result.put("count", 0);
         return result;
     }
 

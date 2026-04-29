@@ -1,27 +1,27 @@
-// 暖色调简约风格
 :root {
-  // 背景色 - 暖白系列
-  --bg-primary: #fdfcfa;           // 暖白（偏米色）
-  --bg-secondary: #f9f7f4;         // 暖灰
-  --bg-elevated: #ffffff;         // 纯白（卡片等提升元素）
-  --bg-input: #f5f3f0;            // 暖灰输入框
-  --bg-hover: #f0ece7;           // 悬停状态
+  // Claude-like warm neutrals with muted clinical accents.
+  --bg-primary: #f7f3ec;
+  --bg-secondary: #f0eae0;
+  --bg-elevated: #fffdf8;
+  --bg-input: #fffdf8;
+  --bg-hover: #ebe3d6;
+  --bg-soft: #faf7f1;
 
-  // 强调色 - 暖色调深色
-  --accent-primary: #2d2926;      // 暖黑色（咖啡色系）
-  --accent-secondary: #5c5550;     // 暖灰色
-  --accent-success: #3d3833;
-  --accent-warning: #6b5f52;
-  --accent-danger: #2d2926;
+  --accent-primary: #2f2a24;
+  --accent-secondary: #5e554b;
+  --accent-brand: #7b5f3e;
+  --accent-clinical: #47645a;
+  --accent-success: #47645a;
+  --accent-warning: #927246;
+  --accent-danger: #9b4d46;
 
-  // 文字色 - 暖色灰度
-  --text-primary: #2d2926;        // 暖黑色
-  --text-secondary: #7a7067;      // 暖灰色
-  --text-muted: #a89f94;         // 浅暖灰
+  --text-primary: #2f2a24;
+  --text-secondary: #6f665c;
+  --text-muted: #9b9186;
 
-  // 边框 - 暖色调边框
-  --border-subtle: rgba(45, 41, 38, 0.06);
-  --border-default: rgba(45, 41, 38, 0.12);
+  --border-subtle: rgba(47, 42, 36, 0.07);
+  --border-default: rgba(47, 42, 36, 0.13);
+  --border-strong: rgba(47, 42, 36, 0.18);
   --border-accent: var(--accent-primary);
 
   // 字体 - 使用系统字体
@@ -34,6 +34,7 @@
   --radius-md: 6px;
   --radius-lg: 8px;
   --radius-xl: 12px;
+  --radius-2xl: 16px;
 
   // 间距
   --space-1: 4px;
@@ -42,14 +43,15 @@
   --space-4: 16px;
   --space-5: 20px;
   --space-6: 24px;
+  --space-7: 28px;
   --space-8: 32px;
   --space-10: 40px;
   --space-12: 48px;
 
-  // 阴影 - 暖色调阴影
-  --shadow-sm: 0 1px 2px rgba(45, 41, 38, 0.04);
-  --shadow-md: 0 2px 8px rgba(45, 41, 38, 0.06);
-  --shadow-lg: 0 4px 16px rgba(45, 41, 38, 0.08);
+  // 阴影
+  --shadow-sm: 0 1px 2px rgba(47, 42, 36, 0.05);
+  --shadow-md: 0 6px 18px rgba(47, 42, 36, 0.08);
+  --shadow-lg: 0 14px 40px rgba(47, 42, 36, 0.12);
 
   // 动画
   --transition-fast: 150ms ease;
@@ -57,7 +59,8 @@
   --transition-slow: 400ms ease;
 
   // 布局
-  --sidebar-width: 280px;
-  --header-height: 60px;
+  --sidebar-width: 292px;
+  --header-height: 56px;
   --max-content-width: 1200px;
+  --chat-content-width: 820px;
 }

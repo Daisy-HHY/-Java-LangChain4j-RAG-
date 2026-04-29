@@ -94,12 +94,13 @@ function createNewSession() {
 .app-sidebar {
   width: var(--sidebar-width);
   min-width: var(--sidebar-width);
-  background-color: var(--bg-primary);
+  background-color: rgba(240, 234, 224, 0.72);
   border-right: 1px solid var(--border-subtle);
   display: flex;
   flex-direction: column;
   transition: width var(--transition-normal), min-width var(--transition-normal);
   overflow: hidden;
+  backdrop-filter: blur(16px);
 
   &.collapsed {
     width: 0;
@@ -112,24 +113,23 @@ function createNewSession() {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-4) var(--space-4);
+  padding: var(--space-4);
   border-bottom: 1px solid var(--border-subtle);
 }
 
 .sidebar-title {
   font-family: var(--font-display);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  letter-spacing: 0;
 }
 
 .icon-btn {
-  width: 28px;
-  height: 28px;
-  border: none;
-  background: var(--bg-secondary);
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-elevated);
   border-radius: var(--radius-md);
   cursor: pointer;
   display: flex;
@@ -142,28 +142,29 @@ function createNewSession() {
 .icon-btn:hover {
   background: var(--bg-hover);
   color: var(--text-primary);
-  transform: scale(1.05);
+  transform: translateY(-1px);
 }
 
 .session-list {
   flex: 1;
   overflow-y: auto;
-  padding: var(--space-2);
+  padding: var(--space-3);
 }
 
 .session-item {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  padding: var(--space-3) var(--space-3);
-  border-radius: var(--radius-md);
+  padding: 10px var(--space-3);
+  border-radius: var(--radius-lg);
   cursor: pointer;
   transition: all var(--transition-fast);
-  margin-bottom: var(--space-1);
+  margin-bottom: 2px;
   position: relative;
+  border: 1px solid transparent;
 
   &:hover {
-    background-color: var(--bg-hover);
+    background-color: rgba(255, 253, 248, 0.62);
 
     .delete-btn {
       opacity: 1;
@@ -171,7 +172,9 @@ function createNewSession() {
   }
 
   &.active {
-    background-color: var(--bg-hover);
+    background-color: var(--bg-elevated);
+    border-color: var(--border-subtle);
+    box-shadow: var(--shadow-sm);
 
     .session-indicator {
       opacity: 1;
@@ -182,13 +185,13 @@ function createNewSession() {
 
 .session-indicator {
   position: absolute;
-  left: 0;
+  left: 6px;
   top: 50%;
   transform: translateY(-50%) scaleY(0);
-  width: 3px;
-  height: 60%;
-  background: var(--accent-primary);
-  border-radius: 0 2px 2px 0;
+  width: 4px;
+  height: 4px;
+  background: var(--accent-clinical);
+  border-radius: 50%;
   opacity: 0;
   transition: all var(--transition-fast);
 }
@@ -202,7 +205,7 @@ function createNewSession() {
 }
 
 .session-title {
-  font-size: 0.875rem;
+  font-size: 0.88rem;
   color: var(--text-primary);
   white-space: nowrap;
   overflow: hidden;
@@ -211,7 +214,7 @@ function createNewSession() {
 }
 
 .session-date {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--text-muted);
 }
 
@@ -232,7 +235,7 @@ function createNewSession() {
 
 .delete-btn:hover {
   color: var(--accent-danger);
-  background-color: rgba(239, 68, 68, 0.1);
+  background-color: rgba(155, 77, 70, 0.1);
 }
 
 .empty-state {
@@ -270,7 +273,7 @@ function createNewSession() {
     top: var(--header-height);
     bottom: 60px;
     z-index: 99;
-    background-color: var(--bg-primary);
+    background-color: rgba(240, 234, 224, 0.96);
 
     &.collapsed {
       transform: translateX(-100%);

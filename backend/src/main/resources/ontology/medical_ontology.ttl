@@ -1,117 +1,69 @@
-# 医疗知识图谱本体定义
-# Medical Knowledge Graph Ontology
-
+@prefix : <http://www.kgdrug.com#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-@prefix kg: <http://kgqa.com/medical#> .
-@prefix data: <http://kgqa.com/data#> .
+<http://www.kgdrug.com> rdf:type owl:Ontology .
 
-# ============== 实体类型 ==============
+:disease rdf:type owl:Class .
+:drug rdf:type owl:Class .
+:symptom rdf:type owl:Class .
 
-# 疾病
-kg:Disease a rdfs:Class ;
-    rdfs:label "Disease"@en , "疾病"@zh ;
-    rdfs:comment "疾病或疾病状态" .
+:haszhengzhuang rdf:type owl:ObjectProperty ;
+    rdfs:domain :disease ;
+    rdfs:range :symptom ;
+    owl:inverseOf :relatedisease .
 
-# 症状/体征
-kg:Symptom a rdfs:Class ;
-    rdfs:label "Symptom"@en , "症状"@zh ;
-    rdfs:comment "疾病的临床表现" .
+:relatedisease rdf:type owl:ObjectProperty ;
+    rdfs:domain :symptom ;
+    rdfs:range :disease .
 
-# 药物/治疗方案
-kg:Drug a rdfs:Class ;
-    rdfs:label "Drug"@en , "药物"@zh ;
-    rdfs:comment "用于治疗的药物" .
+:needcure rdf:type owl:ObjectProperty ;
+    rdfs:domain :disease ;
+    rdfs:range :drug ;
+    owl:inverseOf :cure .
 
-# 科室
-kg:Department a rdfs:Class ;
-    rdfs:label "Department"@en , "科室"@zh ;
-    rdfs:comment "医院科室分类" .
+:cure rdf:type owl:ObjectProperty ;
+    rdfs:domain :drug ;
+    rdfs:range :disease .
 
-# 检查项目
-kg:Examination a rdfs:Class ;
-    rdfs:label "Examination"@en , "检查"@zh ;
-    rdfs:comment "医学检查和检验项目" .
+:jibingname rdf:type owl:DatatypeProperty ;
+    rdfs:domain :disease ;
+    rdfs:range xsd:string .
 
-# 身体部位/器官
-kg:BodyPart a rdfs:Class ;
-    rdfs:label "BodyPart"@en , "身体部位"@zh ;
-    rdfs:comment "解剖学部位或器官" .
+:proname rdf:type owl:DatatypeProperty ;
+    rdfs:domain :drug ;
+    rdfs:range xsd:string .
 
-# 治疗方法
-kg:Treatment a rdfs:Class ;
-    rdfs:label "Treatment"@en , "治疗"@zh ;
-    rdfs:comment "治疗方法或手术" .
+:zzname rdf:type owl:DatatypeProperty ;
+    rdfs:domain :symptom ;
+    rdfs:range xsd:string .
 
-# ============== 关系类型 ==============
+:bingyin rdf:type owl:DatatypeProperty ;
+    rdfs:domain :disease ;
+    rdfs:range xsd:string .
 
-# 疾病 -> 症状
-kg:hasSymptom a rdf:Property ;
-    rdfs:label "hasSymptom"@en , "有以下症状"@zh ;
-    rdfs:domain kg:Disease ;
-    rdfs:range kg:Symptom ;
-    rdfs:comment "疾病表现的症状" .
+:bingfazheng rdf:type owl:DatatypeProperty ;
+    rdfs:domain :disease ;
+    rdfs:range xsd:string .
 
-# 疾病 -> 药物（适应症）
-kg:treatedBy a rdf:Property ;
-    rdfs:label "treatedBy"@en , "可用药物治疗"@zh ;
-    rdfs:domain kg:Disease ;
-    rdfs:range kg:Drug ;
-    rdfs:comment "疾病的药物治疗方案" .
+:zhiliao rdf:type owl:DatatypeProperty ;
+    rdfs:domain :disease ;
+    rdfs:range xsd:string .
 
-kg:indication a rdf:Property ;
-    rdfs:label "indication"@en , "适应症"@zh ;
-    rdfs:domain kg:Drug ;
-    rdfs:range kg:Disease ;
-    rdfs:comment "药物的适应症" .
+:yufang rdf:type owl:DatatypeProperty ;
+    rdfs:domain :disease ;
+    rdfs:range xsd:string .
 
-# 药物 -> 副作用
-kg:sideEffect a rdf:Property ;
-    rdfs:label "sideEffect"@en , "副作用"@zh ;
-    rdfs:domain kg:Drug ;
-    rdfs:range kg:Symptom ;
-    rdfs:comment "药物可能引起的不良反应" .
+:gaishu rdf:type owl:DatatypeProperty ;
+    rdfs:domain :disease ;
+    rdfs:range xsd:string .
 
-# 疾病 -> 所属科室
-kg:belongsToDept a rdf:Property ;
-    rdfs:label "belongsToDept"@en , "属于科室"@zh ;
-    rdfs:domain kg:Disease ;
-    rdfs:range kg:Department ;
-    rdfs:comment "疾病所属的诊疗科室" .
+:gazhzh rdf:type owl:DatatypeProperty ;
+    rdfs:domain :drug ;
+    rdfs:range xsd:string .
 
-# 疾病 -> 需要的检查
-kg:requiresExam a rdf:Property ;
-    rdfs:label "requiresExam"@en , "需要检查"@zh ;
-    rdfs:domain kg:Disease ;
-    rdfs:range kg:Examination ;
-    rdfs:comment "疾病诊断或治疗需要的检查" .
-
-# 疾病 -> 身体部位（位于）
-kg:locatedIn a rdf:Property ;
-    rdfs:label "locatedIn"@en , "位于"@zh ;
-    rdfs:domain kg:Disease ;
-    rdfs:range kg:BodyPart ;
-    rdfs:comment "疾病或症状所在的解剖部位" .
-
-# 疾病 -> 病因
-kg:causedBy a rdf:Property ;
-    rdfs:label "causedBy"@en , "病因为"@zh ;
-    rdfs:domain kg:Disease ;
-    rdfs:range kg:Disease ;
-    rdfs:comment "疾病的病因或致病因素" .
-
-# 并发症
-kg:complicationOf a rdf:Property ;
-    rdfs:label "complicationOf"@en , "并发症为"@zh ;
-    rdfs:domain kg:Disease ;
-    rdfs:range kg:Disease ;
-    rdfs:comment "疾病的并发症" .
-
-# 药物禁忌
-kg:contraindicatedWith a rdf:Property ;
-    rdfs:label "contraindicatedWith"@en , "禁忌配伍"@zh ;
-    rdfs:domain kg:Drug ;
-    rdfs:range kg:Drug ;
-    rdfs:comment "不能与该药物同时使用的药物" .
+:pzwh rdf:type owl:DatatypeProperty ;
+    rdfs:domain :drug ;
+    rdfs:range xsd:string .
