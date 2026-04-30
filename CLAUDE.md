@@ -1,143 +1,214 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides repository-specific guidance for Claude Code and similar coding agents working in this project.
 
-## Project Overview
+## Project Summary
 
-A RAG (Retrieval Augmented Generation) knowledge base QA system with knowledge graph capabilities built with:
-- **Backend**: Java Spring Boot 3.5 + LangChain4j 1.12
-- **Frontend**: Vue.js 3 (not yet created)
-- **Database**: PostgreSQL 16 + pgvector 0.8.2
-- **Embedding Store**: pgvector (PostgreSQL extension)
-- **Knowledge Graph**: Apache Jena TDB2
-- **AI Provider**: SiliconFlow (Qwen3-Embedding-8B for embedding, DeepSeek-V3.2 for chat)
+This repository is a medical QA system that combines:
 
-## Build Commands
+- `RAG` over uploaded medical documents stored in PostgreSQL + pgvector
+- `Knowledge graph QA` over a local Apache Jena TDB2 dataset based on `kgdrug`
+- `Vue 3 frontend` with login, chat, history, and knowledge-base management
+
+The system is no longer a backend-only prototype. It already includes:
+
+- login / register / logout
+- HttpOnly cookie authentication
+- chat session management
+- SSE streaming answers
+- multi-turn follow-up question rewriting
+- per-user knowledge base isolation
+
+## Current Stack
+
+- Backend: Java 17, Spring Boot 3.5, MyBatis-Plus, LangChain4j 1.12
+- Frontend: Vue 3, Vite, Pinia, Vue Router, Element Plus
+- Database: PostgreSQL 16 + pgvector
+- Knowledge graph: Apache Jena TDB2
+- AI provider: SiliconFlow
+
+Current default model configuration comes from [application.yml](E:/Github_project/LangChain4j-KGQA/backend/src/main/resources/application.yml):
+
+- embedding model: `Qwen/Qwen3-Embedding-8B`
+- chat model: `MiniMaxAI/MiniMax-M2.5`
+
+Do not assume older docs mentioning `DeepSeek-V3.2`, `tdb_medqa`, or `wikidata` are still valid.
+
+## What Is Actually Implemented
+
+### Frontend
+
+Routes in [router/index.js](E:/Github_project/LangChain4j-KGQA/frontend/src/router/index.js):
+
+- `/login`
+- `/`
+- `/knowledge`
+- `/history`
+
+Main frontend responsibilities:
+
+- auth flow and session restoration
+- chat streaming UI
+- source rendering
+- session sorting by latest activity
+- knowledge upload and deletion
+
+### Backend API
+
+Implemented controllers:
+
+- [AuthController.java](E:/Github_project/LangChain4j-KGQA/backend/src/main/java/com/kgqa/controller/AuthController.java)
+- [QAController.java](E:/Github_project/LangChain4j-KGQA/backend/src/main/java/com/kgqa/controller/QAController.java)
+- [ChatHistoryController.java](E:/Github_project/LangChain4j-KGQA/backend/src/main/java/com/kgqa/controller/ChatHistoryController.java)
+- [KnowledgeController.java](E:/Github_project/LangChain4j-KGQA/backend/src/main/java/com/kgqa/controller/KnowledgeController.java)
+- [DataImportController.java](E:/Github_project/LangChain4j-KGQA/backend/src/main/java/com/kgqa/controller/DataImportController.java)
+- [QaDebugController.java](E:/Github_project/LangChain4j-KGQA/backend/src/main/java/com/kgqa/controller/QaDebugController.java)
+
+Important API paths:
+
+- `POST /api/auth/login`
+- `POST /api/auth/register`
+- `GET /api/auth/me`
+- `POST /api/auth/logout`
+- `POST /api/qa/chat`
+- `POST /api/qa/chat/stream`
+- `GET /api/qa/sessions`
+- `DELETE /api/qa/sessions/{id}`
+- `GET /api/chat/history/{sessionId}`
+- `DELETE /api/chat/history/{sessionId}`
+- `POST /api/knowledge/upload`
+- `GET /api/knowledge/list`
+- `DELETE /api/knowledge/{id}`
+- `GET /api/knowledge/{id}/status`
+
+There is no current `/api/qa/hybrid` controller endpoint, even though older docs may mention it.
+
+## Retrieval Architecture
+
+### RAG Path
+
+Current behavior:
+
+1. uploaded documents are parsed with Apache Tika
+2. content is chunked
+3. embeddings are stored in pgvector
+4. top-k chunks are retrieved by semantic similarity
+5. LangChain4j chat model generates the final answer
+
+Primary code:
+
+- [RAGPipelineImpl.java](E:/Github_project/LangChain4j-KGQA/backend/src/main/java/com/kgqa/service/rag/impl/RAGPipelineImpl.java)
+- [VectorStoreManagerImpl.java](E:/Github_project/LangChain4j-KGQA/backend/src/main/java/com/kgqa/service/rag/impl/VectorStoreManagerImpl.java)
+
+### Knowledge Graph Path
+
+Current behavior:
+
+1. extract medical entities from the question
+2. try SPARQL template matching first
+3. fall back to LLM-generated SPARQL if needed
+4. query the local TDB2 dataset
+5. format results into natural language
+
+Primary code:
+
+- [HybridQAServiceImpl.java](E:/Github_project/LangChain4j-KGQA/backend/src/main/java/com/kgqa/service/qa/impl/HybridQAServiceImpl.java)
+- [MedicalEntityExtractorImpl.java](E:/Github_project/LangChain4j-KGQA/backend/src/main/java/com/kgqa/service/qa/impl/MedicalEntityExtractorImpl.java)
+- [SPARQLTemplateMatcherImpl.java](E:/Github_project/LangChain4j-KGQA/backend/src/main/java/com/kgqa/service/sparql/impl/SPARQLTemplateMatcherImpl.java)
+- [QueryExecutorImpl.java](E:/Github_project/LangChain4j-KGQA/backend/src/main/java/com/kgqa/service/sparql/impl/QueryExecutorImpl.java)
+
+## Multi-turn Memory
+
+Multi-turn support is already implemented in two layers:
+
+1. RAG prompt history:
+   recent messages are appended into the current question context.
+2. follow-up entity resolution:
+   if the current question lacks an explicit entity, backend logic rewrites it using the latest entity found in recent user messages.
+
+Example:
+
+- turn 1: `胃溃疡有什么症状？`
+- turn 2: `有什么药可以治疗？`
+- rewritten form: `胃溃疡用什么药`
+
+This logic currently lives in [HybridQAServiceImpl.java](E:/Github_project/LangChain4j-KGQA/backend/src/main/java/com/kgqa/service/qa/impl/HybridQAServiceImpl.java).
+
+## Authentication Model
+
+Authentication is cookie-based now.
+
+- backend issues an `HttpOnly` auth cookie
+- frontend uses `withCredentials: true`
+- frontend may cache non-sensitive user profile and expiry metadata locally
+- token itself should not be reintroduced into `localStorage`
+
+Relevant files:
+
+- [AuthController.java](E:/Github_project/LangChain4j-KGQA/backend/src/main/java/com/kgqa/controller/AuthController.java)
+- [TokenAuthInterceptor.java](E:/Github_project/LangChain4j-KGQA/backend/src/main/java/com/kgqa/config/TokenAuthInterceptor.java)
+- [auth.js](E:/Github_project/LangChain4j-KGQA/frontend/src/stores/auth.js)
+
+## Data and Paths
+
+### PostgreSQL schema
+
+Defined in [schema.sql](E:/Github_project/LangChain4j-KGQA/backend/src/main/resources/schema.sql).
+
+Core tables:
+
+- `app_user`
+- `knowledge_base`
+- `knowledge_chunk`
+- `chat_session`
+- `chat_message`
+
+The `embeddings` table is managed through LangChain4j / pgvector integration.
+
+### TDB dataset
+
+Current default path:
+
+- `E:/Github_project/LangChain4j-KGQA/apache jena/tdb_drug_new`
+
+Important:
+
+- only `kgdrug` is in scope now
+- do not reintroduce `wikidata` assumptions unless the user explicitly asks for it
+- TDB lock files may appear when another process is holding the dataset
+
+## Build and Run
+
+### Backend
 
 ```bash
 cd backend
-
-# Compile and run
 mvn clean compile
-mvn spring-boot:run                          # Run dev server (port 8080)
-
-# Build
-mvn package -DskipTests                       # Build JAR
+mvn spring-boot:run
 ```
 
-## Architecture
+### Frontend
 
-### Storage Design
-```
-PostgreSQL + pgvector
-├── 元数据表（knowledge_base, knowledge_chunk, chat_session, chat_message）
-└── 向量表（embeddings）- pgvector 自动管理
-
-Jena TDB2（知识图谱三元组，本地文件）
-```
-
-### Backend Structure
-```
-com.kgqa/
-├── config/                    # Spring configurations
-├── controller/                # REST API endpoints
-├── service/                   # Business logic
-│   ├── qa/                    # QA services (HybridQAService, IntentDetection)
-│   ├── rag/                   # RAG pipeline (embedding, vector store, memory)
-│   └── sparql/                # SPARQL query execution
-├── data/                      # MedQA data processing (parser, ingestor)
-├── kg/                        # Knowledge graph (TDB, ontology, triple extraction)
-├── init/                      # Startup initialization (DataInitializer)
-├── repository/                # MyBatis-Plus data access
-└── model/                     # Entities and DTOs
-```
-
-### RAG Flow
-```
-Question → Embed (SiliconFlow) → Vector Search (pgvector)
-       → Top-K Chunks → Build Prompt → LLM (DeepSeek) → Answer + Sources
-```
-
-### Knowledge Graph Flow
-```
-Question → Intent Detection → SPARQL Generator → TDB Query → Structured Results
-```
-
-### Key Configuration (application.yml)
-```yaml
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/kgqa
-    username: postgres
-    password: 123456
-
-kgqa:
-  tdb:
-    path: E:/Github_project/LangChain4j-KGQA/tdb_medqa
-  embedding:
-    path: E:/Github_project/LangChain4j-KGQA/backend/resource/embeddings/medqa.json
-```
-- Environment variable `SILICONFLOW_API_KEY` - Required for AI features
-
-## API Endpoints
-
-| Method | Path | Description |
-|--------|------|-------------|
-| POST | `/api/qa/chat` | Send question, returns answer + sources |
-| POST | `/api/qa/hybrid` | Hybrid QA with RAG + SPARQL |
-| GET | `/api/qa/sessions` | List chat sessions |
-| DELETE | `/api/qa/sessions/{id}` | Delete session |
-| POST | `/api/knowledge/upload` | Upload document (PDF/Word/TXT) |
-| GET | `/api/knowledge/list` | List knowledge base |
-| DELETE | `/api/knowledge/{id}` | Delete knowledge |
-| GET | `/api/knowledge/{id}/status` | Check processing status |
-| GET | `/api/chat/history/{sessionId}` | Get chat history |
-
-## Database Schema (PostgreSQL)
-
-4 tables in `kgqa` database:
-- `knowledge_base` - 知识库文档表
-- `knowledge_chunk` - 知识块表（分块后的文本）
-- `chat_session` - 对话会话表
-- `chat_message` - 对话消息表
-
-pgvector table `embeddings` is automatically created by LangChain4j.
-
-## MedQA Data Processing
-
-Located in `data/` package:
-- `MedQaRecord.java` - Data model for MedQA records
-- `MedQaParser.java` - JSONL parser with batch processing
-- `EmbeddingIngestor.java` - Batch vectorization to InMemoryEmbeddingStore
-
-Data path: `E:/Github_project/LangChain4j-KGQA/data/data_clean/questions/Mainland/chinese_qbank.jsonl`
-
-## Knowledge Graph (kg/)
-
-Located in `kg/` package:
-- `TdbManager.java` - TDB2 connection management
-- `MedicalOntology.java` - Ontology constants (Disease, Symptom, Drug, etc.)
-- `LLMTripleExtractor.java` - LLM-based triple extraction with confidence scoring
-- `KnowledgeGraphBuilder.java` - Writes triples to TDB
-
-TDB path: `E:/Github_project/LangChain4j-KGQA/tdb_medqa`
-
-## Docker Services
-
-PostgreSQL + pgvector runs in Docker:
 ```bash
-docker run --name kgqa-postgres -p 5432:5432 \
-  -e POSTGRES_USER=postgres \
-  -e POSTGRES_PASSWORD=123456 \
-  -e POSTGRES_DB=kgqa \
-  -d pgvector/pgvector:0.8.2-pg18-trixie
+cd frontend
+npm install
+npm run dev
 ```
 
-## Development Notes
+### Verification
 
-- **pgvector**: Vector extension for PostgreSQL, automatically managed by LangChain4j
-- **TDB locking**: Only one JVM can access TDB at a time; ensure no other process locks it
-- **Embedding persistence**: MedQA vectors saved to `resource/embeddings/medqa.json`
-- Apache Tika handles document parsing (PDF, Word, TXT)
-- Documents are chunked with 500 char size and 50 char overlap
-- Chat history is stored in PostgreSQL for multi-turn conversation support
+```bash
+cd backend
+mvn clean compile
+
+cd frontend
+npm run build
+```
+
+## Agent Notes
+
+- Prefer updating root `README.md` over `frontend/README.md` unless the frontend-specific setup truly changed.
+- Treat `README.md` and this file as living docs; older statements about architecture are not authoritative.
+- When changing auth, streaming, session behavior, or retrieval routing, update these docs because they are easy to drift.
+- If you touch TDB-related code, check current config in [application.yml](E:/Github_project/LangChain4j-KGQA/backend/src/main/resources/application.yml) before making assumptions.
+- If you touch frontend chat behavior, inspect both [ChatView.vue](E:/Github_project/LangChain4j-KGQA/frontend/src/views/ChatView.vue) and [chat.js](E:/Github_project/LangChain4j-KGQA/frontend/src/stores/chat.js).
