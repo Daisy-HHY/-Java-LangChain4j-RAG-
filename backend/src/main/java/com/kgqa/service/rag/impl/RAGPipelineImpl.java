@@ -8,10 +8,15 @@ import com.kgqa.util.AnswerFormatter;
 import dev.langchain4j.data.message.SystemMessage;
 import dev.langchain4j.data.message.UserMessage;
 import dev.langchain4j.model.chat.ChatModel;
+import dev.langchain4j.model.chat.StreamingChatModel;
 import dev.langchain4j.model.chat.response.ChatResponse;
+import dev.langchain4j.model.chat.response.StreamingChatResponseHandler;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 /**
@@ -23,6 +28,7 @@ public class RAGPipelineImpl implements RAGPipeline {
 
     private final VectorStoreManager vectorStoreManager;
     private final ChatModel chatLanguageModel;
+    private final StreamingChatModel streamingChatLanguageModel;
 
     private static final double DEFAULT_MIN_SCORE = 0.75;
     private static final int MAX_HISTORY_MESSAGES = 8;
@@ -48,9 +54,11 @@ public class RAGPipelineImpl implements RAGPipeline {
             """;
 
     public RAGPipelineImpl(VectorStoreManager vectorStoreManager,
-                            ChatModel chatLanguageModel) {
+                            ChatModel chatLanguageModel,
+                            StreamingChatModel streamingChatLanguageModel) {
         this.vectorStoreManager = vectorStoreManager;
         this.chatLanguageModel = chatLanguageModel;
+        this.streamingChatLanguageModel = streamingChatLanguageModel;
     }
 
     @Override
@@ -90,6 +98,73 @@ public class RAGPipelineImpl implements RAGPipeline {
         String answer = response.aiMessage().text();
 
         return new Result(AnswerFormatter.format(answer), relevantDocs);
+    }
+
+    @Override
+    public Result answerStreaming(String question, List<ChatMessageEntity> chatHistory, Consumer<String> tokenConsumer) {
+        List<SourceItem> relevantDocs = vectorStoreManager.searchWithScore(question, 5, DEFAULT_MIN_SCORE);
+
+        if (relevantDocs.isEmpty()) {
+            relevantDocs = vectorStoreManager.searchWithScore(question, 5, 0.5);
+        }
+
+        if (relevantDocs.isEmpty()) {
+            String answer = "资料中未提及。当前医疗文档向量库没有检索到可用于回答该问题的内容。";
+            tokenConsumer.accept(answer);
+            return new Result(answer, List.of());
+        }
+
+        String context = relevantDocs.stream()
+                .map(SourceItem::getContent)
+                .collect(Collectors.joining("\n---\n"));
+        String systemPrompt = String.format(SYSTEM_PROMPT_TEMPLATE, context);
+        String fullQuestion = buildQuestionWithHistory(question, chatHistory);
+
+        StringBuilder answerBuilder = new StringBuilder();
+        CountDownLatch latch = new CountDownLatch(1);
+        AtomicReference<Throwable> errorRef = new AtomicReference<>();
+
+        streamingChatLanguageModel.chat(
+                List.of(SystemMessage.from(systemPrompt), UserMessage.from(fullQuestion)),
+                new StreamingChatResponseHandler() {
+                    @Override
+                    public void onPartialResponse(String partialResponse) {
+                        if (partialResponse == null || partialResponse.isEmpty()) {
+                            return;
+                        }
+                        answerBuilder.append(partialResponse);
+                        tokenConsumer.accept(partialResponse);
+                    }
+
+                    @Override
+                    public void onCompleteResponse(ChatResponse response) {
+                        latch.countDown();
+                    }
+
+                    @Override
+                    public void onError(Throwable error) {
+                        errorRef.set(error);
+                        latch.countDown();
+                    }
+                }
+        );
+
+        awaitStreaming(latch, errorRef);
+        return new Result(AnswerFormatter.format(answerBuilder.toString()), relevantDocs);
+    }
+
+    private void awaitStreaming(CountDownLatch latch, AtomicReference<Throwable> errorRef) {
+        try {
+            latch.await();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new IllegalStateException("流式回答被中断", e);
+        }
+
+        Throwable error = errorRef.get();
+        if (error != null) {
+            throw new IllegalStateException("流式回答生成失败", error);
+        }
     }
 
     /**

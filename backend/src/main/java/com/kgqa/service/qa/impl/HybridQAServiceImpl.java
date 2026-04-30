@@ -18,6 +18,8 @@ import com.kgqa.service.sparql.SPARQLGenerator;
 import com.kgqa.service.sparql.SPARQLTemplateMatcher;
 import com.kgqa.util.AnswerFormatter;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dev.langchain4j.model.chat.StreamingChatModel;
+import dev.langchain4j.model.chat.response.StreamingChatResponseHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -25,6 +27,9 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Consumer;
 import java.util.stream.IntStream;
 
 /**
@@ -42,6 +47,7 @@ public class HybridQAServiceImpl implements HybridQAService {
     private final ChatMessageMapper messageMapper;
     private final ChatMemoryService chatMemoryService;
     private final ObjectMapper objectMapper;
+    private final StreamingChatModel streamingChatModel;
 
     // 混合系统组件
     private final IntentDetectionService intentDetectionService;
@@ -56,6 +62,7 @@ public class HybridQAServiceImpl implements HybridQAService {
             ChatSessionRepository sessionRepository,
             ChatMessageMapper messageMapper,
             ChatMemoryService chatMemoryService,
+            StreamingChatModel streamingChatModel,
             // 混合系统组件
             IntentDetectionService intentDetectionService,
             MedicalEntityExtractor entityExtractor,
@@ -67,6 +74,7 @@ public class HybridQAServiceImpl implements HybridQAService {
         this.messageMapper = messageMapper;
         this.chatMemoryService = chatMemoryService;
         this.objectMapper = new ObjectMapper();
+        this.streamingChatModel = streamingChatModel;
         // 混合系统
         this.intentDetectionService = intentDetectionService;
         this.entityExtractor = entityExtractor;
@@ -113,29 +121,178 @@ public class HybridQAServiceImpl implements HybridQAService {
         return new ChatResponse(result.answer(), result.sources(), actualSessionId);
     }
 
+    @Override
+    public void streamChat(ChatRequest request, Long userId, StreamHandler handler) {
+        String question = request.getQuestion();
+        String sessionIdStr = request.getSessionId();
+
+        log.info("收到流式问题: {}", question);
+
+        Long sessionId = getOrCreateSession(sessionIdStr, userId);
+        String actualSessionId = sessionRepository.selectById(sessionId).getSessionId();
+        handler.onSession(actualSessionId);
+
+        List<ChatMessageEntity> history = chatMemoryService.getChatHistory(sessionId);
+        Result result = answerStreaming(question, history, handler::onToken);
+
+        chatMemoryService.saveMessage(sessionId, "USER", question, null);
+
+        try {
+            String sourcesJson = objectMapper.writeValueAsString(result.sources());
+            chatMemoryService.saveMessage(sessionId, "ASSISTANT", result.answer(), sourcesJson);
+        } catch (Exception e) {
+            chatMemoryService.saveMessage(sessionId, "ASSISTANT", result.answer(), null);
+        }
+
+        updateSessionTitle(sessionId, question);
+        touchSession(sessionId);
+
+        handler.onSources(result.sources());
+        handler.onComplete(result.answer(), result.sources(), actualSessionId);
+    }
+
     /**
      * 执行混合问答
      */
     @Override
     public Result answer(String question, List<ChatMessageEntity> chatHistory) {
+        String resolvedQuestion = resolveQuestionWithMemory(question, chatHistory);
+        if (!resolvedQuestion.equals(question)) {
+            log.info("基于多轮记忆改写问题: [{}] -> [{}]", question, resolvedQuestion);
+        }
+
         // 1. 意图识别
-        IntentDetectionService.QuestionType questionType = intentDetectionService.detect(question);
+        IntentDetectionService.QuestionType questionType = intentDetectionService.detect(resolvedQuestion);
         log.debug("意图识别结果: {}", questionType);
 
         // 2. 实体抽取
-        MedicalEntityExtractor.ExtractionResult entityResult = entityExtractor.extract(question);
+        MedicalEntityExtractor.ExtractionResult entityResult = entityExtractor.extract(resolvedQuestion);
         log.debug("实体抽取结果: {} - {}", entityResult.entities(), entityResult.intent());
 
         // 3. 路由决策：识别到 kgdrug 实体时优先尝试知识图谱。
         if (!entityResult.entities().isEmpty()) {
-            Result sparqlResult = trySPARQLQuery(question, entityResult);
+            Result sparqlResult = trySPARQLQuery(resolvedQuestion, entityResult);
             if (sparqlResult != null) {
                 return sparqlResult;
             }
         }
 
         // 4. Fallback 到 RAG
-        return answerByRAG(question, chatHistory);
+        return answerByRAG(resolvedQuestion, chatHistory);
+    }
+
+    private Result answerStreaming(String question, List<ChatMessageEntity> chatHistory, Consumer<String> tokenConsumer) {
+        String resolvedQuestion = resolveQuestionWithMemory(question, chatHistory);
+        if (!resolvedQuestion.equals(question)) {
+            log.info("基于多轮记忆改写流式问题: [{}] -> [{}]", question, resolvedQuestion);
+        }
+
+        IntentDetectionService.QuestionType questionType = intentDetectionService.detect(resolvedQuestion);
+        log.debug("流式意图识别结果: {}", questionType);
+
+        MedicalEntityExtractor.ExtractionResult entityResult = entityExtractor.extract(resolvedQuestion);
+        log.debug("流式实体抽取结果: {} - {}", entityResult.entities(), entityResult.intent());
+
+        if (!entityResult.entities().isEmpty()) {
+            Result sparqlResult = trySPARQLQueryStreaming(resolvedQuestion, entityResult, tokenConsumer);
+            if (sparqlResult != null) {
+                return sparqlResult;
+            }
+        }
+
+        log.debug("使用 RAG 向量检索流式回答");
+        RAGPipeline.Result result = ragPipeline.answerStreaming(resolvedQuestion, chatHistory, tokenConsumer);
+        return new Result(result.answer(), result.sources());
+    }
+
+    private String resolveQuestionWithMemory(String question, List<ChatMessageEntity> chatHistory) {
+        if (question == null || question.isBlank() || chatHistory == null || chatHistory.isEmpty()) {
+            return question;
+        }
+
+        MedicalEntityExtractor.ExtractionResult currentEntityResult = entityExtractor.extract(question);
+        if (!currentEntityResult.entities().isEmpty()) {
+            return question;
+        }
+
+        if (!isContextualFollowUp(question)) {
+            return question;
+        }
+
+        MedicalEntityExtractor.MedicalEntity recentEntity = findRecentUserEntity(chatHistory);
+        if (recentEntity == null) {
+            return question;
+        }
+
+        return rewriteFollowUpQuestion(question, recentEntity);
+    }
+
+    private boolean isContextualFollowUp(String question) {
+        String q = question.trim();
+        return q.contains("什么药")
+                || q.contains("哪些药")
+                || q.contains("怎么治")
+                || q.contains("怎么治疗")
+                || q.contains("如何治疗")
+                || q.contains("治疗")
+                || q.contains("用药")
+                || q.contains("吃什么")
+                || q.contains("有什么症状")
+                || q.contains("有哪些症状")
+                || q.contains("病因")
+                || q.contains("原因")
+                || q.contains("它")
+                || q.contains("这个")
+                || q.contains("该病")
+                || q.contains("这种病")
+                || q.contains("上述");
+    }
+
+    private MedicalEntityExtractor.MedicalEntity findRecentUserEntity(List<ChatMessageEntity> chatHistory) {
+        int start = Math.max(0, chatHistory.size() - 8);
+        for (int i = chatHistory.size() - 1; i >= start; i--) {
+            ChatMessageEntity message = chatHistory.get(i);
+            if (!"USER".equals(message.getRole()) || message.getContent() == null) {
+                continue;
+            }
+
+            MedicalEntityExtractor.ExtractionResult result = entityExtractor.extract(message.getContent());
+            if (!result.entities().isEmpty()) {
+                return preferDiseaseEntity(result.entities());
+            }
+        }
+
+        return null;
+    }
+
+    private String rewriteFollowUpQuestion(String question, MedicalEntityExtractor.MedicalEntity entity) {
+        String entityName = entity.value();
+        String q = question.trim();
+
+        if (q.contains("什么药") || q.contains("哪些药") || q.contains("用药") || q.contains("吃什么")) {
+            return entityName + "用什么药";
+        }
+        if (q.contains("怎么治") || q.contains("怎么治疗") || q.contains("如何治疗") || q.contains("治疗")) {
+            return entityName + "的治疗方法";
+        }
+        if (q.contains("有什么症状") || q.contains("有哪些症状") || q.contains("症状") || q.contains("表现")) {
+            return entityName + "有什么症状";
+        }
+        if (q.contains("病因") || q.contains("原因")) {
+            return entityName + "的病因";
+        }
+        if (q.contains("预防")) {
+            return entityName + "的预防方法";
+        }
+
+        return entityName + "：" + q;
+    }
+
+    private MedicalEntityExtractor.MedicalEntity preferDiseaseEntity(List<MedicalEntityExtractor.MedicalEntity> entities) {
+        return entities.stream()
+                .filter(entity -> "疾病".equals(entity.type()))
+                .findFirst()
+                .orElse(entities.get(0));
     }
 
     /**
@@ -172,6 +329,37 @@ public class HybridQAServiceImpl implements HybridQAService {
 
         // SPARQL 查询失败，返回 null 触发 RAG fallback
         log.debug("SPARQL 查询无结果，fallback 到 RAG");
+        return null;
+    }
+
+    private Result trySPARQLQueryStreaming(String question,
+                                           MedicalEntityExtractor.ExtractionResult entityResult,
+                                           Consumer<String> tokenConsumer) {
+        SPARQLTemplateMatcher.MatchResult matchResult = templateMatcher.match(question, entityResult);
+
+        if (matchResult != null) {
+            log.info("流式模板匹配成功: {}", matchResult.sparql());
+            List<String> kgResults = queryExecutor.execute(matchResult.sparql());
+
+            if (!kgResults.isEmpty()) {
+                String answer = generateAnswerFromKGStreaming(question, kgResults, matchResult.predicate(), tokenConsumer);
+                return new Result(answer, toSourceItems(kgResults));
+            }
+        }
+
+        String generatedSparql = sparqlGenerator.generate(question, entityResult);
+
+        if (generatedSparql != null && !generatedSparql.isEmpty()) {
+            log.info("流式 LLM 生成 SPARQL: {}", generatedSparql);
+            List<String> kgResults = queryExecutor.execute(generatedSparql);
+
+            if (!kgResults.isEmpty()) {
+                String answer = generateAnswerFromKGStreaming(question, kgResults, null, tokenConsumer);
+                return new Result(answer, toSourceItems(kgResults));
+            }
+        }
+
+        log.debug("流式 SPARQL 查询无结果，fallback 到 RAG");
         return null;
     }
 
@@ -219,6 +407,87 @@ public class HybridQAServiceImpl implements HybridQAService {
             }
             return AnswerFormatter.format("查询结果：\n" + resultsText);
         }
+    }
+
+    private String generateAnswerFromKGStreaming(String question,
+                                                 List<String> kgResults,
+                                                 String predicate,
+                                                 Consumer<String> tokenConsumer) {
+        if (kgResults.isEmpty()) {
+            String answer = "抱歉，我在知识库中没有找到相关信息。";
+            tokenConsumer.accept(answer);
+            return answer;
+        }
+
+        String prompt = buildKgAnswerPrompt(question, kgResults);
+        StringBuilder answerBuilder = new StringBuilder();
+        CountDownLatch latch = new CountDownLatch(1);
+        AtomicReference<Throwable> errorRef = new AtomicReference<>();
+
+        streamingChatModel.chat(prompt, new StreamingChatResponseHandler() {
+            @Override
+            public void onPartialResponse(String partialResponse) {
+                if (partialResponse == null || partialResponse.isEmpty()) {
+                    return;
+                }
+                answerBuilder.append(partialResponse);
+                tokenConsumer.accept(partialResponse);
+            }
+
+            @Override
+            public void onCompleteResponse(dev.langchain4j.model.chat.response.ChatResponse response) {
+                latch.countDown();
+            }
+
+            @Override
+            public void onError(Throwable error) {
+                errorRef.set(error);
+                latch.countDown();
+            }
+        });
+
+        try {
+            latch.await();
+            if (errorRef.get() == null) {
+                return AnswerFormatter.format(answerBuilder.toString());
+            }
+            throw new IllegalStateException(errorRef.get());
+        } catch (Exception e) {
+            if (answerBuilder.isEmpty()) {
+                String fallback = predicate != null
+                        ? String.format("根据查询，%s：\n%s", predicate, formatKgResultsForPrompt(kgResults))
+                        : "查询结果：\n" + formatKgResultsForPrompt(kgResults);
+                String formattedFallback = AnswerFormatter.format(fallback);
+                tokenConsumer.accept(formattedFallback);
+                return formattedFallback;
+            }
+            return AnswerFormatter.format(answerBuilder.toString());
+        }
+    }
+
+    private String buildKgAnswerPrompt(String question, List<String> kgResults) {
+        String resultsText = formatKgResultsForPrompt(kgResults);
+
+        return String.format("""
+                你是一个专业的医学知识问答助手。请根据知识图谱查询结果回答用户问题。
+
+                你必须**严格基于**以下查询结果回答，不要添加查询结果中没有的信息。
+                如果结果不足，请明确说"资料中未提及"，不要编造。
+
+                输出格式要求：
+                1. 第一行直接给出简短结论。
+                2. 如果查询结果有多条，必须使用编号列表，每条结果单独一行。
+                3. 如果查询结果是长文本，按语义拆成 2-4 个短段落。
+                4. 不要把所有内容堆在一个段落里。
+                5. 不要输出 Markdown 表格。
+
+                用户问题：%s
+
+                查询结果：
+                %s
+
+                请用简洁、专业、分段清晰的语言回答。
+                """, question, resultsText);
     }
 
     private String formatKgResultsForPrompt(List<String> kgResults) {

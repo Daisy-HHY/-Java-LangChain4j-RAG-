@@ -1,5 +1,6 @@
 <script setup>
 import { computed } from 'vue'
+import { useAuthStore } from '@/stores/auth'
 import SourceCard from './SourceCard.vue'
 
 const props = defineProps({
@@ -9,9 +10,14 @@ const props = defineProps({
   }
 })
 
+const authStore = useAuthStore()
 const isUser = computed(() => props.message.role === 'USER')
 const isError = computed(() => props.message.role === 'ERROR')
 const formattedBlocks = computed(() => formatAssistantMessage(props.message.content || ''))
+const userAvatarLabel = computed(() => {
+  const label = authStore.user?.displayName || authStore.user?.username || 'U'
+  return String(label).trim().slice(0, 1).toUpperCase() || 'U'
+})
 
 function formatTime(timestamp) {
   if (!timestamp) return ''
@@ -165,9 +171,12 @@ function splitLongParagraph(text) {
   >
     <div class="bubble-content">
       <div class="message-avatar">
-        <span v-if="isUser">·</span>
+        <span v-if="isUser" class="nickname-avatar">{{ userAvatarLabel }}</span>
         <span v-else-if="isError">!</span>
-        <span v-else>·</span>
+        <svg v-else class="medical-shield-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M12 3.2 5.5 5.8v5.4c0 4.1 2.7 7.8 6.5 9.2 3.8-1.4 6.5-5.1 6.5-9.2V5.8L12 3.2Z"></path>
+          <path d="M6.8 12h2.5l1.5-4.3 3.1 8.6 1.5-4.3h1.8"></path>
+        </svg>
       </div>
 
       <div class="message-body">
@@ -219,8 +228,9 @@ function splitLongParagraph(text) {
     }
 
     .message-avatar {
-      background-color: var(--bg-primary);
-      border: 1px solid var(--border-default);
+      background-color: var(--accent-brand);
+      border: 1px solid var(--accent-primary);
+      color: var(--bg-elevated);
     }
   }
 
@@ -233,8 +243,12 @@ function splitLongParagraph(text) {
     }
 
     .message-avatar {
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--border-subtle);
+      width: 36px;
+      height: 36px;
+      background-color: transparent;
+      border: 1px solid transparent;
+      border-radius: 0;
+      color: var(--accent-medical);
     }
   }
 
@@ -267,6 +281,19 @@ function splitLongParagraph(text) {
   font-weight: 600;
   color: var(--text-muted);
   transition: all var(--transition-fast);
+}
+
+.nickname-avatar {
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.medical-shield-icon {
+  width: 36px;
+  height: 36px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .message-body {

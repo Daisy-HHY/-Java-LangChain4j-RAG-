@@ -36,8 +36,9 @@ async function handleLogout() {
       </button>
       <div class="logo" @click="router.push('/')">
         <span class="logo-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+          <svg class="medical-shield-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 3.2 5.5 5.8v5.4c0 4.1 2.7 7.8 6.5 9.2 3.8-1.4 6.5-5.1 6.5-9.2V5.8L12 3.2Z"></path>
+            <path d="M6.8 12h2.5l1.5-4.3 3.1 8.6 1.5-4.3h1.8"></path>
           </svg>
         </span>
         <span class="logo-text">医疗问答</span>
@@ -123,13 +124,18 @@ async function handleLogout() {
 .logo-icon {
   width: 30px;
   height: 30px;
-  border-radius: var(--radius-md);
-  background: var(--accent-primary);
-  color: var(--bg-elevated);
+  color: var(--accent-medical);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform var(--transition-fast);
+}
+
+.medical-shield-icon {
+  width: 30px;
+  height: 30px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .logo:hover .logo-icon {

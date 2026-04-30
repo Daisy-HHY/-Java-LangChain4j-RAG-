@@ -22,6 +22,14 @@ public interface HybridQAService {
     ChatResponse chat(ChatRequest request, Long userId);
 
     /**
+     * 处理用户问答并流式返回助手输出
+     * @param request 聊天请求
+     * @param userId 当前用户ID
+     * @param handler 流式事件回调
+     */
+    void streamChat(ChatRequest request, Long userId, StreamHandler handler);
+
+    /**
      * 执行混合问答
      * @param question 问题
      * @param chatHistory 对话历史（带角色信息）
@@ -46,4 +54,14 @@ public interface HybridQAService {
      * 问答结果
      */
     record Result(String answer, List<SourceItem> sources) {}
+
+    interface StreamHandler {
+        void onSession(String sessionId);
+
+        void onToken(String token);
+
+        void onSources(List<SourceItem> sources);
+
+        void onComplete(String answer, List<SourceItem> sources, String sessionId);
+    }
 }

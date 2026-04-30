@@ -1,11 +1,17 @@
 <script setup>
-import { ref, onMounted, nextTick, watch } from 'vue'
+import { computed, ref, onMounted, nextTick, watch } from 'vue'
 import { useChatStore } from '@/stores/chat'
+import { useAuthStore } from '@/stores/auth'
 import SourceCard from '@/components/chat/SourceCard.vue'
 
 const chatStore = useChatStore()
+const authStore = useAuthStore()
 const isReady = ref(false)
 const messagesContainer = ref(null)
+const userAvatarLabel = computed(() => {
+  const label = authStore.user?.displayName || authStore.user?.username || 'U'
+  return String(label).trim().slice(0, 1).toUpperCase() || 'U'
+})
 
 onMounted(async () => {
   await chatStore.loadSessions()
@@ -13,12 +19,15 @@ onMounted(async () => {
 })
 
 // 自动滚动到底部
-watch(() => chatStore.messages.length, async () => {
+async function scrollToBottom() {
   await nextTick()
   if (messagesContainer.value) {
     messagesContainer.value.scrollTop = messagesContainer.value.scrollHeight
   }
-})
+}
+
+watch(() => chatStore.messages.length, scrollToBottom)
+watch(() => chatStore.messages.map(msg => msg.content).join('\u0000'), scrollToBottom)
 
 async function handleSend(question) {
   if (!question.trim() || chatStore.isLoading) return
@@ -96,9 +105,9 @@ function formatMessageBlocks(content, role) {
       <!-- Welcome State -->
       <div v-if="chatStore.messages.length === 0" class="welcome">
         <div class="welcome-icon">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M12 6v6l4 2"></path>
+          <svg class="welcome-medical-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 3.2 5.5 5.8v5.4c0 4.1 2.7 7.8 6.5 9.2 3.8-1.4 6.5-5.1 6.5-9.2V5.8L12 3.2Z"></path>
+            <path d="M6.8 12h2.5l1.5-4.3 3.1 8.6 1.5-4.3h1.8"></path>
           </svg>
         </div>
         <h2>医疗问答</h2>
@@ -129,16 +138,20 @@ function formatMessageBlocks(content, role) {
           :style="{ animationDelay: `${i * 50}ms` }"
         >
           <div class="message-avatar">
-            <svg v-if="msg.role === 'USER'" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-            </svg>
-            <svg v-else width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            <span v-if="msg.role === 'USER'" class="nickname-avatar">{{ userAvatarLabel }}</span>
+            <svg v-else class="medical-shield-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 3.2 5.5 5.8v5.4c0 4.1 2.7 7.8 6.5 9.2 3.8-1.4 6.5-5.1 6.5-9.2V5.8L12 3.2Z"></path>
+              <path d="M6.8 12h2.5l1.5-4.3 3.1 8.6 1.5-4.3h1.8"></path>
             </svg>
           </div>
           <div class="message-content">
             <div class="message-bubble">
               <div class="message-text">
+                <div v-if="msg.streaming && !msg.content" class="streaming-dots">
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                </div>
                 <template
                   v-for="(block, blockIndex) in formatMessageBlocks(msg.content, msg.role)"
                   :key="`${i}-${blockIndex}`"
@@ -152,6 +165,7 @@ function formatMessageBlocks(content, role) {
                     </li>
                   </ol>
                 </template>
+                <span v-if="msg.streaming && msg.content" class="stream-cursor"></span>
               </div>
               <SourceCard
                 v-if="msg.sources && msg.sources.length"
@@ -163,10 +177,11 @@ function formatMessageBlocks(content, role) {
         </div>
 
         <!-- Loading -->
-        <div v-if="chatStore.isLoading" class="message assistant loading-message">
+        <div v-if="chatStore.isLoading && !chatStore.isStreaming" class="message assistant loading-message">
           <div class="message-avatar">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            <svg class="medical-shield-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 3.2 5.5 5.8v5.4c0 4.1 2.7 7.8 6.5 9.2 3.8-1.4 6.5-5.1 6.5-9.2V5.8L12 3.2Z"></path>
+              <path d="M6.8 12h2.5l1.5-4.3 3.1 8.6 1.5-4.3h1.8"></path>
             </svg>
           </div>
           <div class="message-content">
@@ -266,6 +281,14 @@ function formatMessageBlocks(content, role) {
   margin-bottom: var(--space-5);
   color: var(--accent-clinical);
   box-shadow: var(--shadow-sm);
+}
+
+.welcome-medical-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--accent-medical);
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .welcome h2 {
@@ -368,6 +391,28 @@ function formatMessageBlocks(content, role) {
   color: var(--bg-elevated);
 }
 
+.message.assistant .message-avatar {
+  width: 36px;
+  height: 36px;
+  color: var(--accent-medical);
+  background: transparent;
+  border-color: transparent;
+  border-radius: 0;
+}
+
+.nickname-avatar {
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.medical-shield-icon {
+  width: 36px;
+  height: 36px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .message:hover .message-avatar {
   transform: translateY(-1px);
 }
@@ -429,7 +474,7 @@ function formatMessageBlocks(content, role) {
 }
 
 .message-list-block li::marker {
-  color: var(--accent-clinical);
+  color: var(--accent-medical);
   font-weight: 600;
 }
 
@@ -465,6 +510,35 @@ function formatMessageBlocks(content, role) {
 
 .loading-bubble .dot:nth-child(2) { animation-delay: 0.2s; }
 .loading-bubble .dot:nth-child(3) { animation-delay: 0.4s; }
+
+.streaming-dots {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 28px;
+}
+
+.streaming-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  animation: bounce 1.4s ease-in-out infinite;
+}
+
+.streaming-dots .dot:nth-child(2) { animation-delay: 0.2s; }
+.streaming-dots .dot:nth-child(3) { animation-delay: 0.4s; }
+
+.stream-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-left: 2px;
+  vertical-align: -0.15em;
+  border-radius: 1px;
+  background: var(--accent-medical);
+  animation: cursorBlink 0.9s steps(2, start) infinite;
+}
 
 .loading .loading-dot {
   width: 8px;
@@ -582,6 +656,11 @@ function formatMessageBlocks(content, role) {
   50% { transform: scale(1.05); opacity: 1; }
 }
 
+@keyframes cursorBlink {
+  0%, 45% { opacity: 1; }
+  46%, 100% { opacity: 0; }
+}
+
 @media (max-width: 768px) {
   .chat-header {
     padding-inline: var(--space-4);
@@ -602,6 +681,16 @@ function formatMessageBlocks(content, role) {
   .message-avatar {
     width: 28px;
     height: 28px;
+  }
+
+  .message.assistant .message-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .medical-shield-icon {
+    width: 32px;
+    height: 32px;
   }
 
   .message-content {
