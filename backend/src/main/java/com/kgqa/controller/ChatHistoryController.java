@@ -1,10 +1,12 @@
 package com.kgqa.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.kgqa.config.TokenAuthInterceptor;
 import com.kgqa.model.entity.ChatMessageEntity;
 import com.kgqa.model.entity.ChatSession;
 import com.kgqa.repository.ChatMessageMapper;
 import com.kgqa.repository.ChatSessionRepository;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +17,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/chat")
-@CrossOrigin(origins = "*")
 public class ChatHistoryController {
 
     @Autowired
@@ -29,9 +30,12 @@ public class ChatHistoryController {
     }
 
     @GetMapping("/history/{sessionId}")
-    public List<Map<String, Object>> getHistory(@PathVariable("sessionId") String sessionId) {
+    public List<Map<String, Object>> getHistory(@PathVariable("sessionId") String sessionId,
+                                                HttpServletRequest request) {
         ChatSession session = sessionRepository.selectOne(
-                new LambdaQueryWrapper<ChatSession>().eq(ChatSession::getSessionId, sessionId)
+                new LambdaQueryWrapper<ChatSession>()
+                        .eq(ChatSession::getSessionId, sessionId)
+                        .eq(ChatSession::getUserId, currentUserId(request))
         );
 
         if (session == null) {
@@ -57,9 +61,12 @@ public class ChatHistoryController {
     }
 
     @DeleteMapping("/history/{sessionId}")
-    public boolean clearHistory(@PathVariable("sessionId") String sessionId) {
+    public boolean clearHistory(@PathVariable("sessionId") String sessionId,
+                                HttpServletRequest request) {
         ChatSession session = sessionRepository.selectOne(
-                new LambdaQueryWrapper<ChatSession>().eq(ChatSession::getSessionId, sessionId)
+                new LambdaQueryWrapper<ChatSession>()
+                        .eq(ChatSession::getSessionId, sessionId)
+                        .eq(ChatSession::getUserId, currentUserId(request))
         );
 
         if (session != null) {
@@ -69,5 +76,9 @@ public class ChatHistoryController {
             return true;
         }
         return false;
+    }
+
+    private Long currentUserId(HttpServletRequest request) {
+        return (Long) request.getAttribute(TokenAuthInterceptor.USER_ID_ATTRIBUTE);
     }
 }

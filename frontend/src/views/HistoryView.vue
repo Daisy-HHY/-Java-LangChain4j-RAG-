@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useChatStore } from '@/stores/chat'
 
 const chatStore = useChatStore()
@@ -8,9 +8,30 @@ onMounted(() => {
   chatStore.loadSessions()
 })
 
+const sortedSessions = computed(() => {
+  return [...chatStore.sessions].sort((a, b) => getSessionTime(b) - getSessionTime(a))
+})
+
+function getSessionTime(session) {
+  return parseTime(session?.updatedAt || session?.createdAt)
+}
+
+function parseTime(value) {
+  if (!value) return 0
+  if (Array.isArray(value)) {
+    const [year, month, day, hour = 0, minute = 0, second = 0] = value
+    return new Date(year, month - 1, day, hour, minute, second).getTime()
+  }
+  const timestamp = new Date(value).getTime()
+  return Number.isFinite(timestamp) ? timestamp : 0
+}
+
 function formatDateTime(dateStr) {
   if (!dateStr) return ''
-  return new Date(dateStr).toLocaleString('zh-CN', {
+  const date = Array.isArray(dateStr)
+    ? new Date(dateStr[0], dateStr[1] - 1, dateStr[2], dateStr[3] || 0, dateStr[4] || 0, dateStr[5] || 0)
+    : new Date(dateStr)
+  return date.toLocaleString('zh-CN', {
     year: 'numeric',
     month: '2-digit',
     day: '2-digit',
@@ -36,7 +57,7 @@ function viewSession(session) {
     </div>
 
     <div class="history-list">
-      <div v-if="chatStore.sessions.length === 0" class="empty-state">
+      <div v-if="sortedSessions.length === 0" class="empty-state">
         <div class="empty-icon">·</div>
         <h3>暂无记录</h3>
         <p>开始一个新会话吧</p>
@@ -45,7 +66,7 @@ function viewSession(session) {
 
       <div v-else class="sessions-grid">
         <div
-          v-for="(session, index) in chatStore.sessions"
+          v-for="(session, index) in sortedSessions"
           :key="session.sessionId"
           class="session-card"
           :style="{ animationDelay: `${index * 30}ms` }"
@@ -117,13 +138,17 @@ function viewSession(session) {
 }
 
 .sessions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
 }
 
 .session-card {
-  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  background: var(--bg-elevated);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: var(--space-4);
@@ -138,7 +163,7 @@ function viewSession(session) {
 }
 
 .session-info {
-  margin-bottom: var(--space-3);
+  min-width: 0;
 }
 
 .session-title {
@@ -156,7 +181,19 @@ function viewSession(session) {
 .session-actions {
   display: flex;
   gap: var(--space-2);
-  padding-top: var(--space-3);
-  border-top: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .session-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .session-actions {
+    width: 100%;
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--border-subtle);
+  }
 }
 </style>

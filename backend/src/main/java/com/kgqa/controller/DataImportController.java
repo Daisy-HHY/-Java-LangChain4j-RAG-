@@ -2,6 +2,7 @@ package com.kgqa.controller;
 
 import com.kgqa.service.DataImportService;
 import com.kgqa.service.TextBookImportService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -9,7 +10,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/import")
-@CrossOrigin(origins = "*")
+@Profile("dev")
 public class DataImportController {
 
     private final DataImportService dataImportService;

@@ -12,6 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * SPARQL 查询执行器实现
@@ -25,6 +26,9 @@ public class QueryExecutorImpl implements QueryExecutor {
     // TDB 数据库路径
     @Value("${kgqa.tdb.path:E:/Github_project/LangChain4j-KGQA/tdb_medqa}")
     private String tdbPath;
+
+    @Value("${kgqa.tdb.query-timeout-seconds:10}")
+    private long queryTimeoutSeconds;
 
     private final TdbManager tdbManager;
 
@@ -45,6 +49,7 @@ public class QueryExecutorImpl implements QueryExecutor {
             return tdbManager.readDatasetTransaction(dataset -> {
                 List<String> results = new ArrayList<>();
                 try (QueryExecution qexec = QueryExecutionFactory.create(sparql, dataset)) {
+                    qexec.setTimeout(queryTimeoutSeconds, TimeUnit.SECONDS);
                     ResultSet rs = qexec.execSelect();
                     while (rs.hasNext()) {
                         String resultStr = solutionToString(rs.next());
@@ -105,6 +110,7 @@ public class QueryExecutorImpl implements QueryExecutor {
                 List<String> headers = new ArrayList<>();
                 List<List<String>> rows = new ArrayList<>();
                 try (QueryExecution qexec = QueryExecutionFactory.create(sparql, dataset)) {
+                    qexec.setTimeout(queryTimeoutSeconds, TimeUnit.SECONDS);
                     ResultSet rs = qexec.execSelect();
 
                     // 获取变量名

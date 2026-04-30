@@ -1,10 +1,12 @@
 <script setup>
 import { useRouter, useRoute } from 'vue-router'
+import { useAuthStore } from '@/stores/auth'
 
 const emit = defineEmits(['toggle-sidebar'])
 
 const router = useRouter()
 const route = useRoute()
+const authStore = useAuthStore()
 
 const navItems = [
   { path: '/', name: '问答' },
@@ -14,6 +16,11 @@ const navItems = [
 
 function isActive(path) {
   return route.path === path
+}
+
+async function handleLogout() {
+  await authStore.logout()
+  router.replace('/login')
 }
 </script>
 
@@ -51,10 +58,15 @@ function isActive(path) {
     </nav>
 
     <div class="header-right">
-      <button class="icon-btn" title="设置">
+      <div class="user-chip" :title="authStore.user?.username">
+        <span class="user-avatar">{{ (authStore.user?.displayName || authStore.user?.username || 'U').slice(0, 1) }}</span>
+        <span class="user-name">{{ authStore.user?.displayName || authStore.user?.username || '用户' }}</span>
+      </div>
+      <button class="icon-btn" title="退出登录" @click="handleLogout">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="3"></circle>
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
         </svg>
       </button>
     </div>
@@ -178,6 +190,39 @@ function isActive(path) {
   gap: var(--space-2);
 }
 
+.user-chip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: 34px;
+  padding: 3px 10px 3px 4px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.58);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  max-width: 180px;
+}
+
+.user-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent-clinical);
+  color: var(--bg-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.user-name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-4px); }
   to { opacity: 1; transform: translateY(0); }
@@ -190,6 +235,14 @@ function isActive(path) {
 
   .nav-item span {
     display: none;
+  }
+
+  .user-name {
+    display: none;
+  }
+
+  .user-chip {
+    padding-right: 4px;
   }
 
   .header-nav {

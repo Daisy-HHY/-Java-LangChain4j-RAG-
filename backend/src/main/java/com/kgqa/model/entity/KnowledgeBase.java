@@ -10,6 +10,7 @@ public class KnowledgeBase {
     @TableId(type = IdType.AUTO)
     private Long id;
 
+    private Long userId;
     private String title;
     private String fileName;
     private String fileType;

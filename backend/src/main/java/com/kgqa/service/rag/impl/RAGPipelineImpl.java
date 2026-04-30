@@ -25,6 +25,8 @@ public class RAGPipelineImpl implements RAGPipeline {
     private final ChatModel chatLanguageModel;
 
     private static final double DEFAULT_MIN_SCORE = 0.75;
+    private static final int MAX_HISTORY_MESSAGES = 8;
+    private static final int MAX_HISTORY_CHARS = 3000;
 
     private static final String SYSTEM_PROMPT_TEMPLATE = """
             你是一个医学知识助手，请根据参考资料回答用户问题。
@@ -100,12 +102,20 @@ public class RAGPipelineImpl implements RAGPipeline {
 
         StringBuilder sb = new StringBuilder();
         sb.append("【对话历史】\n");
-        for (ChatMessageEntity msg : chatHistory) {
-            if ("USER".equals(msg.getRole())) {
-                sb.append("用户：").append(msg.getContent()).append("\n");
-            } else {
-                sb.append("助手：").append(msg.getContent()).append("\n");
+        int start = Math.max(0, chatHistory.size() - MAX_HISTORY_MESSAGES);
+        int usedChars = 0;
+        for (int i = start; i < chatHistory.size(); i++) {
+            ChatMessageEntity msg = chatHistory.get(i);
+            String content = msg.getContent() == null ? "" : msg.getContent();
+            if (usedChars + content.length() > MAX_HISTORY_CHARS) {
+                break;
             }
+            if ("USER".equals(msg.getRole())) {
+                sb.append("用户：").append(content).append("\n");
+            } else {
+                sb.append("助手：").append(content).append("\n");
+            }
+            usedChars += content.length();
         }
         sb.append("【当前问题】").append(question);
         return sb.toString();

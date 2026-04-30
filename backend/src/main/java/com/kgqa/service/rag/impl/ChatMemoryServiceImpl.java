@@ -7,6 +7,7 @@ import com.kgqa.service.rag.ChatMemoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -39,6 +40,7 @@ public class ChatMemoryServiceImpl implements ChatMemoryService {
         message.setRole(role);
         message.setContent(content);
         message.setSources(sources);
+        message.setCreatedAt(LocalDateTime.now());
         messageMapper.insert(message);
     }
 }

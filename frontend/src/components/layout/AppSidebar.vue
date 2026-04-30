@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useChatStore } from '@/stores/chat'
 
 defineProps({
@@ -11,13 +11,33 @@ defineProps({
 
 const chatStore = useChatStore()
 
+const sortedSessions = computed(() => {
+  return [...chatStore.sessions].sort((a, b) => getSessionTime(b) - getSessionTime(a))
+})
+
 onMounted(() => {
   chatStore.loadSessions()
 })
 
+function getSessionTime(session) {
+  return parseTime(session?.updatedAt || session?.createdAt)
+}
+
+function parseTime(value) {
+  if (!value) return 0
+  if (Array.isArray(value)) {
+    const [year, month, day, hour = 0, minute = 0, second = 0] = value
+    return new Date(year, month - 1, day, hour, minute, second).getTime()
+  }
+  const timestamp = new Date(value).getTime()
+  return Number.isFinite(timestamp) ? timestamp : 0
+}
+
 function formatDate(dateStr) {
   if (!dateStr) return ''
-  const date = new Date(dateStr)
+  const date = Array.isArray(dateStr)
+    ? new Date(dateStr[0], dateStr[1] - 1, dateStr[2], dateStr[3] || 0, dateStr[4] || 0, dateStr[5] || 0)
+    : new Date(dateStr)
   const now = new Date()
   const diff = now - date
 
@@ -59,7 +79,7 @@ function createNewSession() {
 
     <div class="session-list">
       <div
-        v-for="(session, index) in chatStore.sessions"
+        v-for="(session, index) in sortedSessions"
         :key="session.sessionId"
         class="session-item"
         :class="{ active: chatStore.currentSessionId === session.sessionId }"
@@ -82,7 +102,7 @@ function createNewSession() {
         </button>
       </div>
 
-      <div v-if="chatStore.sessions.length === 0" class="empty-state">
+      <div v-if="sortedSessions.length === 0" class="empty-state">
         <div class="empty-dot"></div>
         <p>暂无会话</p>
       </div>

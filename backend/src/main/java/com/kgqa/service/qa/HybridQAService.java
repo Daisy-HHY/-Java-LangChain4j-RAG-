@@ -19,7 +19,7 @@ public interface HybridQAService {
      * @param request 聊天请求
      * @return 聊天响应
      */
-    ChatResponse chat(ChatRequest request);
+    ChatResponse chat(ChatRequest request, Long userId);
 
     /**
      * 执行混合问答
@@ -33,14 +33,14 @@ public interface HybridQAService {
      * 获取所有会话
      * @return 会话列表
      */
-    List<ChatSession> getSessions();
+    List<ChatSession> getSessions(Long userId);
 
     /**
      * 删除会话
      * @param sessionId 会话ID
      * @return 是否成功
      */
-    boolean deleteSession(String sessionId);
+    boolean deleteSession(String sessionId, Long userId);
 
     /**
      * 问答结果

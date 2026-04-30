@@ -36,10 +36,10 @@ public class EmbeddingThresholdAnalyzer {
     private static final int SELF_TOP_K = 3;           // 期望自己在 top3
 
     // 数据库配置（请根据实际情况修改）
-    private static final String JDBC_URL = "jdbc:postgresql://localhost:5432/kgqa";
-    private static final String USERNAME = "postgres";
-    private static final String PASSWORD = "123456";
-    private static final String TABLE_NAME = "embeddings";
+    private static final String JDBC_URL = System.getenv().getOrDefault("KGQA_DB_URL", "jdbc:postgresql://localhost:5432/kgqa");
+    private static final String USERNAME = System.getenv().getOrDefault("KGQA_DB_USERNAME", "postgres");
+    private static final String PASSWORD = System.getenv().getOrDefault("KGQA_DB_PASSWORD", "123456");
+    private static final String TABLE_NAME = System.getenv().getOrDefault("KGQA_EMBEDDING_TABLE", "embeddings");
 
     public static void main(String[] args) {
         log.info("========== 向量检索阈值分析工具 ==========");

@@ -22,6 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.IntStream;
@@ -78,14 +79,14 @@ public class HybridQAServiceImpl implements HybridQAService {
      * 处理用户问答
      */
     @Override
-    public ChatResponse chat(ChatRequest request) {
+    public ChatResponse chat(ChatRequest request, Long userId) {
         String question = request.getQuestion();
         String sessionIdStr = request.getSessionId();
 
         log.info("收到问题: {}", question);
 
         // 获取或创建会话
-        Long sessionId = getOrCreateSession(sessionIdStr);
+        Long sessionId = getOrCreateSession(sessionIdStr, userId);
 
         // 获取对话历史（带角色信息）
         List<ChatMessageEntity> history = chatMemoryService.getChatHistory(sessionId);
@@ -106,6 +107,7 @@ public class HybridQAServiceImpl implements HybridQAService {
 
         // 更新会话标题为问题内容（如果标题是默认的"新会话"）
         updateSessionTitle(sessionId, question);
+        touchSession(sessionId);
 
         String actualSessionId = sessionRepository.selectById(sessionId).getSessionId();
         return new ChatResponse(result.answer(), result.sources(), actualSessionId);
@@ -242,25 +244,35 @@ public class HybridQAServiceImpl implements HybridQAService {
     /**
      * 获取或创建会话
      */
-    private Long getOrCreateSession(String sessionIdStr) {
+    private Long getOrCreateSession(String sessionIdStr, Long userId) {
         if (sessionIdStr == null || sessionIdStr.isEmpty()) {
             // 创建新会话
             ChatSession session = new ChatSession();
+            session.setUserId(userId);
             session.setSessionId(UUID.randomUUID().toString().replace("-", ""));
             session.setTitle("新会话");
+            LocalDateTime now = LocalDateTime.now();
+            session.setCreatedAt(now);
+            session.setUpdatedAt(now);
             sessionRepository.insert(session);
             return session.getId();
         }
 
         // 查找现有会话
         ChatSession session = sessionRepository.selectOne(
-                new LambdaQueryWrapper<ChatSession>().eq(ChatSession::getSessionId, sessionIdStr)
+                new LambdaQueryWrapper<ChatSession>()
+                        .eq(ChatSession::getSessionId, sessionIdStr)
+                        .eq(ChatSession::getUserId, userId)
         );
 
         if (session == null) {
             session = new ChatSession();
+            session.setUserId(userId);
             session.setSessionId(sessionIdStr);
             session.setTitle("会话 " + sessionIdStr.substring(0, Math.min(8, sessionIdStr.length())));
+            LocalDateTime now = LocalDateTime.now();
+            session.setCreatedAt(now);
+            session.setUpdatedAt(now);
             sessionRepository.insert(session);
         }
 
@@ -280,24 +292,30 @@ public class HybridQAServiceImpl implements HybridQAService {
         }
     }
 
+    private void touchSession(Long sessionId) {
+        ChatSession session = new ChatSession();
+        session.setId(sessionId);
+        session.setUpdatedAt(LocalDateTime.now());
+        sessionRepository.updateById(session);
+    }
+
     /**
      * 获取所有会话
      */
     @Override
-    public List<ChatSession> getSessions() {
-        return sessionRepository.selectList(
-                new LambdaQueryWrapper<ChatSession>()
-                        .orderByDesc(ChatSession::getUpdatedAt)
-        );
+    public List<ChatSession> getSessions(Long userId) {
+        return sessionRepository.selectSessionsOrderByLatestActivity(userId);
     }
 
     /**
      * 删除会话
      */
     @Override
-    public boolean deleteSession(String sessionId) {
+    public boolean deleteSession(String sessionId, Long userId) {
         ChatSession session = sessionRepository.selectOne(
-                new LambdaQueryWrapper<ChatSession>().eq(ChatSession::getSessionId, sessionId)
+                new LambdaQueryWrapper<ChatSession>()
+                        .eq(ChatSession::getSessionId, sessionId)
+                        .eq(ChatSession::getUserId, userId)
         );
         if (session != null) {
             messageMapper.delete(

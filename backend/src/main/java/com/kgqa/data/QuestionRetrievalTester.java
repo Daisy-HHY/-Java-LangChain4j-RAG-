@@ -34,10 +34,10 @@ public class QuestionRetrievalTester {
     private static final int TOP_K = 5;
     private static final double[] THRESHOLDS = {0.3, 0.4, 0.5, 0.6, 0.7, 0.75, 0.8, 0.85, 0.9};
 
-    private static final String JDBC_URL = "jdbc:postgresql://localhost:5432/kgqa";
-    private static final String USERNAME = "postgres";
-    private static final String PASSWORD = "123456";
-    private static final String TABLE_NAME = "embeddings";
+    private static final String JDBC_URL = System.getenv().getOrDefault("KGQA_DB_URL", "jdbc:postgresql://localhost:5432/kgqa");
+    private static final String USERNAME = System.getenv().getOrDefault("KGQA_DB_USERNAME", "postgres");
+    private static final String PASSWORD = System.getenv().getOrDefault("KGQA_DB_PASSWORD", "123456");
+    private static final String TABLE_NAME = System.getenv().getOrDefault("KGQA_EMBEDDING_TABLE", "embeddings");
 
     public static void main(String[] args) {
         log.info("========== 真实问题检索测试 ==========");
@@ -85,7 +85,10 @@ public class QuestionRetrievalTester {
     }
 
     private static EmbeddingModel createEmbeddingModel() {
-        String apiKey = "sk-uavgmvrxbztvjpnlkltozsjvbguycmacaojjjvhezhaurxlp";
+        String apiKey = System.getenv("SILICONFLOW_API_KEY");
+        if (apiKey == null || apiKey.isBlank()) {
+            throw new IllegalStateException("请设置 SILICONFLOW_API_KEY 环境变量");
+        }
         return OpenAiEmbeddingModel.builder()
                 .apiKey(apiKey)
                 .baseUrl("https://api.siliconflow.cn/v1")

@@ -23,13 +23,14 @@ public class HallucinationTester {
 
     private static final Logger log = LoggerFactory.getLogger(HallucinationTester.class);
 
-    private static final String API_URL = "http://localhost:8080/api/qa/chat";
+    private static final String API_URL = System.getenv().getOrDefault("KGQA_CHAT_API_URL", "http://localhost:8080/api/qa/chat");
     private static final String SILICONFLOW_API_URL = "https://api.siliconflow.cn/v1/chat/completions";
     private static final HttpClient httpClient = HttpClient.newHttpClient();
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
     // SiliconFlow API Key
     private static final String API_KEY = System.getenv("SILICONFLOW_API_KEY");
+    private static final String AUTH_TOKEN = System.getenv("KGQA_AUTH_TOKEN");
     private static final String MODEL_NAME = "MiniMaxAI/MiniMax-M2.5";
 
     // LLM 裁判的系统提示
@@ -140,9 +141,13 @@ public class HallucinationTester {
             Map.of("question", tq.question, "sessionId", UUID.randomUUID().toString())
         );
 
-        HttpRequest request = HttpRequest.newBuilder()
+        HttpRequest.Builder requestBuilder = HttpRequest.newBuilder()
                 .uri(URI.create(API_URL))
-                .header("Content-Type", "application/json")
+                .header("Content-Type", "application/json");
+        if (AUTH_TOKEN != null && !AUTH_TOKEN.isBlank()) {
+            requestBuilder.header("Authorization", "Bearer " + AUTH_TOKEN);
+        }
+        HttpRequest request = requestBuilder
                 .POST(HttpRequest.BodyPublishers.ofString(requestBody))
                 .build();
 

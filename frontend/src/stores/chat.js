@@ -21,11 +21,30 @@ export const useChatStore = defineStore('chat', () => {
   // Actions
   async function loadSessions() {
     try {
-      sessions.value = await getSessions()
+      const data = await getSessions()
+      sessions.value = sortSessions(data)
     } catch (e) {
       error.value = '加载会话列表失败'
       console.error(e)
     }
+  }
+
+  function sortSessions(data) {
+    return [...(data || [])].sort((a, b) => sessionTime(b) - sessionTime(a))
+  }
+
+  function sessionTime(session) {
+    return parseTime(session?.updatedAt || session?.createdAt)
+  }
+
+  function parseTime(value) {
+    if (!value) return 0
+    if (Array.isArray(value)) {
+      const [year, month, day, hour = 0, minute = 0, second = 0] = value
+      return new Date(year, month - 1, day, hour, minute, second).getTime()
+    }
+    const timestamp = new Date(value).getTime()
+    return Number.isFinite(timestamp) ? timestamp : 0
   }
 
   async function sendMessage(question) {

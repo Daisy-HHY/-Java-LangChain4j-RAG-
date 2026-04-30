@@ -1,9 +1,12 @@
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import { useRoute } from 'vue-router'
 import AppHeader from './components/layout/AppHeader.vue'
 import AppSidebar from './components/layout/AppSidebar.vue'
 
 const isSidebarCollapsed = ref(false)
+const route = useRoute()
+const isAuthLayout = computed(() => route.meta.authLayout)
 
 function toggleSidebar() {
   isSidebarCollapsed.value = !isSidebarCollapsed.value
@@ -11,15 +14,17 @@ function toggleSidebar() {
 </script>
 
 <template>
-  <div class="app-container">
-    <AppHeader @toggle-sidebar="toggleSidebar" />
+  <div class="app-container" :class="{ 'auth-container': isAuthLayout }">
+    <AppHeader v-if="!isAuthLayout" @toggle-sidebar="toggleSidebar" />
 
-    <div class="app-body">
+    <div v-if="!isAuthLayout" class="app-body">
       <AppSidebar :collapsed="isSidebarCollapsed" />
       <div class="app-page">
         <router-view />
       </div>
     </div>
+
+    <router-view v-else />
   </div>
 </template>
 
@@ -54,6 +59,10 @@ html, body {
   display: flex;
   flex: 1;
   overflow: hidden;
+}
+
+.auth-container {
+  display: block;
 }
 
 .app-page {

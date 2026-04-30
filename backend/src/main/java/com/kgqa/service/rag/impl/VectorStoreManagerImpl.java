@@ -56,10 +56,16 @@ public class VectorStoreManagerImpl implements VectorStoreManager {
 
         return embeddingStore.search(request).matches().stream()
                 .map(match -> {
-                    String text = match.embedded().text();
+                    TextSegment segment = match.embedded();
+                    String text = segment.text();
                     // match.score() returns cosine similarity (0-1)
                     double score = match.score() == null ? 0.0 : match.score();
-                    return new SourceItem(text, score);
+                    SourceItem source = new SourceItem(text, score);
+                    Long knowledgeId = segment.metadata().getLong("knowledge_id");
+                    if (knowledgeId != null) {
+                        source.setKnowledgeId(String.valueOf(knowledgeId));
+                    }
+                    return source;
                 })
                 .collect(Collectors.toList());
     }

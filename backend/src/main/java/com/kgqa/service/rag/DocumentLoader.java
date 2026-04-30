@@ -33,6 +33,15 @@ public class DocumentLoader {
         }
     }
 
+    public String loadText(byte[] content, String contentType) throws IOException, TikaException {
+        if (contentType == null || !SUPPORTED_TYPES.contains(contentType)) {
+            throw new IllegalArgumentException("Unsupported file type: " + contentType);
+        }
+        try (InputStream is = new java.io.ByteArrayInputStream(content)) {
+            return tika.parseToString(is);
+        }
+    }
+
     public boolean isSupported(String contentType) {
         return contentType != null && SUPPORTED_TYPES.contains(contentType);
     }
