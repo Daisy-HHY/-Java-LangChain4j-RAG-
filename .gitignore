@@ -33,3 +33,6 @@ uploads/
 # Node (if any frontend)
 node_modules/
 dist/
+
+# 知识图谱导出的大文件
+kgdrug_export/
