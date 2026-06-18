@@ -27,6 +27,26 @@ public class SourceItem {
      */
     private String knowledgeId;
 
+    /**
+     * 用户ID（可选，用于调试和隔离校验）
+     */
+    private String userId;
+
+    /**
+     * 来源类型：DOCUMENT 或 GRAPH
+     */
+    private String sourceType;
+
+    /**
+     * 文档标题（可选）
+     */
+    private String documentTitle;
+
+    /**
+     * 文档块序号（可选）
+     */
+    private Integer chunkIndex;
+
     public SourceItem(String content, double score) {
         this.content = content;
         this.score = score;

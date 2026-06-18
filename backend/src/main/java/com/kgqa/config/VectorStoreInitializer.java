@@ -79,10 +79,15 @@ public class VectorStoreInitializer implements ApplicationRunner {
                         .toList();
 
                 // 批量添加到向量存储
-                int count = vectorStoreManager.addDocuments(texts);
+                int count = vectorStoreManager.addDocuments(
+                        texts,
+                        knowledge.getId(),
+                        knowledge.getUserId(),
+                        knowledge.getTitle()
+                );
                 totalChunks += count;
 
-                log.info("已加载 {} 条知识块 from: {}", count, knowledge.getTitle());
+                log.info("已加载 {} 条知识块 from: {}, userId={}", count, knowledge.getTitle(), knowledge.getUserId());
             }
 
             log.info("========== 向量存储初始化完成，共加载 {} 条知识块 ==========", totalChunks);

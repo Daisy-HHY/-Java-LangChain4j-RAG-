@@ -28,6 +28,15 @@ public interface RAGPipeline {
     Result answer(String question, List<ChatMessageEntity> chatHistory);
 
     /**
+     * 执行当前用户范围内的 RAG 问答
+     * @param question 问题
+     * @param chatHistory 对话历史（带角色信息）
+     * @param userId 当前用户ID
+     * @return 问答结果
+     */
+    Result answer(String question, List<ChatMessageEntity> chatHistory, Long userId);
+
+    /**
      * 执行 RAG 流式问答
      * @param question 问题
      * @param chatHistory 对话历史（带角色信息）
@@ -35,6 +44,16 @@ public interface RAGPipeline {
      * @return 完整问答结果
      */
     Result answerStreaming(String question, List<ChatMessageEntity> chatHistory, Consumer<String> tokenConsumer);
+
+    /**
+     * 执行当前用户范围内的 RAG 流式问答
+     * @param question 问题
+     * @param chatHistory 对话历史（带角色信息）
+     * @param tokenConsumer LLM 返回片段回调
+     * @param userId 当前用户ID
+     * @return 完整问答结果
+     */
+    Result answerStreaming(String question, List<ChatMessageEntity> chatHistory, Consumer<String> tokenConsumer, Long userId);
 
     /**
      * 问答结果

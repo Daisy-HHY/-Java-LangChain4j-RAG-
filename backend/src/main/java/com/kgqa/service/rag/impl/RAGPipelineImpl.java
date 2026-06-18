@@ -11,6 +11,8 @@ import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.chat.StreamingChatModel;
 import dev.langchain4j.model.chat.response.ChatResponse;
 import dev.langchain4j.model.chat.response.StreamingChatResponseHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -25,6 +27,8 @@ import java.util.stream.Collectors;
  */
 @Component
 public class RAGPipelineImpl implements RAGPipeline {
+
+    private static final Logger log = LoggerFactory.getLogger(RAGPipelineImpl.class);
 
     private final VectorStoreManager vectorStoreManager;
     private final ChatModel chatLanguageModel;
@@ -68,13 +72,20 @@ public class RAGPipelineImpl implements RAGPipeline {
 
     @Override
     public Result answer(String question, List<ChatMessageEntity> chatHistory) {
+        return answer(question, chatHistory, null);
+    }
+
+    @Override
+    public Result answer(String question, List<ChatMessageEntity> chatHistory, Long userId) {
         // 1. 检索相关知识（带阈值过滤）
-        List<SourceItem> relevantDocs = vectorStoreManager.searchWithScore(question, 5, DEFAULT_MIN_SCORE);
+        List<SourceItem> relevantDocs = vectorStoreManager.searchWithScore(question, 5, DEFAULT_MIN_SCORE, userId);
 
         // 如果没有高质量结果，降低阈值再搜索一次
         if (relevantDocs.isEmpty()) {
-            relevantDocs = vectorStoreManager.searchWithScore(question, 5, 0.5);
+            relevantDocs = vectorStoreManager.searchWithScore(question, 5, 0.5, userId);
         }
+
+        logRetrieval(question, userId, relevantDocs);
 
         if (relevantDocs.isEmpty()) {
             return new Result("资料中未提及。当前医疗文档向量库没有检索到可用于回答该问题的内容。", List.of());
@@ -102,11 +113,18 @@ public class RAGPipelineImpl implements RAGPipeline {
 
     @Override
     public Result answerStreaming(String question, List<ChatMessageEntity> chatHistory, Consumer<String> tokenConsumer) {
-        List<SourceItem> relevantDocs = vectorStoreManager.searchWithScore(question, 5, DEFAULT_MIN_SCORE);
+        return answerStreaming(question, chatHistory, tokenConsumer, null);
+    }
+
+    @Override
+    public Result answerStreaming(String question, List<ChatMessageEntity> chatHistory, Consumer<String> tokenConsumer, Long userId) {
+        List<SourceItem> relevantDocs = vectorStoreManager.searchWithScore(question, 5, DEFAULT_MIN_SCORE, userId);
 
         if (relevantDocs.isEmpty()) {
-            relevantDocs = vectorStoreManager.searchWithScore(question, 5, 0.5);
+            relevantDocs = vectorStoreManager.searchWithScore(question, 5, 0.5, userId);
         }
+
+        logRetrieval(question, userId, relevantDocs);
 
         if (relevantDocs.isEmpty()) {
             String answer = "资料中未提及。当前医疗文档向量库没有检索到可用于回答该问题的内容。";
@@ -164,6 +182,19 @@ public class RAGPipelineImpl implements RAGPipeline {
         Throwable error = errorRef.get();
         if (error != null) {
             throw new IllegalStateException("流式回答生成失败", error);
+        }
+    }
+
+    private void logRetrieval(String question, Long userId, List<SourceItem> relevantDocs) {
+        log.info("RAG 检索完成: userId={}, question='{}', hits={}", userId, question, relevantDocs.size());
+        for (int i = 0; i < relevantDocs.size(); i++) {
+            SourceItem source = relevantDocs.get(i);
+            String preview = source.getContent() == null ? "" : source.getContent().replaceAll("\\s+", " ");
+            if (preview.length() > 120) {
+                preview = preview.substring(0, 120) + "...";
+            }
+            log.debug("RAG 命中 #{}: score={}, knowledgeId={}, sourceUserId={}, preview={}",
+                    i + 1, source.getScore(), source.getKnowledgeId(), source.getUserId(), preview);
         }
     }
 

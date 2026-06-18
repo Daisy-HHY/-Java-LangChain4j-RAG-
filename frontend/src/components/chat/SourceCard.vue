@@ -28,6 +28,24 @@ function getSourceScore(source) {
   const score = typeof source === 'object' ? Number(source?.score) : NaN
   return Number.isFinite(score) ? `${(score * 100).toFixed(0)}%` : 'N/A'
 }
+
+function getSourceType(source) {
+  if (typeof source !== 'object' || !source) return '来源'
+  if (source.sourceType === 'GRAPH') return '图谱'
+  if (source.sourceType === 'DOCUMENT') return '文档'
+  return '来源'
+}
+
+function getSourceMeta(source) {
+  if (typeof source !== 'object' || !source) return ''
+  const parts = []
+  if (source.documentTitle) parts.push(source.documentTitle)
+  if (source.chunkIndex !== undefined && source.chunkIndex !== null) {
+    parts.push(`片段 ${Number(source.chunkIndex) + 1}`)
+  }
+  if (source.knowledgeId && !source.documentTitle) parts.push(`知识库 ${source.knowledgeId}`)
+  return parts.join(' · ')
+}
 </script>
 
 <template>
@@ -55,6 +73,10 @@ function getSourceScore(source) {
       >
         <div class="source-index">#{{ index + 1 }}</div>
         <div class="source-main">
+          <div class="source-meta-row">
+            <span class="source-type">{{ getSourceType(source) }}</span>
+            <span v-if="getSourceMeta(source)" class="source-meta">{{ getSourceMeta(source) }}</span>
+          </div>
           <div class="source-content">{{ getSourceContent(source) }}</div>
           <div class="source-score">相关度 {{ getSourceScore(source) }}</div>
         </div>
@@ -163,6 +185,29 @@ function getSourceScore(source) {
   margin-bottom: var(--space-1);
   white-space: pre-wrap;
   overflow-wrap: anywhere;
+}
+
+.source-meta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
+}
+
+.source-type {
+  color: var(--accent-medical);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-elevated);
+  border-radius: 6px;
+  padding: 1px 6px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+}
+
+.source-meta {
+  color: var(--text-muted);
+  font-size: 0.72rem;
 }
 
 .source-score {

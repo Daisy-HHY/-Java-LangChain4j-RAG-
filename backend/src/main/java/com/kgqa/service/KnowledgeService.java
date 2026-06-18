@@ -54,7 +54,7 @@ public class KnowledgeService {
         knowledgeRepository.insert(knowledge);
 
         // 2. 异步处理文档
-        knowledgeProcessingService.processDocumentAsync(knowledge.getId(), fileBytes, fileType);
+        knowledgeProcessingService.processDocumentAsync(knowledge.getId(), userId, fileBytes, fileType);
 
         return knowledge;
     }
@@ -92,7 +92,7 @@ public class KnowledgeService {
             return false;
         }
         // 级联删除向量数据
-        vectorStoreManager.deleteByKnowledgeId(id);
+        vectorStoreManager.deleteByKnowledgeId(id, userId);
         // 级联删除 PostgreSQL 元数据
         chunkRepository.delete(new LambdaQueryWrapper<KnowledgeChunk>().eq(KnowledgeChunk::getKnowledgeId, id));
         knowledgeRepository.deleteById(id);

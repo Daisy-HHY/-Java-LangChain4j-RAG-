@@ -365,6 +365,29 @@ SPARQL 执行器当前主要取查询结果里的第一个绑定值，丢失多�
 - 至少 20 条评估样例可运行
 - 问答日志能显示路由和召回信息
 
+当前已落地的第一批基础项：
+
+- 用户上传文档向量写入 `user_id` metadata
+- 在线 RAG 检索按当前登录用户过滤向量
+- 文档删除按 `knowledge_id + user_id` 删除向量
+- 启动重建向量时保留知识库所属用户
+- 问答链路记录路由、实体、意图和 RAG 命中摘要
+- 新增 `evaluation/rag_eval_samples.jsonl` 作为基础评估集
+- 新增 `RagEvaluationDatasetPrinter` 用于验证评估集格式
+- 评估集已扩展到 24 条样例，覆盖 KG、RAG、HYBRID、MEMORY、MISSING、SAFETY
+- `SourceItem` 已扩展来源类型、文档标题和 chunkIndex
+- 前端来源卡片已支持展示“图谱 / 文档”来源类型和文档片段信息
+
+本地验证命令示例：
+
+```bash
+cd backend
+mvn -DskipTests compile
+mvn exec:java -Dexec.mainClass=com.kgqa.data.RagEvaluationDatasetPrinter
+```
+
+注意：项目使用 Java 17+ 语法，运行 Maven 前需要确保 `JAVA_HOME` 指向 JDK 17 或更高版本。
+
 ### 第二阶段：RAG 效果提升
 
 目标：提升文档问答质量。

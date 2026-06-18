@@ -34,11 +34,11 @@ public class KnowledgeProcessingService {
     }
 
     @Async
-    public void processDocumentAsync(Long knowledgeId, byte[] fileBytes, String contentType) {
+    public void processDocumentAsync(Long knowledgeId, Long userId, byte[] fileBytes, String contentType) {
         try {
-            processDocument(knowledgeId, fileBytes, contentType);
+            processDocument(knowledgeId, userId, fileBytes, contentType);
         } catch (Exception e) {
-            vectorStoreManager.deleteByKnowledgeId(knowledgeId);
+            vectorStoreManager.deleteByKnowledgeId(knowledgeId, userId);
             KnowledgeBase knowledge = knowledgeRepository.selectById(knowledgeId);
             if (knowledge != null) {
                 knowledge.setStatus("FAILED");
@@ -48,11 +48,13 @@ public class KnowledgeProcessingService {
     }
 
     @Transactional
-    public void processDocument(Long knowledgeId, byte[] fileBytes, String contentType) throws Exception {
+    public void processDocument(Long knowledgeId, Long userId, byte[] fileBytes, String contentType) throws Exception {
         String content = documentLoader.loadText(fileBytes, contentType);
         List<String> chunks = textSplitter.split(content);
 
-        vectorStoreManager.addDocuments(chunks, knowledgeId);
+        KnowledgeBase knowledge = knowledgeRepository.selectById(knowledgeId);
+        String documentTitle = knowledge == null ? null : knowledge.getTitle();
+        vectorStoreManager.addDocuments(chunks, knowledgeId, userId, documentTitle);
 
         for (int i = 0; i < chunks.size(); i++) {
             KnowledgeChunk chunk = new KnowledgeChunk();
@@ -62,7 +64,6 @@ public class KnowledgeProcessingService {
             chunkRepository.insert(chunk);
         }
 
-        KnowledgeBase knowledge = knowledgeRepository.selectById(knowledgeId);
         if (knowledge != null) {
             knowledge.setChunkCount(chunks.size());
             knowledge.setStatus("READY");
