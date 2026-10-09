@@ -60,6 +60,12 @@ public class VectorStoreInitializer implements ApplicationRunner {
             int totalChunks = 0;
 
             for (KnowledgeBase knowledge : knowledgeList) {
+                if (knowledge.getUserId() == null || knowledge.getUserId() <= 0) {
+                    // 空归属可能来自历史数据或已删除用户，绝不能据此自动公开。
+                    log.warn("跳过归属不明确的知识库 {}；请核实归属后重建，或由管理员重新导入共享资料",
+                            knowledge.getId());
+                    continue;
+                }
                 log.info("正在加载知识库: {} (ID: {})", knowledge.getTitle(), knowledge.getId());
 
                 // 查询该知识库的所有知识块
@@ -78,8 +84,9 @@ public class VectorStoreInitializer implements ApplicationRunner {
                         .map(KnowledgeChunk::getContent)
                         .toList();
 
-                // 批量添加到向量存储
-                int count = vectorStoreManager.addDocuments(texts);
+                // 完成全部向量化后再替换索引，保留用户归属并避免重复数据。
+                int count = vectorStoreManager.replaceDocuments(
+                        texts, knowledge.getId(), knowledge.getUserId());
                 totalChunks += count;
 
                 log.info("已加载 {} 条知识块 from: {}", count, knowledge.getTitle());
@@ -89,6 +96,7 @@ public class VectorStoreInitializer implements ApplicationRunner {
 
         } catch (Exception e) {
             log.error("向量存储初始化失败: {}", e.getMessage(), e);
+            throw new IllegalStateException("向量重建失败，请检查并恢复索引后再启动", e);
         }
     }
 }

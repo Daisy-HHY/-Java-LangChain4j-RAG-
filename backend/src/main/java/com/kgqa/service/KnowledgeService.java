@@ -35,6 +35,9 @@ public class KnowledgeService {
     }
 
     public KnowledgeBase uploadAndProcess(MultipartFile file, String title, String tags, Long userId) throws Exception {
+        if (userId == null || userId <= 0) {
+            throw new IllegalArgumentException("上传文档必须指定有效的所属用户");
+        }
         // 1. 保存文件元数据
         String originalFilename = file.getOriginalFilename();
         String fileType = file.getContentType();
@@ -54,7 +57,8 @@ public class KnowledgeService {
         knowledgeRepository.insert(knowledge);
 
         // 2. 异步处理文档
-        knowledgeProcessingService.processDocumentAsync(knowledge.getId(), fileBytes, fileType);
+        knowledgeProcessingService.processDocumentAsync(
+                knowledge.getId(), userId, fileBytes, fileType);
 
         return knowledge;
     }

@@ -75,8 +75,8 @@ public class TextBookImportService {
         List<String> chunks = textSplitter.split(content);
         log.info("分块后得到 {} 个文本块", chunks.size());
 
-        // 4. 存入向量数据库
-        int added = vectorStoreManager.addDocuments(chunks);
+        // 4. 显式发布经过授权的系统共享教材。
+        int added = vectorStoreManager.addSharedDocuments(chunks, knowledge.getId());
         log.info("已添加到向量存储: {} 条", added);
 
         // 5. 保存到 MySQL

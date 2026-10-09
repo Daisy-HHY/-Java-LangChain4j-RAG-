@@ -200,6 +200,9 @@ npm run dev
 - 认证令牌由后端写入 `HttpOnly Cookie`
 - 前端不会把 token 暴露在 `localStorage`
 - 不同用户的知识库、会话和历史记录彼此隔离
+- RAG 私有向量包含 `knowledge_id`、`user_id` 和 `visibility=PRIVATE`；向量查询在 pgvector 内按当前用户过滤，普通及流式问答的降阈值重试也保留此过滤
+- 共享向量必须由显式的系统导入写入 `visibility=PUBLIC`；开发环境的 CSV/教材共享导入仅限管理员，缺失用户 ID 的上传不会自动公开
+- 不完整的历史向量元数据默认不可检索；迁移、重建注意事项见 [RAG 用户隔离与迁移](docs/RAG_USER_ISOLATION.md)
 
 ## API
 
@@ -242,8 +245,8 @@ npm run dev
 | Method | Path | 说明 |
 |--------|------|------|
 | POST | `/api/import/tdb` | 导入 TDB 数据 |
-| POST | `/api/import/csv` | 导入 CSV 数据 |
-| POST | `/api/import/textbook` | 导入教材文本 |
+| POST | `/api/import/csv` | 管理员导入共享 CSV 数据（仅 dev） |
+| POST | `/api/import/textbook` | 管理员导入共享教材文本（仅 dev） |
 | GET | `/api/qa/test/triples` | 查看三元组 |
 | POST | `/api/qa/test/sparql` | 执行调试 SPARQL |
 

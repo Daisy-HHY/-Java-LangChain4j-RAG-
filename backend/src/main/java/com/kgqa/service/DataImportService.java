@@ -71,8 +71,8 @@ public class DataImportService {
             int end = Math.min(i + batchSize, triples.size());
             List<String> batch = triples.subList(i, end);
 
-            // 存入向量数据库
-            vectorStoreManager.addDocuments(batch);
+            // 显式发布经过授权的系统共享资料，不使用缺失用户 ID 推断公开权限。
+            vectorStoreManager.addSharedDocuments(batch, knowledge.getId());
 
             // 保存到 MySQL
             for (int j = 0; j < batch.size(); j++) {
@@ -243,8 +243,8 @@ public class DataImportService {
             int end = Math.min(i + batchSize, records.size());
             List<String> batch = records.subList(i, end);
 
-            // 存入向量数据库
-            vectorStoreManager.addDocuments(batch);
+            // 显式发布经过授权的系统共享资料，不使用缺失用户 ID 推断公开权限。
+            vectorStoreManager.addSharedDocuments(batch, knowledge.getId());
 
             // 保存到 MySQL
             for (int j = 0; j < batch.size(); j++) {

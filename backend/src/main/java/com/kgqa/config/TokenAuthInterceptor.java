@@ -41,7 +41,8 @@ public class TokenAuthInterceptor implements HandlerInterceptor {
             }
             request.setAttribute(USER_ID_ATTRIBUTE, claims.userId());
             request.setAttribute(USERNAME_ATTRIBUTE, claims.username());
-            request.setAttribute(ROLE_ATTRIBUTE, claims.role());
+            // 使用当前数据库角色，避免降权后的用户继续凭旧令牌发布共享资料。
+            request.setAttribute(ROLE_ATTRIBUTE, user.getRole());
             return true;
         } catch (Exception e) {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);

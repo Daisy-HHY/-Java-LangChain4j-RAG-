@@ -1,5 +1,9 @@
 package com.kgqa.controller;
 
+import com.kgqa.config.TokenAuthInterceptor;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 import com.kgqa.service.DataImportService;
 import com.kgqa.service.TextBookImportService;
 import org.springframework.context.annotation.Profile;
@@ -43,7 +47,9 @@ public class DataImportController {
     public Map<String, Object> importFromCSV(
             @RequestParam String path,
             @RequestParam String title,
-            @RequestParam(required = false, defaultValue = "") String tags) {
+            @RequestParam(required = false, defaultValue = "") String tags,
+            HttpServletRequest request) {
+        requireAdmin(request);
         Map<String, Object> result = new HashMap<>();
         try {
             int count = dataImportService.importFromCSV(path, title, tags);
@@ -63,7 +69,9 @@ public class DataImportController {
     @PostMapping("/textbook")
     public Map<String, Object> importTextbook(
             @RequestParam(defaultValue = "E:/Github_project/LangChain4j-KGQA/data/data_clean/textbooks/zh_paragraph") String directory,
-            @RequestParam(defaultValue = "医学教科书") String title) {
+            @RequestParam(defaultValue = "医学教科书") String title,
+            HttpServletRequest request) {
+        requireAdmin(request);
         Map<String, Object> result = new HashMap<>();
         try {
             int count = textBookImportService.importAllChineseTextBooks(directory);
@@ -75,5 +83,11 @@ public class DataImportController {
             result.put("message", "导入失败: " + e.getMessage());
         }
         return result;
+    }
+
+    private void requireAdmin(HttpServletRequest request) {
+        if (!"ADMIN".equals(request.getAttribute(TokenAuthInterceptor.ROLE_ATTRIBUTE))) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "仅管理员可导入共享知识库");
+        }
     }
 }

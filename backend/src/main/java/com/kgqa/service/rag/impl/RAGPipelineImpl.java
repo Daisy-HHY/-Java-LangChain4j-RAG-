@@ -67,13 +67,14 @@ public class RAGPipelineImpl implements RAGPipeline {
     }
 
     @Override
-    public Result answer(String question, List<ChatMessageEntity> chatHistory) {
-        // 1. 检索相关知识（带阈值过滤）
-        List<SourceItem> relevantDocs = vectorStoreManager.searchWithScore(question, 5, DEFAULT_MIN_SCORE);
+    public Result answer(String question, List<ChatMessageEntity> chatHistory, Long userId) {
+        // 1. 检索当前用户可访问的相关知识（带阈值过滤）
+        List<SourceItem> relevantDocs = vectorStoreManager.searchWithScore(
+                question, userId, 5, DEFAULT_MIN_SCORE);
 
         // 如果没有高质量结果，降低阈值再搜索一次
         if (relevantDocs.isEmpty()) {
-            relevantDocs = vectorStoreManager.searchWithScore(question, 5, 0.5);
+            relevantDocs = vectorStoreManager.searchWithScore(question, userId, 5, 0.5);
         }
 
         if (relevantDocs.isEmpty()) {
@@ -101,11 +102,13 @@ public class RAGPipelineImpl implements RAGPipeline {
     }
 
     @Override
-    public Result answerStreaming(String question, List<ChatMessageEntity> chatHistory, Consumer<String> tokenConsumer) {
-        List<SourceItem> relevantDocs = vectorStoreManager.searchWithScore(question, 5, DEFAULT_MIN_SCORE);
+    public Result answerStreaming(String question, List<ChatMessageEntity> chatHistory,
+                                  Long userId, Consumer<String> tokenConsumer) {
+        List<SourceItem> relevantDocs = vectorStoreManager.searchWithScore(
+                question, userId, 5, DEFAULT_MIN_SCORE);
 
         if (relevantDocs.isEmpty()) {
-            relevantDocs = vectorStoreManager.searchWithScore(question, 5, 0.5);
+            relevantDocs = vectorStoreManager.searchWithScore(question, userId, 5, 0.5);
         }
 
         if (relevantDocs.isEmpty()) {

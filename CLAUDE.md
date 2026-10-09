@@ -92,8 +92,13 @@ Current behavior:
 1. uploaded documents are parsed with Apache Tika
 2. content is chunked
 3. embeddings are stored in pgvector
-4. top-k chunks are retrieved by semantic similarity
+4. top-k chunks are retrieved by semantic similarity with a pgvector metadata filter:
+   `(visibility = PRIVATE AND user_id = current user) OR visibility = PUBLIC`
 5. LangChain4j chat model generates the final answer
+
+Both regular and streaming QA, including lower-threshold retries, must pass the authenticated user ID to retrieval. Private uploads require positive knowledge/user IDs. Shared vectors may only be published explicitly through `addSharedDocuments`; development CSV/textbook endpoints require the current database role to be ADMIN. Never interpret a missing owner as permission to publish.
+
+Startup reindex preserves owner metadata and replaces only the corresponding private knowledge base. Unknown owners are skipped. Embeddings are generated before deleting the old index; database replacement is not atomic and requires maintenance/backup. A rebuild error fails startup instead of silently succeeding. Legacy metadata remains excluded until verified and migrated. See [RAG isolation migration guide](docs/RAG_USER_ISOLATION.md).
 
 Primary code:
 
@@ -199,7 +204,7 @@ npm run dev
 
 ```bash
 cd backend
-mvn clean compile
+mvn clean test
 
 cd frontend
 npm run build

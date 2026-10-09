@@ -25,7 +25,7 @@ public interface RAGPipeline {
      * @param chatHistory 对话历史（带角色信息）
      * @return 问答结果
      */
-    Result answer(String question, List<ChatMessageEntity> chatHistory);
+    Result answer(String question, List<ChatMessageEntity> chatHistory, Long userId);
 
     /**
      * 执行 RAG 流式问答
@@ -34,7 +34,8 @@ public interface RAGPipeline {
      * @param tokenConsumer LLM 返回片段回调
      * @return 完整问答结果
      */
-    Result answerStreaming(String question, List<ChatMessageEntity> chatHistory, Consumer<String> tokenConsumer);
+    Result answerStreaming(String question, List<ChatMessageEntity> chatHistory,
+                           Long userId, Consumer<String> tokenConsumer);
 
     /**
      * 问答结果

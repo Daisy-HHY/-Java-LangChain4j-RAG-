@@ -100,7 +100,7 @@ public class HybridQAServiceImpl implements HybridQAService {
         List<ChatMessageEntity> history = chatMemoryService.getChatHistory(sessionId);
 
         // 执行混合问答
-        Result result = answer(question, history);
+        Result result = answer(question, history, userId);
 
         // 保存用户消息
         chatMemoryService.saveMessage(sessionId, "USER", question, null);
@@ -133,7 +133,7 @@ public class HybridQAServiceImpl implements HybridQAService {
         handler.onSession(actualSessionId);
 
         List<ChatMessageEntity> history = chatMemoryService.getChatHistory(sessionId);
-        Result result = answerStreaming(question, history, handler::onToken);
+        Result result = answerStreaming(question, history, userId, handler::onToken);
 
         chatMemoryService.saveMessage(sessionId, "USER", question, null);
 
@@ -155,7 +155,7 @@ public class HybridQAServiceImpl implements HybridQAService {
      * 执行混合问答
      */
     @Override
-    public Result answer(String question, List<ChatMessageEntity> chatHistory) {
+    public Result answer(String question, List<ChatMessageEntity> chatHistory, Long userId) {
         String resolvedQuestion = resolveQuestionWithMemory(question, chatHistory);
         if (!resolvedQuestion.equals(question)) {
             log.info("基于多轮记忆改写问题: [{}] -> [{}]", question, resolvedQuestion);
@@ -178,10 +178,11 @@ public class HybridQAServiceImpl implements HybridQAService {
         }
 
         // 4. Fallback 到 RAG
-        return answerByRAG(resolvedQuestion, chatHistory);
+        return answerByRAG(resolvedQuestion, chatHistory, userId);
     }
 
-    private Result answerStreaming(String question, List<ChatMessageEntity> chatHistory, Consumer<String> tokenConsumer) {
+    private Result answerStreaming(String question, List<ChatMessageEntity> chatHistory,
+                                   Long userId, Consumer<String> tokenConsumer) {
         String resolvedQuestion = resolveQuestionWithMemory(question, chatHistory);
         if (!resolvedQuestion.equals(question)) {
             log.info("基于多轮记忆改写流式问题: [{}] -> [{}]", question, resolvedQuestion);
@@ -201,7 +202,8 @@ public class HybridQAServiceImpl implements HybridQAService {
         }
 
         log.debug("使用 RAG 向量检索流式回答");
-        RAGPipeline.Result result = ragPipeline.answerStreaming(resolvedQuestion, chatHistory, tokenConsumer);
+        RAGPipeline.Result result = ragPipeline.answerStreaming(
+                resolvedQuestion, chatHistory, userId, tokenConsumer);
         return new Result(result.answer(), result.sources());
     }
 
@@ -504,9 +506,9 @@ public class HybridQAServiceImpl implements HybridQAService {
     /**
      * 使用 RAG 回答
      */
-    private Result answerByRAG(String question, List<ChatMessageEntity> chatHistory) {
+    private Result answerByRAG(String question, List<ChatMessageEntity> chatHistory, Long userId) {
         log.debug("使用 RAG 向量检索回答");
-        RAGPipeline.Result result = ragPipeline.answer(question, chatHistory);
+        RAGPipeline.Result result = ragPipeline.answer(question, chatHistory, userId);
         return new Result(result.answer(), result.sources());
     }
 

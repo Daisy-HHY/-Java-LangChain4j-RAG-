@@ -34,9 +34,10 @@ public class KnowledgeProcessingService {
     }
 
     @Async
-    public void processDocumentAsync(Long knowledgeId, byte[] fileBytes, String contentType) {
+    public void processDocumentAsync(Long knowledgeId, Long userId,
+                                     byte[] fileBytes, String contentType) {
         try {
-            processDocument(knowledgeId, fileBytes, contentType);
+            processDocument(knowledgeId, userId, fileBytes, contentType);
         } catch (Exception e) {
             vectorStoreManager.deleteByKnowledgeId(knowledgeId);
             KnowledgeBase knowledge = knowledgeRepository.selectById(knowledgeId);
@@ -48,11 +49,12 @@ public class KnowledgeProcessingService {
     }
 
     @Transactional
-    public void processDocument(Long knowledgeId, byte[] fileBytes, String contentType) throws Exception {
+    public void processDocument(Long knowledgeId, Long userId,
+                                 byte[] fileBytes, String contentType) throws Exception {
         String content = documentLoader.loadText(fileBytes, contentType);
         List<String> chunks = textSplitter.split(content);
 
-        vectorStoreManager.addDocuments(chunks, knowledgeId);
+        vectorStoreManager.addDocuments(chunks, knowledgeId, userId);
 
         for (int i = 0; i < chunks.size(); i++) {
             KnowledgeChunk chunk = new KnowledgeChunk();

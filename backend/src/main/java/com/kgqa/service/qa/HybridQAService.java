@@ -35,7 +35,7 @@ public interface HybridQAService {
      * @param chatHistory 对话历史（带角色信息）
      * @return 问答结果
      */
-    Result answer(String question, List<ChatMessageEntity> chatHistory);
+    Result answer(String question, List<ChatMessageEntity> chatHistory, Long userId);
 
     /**
      * 获取所有会话
