@@ -13,8 +13,6 @@ spring:
     init:
       mode: always
       schema-locations: classpath:schema.sql
-      dependency:
-        type: none  # 关键！关闭数据库初始化依赖检测
   servlet:
     multipart:
       max-file-size: 100MB
@@ -30,7 +28,7 @@ langchain4j:
 
 # 文件上传配置
 upload:
-  path: ./uploads
+  path: ${UPLOAD_PATH:./uploads}
 
 # 知识图谱配置
 kgqa:
@@ -45,7 +43,7 @@ kgqa:
       username: ${KGQA_DEFAULT_ADMIN_USERNAME:admin}
       password: ${KGQA_DEFAULT_ADMIN_PASSWORD:admin123}
   tdb:
-    path: ${KGQA_TDB_PATH:E:/Github_project/LangChain4j-KGQA/apache jena/tdb_drug_new}
+    path: ${KGQA_TDB_PATH:../.runtime/tdb_drug_new}
     validate-on-startup: true
     query-timeout-seconds: ${KGQA_TDB_QUERY_TIMEOUT_SECONDS:10}
   # 本体 URI (kgdrug)

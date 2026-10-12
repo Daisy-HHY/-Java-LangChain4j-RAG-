@@ -6,11 +6,11 @@ This file provides guidance to Codex (Codex.ai/code) when working with code in t
 
 A RAG (Retrieval Augmented Generation) knowledge base QA system with knowledge graph capabilities built with:
 - **Backend**: Java Spring Boot 3.5 + LangChain4j 1.12
-- **Frontend**: Vue.js 3 (not yet created)
-- **Database**: PostgreSQL 16 + pgvector 0.8.2
+- **Frontend**: Vue.js 3 + Vite 8 (Node.js 22.12+)
+- **Database**: PostgreSQL 18 + pgvector 0.8.2
 - **Embedding Store**: pgvector (PostgreSQL extension)
-- **Knowledge Graph**: Apache Jena TDB2
-- **AI Provider**: SiliconFlow (Qwen3-Embedding-8B for embedding, DeepSeek-V3.2 for chat)
+- **Knowledge Graph**: Apache Jena TDB1
+- **AI Provider**: SiliconFlow (Qwen3-Embedding-8B for embedding, MiniMax-M2.5 for chat)
 
 ## Build Commands
 
@@ -33,7 +33,7 @@ PostgreSQL + pgvector
 ├── 元数据表（knowledge_base, knowledge_chunk, chat_session, chat_message）
 └── 向量表（embeddings）- pgvector 自动管理
 
-Jena TDB2（知识图谱三元组，本地文件）
+Jena TDB1（知识图谱三元组，本地文件）
 ```
 
 ### Backend Structure
@@ -73,9 +73,9 @@ spring:
 
 kgqa:
   tdb:
-    path: E:/Github_project/LangChain4j-KGQA/tdb_medqa
+    path: ../.runtime/tdb_drug_new
   embedding:
-    path: E:/Github_project/LangChain4j-KGQA/backend/resource/embeddings/medqa.json
+    table: embeddings
 ```
 - Environment variable `SILICONFLOW_API_KEY` - Required for AI features
 
@@ -95,7 +95,8 @@ kgqa:
 
 ## Database Schema (PostgreSQL)
 
-4 tables in `kgqa` database:
+5 business tables in `kgqa` database:
+- `app_user` - 用户表
 - `knowledge_base` - 知识库文档表
 - `knowledge_chunk` - 知识块表（分块后的文本）
 - `chat_session` - 对话会话表
@@ -115,28 +116,37 @@ Data path: `E:/Github_project/LangChain4j-KGQA/data/data_clean/questions/Mainlan
 ## Knowledge Graph (kg/)
 
 Located in `kg/` package:
-- `TdbManager.java` - TDB2 connection management
+- `TdbManager.java` - TDB1 connection management
 - `MedicalOntology.java` - Ontology constants (Disease, Symptom, Drug, etc.)
 - `LLMTripleExtractor.java` - LLM-based triple extraction with confidence scoring
 - `KnowledgeGraphBuilder.java` - Writes triples to TDB
 
-TDB path: `E:/Github_project/LangChain4j-KGQA/tdb_medqa`
+TDB path: `../.runtime/tdb_drug_new`
 
 ## Docker Services
 
-PostgreSQL + pgvector runs in Docker:
+Use the same branch and `compose.yaml` for both modes. See `docs/DOCKER_DEVELOPMENT.md`.
+
 ```bash
-docker run --name kgqa-postgres -p 5432:5432 \
-  -e POSTGRES_USER=postgres \
-  -e POSTGRES_PASSWORD=123456 \
-  -e POSTGRES_DB=kgqa \
-  -d pgvector/pgvector:0.8.2-pg18-trixie
+# Full local Docker mode: database + backend + Vite frontend
+docker compose --profile app up -d --build
+
+# Switch to local IDEA / Vite debugging; keep the database running
+docker compose --profile app stop frontend backend
+docker compose up -d postgres
 ```
+
+- Copy `.env.example` to `.env` and prepare `.runtime/tdb_drug_new` before full startup.
+- Compose uses PostgreSQL 18 with its data volume mounted at `/var/lib/postgresql`.
+- IDEA does not automatically read Compose's `.env`; explicitly set the local database URL, graph/upload host paths, API key, and the same token secret.
+- Always stop the previous backend before switching; do not share a graph directory between running JVMs.
+- The actual graph API is `org.apache.jena.tdb.TDBFactory` (TDB1), not TDB2. Do not migrate it as part of container setup.
+- Run backend commands from `backend` and frontend commands from `frontend`.
 
 ## Development Notes
 
 - **pgvector**: Vector extension for PostgreSQL, automatically managed by LangChain4j
-- **TDB locking**: Only one JVM can access TDB at a time; ensure no other process locks it
+- **TDB locking**: Only one JVM can access TDB at a time; stop the previous backend before switching modes; lock-file existence alone does not prove a running owner
 - **Embedding persistence**: MedQA vectors saved to `resource/embeddings/medqa.json`
 - Apache Tika handles document parsing (PDF, Word, TXT)
 - Documents are chunked with 500 char size and 50 char overlap

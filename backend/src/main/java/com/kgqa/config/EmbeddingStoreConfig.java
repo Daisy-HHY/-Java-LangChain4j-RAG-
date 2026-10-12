@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.sql.init.dependency.DependsOnDatabaseInitialization;
 
 @Configuration
 public class EmbeddingStoreConfig {
@@ -28,6 +29,7 @@ public class EmbeddingStoreConfig {
     private String embeddingTable;
 
     @Bean
+    @DependsOnDatabaseInitialization
     public EmbeddingStore<TextSegment> embeddingStore(EmbeddingModel embeddingModel) {
         log.info("初始化 PgVectorEmbeddingStore...");
         log.info("数据源: {}", datasourceUrl);
