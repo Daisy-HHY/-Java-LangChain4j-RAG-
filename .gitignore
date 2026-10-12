@@ -23,6 +23,7 @@ uploads/
 # Environment
 .env
 *.env.local
+.runtime/
 
 # Maven
 .mvn/wrapper/maven-wrapper.jar

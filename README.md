@@ -14,7 +14,7 @@
 ## 当前功能
 
 - 混合问答：优先尝试知识图谱查询，失败后回退到 RAG
-- 知识图谱查询：基于 `kgdrug` 的 TDB2 本地数据集，支持模板匹配和 LLM 生成 SPARQL
+- 知识图谱查询：基于 `kgdrug` 的 TDB1 本地数据集，支持模板匹配和 LLM 生成 SPARQL
 - RAG 检索：文档上传、切分、向量化、pgvector 相似度检索
 - 流式回答：前端通过 SSE 接收流式输出，聊天区逐步渲染
 - 多轮对话记忆：当当前问题缺少实体时，会根据最近用户消息补全上下文
@@ -29,11 +29,11 @@
 | 后端 | Java 17, Spring Boot 3.5, MyBatis-Plus |
 | AI 框架 | LangChain4j 1.12 |
 | 前端 | Vue 3, Vite, Pinia, Vue Router, Element Plus |
-| 向量存储 | PostgreSQL 16 + pgvector |
-| 知识图谱 | Apache Jena TDB2 |
+| 向量存储 | PostgreSQL 18 + pgvector 0.8.2 |
+| 知识图谱 | Apache Jena TDB1 |
 | 模型提供方 | SiliconFlow |
 
-当前默认模型配置来自 [application.yml](E:/Github_project/LangChain4j-KGQA/backend/src/main/resources/application.yml)：
+当前默认模型配置来自 [application.yml](backend/src/main/resources/application.yml)：
 
 - Embedding: `Qwen/Qwen3-Embedding-8B`
 - Chat: `MiniMaxAI/MiniMax-M2.5`
@@ -59,7 +59,7 @@
 ┌──────────────────────┐                 ┌──────────────────────┐
 │      RAG Pipeline    │                 │    KG Query Path     │
 │ Embed -> pgvector    │                 │ Entity -> SPARQL     │
-│ -> TopK -> LLM       │                 │ -> TDB2 -> LLM       │
+│ -> TopK -> LLM       │                 │ -> TDB1 -> LLM       │
 └──────────────────────┘                 └──────────────────────┘
           │                                         │
           └────────────────────┬────────────────────┘
@@ -119,78 +119,69 @@ LangChain4j-KGQA/
 - 聊天消息 `chat_message`
 - LangChain4j 维护的向量表 `embeddings`
 
-初始化脚本见 [schema.sql](E:/Github_project/LangChain4j-KGQA/backend/src/main/resources/schema.sql)。
+初始化脚本见 [schema.sql](backend/src/main/resources/schema.sql)。
 
-### 2. Apache Jena TDB2
+### 2. Apache Jena TDB1
 
 当前仅保留 `kgdrug` 数据集，不再使用 `wikidata`。
 
-- 默认 TDB 路径：`E:/Github_project/LangChain4j-KGQA/apache jena/tdb_drug_new`
+- 原始图谱：`apache jena/tdb_drug_new`
+- 开发副本：`.runtime/tdb_drug_new`；Docker 挂载到 `/data/tdb_drug_new`
+- 本机后端从 `backend` 目录运行时默认读取 `../.runtime/tdb_drug_new`，也可以用 `KGQA_TDB_PATH` 指定绝对路径
 - 本体基地址：`http://www.kgdrug.com`
 
 注意：
 
-- TDB2 同时只允许一个 JVM 可靠写入/访问同一数据目录
-- 如果目录存在 `tdb.lock`，通常说明有进程仍在占用
+- TDB1 同时只允许一个 JVM 可靠写入/访问同一数据目录
+- `tdb.lock` 文件存在不等于有进程占用；遇到锁错误先关闭占用进程，不直接删除锁文件
 
 ## 快速开始
 
+同一套代码支持完整 Docker 运行和本地前后端连接 Docker 数据库。完整步骤、Windows 命令、IDEA 环境变量和备份恢复见 [Docker 运行与本地断点调试](docs/DOCKER_DEVELOPMENT.md)。
+
 ### 环境要求
 
-- JDK 17+
-- Maven 3.8+
-- Node.js 18+
-- PostgreSQL 16+（或 Docker）
+- Docker Engine / Docker Desktop 和 Docker Compose v2
+- 本地调试额外需要 JDK 17、Maven 3.8+、Node.js 22.12+
+- 可用的 `SILICONFLOW_API_KEY`，模型仍通过 SiliconFlow API 调用
 
-### 1. 启动 PostgreSQL + pgvector
+### 首次准备
 
-```bash
-docker run --name kgqa-postgres -p 5432:5432 ^
-  -e POSTGRES_USER=postgres ^
-  -e POSTGRES_PASSWORD=123456 ^
-  -e POSTGRES_DB=kgqa ^
-  -d pgvector/pgvector:0.8.2-pg18-trixie
-```
-
-### 2. 配置环境变量
-
-至少需要：
+从项目根目录执行，复制图谱前停止访问原图谱的进程；已有 `.env` 或图谱副本时保留原文件：
 
 ```bash
-SILICONFLOW_API_KEY=your_api_key
+cp .env.example .env
+mkdir -p .runtime uploads
+test ! -e .runtime/tdb_drug_new && cp -a 'apache jena/tdb_drug_new' .runtime/tdb_drug_new
 ```
 
-可选配置：
+编辑 `.env`，填写 API Key、数据库密码和固定的令牌密钥，并选择账户可用的聊天模型。原应用默认聊天模型返回禁用错误，`.env.example` 已选择经过验证的替代模型；详情见运行文档。
+
+### 完整 Docker 运行
 
 ```bash
-KGQA_DB_URL=jdbc:postgresql://localhost:5432/kgqa
-KGQA_DB_USERNAME=postgres
-KGQA_DB_PASSWORD=123456
-KGQA_TDB_PATH=E:/Github_project/LangChain4j-KGQA/apache jena/tdb_drug_new
-KGQA_AUTH_TOKEN_SECRET=replace_me
-KGQA_DEFAULT_ADMIN_USERNAME=admin
-KGQA_DEFAULT_ADMIN_PASSWORD=admin123
+docker compose --profile app up -d --build
+docker compose --profile app logs -f backend
 ```
 
-### 3. 启动后端
+后端启动完成后访问 `http://localhost:5173`。默认管理员为 `admin / admin123`，可以在首次启动前通过 `.env` 修改。此模式用于本机开发，前端运行 Vite 开发服务器。
+
+### 本地断点调试
 
 ```bash
-cd backend
-mvn clean compile
-mvn spring-boot:run
+docker compose --profile app stop frontend backend
+docker compose up -d postgres
 ```
 
-后端默认地址：`http://localhost:8080`
-
-### 4. 启动前端
+在 IDEA 中设置 Spring `dev` profile 和文档列出的环境变量，数据库使用 `localhost:5432`，图谱与上传目录使用对应宿主机绝对路径，然后 Debug 启动 `com.kgqa.KgQaApplication`。Compose 根目录 `.env` 不会被 IDEA 自动加载。
 
 ```bash
 cd frontend
-npm install
+npm ci
 npm run dev
 ```
 
-前端默认地址：`http://localhost:5173`
+切回 Docker 时先停止本机前后端，再从项目根目录执行 `docker compose --profile app up -d --build`。数据库数据卷始终保留；同一图谱目录只允许一个后端进程访问。
 
 ## 认证说明
 
@@ -278,10 +269,10 @@ npm run build
 
 如果你要调整系统行为，优先关注这些位置：
 
-- [HybridQAServiceImpl.java](E:/Github_project/LangChain4j-KGQA/backend/src/main/java/com/kgqa/service/qa/impl/HybridQAServiceImpl.java)
-- [RAGPipelineImpl.java](E:/Github_project/LangChain4j-KGQA/backend/src/main/java/com/kgqa/service/rag/impl/RAGPipelineImpl.java)
-- [SPARQLTemplateMatcherImpl.java](E:/Github_project/LangChain4j-KGQA/backend/src/main/java/com/kgqa/service/sparql/impl/SPARQLTemplateMatcherImpl.java)
-- [ChatView.vue](E:/Github_project/LangChain4j-KGQA/frontend/src/views/ChatView.vue)
+- [HybridQAServiceImpl.java](backend/src/main/java/com/kgqa/service/qa/impl/HybridQAServiceImpl.java)
+- [RAGPipelineImpl.java](backend/src/main/java/com/kgqa/service/rag/impl/RAGPipelineImpl.java)
+- [SPARQLTemplateMatcherImpl.java](backend/src/main/java/com/kgqa/service/sparql/impl/SPARQLTemplateMatcherImpl.java)
+- [ChatView.vue](frontend/src/views/ChatView.vue)
 
 ## License
 
